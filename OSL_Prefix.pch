@@ -1,0 +1,189 @@
+//
+// Prefix header for all source files of the 'PixelSniper' target in the 'PixelSnipe' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <GameKit/GameKit.h>
+#endif
+
+#define COUNTDOWN 8
+#define RAND_UINT_MAX		0xFFFFFFFF
+#define RAND_INT_MAX		0x7FFFFFFF
+
+#define RAND_INT_VAL(a,b)
+
+#define DEFGAIN 0.8
+// Object Detection
+#define MAXX 1524
+#define MINX -1224
+
+#define SKYY 634
+
+#define ZOUT 6
+#define ZIN 2
+#define ZESCALATOR 1
+#define ZNONE 0
+
+#define STREET -228
+#define SIDEWALK -188
+
+#define BUILDINGEDGE -6
+#define BUILDINGEDGECITIZEN BUILDINGEDGE - 40
+#define BUILDINGDOOR -122
+
+#define BUILDING2RIGHT 1064
+#define BUILDING2LEFT 520
+
+#define ELEVATORX -576
+
+#define PREZX (ELEVATORX + BUILDINGEDGE) / 2
+#define ROOM1 PREZX - 60
+#define ROOM2 PREZX + 60
+#define SECURITY1 PREZX - 80
+#define SECURITY2 PREZX + 80
+
+#define ESCALATORRIGHT BUILDINGEDGE-200
+#define ESCALATORLEFT ELEVATORX+136
+
+#define FLOOR1Y SIDEWALK+42
+#define FLOOR2Y SIDEWALK+138
+
+#define FLOOR3Y FLOOR2Y+98
+
+
+#define FLOOR4Y FLOOR3Y+98
+
+#define FLOOR5Y FLOOR4Y+98
+
+#define ROOF FLOOR5Y+94
+#define HELIPADX (ELEVATORX + BUILDINGEDGE) / 2
+
+#define PARACHUTE1X 460
+#define PARACHUTE1Y SKYY
+
+//// Travel Rates
+#define RATEMULTIPLIER 1
+
+//// Travel Rates NEW
+#define INSTANTRATE 300
+#define WALKRATE 45
+#define CLIMBRATE 23
+#define RAPPELRATE 100
+#define ELEVATORRATE 30
+#define ESCALATORRATE 30
+#define ENTERDOORRATE 30
+#define FALLRATE 90
+#define PARACHUTE1RATE 38
+#define VEHICLE1RATE 90
+#define VEHICLE2RATE 100
+
+//// Animation States
+#define DEAD 0
+#define PAUSE 1
+#define WALK 2
+#define CLIMB 3
+#define FALL 4
+#define PARACHUTE 5
+#define SHOOT 6
+#define RAPPEL 7
+#define ELEVATOR 8
+#define DRIVE 9
+#define DROP 10
+#define LEAVE 11
+#define RUN 12
+#define JUMP 13
+#define FIGHT 14
+#define KNEEL 15
+#define NOTHING 16
+#define STATIONARY -1
+
+//// Vehicle Type
+#define TRUCK 0
+#define ARMOR 1
+#define PLANE 2
+#define HELIC 3
+
+//// Enemy Type
+#define AGENT 0
+#define PARACHUTER 1
+#define CITIZEN 2
+#define FROMVEHICLE 3
+#define FROMHELICOPTER 4
+#define JUMPER 5
+#define SECURITY 6
+#define TARGET 7
+
+//// Sound
+#define CGROUP_BACKGGROUND 0
+#define CGROUP_WEAPONS 1
+#define CGROUP_VOICES 2
+#define CGROUP_TOTAL 3
+
+// Fonts
+
+
+// Game Type
+#define SURVIVAL 1
+#define MULTIPLAYER 2
+#define MULTIPLAYER3 3
+#define SURVIVALEXTREME 4
+#define TOURNAMENT 5
+#define SANDBOX 30
+#define MISSIONS 31
+#define TUTORIAL 32
+
+#define BMONEY 10
+#define MRATE 0.4
+#define T1 20
+#define T2 40
+#define T3 60
+#define T4 80
+#define T5 100
+
+//Actions
+#define CODEAGENT 1
+#define CODECITIZEN 2
+#define CODEPARACHUTE 3
+#define CODEJUMPER 4
+#define CODEINVERTED 5
+#define CODETHUMB 6
+#define CODERECON 7
+#define CODEANTI 8
+#define CODEARMOR 9
+#define CODEPLANE 10
+#define CODETRUCK 11
+#define CODECHOPPER 12
+#define CODEPERK1 13
+#define CODEPERK2 14
+#define CODEPERK3 15
+#define CODELOSE 999
+#define CODEINNOCENT 998
+#define SNIPERFOUND 997
+#define KIDNAPPERDEAD 996
+#define DISCONNECT 995
+#define CODEPARTY 994 
+#define CODEPERK1TAKEN 993
+#define HEARTBEAT 992
+
+//Help Pages
+#define SECTION2 5
+#define SECTION3 8
+#define SECTION4 13 //14
+#define SECTION5 15 //16
+
+#define MAXTUT 19
+#define MISSIONMAX 1
+#define MINMINS 5
+
+// Hats
+#define CANDIDATEHAT 7
+#define DRIVERHAT 9
+#define SECURITYHAT 6
+#define CONSTRUCTIONHAT 5
+
+// Game States
+#define NOGAME 0
+#define CONNECTING 1
+#define INGAME 2
