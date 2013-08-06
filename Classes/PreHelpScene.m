@@ -19,7 +19,9 @@
     if (self != nil) {
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
         CCSprite * bg = [CCSprite spriteWithFile:@"menuBackground.png"];
-        [bg setPosition:ccp(240, 160)];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
         [self addChild:bg z:0];
 
 		CGSize s = [[CCDirector sharedDirector] winSize];

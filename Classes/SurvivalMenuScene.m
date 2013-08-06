@@ -19,7 +19,9 @@
 		[AppDelegate get].help = 0;
 		[AppDelegate get].multiplayer = 0;
         CCSprite * bg = [CCSprite spriteWithFile:@"menuBackground.png"];
-        [bg setPosition:ccp(240, 160)];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
         [self addChild:bg z:0];
         [self addChild:[SurvivalMenuLayer node] z:1 tag:1];
 		[[AppDelegate get].opponentPerks removeAllObjects];

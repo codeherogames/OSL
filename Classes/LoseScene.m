@@ -22,24 +22,28 @@
     if (self != nil) {
 		CCLOG(@"LoseLayer");
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
 		if ([AppDelegate get].gameType == MISSIONS) {
 			CCSprite *c = [CCSprite spriteWithFile:@"w1px.png"];
 			c.color=ccc3(43,69,127);
-			c.scaleX = 480;
-			c.scaleY = 320;
-			[c setPosition:ccp(240, 160)];
+            [c setPosition:ccp(winSize.height/2, winSize.width/2)];
+            c.scaleX = winSize.height/c.contentSize.width;
 			[self addChild:c z:0];
 			
 			CCSprite * bg = [CCSprite spriteWithFile:@"newspaper.png"];
 			bg.scale = 1.4;
 			bg.rotation=-14;
-			[bg setPosition:ccp(260, 160)];
+			//[bg setPosition:ccp(260, 160)];
+            
+            [bg setPosition:ccp(winSize.height/2+20, winSize.width/2)];
+            bg.scaleX = winSize.height/bg.contentSize.width;
 			[self addChild:bg z:0];
 			//[[LocalyticsSession sharedLocalyticsSession] tagEvent:[NSString stringWithFormat:@"Mission Lost - %i",[AppDelegate get].currentMission]];
 		}
 		else {
 			CCSprite * bg = [CCSprite spriteWithFile:@"missionfailed.png"];
-			[bg setPosition:ccp(240, 160)];
+            [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+            bg.scaleX = winSize.height/bg.contentSize.width;
 			[self addChild:bg z:0];	
 		}
 		[self addChild:[LoseLayer node] z:1];

@@ -23,10 +23,20 @@
 		//[[AppDelegate get].gkHelper queryMatchmakingActivity];
 		[AppDelegate get].multiplayer = 0;
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
-        CCSprite * bg = [CCSprite spriteWithFile:@"menuBackground.png"];
+        /*CCSprite * bg = [CCSprite spriteWithFile:@"menuBackground.png"];
         [bg setPosition:ccp(240, 160)];
         [self addChild:bg z:0];
+        [self addChild:[PlayLayer node] z:1 tag:1];*/
+        
+        /////
+        CCSprite * bg = [CCSprite spriteWithFile:@"menuBackground.png"];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
+        [self addChild:bg z:0];
         [self addChild:[PlayLayer node] z:1 tag:1];
+        
+
 		[[AppDelegate get].opponentPerks removeAllObjects];
 		[AppDelegate get].survivalMode = 0;
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
@@ -141,7 +151,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
 		back.color=ccBLACK;
         [self addChild:back];
-		[back setPosition:ccp(448, 300)];
+		[back setPosition:ccp([[UIScreen mainScreen] bounds].size.height-mm.contentSize.width, 300)];
 		
 		/*loading = [CCLabelTTF labelWithString:@"Loading..." fontName:[AppDelegate get].menuFont fontSize:22];
 		[loading setColor:ccWHITE];

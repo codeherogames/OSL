@@ -26,15 +26,20 @@
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
         CCSprite * bg = [CCSprite spriteWithFile:@"Cmain.png"];
-        [bg setPosition:ccp(240, 160)];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
         [self addChild:bg z:0];
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
 		CCLayer *popup = [[[PopupLayer alloc] initWithMessage:@"Weapons are used in ALL game modes.  Your current weapon loadout is on the left as well as associated Power, Recoil and Accuracy.  View equipment types by selecting the buttons on the bottom.  On the right, use arrows to view different equipment descriptions and prices.  Select Purchase to unlock, Equip to use it.  Only Extras can be Unequipped, the rest are replaced when you Equip a different item." t:@"Customizing Weapons"] autorelease];
 		[self addChild:popup z:10];
 
-		[self addChild:[EquipmentLayer node] z:1];
-		
+        EquipmentLayer *m = [EquipmentLayer node];
+        [self addChild:m z:1];
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && (winSize.height == 568)) {
+            m.position = ccp(44, 0);
+        }
     }
     return self;
 }

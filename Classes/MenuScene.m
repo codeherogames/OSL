@@ -31,9 +31,15 @@
     if (self != nil) {
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
         CCSprite * bg = [CCSprite spriteWithFile:@"cityscape.png"];
-        [bg setPosition:ccp(240, 160)];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
         [self addChild:bg z:0];
-        [self addChild:[MenuLayer node] z:1 tag:1];
+        MenuLayer *m = [MenuLayer node];
+        [self addChild:m z:1 tag:1];
+        bg.scaleX = winSize.height/bg.contentSize.width;
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && (winSize.height == 568)) {
+            m.position = ccp(44, 0);
+        }
 		[AppDelegate get].multiplayer = 0;
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
     }

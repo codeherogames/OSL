@@ -29,8 +29,10 @@
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
 		CCSprite * bg = [CCSprite spriteWithFile:@"perkscreen.png"];
-		[bg setPosition:ccp(240, 160)];
-		[self addChild:bg z:0];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
+        [self addChild:bg z:0];
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
 		

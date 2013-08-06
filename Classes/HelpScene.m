@@ -27,8 +27,10 @@
 		CGSize s = [[CCDirector sharedDirector] winSize];
 		
 		CCSprite *bg = [CCSprite spriteWithFile: @"paper.png"];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
 		[self addChild:bg z:0];
-		bg.position = ccp(s.width/2, s.height/2);
 		
 		CCSprite *curl = [CCSprite spriteWithFile: @"pagecurl.png"];
 		[self addChild:curl z:1];

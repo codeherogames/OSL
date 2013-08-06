@@ -40,7 +40,8 @@
     if (self != nil) {	
 		self.isTouchEnabled = YES;
 		CGSize s = [[CCDirector sharedDirector] winSize];
-		
+		CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Wrist Computer" fontName:[AppDelegate get].menuFont fontSize:30];
 		[label setColor:ccYELLOW];
 		label.position =ccp(s.width/2, s.height-label.contentSize.height);
@@ -49,17 +50,17 @@
 		[AppDelegate get].money=999999999999999;
 		[AppDelegate get].help = 1;
 		
-		// Zoom Button
-		CCSprite *myZoomButton = [CCSprite spriteWithFile: @"zoom.png"]; 
-		[myZoomButton setPosition:ccp(366, 30)];
-		[self addChild:myZoomButton z:12];
-		
 		// Fire Button
 		CCMenuItem *myFireButton = [CCMenuItemImage itemFromNormalImage:@"fireButtonChrome.png" selectedImage:@"fireButtonChrome.png" target:self selector:@selector(fake:)];
 		CCMenu *buttonMenu = [CCMenu menuWithItems:myFireButton, nil];
 		//buttonMenu.tag = kButtonMenu;
-		[buttonMenu setPosition:ccp(450, 30)];
+		[buttonMenu setPosition:ccp(winSize.height-30, 30)];
 		[self addChild:buttonMenu z:12];
+        
+        // Zoom Button
+		CCSprite *myZoomButton = [CCSprite spriteWithFile: @"zoom.png"];
+		[myZoomButton setPosition:ccp(buttonMenu.position.x-70, 30)];
+		[self addChild:myZoomButton z:12];
 		
 		[CCMenuItemFont setFontSize:14];
 		
@@ -67,7 +68,7 @@
 													   target:self
 													 selector:@selector(mainMenu:)];
 		CCMenu *mMenu = [CCMenu menuWithItems:mainMenu, nil];
-        mMenu.position = ccp(456,310);
+        mMenu.position = ccp(winSize.height-24,310);
 		[self addChild:mMenu];
 		for (CCMenuItem *mi in mMenu.children) {
 			CGSize tmp = mi.contentSize;

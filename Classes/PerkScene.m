@@ -21,9 +21,15 @@
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
         CCSprite * bg = [CCSprite spriteWithFile:@"perkscreen.png"];
-        [bg setPosition:ccp(240, 160)];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
         [self addChild:bg z:0];
-        [self addChild:[PerkLayer node] z:1];
+        PerkLayer *m = [PerkLayer node];
+        [self addChild:m z:1];
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && (winSize.height == 568)) {
+            m.position = ccp(44, 0);
+        }
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
 		CCLayer *popup = [[[PopupLayer alloc] initWithMessage:@"Perks are used in multiplayer and sandbox modes.  They can give you an ability or be a detriment to your opponent.  Locked perks are dimmed until unlocked.  Choose a perk to see the description in the bottom left.  Purchase the perk and then Enable the perk to use it.  You can assign perks to unlocked slots on the bottom right." t:@"What are Perks?"] autorelease];
