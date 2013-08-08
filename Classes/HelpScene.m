@@ -68,7 +68,7 @@
 													 selector:@selector(mainMenu:)];
 		CCMenu *mMenu = [CCMenu menuWithItems:mainMenu, nil];
 		[mMenu setColor:fontColor];
-        mMenu.position = ccp(456,310);
+        mMenu.position = ccp(s.width-24,310);
 		[self addChild:mMenu];
 		for (CCMenuItem *mi in mMenu.children) {
 			CGSize tmp = mi.contentSize;
@@ -120,7 +120,7 @@
 		next.scale = 100;
 		CCMenu *menu = [CCMenu menuWithItems:back,next, nil];
 		[menu setColor:fontColor];
-		[menu alignItemsHorizontallyWithPadding: 320.0f];
+		[menu alignItemsHorizontallyWithPadding: (s.width/3)*2/*320.0f*/];
         menu.position = ccp(s.width/2,50);
 		//menu.position = ccp(s.width-50,0);
 		[self addChild:menu];
@@ -244,7 +244,7 @@
 	menu.anchorPoint=ccp(0,0);
 	[menu setColor:ccc3(71,10,10)];
 	[menu alignItemsVerticallyWithPadding: 20.0f];
-	menu.position = ccp(140,s.height/2.4);
+	menu.position = ccp(s.width/2-100,s.height/2.4);
 	[self addChild:menu];
 	for (CCMenuItem *mi in menu.children) {
 		CGSize tmp = mi.contentSize;

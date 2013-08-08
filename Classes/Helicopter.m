@@ -111,7 +111,7 @@
 		[self unschedule: @selector(move:)];
 		[self stopAllActions];
 		[self dead];
-		
+		[[AppDelegate get].bgLayer menuAttack:CODESCRAPMETAL];
 	}
 	else
 	{
@@ -127,17 +127,22 @@
 	enemy1.type = FROMHELICOPTER;
 	[enemy1 setPosition:ccp(self.contentSize.width/2,self.contentSize.height/3)];
 	[self reorderChild:enemy1 z:-2];
-	
-	Enemy *enemy2 = [[Enemy alloc] initWithFile: @"headOnly.png" l:self h:@"hat1.png"];
-	enemy2.color = ccRED;
-	enemy2.type = FROMHELICOPTER;
-	enemy2.currentState = DRIVE;
-	if (self.flipX == TRUE)
-		[enemy2 setPosition:ccp(self.contentSize.width-(self.contentSize.width/2-24),self.contentSize.height/3)];
-	else 
-		[enemy2 setPosition:ccp(self.contentSize.width/2-24,self.contentSize.height/3)];
-	[self reorderChild:enemy2 z:-2];
-	
+    [passengers addObject:enemy1];
+	enemy1.customTag = 0;
+    
+    if (![[AppDelegate get] perkEnabled:40]) {
+        Enemy *enemy2 = [[Enemy alloc] initWithFile: @"headOnly.png" l:self h:@"hat1.png"];
+        enemy2.color = ccRED;
+        enemy2.type = FROMHELICOPTER;
+        enemy2.currentState = DRIVE;
+        if (self.flipX == TRUE)
+            [enemy2 setPosition:ccp(self.contentSize.width-(self.contentSize.width/2-24),self.contentSize.height/3)];
+        else 
+            [enemy2 setPosition:ccp(self.contentSize.width/2-24,self.contentSize.height/3)];
+        [self reorderChild:enemy2 z:-2];
+        [passengers addObject:enemy2];
+        enemy2.customTag = 1;
+	}
 	Enemy *enemy3 = [[Enemy alloc] initWithFile: @"headOnly.png" l:self h:@"hat1.png"];
 	enemy3.color = ccRED;
 	enemy3.type = FROMHELICOPTER;
@@ -149,20 +154,13 @@
 	[self reorderChild:enemy3 z:-2];
 	enemy3.anchorPoint=ccp(0.5,0.5);
 	enemy3.customTag = 99;
-	//[passengerList addObject:enemy3];
-	[passengers addObject:enemy1];
-	enemy1.customTag = 0;
-	[passengers addObject:enemy2];
-	enemy2.customTag = 1;
-	
+
 	if (self.flipX == TRUE) {
 		CCLOG(@"Passengers Flipx");
-		enemy1.flipX = TRUE;
-		enemy1.hat.flipX = TRUE;
-		enemy2.flipX = TRUE;
-		enemy2.hat.flipX = TRUE;
-		enemy3.flipX = TRUE;
-		enemy3.hat.flipX = TRUE;
+        for (Enemy *e in passengers) {
+            e.flipX = TRUE;
+            e.hat.flipX = TRUE;
+        }
 	}
 	if ([[AppDelegate get] perkEnabled:1])
 		[armor setPosition:enemy3.position];
@@ -204,6 +202,19 @@
 	
 	if (i == 99) {
 		CCLOG(@"Driver Shot");
+        // TRIFECTA or BOUNTBONUS check
+        if ([AppDelegate get].gameType != SURVIVAL) {
+            if ([[AppDelegate get] perkEnabled:44] && [passengers count] == 0) {
+                    [AppDelegate get].money += 500;
+                    [[AppDelegate get].bgLayer sendMyIntel:@"5000 Bonus"];
+                    [[AppDelegate get].bgLayer sendMyIntel:@"Trifecta"];
+            }
+            if ([[AppDelegate get] perkEnabled:28]) {
+                [AppDelegate get].money += 80;
+                [[AppDelegate get].bgLayer sendMyIntel:@"800 Bonus"];
+                [[AppDelegate get].bgLayer sendMyIntel:@"Bounty Bonus"];
+            }
+        }
 		self.currentState = PAUSE;
 		driverDied = 1;
 		[self unschedule: @selector(move:)];

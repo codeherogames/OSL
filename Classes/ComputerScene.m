@@ -128,7 +128,7 @@
 		[self addChild:bullet z:12];
 		bullet.position = ccp(menuTray.contentSize.width/2, 26);*/
 		
-		float infoX = 388;
+		float infoX = s.width-92;//388;
 		
 		CCLabelTTF *infoTitle = [CCLabelTTF labelWithString:@"Recon" fontName:[AppDelegate get].clearFont fontSize:12];
 		infoTitle.position = ccp(infoX,270);
@@ -160,7 +160,7 @@
 		[self addChild:info4 z:3];
 		
 		self.des = [CCLabelTTF labelWithString:@"The buttons on the left are part your wrist computer.  They are used to launch actions.  Click on each one to launch your option slider.  Each option on the slider can be clicked for further description.  Try Sandbox Mode to experiment with each of the actions.  The Recon section will list the last several actions taken during a game." dimensions:CGSizeMake(200,300) alignment:UITextAlignmentCenter fontName:[AppDelegate get].clearFont fontSize:14];
-		des.position = ccp(240,100);
+		des.position = ccp(s.width/2,100);
 		[self addChild:des z:8];
 		
 	}

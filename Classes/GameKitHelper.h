@@ -37,7 +37,8 @@
 -(void) onLeaderboardViewDismissed;
 -(void) onAchievementsViewDismissed;
 
--(void) onAttackReceived:(int)attack pid:(NSString*)pid;
+//-(void) onAttackReceived:(int)attack pid:(NSString*)pid;
+-(void) onAttackReceived:(int)attack pid:(NSString*)pid m:(int)m a:(int)a;
 -(void) onAliasReceived:(NSString*)alias;
 @end
 

@@ -37,7 +37,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
 		[back setColor:ccBLACK];
         [self addChild:back];
-		[back setPosition:ccp(436, 300)];
+		[back setPosition:ccp([[UIScreen mainScreen] bounds].size.height-mm.contentSize.width, 300)];
 		for (CCMenuItem *mi in back.children) {
 			CGSize tmp = mi.contentSize;
 			tmp.width = tmp.width*1.3;

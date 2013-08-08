@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "LoseScene.h"
 #import "ConnectingScene.h"
+#import "Enemy.h"
+#import "Vehicle.h"
+#import "GameScene.h"
 
 static NSString* kCachedAchievementsFile = @"CachedAchievements.archive";
 
@@ -692,12 +695,30 @@ static GameKitHelper *instanceOfGameKitHelper;
 }
 
 -(void) sendAttack:(int) i {
+    int eCount=0;
+    if ([[AppDelegate get] perkEnabled:43]) {
+        for (Enemy *e in [AppDelegate get].enemies) {
+            if (e.currentState != DEAD && e.tag != 100 && e.type != FROMVEHICLE) {
+                eCount++;
+            }
+        }
+        BackgroundLayer *bgLayer = (BackgroundLayer*)[AppDelegate get].bgLayer;
+        for (Vehicle *v in bgLayer.vehicles) {
+            if (v.currentState != DEAD) {
+                if (v.type == PLANE || v.type == ARMOR)
+                    eCount += [v.passengers count];
+                /*else
+                    eCount += v.passengerCount;*/
+            }
+        }
+        eCount -= [AppDelegate get].jammers;
+    }
     NSError *error = nil;
 	DataPacket packet;
 	packet.type = 1;
 	packet.one = i;
-	packet.two = 0;
-	packet.three = 0;
+	packet.two = eCount;
+	packet.three = [AppDelegate get].money;
     //NSData *packet = [NSData dataWithBytes:&packet length:sizeof(packet)];
     [self sendDataToAllPlayers: &packet length:sizeof(packet)];
     if (error != nil)
@@ -772,8 +793,8 @@ static GameKitHelper *instanceOfGameKitHelper;
 	DataPacket* packet = (DataPacket*)[data bytes];
 	if (packet->type == 1) {
 		CCLOG(@"match didReceiveData: attack: %d", packet->one);
-		int receivedScore = packet->one;
-		[delegate onAttackReceived:receivedScore pid:playerID];
+		int attack = packet->one;
+		[delegate onAttackReceived:attack pid:playerID m:packet->two a:packet->three];
 	}
 	else if (packet->type == 2) {
 		NSNumber *one = [NSNumber numberWithInteger:packet->one];

@@ -427,9 +427,13 @@ BOOL isGameCenterAPIAvailable()
 	//[gkHelper getPlayerInfo:players];
 }
 
--(void) onAttackReceived:(int)attack pid:(NSString*)pid {
+-(void) onAttackReceived:(int)attack pid:(NSString*)pid m:(int)m a:(int)a {
 	CCLOG(@"attack recieved %i",attack);
-	[bgLayer onAttackReceived:attack pid:pid];
+    [bgLayer onAttackReceived:attack pid:pid];
+    if ([[AppDelegate get] myPerk:42])
+        [bgLayer showEnemyMoney:m];
+    if ([[AppDelegate get] myPerk:43])
+        [bgLayer showAgentCount:a];
 }
 
 -(void) onAliasReceived:(NSString*)alias {

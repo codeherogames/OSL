@@ -18,7 +18,10 @@
 	self =  [super initWithFile:s l:l a:a];
 	if (self != nil) {
 		self.type = ARMOR;
-		self.passengerCount = 2;
+        if ([[AppDelegate get] perkEnabled:40])
+            self.passengerCount = 1;
+        else
+            self.passengerCount = 2;
 		//self.tire1 = [[CCSprite spriteWithFile:@"tire.png"] retain];
 		//self.tire2 = [[CCSprite spriteWithFile:@"tire.png"] retain];
 		self.tire1 = [[CCSprite spriteWithFile:@"hubcap.png"] retain];

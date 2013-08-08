@@ -74,7 +74,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
 		back.color=ccBLACK;
         [self addChild:back];
-		[back setPosition:ccp(448, 300)];
+		[back setPosition:ccp([[UIScreen mainScreen] bounds].size.height-mm.contentSize.width, 300)];
 	}
     return self;
 }

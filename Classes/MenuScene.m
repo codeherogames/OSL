@@ -37,9 +37,6 @@
         MenuLayer *m = [MenuLayer node];
         [self addChild:m z:1 tag:1];
         bg.scaleX = winSize.height/bg.contentSize.width;
-        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && (winSize.height == 568)) {
-            m.position = ccp(44, 0);
-        }
 		[AppDelegate get].multiplayer = 0;
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
     }
@@ -56,7 +53,8 @@
 - (id) init {
     self = [super init];
     if (self != nil) {
-		CCLOG(@"MenuLayer init"); 
+		CCLOG(@"MenuLayer init");
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
 		/*if ([AppDelegate get].loadout.g > 0) {
 			CCSprite *goldBack = [CCSprite spriteWithFile:@"cinset.png"];
 			[goldBack setPosition:ccp(440,298)];
@@ -82,7 +80,7 @@
 		//[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 		CCLabelTTF *ver = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"version %@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]] fontName:[AppDelegate get].clearFont fontSize:14];
 		[ver setColor:ccWHITE];
-		ver.position =ccp(430, 310);
+		ver.position =ccp(winSize.height-50, 310);
 		[self addChild:ver z:3];
 
 		[CCMenuItemFont setFontSize:16];
@@ -120,7 +118,7 @@
 		
         CCMenu *menu = [CCMenu menuWithItems:play,a,b,d,e, nil];
         [menu alignItemsVerticallyWithPadding: 20.0f];
-        menu.position = ccp(340,150);
+        menu.position = ccp(winSize.height-140,150);
 		[self addChild:menu];
 
 		//[AppDelegate showNotification:@"Test"];

@@ -41,9 +41,11 @@
 	CCLabelTTF *headshotLabel;
 	NSArray *streakName;
 	Sniper *sniper;
-	int myBeat,theirBeat;
+	int myBeat,theirBeat,lastAttack,lastAttackCount,shotsFired;
 	//CCLabelTTF *opponent,*opLabel;
 }
+
+@property (nonatomic,assign) NSMutableArray *vehicles;
 
 //- (void) setSchedule;
 -(void) setup;
@@ -102,6 +104,9 @@
 -(void)launchMachinegun;
 -(void)launchSecurity;
 
+-(void)showEnemyMoney:(int)i;
+-(void)showAgentCount:(int)i;
+
 @end
 
 @interface ForegroundLayer : CCLayer {}
@@ -119,7 +124,7 @@
 	CGPoint speedVector;
 	CCSprite *bullet,*menuTray,*zoomedInButton;
 	CCLabelTTF *info1,*info2,*info3,*info4,*levelLabel;
-	CCLabelBMFont *moneyLabel;
+	CCLabelBMFont *moneyLabel,*enemyMoneyLabel,*agentCountLabel;
 	NSArray *taunts;
 	CCMenu *aMenu,*gMenu;
 }
@@ -136,6 +141,10 @@
 -(void)showMachinegun;
 -(void)hideArmageddon;
 -(void)hideMachinegun;
+-(void) hiccup;
+-(void)showEnemyMoney;
+-(void)showAgentCount;
+-(void)showProximity:(int) i;
 @end
 
 @interface ScopeLayer : CCLayer {

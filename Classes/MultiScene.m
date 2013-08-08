@@ -94,7 +94,7 @@
 		*/		
 		CCMenu *menu = [CCMenu menuWithItems:two, nil];
 		[menu alignItemsVerticallyWithPadding: 16.0f];
-		menu.position = ccp(240,190);
+		menu.position = ccp([[UIScreen mainScreen] bounds].size.height/2,190);
 		[self addChild:menu z:4];
 		
 		[CCMenuItemFont setFontSize:20];
@@ -109,7 +109,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
 		back.color=ccBLACK;
         [self addChild:back];
-		[back setPosition:ccp(448, 300)];
+		[back setPosition:ccp([[UIScreen mainScreen] bounds].size.height-mm.contentSize.width, 300)];
 		
 		JDMenuItem *Q2 = [JDMenuItem itemFromNormalImage:@"questionmark.png" selectedImage:@"questionmark.png" 
 													 target:self
@@ -125,7 +125,7 @@
 		*/
 		CCMenu *questionMenu1 = [CCMenu menuWithItems:Q2, nil];
 		[questionMenu1 alignItemsVerticallyWithPadding: 16.0f];
-		questionMenu1.position = ccp(336,190);
+		questionMenu1.position = ccp(menu.position.x+94,190);
 		[self addChild:questionMenu1 z:4];
 		
 		CCLabelTTF *gameOptions = [CCLabelTTF labelWithString:@"Match Options" fontName:[AppDelegate get].menuFont fontSize:20];
@@ -153,7 +153,7 @@
 		
 		CCMenu *optionsMenu = [CCMenu menuWithItems:toggleType, nil];
 		[optionsMenu alignItemsVerticallyWithPadding: 10.0f];
-		optionsMenu.position = ccp(240,44);
+		optionsMenu.position = ccp([[UIScreen mainScreen] bounds].size.height/2,44);
 		[self addChild:optionsMenu z:4];
 		
 		if ([[NSUserDefaults standardUserDefaults] objectForKey:@"playerLevel"] != nil) {
@@ -182,7 +182,7 @@
 		
 		CCMenu *questionMenu = [CCMenu menuWithItems:rookQ, nil];
 		[questionMenu alignItemsVerticallyWithPadding: 10.0f];
-		questionMenu.position = ccp(336,44);
+		questionMenu.position = ccp(optionsMenu.position.x+94,44);
 		[self addChild:questionMenu z:4];
     }
     return self;
