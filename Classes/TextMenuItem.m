@@ -20,7 +20,7 @@
 	[myLabel setColor:ccBLACK];
 	myLabel.position =ccp(sprite.contentSize.width/2, sprite.contentSize.height/2-2);
 	[self addChild:myLabel z:sprite.zOrder+1];
-	pressed = 0;
+	//pressed = 0;
 	return self;
 }
 
@@ -34,7 +34,7 @@
 	[myLabel setColor:ccBLACK];
 	myLabel.position =ccp(sprite.contentSize.width/2, sprite.contentSize.height/2-2);
 	[self addChild:myLabel z:sprite.zOrder+1];
-	pressed = 0;
+	//pressed = 0;
 	return self;
 }
 

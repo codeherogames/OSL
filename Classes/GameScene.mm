@@ -1941,7 +1941,7 @@ foundit:
 		
 		CCMenuItem *myZoomButton = [CCMenuItemImage itemFromNormalImage:@"zoom.png" selectedImage:@"zoom1.png" target:self selector:@selector(zoomButtonPressed:)]; 
 		CCMenu *zoomMenu = [CCMenu menuWithItems:myZoomButton, nil];
-		[zoomMenu setPosition:ccp(366, 30)];
+		[zoomMenu setPosition:ccp([[UIScreen mainScreen] bounds].size.height-114, 30)];
 		[self addChild:zoomMenu z:12];
 		
 		zoomedInButton = [CCSprite spriteWithFile:@"zoom1.png"];
@@ -1953,7 +1953,7 @@ foundit:
 		CCMenuItem *myFireButton = [CCMenuItemImage itemFromNormalImage:@"fireButtonChrome.png" selectedImage:@"fireButtonChromePressed.png" target:self selector:@selector(fireButtonPressed:)];
 		CCMenu *buttonMenu = [CCMenu menuWithItems:myFireButton, nil];
 		//buttonMenu.tag = kButtonMenu;
-		[buttonMenu setPosition:ccp(450, 30)];
+		[buttonMenu setPosition:ccp([[UIScreen mainScreen] bounds].size.height-30, 30)];
 		[self addChild:buttonMenu z:12];
 
 		[CCMenuItemFont setFontSize:14];
@@ -1990,6 +1990,7 @@ foundit:
 }
 
 -(void) setup {
+    CGSize winSize = [[UIScreen mainScreen] bounds].size;
 	taunts = [[NSArray alloc] initWithObjects:@"You will lose",@"Nice try",@"lol", @"Too easy",@"This is fun!",@"I'm so good",@"Not even trying",@"Going down",@"Still tryin 2 win?",@"I'll be gentle",@"Embarrassing",@"Do I annoy you?",nil];
 	tauntIndex = 0;
 	
@@ -2104,7 +2105,7 @@ foundit:
 		
 	}		
 	
-	float infoX = 386;
+	float infoX = winSize.height-94;//386;
 	float infoY = 280;
 	CCLabelTTF *infoTitle = [CCLabelTTF labelWithString:@"Recon" fontName:[AppDelegate get].clearFont fontSize:12];
 	infoTitle.position = ccp(infoX,infoY);
@@ -2393,12 +2394,12 @@ foundit:
 
 -(void) showArmageddon {
 	[[[AppDelegate get].m5.childButtons objectAtIndex:0] disable];
-	aMenu.position = ccp(450, 168);
+	aMenu.position = ccp([[UIScreen mainScreen] bounds].size.height-30, 168);
 }
 
 -(void) showMachinegun {
 	[[[AppDelegate get].m5.childButtons objectAtIndex:1] disable];
-	gMenu.position = ccp(450, 108);
+	gMenu.position = ccp([[UIScreen mainScreen] bounds].size.height-30, 108);
 }	
 
 -(void) hideArmageddon {
@@ -2794,6 +2795,16 @@ foundit:
 		//scope.opacity=255;
         [scope setPosition:ccp(s.width/2, s.height/2)];
         [self addChild:scope z:5];
+        
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && (s.width == 568)) {
+            CCSprite *extraPadding = [CCSprite spriteWithFile:@"b1px.png"];
+            extraPadding.scaleX=44;
+            extraPadding.scaleY=320;
+            extraPadding.anchorPoint=ccp(1,0.5);
+            [extraPadding setPosition:ccp(480+88, s.height/2)];
+            [self addChild:extraPadding z:5];
+            extraPadding.opacity=212;
+        }
 		
 		machinegun = [CCSprite spriteWithFile:@"machinegun.png"];
 		[machinegun setPosition:ccp(s.width/2, s.height/2-machinegun.contentSize.height/2)];

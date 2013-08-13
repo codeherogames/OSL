@@ -13,6 +13,7 @@
 @interface TextMenuItem : CCMenuItemSprite {
 	int pressed;
 }
+//@property (nonatomic, assign) int pressed;
 +(id) itemFromNormalImage: (NSString*)value selectedImage:(NSString*) value2 target:(id) t selector:(SEL) s label:(NSString*) label;
 +(id) itemFromNormalImage: (NSString*)value selectedImage:(NSString*) value2 target:(id) t selector:(SEL) s label:(NSString*) label fontSize:(int)fontSize;
 @end
