@@ -26,7 +26,7 @@
 }
 @property (nonatomic,assign) ccColor3B fontColor;
 
--(void) toc;
+-(void) tocMenu;
 -(void) rules;
 -(void) controls;
 -(void) modes;

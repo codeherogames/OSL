@@ -16,9 +16,10 @@
     self = [super init];
     if (self != nil) {
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
-		CGSize s = [[CCDirector sharedDirector] winSize];
         CCSprite * bg = [CCSprite spriteWithFile:@"splash.png"];
-        [bg setPosition:ccp(s.width/2, s.height/2)];
+        CGSize winSize = [[UIScreen mainScreen] bounds].size;
+        [bg setPosition:ccp(winSize.height/2, winSize.width/2)];
+        bg.scaleX = winSize.height/bg.contentSize.width;
         [self addChild:bg z:0];
         [self addChild:[MissionSplashLayer node] z:1];
 		//reward = [[NSUserDefaults standardUserDefaults] integerForKey:@"t"];

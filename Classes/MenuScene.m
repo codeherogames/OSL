@@ -150,10 +150,10 @@
 			[self schedule: @selector(loopNews) interval: 10];
 		}
 		// This method requests the tapjoy server for current virtual currency of the user.
-		[TapjoyConnect getTapPoints];
+		//[TapjoyConnect getTapPoints];
 		
 		// A notification method must be set to retrieve the points.
-		[[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(getPoints:) name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+		//[[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(getPoints:) name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
     }
     return self;
 }

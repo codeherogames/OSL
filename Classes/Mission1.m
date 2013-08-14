@@ -132,8 +132,9 @@ enum {
 	[self addChild:sidewalk2 z:0];
 	
 	CCLOG(@"Current mission: %i",[AppDelegate get].currentMission);
-	
-	float winX[] = {-114,-44,30,370,446,520};
+	float centerX = [[UIScreen mainScreen] bounds].size.height/2;
+	//float winX[] = {-114,-44,30,370,446,520};
+    float winX[] = {centerX-354,centerX-284,centerX-210,centerX+130,centerX+206,centerX+280};
 	float winY[] = {72,-19};
 	if ([AppDelegate get].currentMission == 1) {
 		NSArray *truckRoute =  [[NSMutableArray alloc] initWithObjects:[[LinearPoint alloc] initWithData:VEHICLE1RATE p:ccp(s.width/2+self.contentSize.width*3,STREET) s:DRIVE z:ZOUT n:@"streetRight"],[[LinearPoint alloc] initWithData:VEHICLE1RATE p:ccp(-600,STREET) s:DRIVE z:ZOUT n:@"streetLeft"],nil];
@@ -530,7 +531,7 @@ enum {
 		//c.color=ccc3(43,69,127);
 		[c setScaleY:self.contentSize.width*6];
 		[c setScaleX:self.contentSize.width*6];
-		[c setPosition:ccp(240, 160)];
+		[c setPosition:ccp([[UIScreen mainScreen] bounds].size.height/2, 160)];
 		c.opacity = 100;
 		[self addChild:c z:500];
 		
@@ -695,7 +696,7 @@ enum {
 
 - (int) shotFired {
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CCLOG(@"shot position: %f,%f",240-location.x,160-location.y);
+	CCLOG(@"shot position: %f,%f",[[UIScreen mainScreen] bounds].size.height/2-location.x,160-location.y);
 	int gotHim = -1;
 	int headshot = 0;
 	//CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);

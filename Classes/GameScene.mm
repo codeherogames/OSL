@@ -109,7 +109,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 -(void) doSnow
 {
 	CCParticleSystem *emitter = [CCParticleSnow node];
-	emitter.position = ccp(240,320);
+	emitter.position = ccp([[UIScreen mainScreen] bounds].size.height/2,320);
 	
 	
 	//CGPoint p = emitter.position;
@@ -256,7 +256,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	[filler1 setPosition:ccp(300,-600)];	
 	[filler1 setScaleY:200];
 	[filler1 setScaleX:1000];
-	filler1.color= ccc3(200,200,200);
+	filler1.color= ccc3(79,79,79);
 	[self addChild:filler1 z:0];	
 	
 	//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
@@ -1690,7 +1690,7 @@ foundit:
         }
     }
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CCLOG(@"shot position: %f,%f",240-location.x,160-location.y);
+	CCLOG(@"shot position: %f,%f",[[UIScreen mainScreen] bounds].size.height/2-location.x,160-location.y);
 	int gotHim = -1;
 	int headshot = 0;
 	//CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);
@@ -1788,7 +1788,7 @@ foundit:
         //c.color=ccc3(43,69,127);
         [c setScaleY:50000];
         [c setScaleX:50000];
-        [c setPosition:ccp(240, 160)];
+        [c setPosition:ccp([[UIScreen mainScreen] bounds].size.height/2, 160)];
         c.opacity = 0;//100;
         [self addChild:c z:500 tag:NIGHTSPRITE];
     }
@@ -2832,7 +2832,7 @@ foundit:
 -(void) showSniper {
 	if (showArrow == 0) {
 		showArrow = 1;
-		arrow.position=ccp(240,160);
+		arrow.position=ccp([[UIScreen mainScreen] bounds].size.height/2,160);
 		[arrow runAction: [CCFadeOut actionWithDuration:0.9]];
 		[self schedule: @selector(doArrow) interval: 1];
 	}
@@ -2848,12 +2848,12 @@ foundit:
 -(void) doArrow {
 	//CCLOG(@"bgposition:%f",[AppDelegate get].bgLayer.position.x);
 	if ([(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] leftOfSniper]) {
-		arrow.position=ccp(240,160);
+		arrow.position=ccp([[UIScreen mainScreen] bounds].size.height/2,160);
 		
 		//Rotate arrow
 		CGPoint location = [self convertToWorldSpace:CGPointZero];
 		CGPoint sniperPos = [(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] getSniperPos];
-		arrow.rotation = 360-(findAngle(sniperPos,ccp(240-location.x,150-location.y)));
+		arrow.rotation = 360-(findAngle(sniperPos,ccp([[UIScreen mainScreen] bounds].size.height/2-location.x,150-location.y)));
 		//CCLOG(@"Arrow rotation:%f",arrow.rotation);
 		if (showArrow == 2) {
 			showArrow = 1;
@@ -2918,8 +2918,8 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 	[[AppDelegate get].soundEngine playSound:10 sourceGroupId:0 pitch:1.0f pan:0.0f gain:1.0f loop:NO];
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	CCSprite *whiteScreen= [CCSprite spriteWithFile:@"w1px.png"];
-	whiteScreen.scaleX = 480;
-	whiteScreen.scaleY = 320;
+	whiteScreen.scaleX = s.width;
+	whiteScreen.scaleY = s.height;
 	whiteScreen.position = ccp(s.width/2,s.height/2);
 	[self addChild:whiteScreen z:0];
 	[whiteScreen runAction: [CCFadeOut actionWithDuration:8]];
@@ -3017,7 +3017,12 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		[self makeBuilding:1 y:6 cc:ccc3(64,103,185) cg:ccp(-520, -800)];
 		[self makeBuilding:3 y:4 cc:ccc3(185,185,185) cg:ccp(-820, -800)];
 		//Left
-		[self makeBuilding:2 y:16 cc:ccc3(210,180,137) cg:ccp(MINX+4, -800)];
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
+            [self makeBuilding:2 y:16 cc:ccc3(210,180,137) cg:ccp(MINX-4-IPHONE5OFFSET, -800)];
+        }
+        else {
+            [self makeBuilding:2 y:16 cc:ccc3(210,180,137) cg:ccp(MINX, -800)];
+        }
 		//Right
 		[self makeBuilding:3 y:17 cc:ccc3(255,223,206) cg:ccp(MAXX, -800)];
 		
@@ -3201,7 +3206,7 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		CCMenu *unpause = [CCMenu menuWithItems:up,nil];
         [self addChild:unpause];
 		unpause.anchorPoint=ccp(0.0,1);
-		[unpause setPosition:ccp(240, 200)];
+		[unpause setPosition:ccp([[UIScreen mainScreen] bounds].size.height/2, 200)];
 		
 		/*
 		 [CCMenuItemFont setFontSize:16];

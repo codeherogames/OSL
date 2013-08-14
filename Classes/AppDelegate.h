@@ -21,7 +21,7 @@
 #import "CustomPoint.h"
 #import "DeviceDetection.h"
 #import "SHK.h"
-#import "TapjoyConnect.h"
+//#import "TapjoyConnect.h"
 
 @class RootViewController;
 @class MyMenuButton;

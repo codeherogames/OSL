@@ -43,7 +43,7 @@
 	if (! self.visible)
 		return 0;
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CGPoint point = ccp(240,160);
+	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width/2);
 	
 	if (CGRectContainsPoint(CGRectMake(location.x,location.y+self.contentSize.height*[AppDelegate get].scale, self.contentSize.width*[AppDelegate get].scale,-self.contentSize.height*[AppDelegate get].scale), point))
 		{
@@ -59,7 +59,7 @@
 
 - (int) checkIfSighted {
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CGPoint point = ccp(240,160);
+	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,160);
 	
 	if (CGRectContainsPoint(CGRectMake(location.x,location.y+self.contentSize.height*[AppDelegate get].scale, self.contentSize.width*[AppDelegate get].scale,-self.contentSize.height*[AppDelegate get].scale), point))
 	{

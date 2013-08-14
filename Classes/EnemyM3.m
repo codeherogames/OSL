@@ -207,7 +207,7 @@
 	if (self.position.x > (ELEVATORX-20) && self.position.x < (ELEVATORX+20)) {
 		return 0;
 	}
-	CGPoint point = ccp(240,160);
+	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width/2);
 	if(CGRectContainsPoint(CGRectMake(headLoc.x,headLoc.y, head.contentSize.width*[AppDelegate get].scale,head.contentSize.height*[AppDelegate get].scale), point))
 	{
 		if ([self dodged]) {

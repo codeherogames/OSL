@@ -139,10 +139,10 @@
 }
 
 -(void) showWinnings {
-	if ([AppDelegate get].friendInvite > -1) {
+	//if ([AppDelegate get].friendInvite > -1) {
 		CCLabelTTF *winTitle = [CCLabelTTF labelWithString:@"You Earned" fontName:[AppDelegate get].clearFont fontSize:16];
 		[winTitle setColor:ccBLACK];
-		winTitle.position=ccp(314,200);
+		winTitle.position=ccp([[UIScreen mainScreen] bounds].size.height/2+74/*314*/,200);
 		[self addChild:winTitle z:1];
 		winTitle.rotation=6;
 		
@@ -171,20 +171,20 @@
 		[[AppDelegate get] writeData:@"l" d:[AppDelegate get].loadout];	
 		CCLabelTTF *winnings = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%iG", mWon] fontName:[AppDelegate get].clearFont fontSize:30];
 		[winnings setColor:ccBLACK];
-		winnings.position=ccp(316,174);
+		winnings.position=ccp([[UIScreen mainScreen] bounds].size.height/2+76/*316*/,174);
 		[self addChild:winnings z:1];
 		winnings.rotation=7;
 		CCLabelTTF *winnings2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%iG", mWon] fontName:[AppDelegate get].clearFont fontSize:30];
 		[winnings2 setColor:ccYELLOW];
-		winnings2.position=ccp(314,176);
+		winnings2.position=ccp([[UIScreen mainScreen] bounds].size.height/2+74/*314*/,176);
 		[self addChild:winnings2 z:1];
 		winnings2.rotation=7;
 		[self schedule: @selector(updateG) interval: 0.05];
-	}
+	/*}
 	else if ([AppDelegate get].multiplayer > 0) {
 		CCLayer *popup = [[[PopupLayer alloc] initWithMessage:@"To protect the integrity of the game, no Gold or Win is earned when you do Friend Invite and then win by your opponent Diconnecting.  If you do Auto-Match, you will earn Gold and a Win when your opponent Disconnects.  Thank you for understanding." t:@"No Gold Earned"] autorelease];
 		[self addChild:popup z:10];
-	}
+	}*/
 }
 
 -(void) updateG {

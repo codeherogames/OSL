@@ -62,6 +62,10 @@
 }
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
+#ifdef ANDROID
+    // UIScreenIPhone3GEmulationMode , UIScreenBestEmulatedMode, UIScreenAspectFitEmulationMode
+    [UIScreen mainScreen].currentMode = [UIScreenMode emulatedMode:UIScreenAspectFitEmulationMode];
+#endif
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:[MyIAPHelper sharedHelper]];
 	
 	// Init the window
@@ -174,10 +178,10 @@
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
-	NSString *devName = [DeviceDetection returnDeviceName: NO];
+	NSString *devName = (NSString*)[DeviceDetection returnDeviceName: NO];
 	CCLOG(@"device:%@",devName);
 	lowRes = 0;
-	if (devName == @"iPod Touch" || devName == @"iPod Touch 2" || devName == @"iPod Touch 3" || devName == @"iPhone" || devName == @"iPhone 3G") {
+	if ([devName isEqualToString:@"iPod Touch"] || [devName isEqualToString:@"iPod Touch 2"] || [devName isEqualToString:@"iPod Touch 3"] || [devName isEqualToString:@"iPhone"] || [devName isEqualToString:@"iPhone 3G"]) {
 		CCLOG(@"Going RGBA4444");
 		lowRes = 1;
 		[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
@@ -217,8 +221,7 @@
 	
 	[window makeKeyAndVisible];
 	
-	[TapjoyConnect requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0" secretKey:@"UWIj5ZSXO6CVNN16htpl"];
-	//[TapjoyConnect setUserID:[[UIDevice currentDevice] uniqueIdentifier]];
+	//[TapjoyConnect requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0" secretKey:@"UWIj5ZSXO6CVNN16htpl"];
 
 	
 	//Init
@@ -374,7 +377,7 @@ BOOL isGameCenterAPIAvailable()
 {
 	NSNumber *tp = notifyObj.object;
 	tjg = [tp intValue];
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+	//[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
 	// Print out the updated points value.
 	CCLOG(@"Points: %i", tjg);
 	if(tjg > 0) {
@@ -392,7 +395,7 @@ BOOL isGameCenterAPIAvailable()
 {
 	CCLOG(@"UpdatedPoints");
 	NSNumber *tp = notifyObj.object;
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_SPEND_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+	//[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_SPEND_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
 	if([tp intValue] == 0) {
 		if ([[[CCDirector sharedDirector] runningScene] respondsToSelector:@selector(go)]) {
 			[[[CCDirector sharedDirector] runningScene] go];
@@ -438,7 +441,7 @@ BOOL isGameCenterAPIAvailable()
 
 -(void) onAliasReceived:(NSString*)alias {
 	CCLOG(@"onAliasReceived %@",alias);
-	currentOpponent = alias;
+	currentOpponent = [alias mutableCopy];
 	gameState = INGAME;
 	[[CCDirector sharedDirector] replaceScene: [GameScene node]];
 }

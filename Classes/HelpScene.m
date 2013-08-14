@@ -81,7 +81,7 @@
 		if ([AppDelegate get].helpPage != 0) {
 			CCMenuItem *toc = [CCMenuItemFont itemFromString:@"TOC"
 														   target:self
-														 selector:@selector(TOC:)];
+														 selector:@selector(goTOCMenu:)];
 			
 			CCMenu *tMenu = [CCMenu menuWithItems:toc, nil];
 			[tMenu setColor:fontColor];
@@ -163,7 +163,7 @@
 	[[CCDirector sharedDirector] replaceScene:[MenuScene node]];
 }
 
--(void)TOC: (id)sender {
+-(void)goTOCMenu: (id)sender {
 	[[AppDelegate get].soundEngine playSound:9 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN loop:NO];
 	[AppDelegate get].helpPage=0;
 	[[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:[HelpScene node]]];
@@ -196,7 +196,7 @@
 		midTextSize=16;
 		
 		if ([AppDelegate get].helpPage == 0)
-			[self toc];
+			[self tocMenu];
 		else if ([AppDelegate get].helpPage >= SECTION5)
 			[self computer];
 		else if ([AppDelegate get].helpPage  >= SECTION4)
@@ -212,7 +212,7 @@
 	return self;
 }
 
--(void) toc
+-(void) tocMenu
 {
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	CCMenuItem *section1 = [CCMenuItemFont itemFromString:@"1. The Code"

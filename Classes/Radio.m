@@ -65,7 +65,7 @@ return self;
 {
 	CCLOG(@"Check if jammer shot");
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CGPoint point = ccp(240,160);
+	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,160);
 	//float myScale = 2;
 	//CCLOG(@"self position %f,%f, location position %f, %f",self.position.x,self.position.y,location.x,location.y);
 	if (CGRectContainsPoint(CGRectMake(location.x, location.y, self.contentSize.width*[AppDelegate get].scale, self.contentSize.height*[AppDelegate get].scale), point)) {		CCLOG(@"Radio Shot!!");

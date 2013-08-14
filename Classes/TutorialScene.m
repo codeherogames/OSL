@@ -529,7 +529,7 @@ enum {
 
 - (int) shotFired {
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CCLOG(@"shot position: %f,%f",240-location.x,160-location.y);
+	CCLOG(@"shot position: %f,%f",[[UIScreen mainScreen] bounds].size.height/2-location.x,160-location.y);
 	int gotHim = -1;
 	int headshot = 0;
 	CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);
@@ -646,7 +646,7 @@ enum {
 		[self disableAll];
 		[self schedule: @selector(doReload) interval: .6];
 		arrow = [CCSprite spriteWithFile:@"arrow1.png"];
-		arrow.position=ccp(240,160);
+		arrow.position=ccp([[UIScreen mainScreen] bounds].size.height/2,160);
 		[self addChild:arrow z:4];
 		arrow.visible=FALSE;
 	}
@@ -676,7 +676,7 @@ enum {
 		Enemy *e = [[AppDelegate get].enemies objectAtIndex:1];
 		CGPoint sniperPosition = [e convertToWorldSpace:ccp(0.5,0.5)];
 		CCLOG(@"layerpos:%f,%f sniper:%f,%f",location.x,location.y,sniperPosition.x,sniperPosition.y);
-		arrow.position=ccp(240,160);
+		arrow.position=ccp([[UIScreen mainScreen] bounds].size.height/2,160);
 		arrow.rotation = 360-(findAngle(sniperPosition,ccp(100-(location.x/[AppDelegate get].scale),160-(location.y/[AppDelegate get].scale))));
 		arrow.visible = TRUE;
 		[self schedule: @selector(doArrow) interval: 1];

@@ -18,6 +18,7 @@
 // Object Detection
 #define MAXX 1524
 #define MINX -1224
+#define IPHONE5OFFSET 44
 
 #define SKYY 634
 
