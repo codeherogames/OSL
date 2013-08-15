@@ -126,7 +126,19 @@
 	[glView setMultipleTouchEnabled:YES];
 	
 	// make the View Controller a child of the main window
-	[window addSubview: viewController.view];
+	//[window addSubview: viewController.view];
+    
+    // Set RootViewController to window
+    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
+    {
+        // warning: addSubView doesn't work on iOS6
+        [window addSubview: viewController.view];
+    }
+    else
+    {
+        // use this mehod on ios6
+        [window setRootViewController:viewController];
+    }
 	
 	//[[LocalyticsSession sharedLocalyticsSession] startSession:@"037824fde0fbf8f9dcda299-cf2fc20c-5627-11e0-f8f0-007f58cb3154"];
 	
@@ -1249,6 +1261,7 @@ BOOL isGameCenterAPIAvailable()
 }
 
 -(void) getNews {
+    /*
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	Reachability *reach = [[Reachability reachabilityWithHostName: @"battlecourt.com"] retain];	
 	NetworkStatus netStatus = [reach currentReachabilityStatus];
@@ -1264,7 +1277,7 @@ BOOL isGameCenterAPIAvailable()
 		}
 		//[dictionary release];
 	}	
-	[pool release];
+	[pool release];*/
 }
 /////////////////////////////
 -(CCSprite*) getSprite:(NSString*) spriteName

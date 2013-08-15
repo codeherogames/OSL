@@ -43,12 +43,13 @@
 			elapsed = 0;
 
 			CCLOG(@"Count:%i",self.pointCount);
-			if (self.pointCount == [self.points count]) {
+			if (self.pointCount == [self.points count]-1) {
 				[self unschedule: @selector(move:)];
 				[self stopAllActions];
 				if (driverDied == 0)
 					[self.layerPointer launchHelicopter];
 				[self dead];
+                return;
 			}
 			lastX = c.point.x;
 			pointCount++;
@@ -147,10 +148,13 @@
 	enemy3.color = ccRED;
 	enemy3.type = FROMHELICOPTER;
 	enemy3.currentState = DRIVE;
-	if (self.flipX == TRUE)
+	if (self.flipX == TRUE) {
+        enemy3.hat.flipX = TRUE;
 		[enemy3 setPosition:ccp(self.contentSize.width-58,self.contentSize.height/3+2)];
-	else 
+    }
+	else {
 		[enemy3 setPosition:ccp(58,self.contentSize.height/3+2)];
+    }
 	[self reorderChild:enemy3 z:-2];
 	enemy3.anchorPoint=ccp(0.5,0.5);
 	enemy3.customTag = 99;

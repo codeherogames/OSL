@@ -59,6 +59,7 @@
 				[self stopAllActions];
 				[self killPassenger];
 				[self.layerPointer doLose];
+                return;
 			}
 			lastX = c.point.x;
 			pointCount++;

@@ -68,7 +68,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
         [self addChild:back];
 		back.color=ccWHITE;
-		[back setPosition:ccp(406, 298)];
+		[back setPosition:ccp(s.width/2+166+((s.width-480)/2), 298)];
 		for (CCMenuItem *mi in back.children) {
 			CGSize tmp = mi.contentSize;
 			tmp.width = tmp.width*1.3;

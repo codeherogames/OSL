@@ -63,7 +63,7 @@
 												   selector:@selector(showRight:)];
 		right.rotation = -180;
 		CCMenu *m3 = [CCMenu menuWithItems:left,right, nil];
-        [m3 alignItemsHorizontallyWithPadding: s.width-178];
+        [m3 alignItemsHorizontallyWithPadding: s.width-178-((winSize.width)-480/2)];
         m3.position = ccp(s.width/2-2,260);
 		[self addChild:m3 z:3];
 		
@@ -163,7 +163,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
         [self addChild:back];
 		back.color=ccWHITE;
-		[back setPosition:ccp(406, 298)];
+		[back setPosition:ccp(s.width/2+166+((s.width-480)/2), 298)];
 		for (CCMenuItem *mi in back.children) {
 			CGSize tmp = mi.contentSize;
 			tmp.width = tmp.width*1.3;

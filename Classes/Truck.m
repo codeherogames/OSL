@@ -17,6 +17,7 @@
 	if (self != nil) {
 		self.type = TRUCK;
 		driverDied = 0;
+        self.pointCount = 0;
 		//self.tire1 = [[CCSprite spriteWithFile:@"tire.png"] retain];
 		//self.tire2 = [[CCSprite spriteWithFile:@"tire.png"] retain];
 		self.tire1 = [[CCSprite spriteWithFile:@"hubcap.png"] retain];
@@ -36,6 +37,11 @@
 			[self addChild:armor z:self.zOrder+20];
 			armor.visible = NO;
 		}
+        
+        for (int i=0;i<self.points.count;i++) {
+            CustomPoint *p = [self.points objectAtIndex:i];
+            CCLOG(@"point%i:%f,%f",i,p.point.x,p.point.y);
+        }
 	}
     return self;
 }
@@ -48,16 +54,19 @@
 		{
 			elapsed = 0;
 			
-			CCLOG(@"Count:%i",self.pointCount);
-			if (self.pointCount == [self.points count]) {
+			CCLOG(@"Count:%i",pointCount);
+            CCLOG(@"PointsCount:%i",[self.points count]);
+			if (pointCount == [self.points count]-1) {
 				[self unschedule: @selector(move:)];
 				[self stopAllActions];
 				if (driverDied == 0)
 					[self.layerPointer launchTruck];
 				[self dead];
+                return;
 			}
 			lastX = c.point.x;
 			pointCount++;
+            //CCLOG(@"point%i:%f,%f",i,p.point.x,p.point.y);
 			c = [self.points objectAtIndex:pointCount];
 			
 			

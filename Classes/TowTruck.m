@@ -61,9 +61,10 @@
 		
 		
 		CCLOG(@"Count:%i",self.pointCount);
-		if (self.pointCount == [self.points count]) {
+		if (self.pointCount == [self.points count]-1) {
 			[self unschedule: @selector(move:)];
 			[self stopAllActions];
+            return;
 		}
 		lastX = c.point.x;
 		pointCount++;

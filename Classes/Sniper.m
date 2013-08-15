@@ -17,6 +17,7 @@
 	if (self != nil) {
 		[[AppDelegate get].enemies addObject:self];
 		self.type = 100;
+        self.currentState = STATIONARY;
 		/*hat = [CCSprite spriteWithFile:@"indyHat.png"];
 		[hat setPosition:ccp(self.contentSize.width/2,self.contentSize.height)];
 		[self addChild:hat z:self.zOrder+1];
@@ -31,6 +32,7 @@
 - (void) dead
 {
 	CCLOG(@"Sniper Dead");
+    self.currentState = DEAD;
 	//[self runAction: [CCFadeOut actionWithDuration:1]];
 	//[hat runAction: [CCFadeOut actionWithDuration:1]];
 	if ([AppDelegate get].gameType != MISSIONS)

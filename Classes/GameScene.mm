@@ -1962,7 +1962,7 @@ foundit:
 															target:self
 														  selector:@selector(pauseMenu:)];
 			CCMenu *pMenu = [CCMenu menuWithItems:pauseMenu, nil];
-			pMenu.position = ccp(390,310);
+			pMenu.position = ccp([[UIScreen mainScreen] bounds].size.height-90/*390*/,310);
 			[self addChild:pMenu];
 			for (CCMenuItem *mi in pMenu.children) {
 				CGSize tmp = mi.contentSize;
@@ -1976,7 +1976,7 @@ foundit:
 													   target:self
 													 selector:@selector(mainMenu:)];
 		CCMenu *mMenu = [CCMenu menuWithItems:mainMenu, nil];
-        mMenu.position = ccp(456,310);
+        mMenu.position = ccp([[UIScreen mainScreen] bounds].size.height-24/*456*/,310);
 		[self addChild:mMenu];
 		for (CCMenuItem *mi in mMenu.children) {
 			CGSize tmp = mi.contentSize;

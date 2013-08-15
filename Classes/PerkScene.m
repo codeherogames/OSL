@@ -48,23 +48,28 @@
 @implementation PerkLayer
 - (id) init {
     self = [super init];
-    if (self != nil) {		
+    if (self != nil) {
+        float centerX = [[UIScreen mainScreen] bounds].size.height/2;
+        float wideScreenOffset = 0.0;
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
+            wideScreenOffset = centerX - 240;
+        }
 		selected = 1;
 		CGSize s = [[CCDirector sharedDirector] winSize];
 		CCSprite *goldBack = [CCSprite spriteWithFile:@"cinset.png"];
-        [goldBack setPosition:ccp(88,298)];
+        [goldBack setPosition:ccp(88-wideScreenOffset,298)];
 		goldBack.scaleX=0.8;
 		goldBack.scaleY=0.6;
         [self addChild:goldBack z:0];
 		
 		gold = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%iG",[AppDelegate get].loadout.g] fontName:[AppDelegate get].clearFont fontSize:16];
 		[gold setColor:ccYELLOW];
-		gold.position=ccp(88,298);
+		gold.position=ccp(88-wideScreenOffset,298);
 		[self addChild:gold z:1];
 		
 		CCLabelTTF *title = [CCLabelTTF labelWithString:@"Customize Perks" fontName:[AppDelegate get].clearFont fontSize:16];
 		[title setColor:ccWHITE];
-		title.position=ccp(s.width/2,294);
+		title.position=ccp(centerX-wideScreenOffset,294);
 		[self addChild:title z:1];
 		
 		[CCMenuItemFont setFontSize:16];
@@ -75,7 +80,7 @@
 		CCMenu *back = [CCMenu menuWithItems:mm,nil];
         [self addChild:back];
 		back.color=ccWHITE;
-		[back setPosition:ccp(406, 298)];
+		[back setPosition:ccp(centerX+166/*406*/, 298)];
 		for (CCMenuItem *mi in back.children) {
 			CGSize tmp = mi.contentSize;
 			tmp.width = tmp.width*1.3;

@@ -57,6 +57,7 @@
 				[self unschedule: @selector(move:)];
 				[self stopAllActions];
 				[self.layerPointer doBomb:self.position];
+                return;
 			}
 			lastX = c.point.x;
 			pointCount++;
