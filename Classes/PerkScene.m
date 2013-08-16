@@ -11,6 +11,7 @@
 #import "Perk.h"
 #import "GoldScene.h"
 #import "PopupLayer.h"
+#import "JDMenuItem.h"
 
 @implementation PerkScene
 - (id) init {
@@ -49,13 +50,15 @@
 - (id) init {
     self = [super init];
     if (self != nil) {
+        currentPage = 0;
         float centerX = [[UIScreen mainScreen] bounds].size.height/2;
         float wideScreenOffset = 0.0;
         if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
             wideScreenOffset = centerX - 240;
         }
+        
 		selected = 1;
-		CGSize s = [[CCDirector sharedDirector] winSize];
+		//CGSize s = [[CCDirector sharedDirector] winSize];
 		CCSprite *goldBack = [CCSprite spriteWithFile:@"cinset.png"];
         [goldBack setPosition:ccp(88-wideScreenOffset,298)];
 		goldBack.scaleX=0.8;
@@ -88,25 +91,7 @@
 			[mi setContentSize:tmp];
 		}
 		
-		int columns = 8;
-		CGPoint pos = ccp(22,254);
-		float y = 0;
-		float x = 0;
-		for (int i=0; i<[[AppDelegate get].perks count];i++) {
-			Perk *pk = [[AppDelegate get].perks objectAtIndex:i];
-			x++;
-			if (i>0 && i % columns == 0) {
-				y++;
-				x=1;
-			}
-			[pk reset];
-			pk.scale = 0.8;
-			pk.position = ccp(pos.x + (48*x),pos.y-(y*48));
-			[self addChild:pk];
-		}
-		Perk *pk1 = [[AppDelegate get].perks objectAtIndex:0];
-		[pk1 showHighlight];
-		pk1.opacity=255;
+        [self loadPerks];
 		
 		CCSprite *pinset = [CCSprite spriteWithFile:@"perkinset.png"];
         [pinset setPosition:ccp(146,78)];
@@ -212,6 +197,34 @@
 		
 		/////////////
 		
+        ////
+        JDMenuItem *left = [JDMenuItem itemFromNormalImage:@"Carrow.png" selectedImage:@"Carrow.png"
+                                                    target:self
+                                                  selector:@selector(nextPage:)];
+		
+		JDMenuItem *right = [JDMenuItem itemFromNormalImage:@"Carrow.png" selectedImage:@"Carrow.png"
+                                                     target:self
+                                                   selector:@selector(nextPage:)];
+		right.rotation = -180;
+		CCMenu *pagesMenu = [CCMenu menuWithItems:left,right, nil];
+        pagesMenu.position = ccp(0,0);
+		[self addChild:pagesMenu z:3];
+        left.position = ccp(slot1.position.x,slot1.position.y+slot1.contentSize.height+13);
+        right.position = ccp(slot3.position.x,left.position.y);
+        //left.scale = 0.8;
+        //right.scale = left.scale;
+        
+        pageLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Page %i",currentPage+1] fontName:[AppDelegate get].clearFont fontSize:18];
+		[pageLabel setColor:ccYELLOW];
+		pageLabel.position=ccp(slot2.position.x,left.position.y);
+		[self addChild:pageLabel z:1];
+        
+        CCSprite *pageBack = [CCSprite spriteWithFile:@"cinset.png"];
+        [pageBack setPosition:ccp(right.position.x - ((right.position.x-left.position.x)/2),left.position.y)];
+		pageBack.scaleX=2;
+		pageBack.scaleY=0.8;
+        [self addChild:pageBack z:0];
+        ////
 		preview = [CCSprite spriteWithFile:pk1.img];
 		preview.position = ccp(78,96);
 		[self addChild:preview z:1];
@@ -495,17 +508,17 @@
 
 -(void)showInfo: (int) i {
 	selected = i;
-	Perk *pk = [[AppDelegate get].perks objectAtIndex:i-1];
-	CCSprite *tmp = [CCSprite spriteWithFile:pk.img];
+	pk1 = [[AppDelegate get].perks objectAtIndex:i-1];
+	CCSprite *tmp = [CCSprite spriteWithFile:pk1.img];
 	preview.texture = tmp.texture;
 	preview.textureRect = tmp.textureRect;
-	[name setString:pk.n];
-	[description setString:pk.d];
+	[name setString:pk1.n];
+	[description setString:pk1.d];
 	
 	// Add logic for unequip
 	NSString *pkStatus = @"Equip";
-	if (pk.s == 0) {
-		if (pk.c > [AppDelegate get].loadout.g)
+	if (pk1.s == 0) {
+		if (pk1.c > [AppDelegate get].loadout.g)
 			pkStatus = @"Buy Gold";
 		else
 			pkStatus = @"Purchase";
@@ -522,6 +535,51 @@
 	//[[LocalyticsSession sharedLocalyticsSession] upload];
 	[CCMenuItemFont setFontName:[AppDelegate get].menuFont];
 	[[CCDirector sharedDirector] replaceScene:[CustomScene node]];
+}
+
+-(void)nextPage: (id)sender {
+    int offset = 24*currentPage;
+    // Remove Existing
+    for (int i=0; i<24;i++) {
+        Perk *pk = [[AppDelegate get].perks objectAtIndex:i+offset];
+        [pk removeFromParentAndCleanup:YES];
+        [self removeChildByTag:10+i+offset cleanup:YES];
+    }
+    if (currentPage == 0)
+        currentPage = 1;
+    else
+        currentPage = 0;
+    [pageLabel setString:[NSString stringWithFormat:@"Page %i",currentPage+1]];
+
+    [self loadPerks];
+}
+
+-(void)loadPerks {
+    int columns = 8;
+    CGPoint pos = ccp(22,254);
+    float y = 0;
+    float x = 0;
+    int offset = 24*currentPage;
+
+    // Add for Page
+    for (int i=0; i<24;i++) {
+        Perk *pk = [[AppDelegate get].perks objectAtIndex:i+offset];
+        x++;
+        if (i>0 && i % columns == 0) {
+            y++;
+            x=1;
+        }
+        [pk reset];
+        pk.scale = 0.8;
+        pk.position = ccp(pos.x + (48*x),pos.y-(y*48));
+        pk.tag = 10+i;
+        [self addChild:pk];
+        if (i==0) {
+            [pk showHighlight];
+            pk.opacity=255;
+            [self showInfo:pk.x];
+        }
+    }
 }
 
 - (void) dealloc {
