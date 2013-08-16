@@ -76,7 +76,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 			[AppDelegate get].money = 99999999;
 		
         if ([[AppDelegate get] perkEnabled:46])
-            [AppDelegate get].sensitivity = 5;
+            [AppDelegate get].sensitivity = 0;
         else
             [AppDelegate get].sensitivity = 1;
 		

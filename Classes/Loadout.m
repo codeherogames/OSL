@@ -74,7 +74,7 @@
 	else {
 		re = rifle.r;
 	}
-	CCLOG (@"r:%i,s:%i,a:%i,b:%i,e:%i,g:%i,po:%i,ac:%i,re:%i,s1:%i,s2:%i,s3:%i,version:%i",r,s,a,b,e,g,po,ac,re,s1,s2,s3,version);
+	//CCLOG (@"r:%i,s:%i,a:%i,b:%i,e:%i,g:%i,po:%i,ac:%i,re:%i,s1:%i,s2:%i,s3:%i,version:%i",r,s,a,b,e,g,po,ac,re,s1,s2,s3,version);
 }
 
 - (void) dealloc 

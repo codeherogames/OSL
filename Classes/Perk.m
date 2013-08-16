@@ -18,7 +18,7 @@ enum {
 
 - (id) initWithFile: (NSString*) iX nX:(NSString*) nX dX:(NSString*)dX xX:(int)xX cX:(int)cX sX:(int)sX mX:(int)mX
 {
-	CCLOG(@"--------------Perk init");
+	CCLOG(@"--------------Perk init:%@",iX);
 	self =  [super initWithFile:iX];
 	if (self != nil) {
 		self.img = iX;

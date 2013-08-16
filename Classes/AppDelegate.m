@@ -1072,21 +1072,25 @@ BOOL isGameCenterAPIAvailable()
 	NSMutableArray *obj;// = [[NSMutableArray alloc] init];
     bool found = NO;
 	if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px-hd.pvr",f]]]) {
-		CCLOG(@"%@-hd exists",f);
+		//CCLOG(@"%@-hd exists",f);
 		obj = [(NSMutableArray*) [self readDataHD:f] retain];
         found = YES;
 	}
     else if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px.pvr",f]]]) {
-		CCLOG(@"%@ exists",f);
+		//CCLOG(@"%@ exists",f);
 		obj = [(NSMutableArray*) [self readData:f] retain];
         found = YES;
 	}
     if (found) {
         if ([f isEqualToString:@"p"]) {
             for (uint i=0; i<obj.count;i++) {
-                Perk *p2 = [obj objectAtIndex:i];
-                Perk *p1 = [perks objectAtIndex:i];
-                p1.s = p2.s;
+                if (i < obj.count) {
+                    Perk *p2 = [obj objectAtIndex:i];
+                    CCLOG(@"i:%i pcount:%i",i,perks.count);
+                
+                    Perk *p1 = [perks objectAtIndex:i];
+                    p1.s = p2.s;
+                }
             }
             [self writeData:f d:perks];
         }

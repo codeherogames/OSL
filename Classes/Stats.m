@@ -31,7 +31,7 @@
 		tg = tgX;
 		mi = miX;
 		sux = suxX;
-		CCLOG (@"w2:%i,w3:%i,w4:%i,w2w:%i,w3w:%i,w4w:%i,su:%i,st:%i,he:%i,tut:%i,tg:%i,mi:%i,sux:%i",w2,w3,w4,w2w,w3w,w4w,su,st,he,tut,tg,mi,sux);
+		//CCLOG (@"w2:%i,w3:%i,w4:%i,w2w:%i,w3w:%i,w4w:%i,su:%i,st:%i,he:%i,tut:%i,tg:%i,mi:%i,sux:%i",w2,w3,w4,w2w,w3w,w4w,su,st,he,tut,tg,mi,sux);
 	}
     return self;
 }
