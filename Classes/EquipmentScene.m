@@ -56,8 +56,10 @@
 	if( (self=[super init] )) {
         float centerX = [[UIScreen mainScreen] bounds].size.height/2;
         float wideScreenOffset = 0.0;
+        float blueOffset = 0.0;
         if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
             wideScreenOffset = centerX - 240;
+            blueOffset = (wideScreenOffset/2)-4;
         }
 		selected = 1;
 		CGSize s = [[CCDirector sharedDirector] winSize];
@@ -94,21 +96,22 @@
 		}
 		[CCMenuItemFont setFontName:[AppDelegate get].menuFont];
 		
+        
 		//Background boxes
 		CCSprite *blueBox = [CCSprite spriteWithFile:@"cbluebox.png"];
-        [blueBox setPosition:ccp(336,218)];
+        [blueBox setPosition:ccp(336+blueOffset,218)];
         [self addChild:blueBox z:0];
 		
 		CCSprite *rifleRedBox = [CCSprite spriteWithFile:@"credbox2.png"];
-        [rifleRedBox setPosition:ccp(s.width/3-16,240)];
+        [rifleRedBox setPosition:ccp(144-(wideScreenOffset/2),240)];
         [self addChild:rifleRedBox z:0];
 		
 		CCSprite *scopeRedBox = [CCSprite spriteWithFile:@"credbox1.png"];
-        [scopeRedBox setPosition:ccp(s.width/5+2,rifleRedBox.position.y-rifleRedBox.contentSize.height/2-scopeRedBox.contentSize.height/2+2)];
+        [scopeRedBox setPosition:ccp(rifleRedBox.position.x-scopeRedBox.contentSize.width/2-3,rifleRedBox.position.y-rifleRedBox.contentSize.height/2-scopeRedBox.contentSize.height/2+2)];
         [self addChild:scopeRedBox z:0];
 		
 		CCSprite *ammoRedBox = [CCSprite spriteWithFile:@"credbox1.png"];
-        [ammoRedBox setPosition:ccp(scopeRedBox.position.x+scopeRedBox.contentSize.width+5,scopeRedBox.position.y)];
+        [ammoRedBox setPosition:ccp(scopeRedBox.position.x+scopeRedBox.contentSize.width+6,scopeRedBox.position.y)];
         [self addChild:ammoRedBox z:0];	
 
 		CCSprite *e1RedBox = [CCSprite spriteWithFile:@"credbox1.png"];
@@ -158,9 +161,11 @@
 		[self addChild:extra2Name z:3];		
 		
 		// Stats
+        float statsX = scopeRedBox.position.x+14;
+        float boxesX = statsX+14;
 		CCLabelTTF *pow = [CCLabelTTF labelWithString:@"POWER" dimensions:CGSizeMake(100,16) alignment:UITextAlignmentLeft fontName:[AppDelegate get].clearFont fontSize:14];
 		[pow setColor:ccWHITE];
-		pow.position=ccp(114,104);
+		pow.position=ccp(statsX,104);
 		[self addChild:pow z:3];		
 		for (int x=1;x<6;x++) {
 			CCSprite *b = nil;
@@ -168,13 +173,13 @@
 				b = [CCSprite spriteWithFile:@"BOX.png"];
 			else
 				b = [CCSprite spriteWithFile:@"BOXOUTLINE.png"];
-			[b setPosition:ccp(120+(20*x),104)];
+			[b setPosition:ccp(boxesX+(20*x),104)];
 			[self addChild:b z:1 tag:(200+0+x)];
 		}
 		
 		CCLabelTTF *rec = [CCLabelTTF labelWithString:@"RECOIL" dimensions:CGSizeMake(100,16) alignment:UITextAlignmentLeft fontName:[AppDelegate get].clearFont fontSize:14];
 		[rec setColor:ccWHITE];
-		rec.position=ccp(114,84);
+		rec.position=ccp(statsX,84);
 		[self addChild:rec z:3];
 		for (int x=1;x<6;x++) {
 			CCSprite *b = nil;
@@ -182,13 +187,13 @@
 				b = [CCSprite spriteWithFile:@"BOX.png"];
 			else
 				b = [CCSprite spriteWithFile:@"BOXOUTLINE.png"];
-			[b setPosition:ccp(120+(20*x),84)];
+			[b setPosition:ccp(boxesX+(20*x),84)];
 			[self addChild:b z:1 tag:(200+10+x)];
 		}
 		
 		CCLabelTTF *acc = [CCLabelTTF labelWithString:@"ACCURACY" dimensions:CGSizeMake(100,16) alignment:UITextAlignmentLeft fontName:[AppDelegate get].clearFont fontSize:14];
 		[acc setColor:ccWHITE];
-		acc.position=ccp(114,64);
+		acc.position=ccp(statsX,64);
 		[self addChild:acc z:3];
 		for (int x=1;x<6;x++) {
 			CCSprite *b = nil;
@@ -196,7 +201,7 @@
 				b = [CCSprite spriteWithFile:@"BOX.png"];
 			else
 				b = [CCSprite spriteWithFile:@"BOXOUTLINE.png"];
-			[b setPosition:ccp(120+(20*x),64)];
+			[b setPosition:ccp(boxesX+(20*x),64)];
 			[self addChild:b z:1 tag:(200+20+x)];
 		}
 		
@@ -210,7 +215,7 @@
 		right.rotation = -180;
 		CCMenu *m3 = [CCMenu menuWithItems:left,right, nil];
         [m3 alignItemsHorizontallyWithPadding: 102.0f];
-        m3.position = ccp(336,178);
+        m3.position = ccp(336+blueOffset,178);
 		[self addChild:m3 z:3];
 		
 		[CCMenuItemFont setFontSize:18];
@@ -231,8 +236,9 @@
 											  selector:@selector(showExtra:)];		
 		d.tag=14;
 		menu = [CCMenu menuWithItems:a,b,c,d,nil];
-		[menu alignItemsHorizontallyWithPadding: 2.0f];
-		menu.position = ccp(s.width/2-2,37);
+		[menu alignItemsHorizontallyWithPadding: 2.0];
+		menu.position = ccp(s.width/2 - wideScreenOffset,37);
+        //menu.anchorPoint = ccp(0.0,0.0);
 		[self addChild:menu];
 		a.selected;
 
@@ -262,7 +268,7 @@
 		
 		itemDescription = [CCLabelTTF labelWithString:r.d dimensions:CGSizeMake(190,200) alignment:UITextAlignmentCenter fontName:[AppDelegate get].clearFont fontSize:14];
 		[itemDescription setColor:ccWHITE];
-		itemDescription.position=ccp(338,54);
+		itemDescription.position=ccp(336+blueOffset,54);
 		[self addChild:itemDescription z:1];
 		
 		JDMenuItem *purchase = [JDMenuItem itemFromNormalImage:@"Cbutton.png" selectedImage:@"Cbuttonhighlighted.png"
