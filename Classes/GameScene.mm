@@ -18,6 +18,7 @@
 #import "Radio.h"
 #import "Perk.h"
 #import "LinearPoint.h"
+#include <sys/time.h>
 
 //#define kFilteringFactor 0.5 // orginal
 //#define kAccelMultiple 250.0 // orginal
@@ -159,6 +160,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 @end
 
 @implementation BackgroundLayer
+@synthesize vehicles;
 - (id) init {
 	CCLOG(@"BackgroundLayer");
     self = [super init];
@@ -842,22 +844,29 @@ foundit:
 			break;
         case CODEOVERDRAFT: // overdraft fee
 			[AppDelegate get].money+=10;
-            [self sendMyIntel:@"100 Bonus"];
-			[self sendMyIntel:@"Overdraft"];
+            //[self sendMyIntel:@"100 Bonus"];
+			//[self sendMyIntel:@"Overdraft"];
+            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
 			break;
         case CODEAMMODEPOT: // ammo depot
 			[AppDelegate get].money+=10;
-            [self sendMyIntel:@"100 Bonus"];
-			[self sendMyIntel:@"Ammo Depot"];
+            /*[self sendMyIntel:@"100 Bonus"];
+			[self sendMyIntel:@"Ammo Depot"];*/
+            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
 			break;
         case CODESCRAPMETAL: // CODESCRAPMETAL
             if ([[AppDelegate get] myPerk:38]) {
-                [AppDelegate get].money+=40;
-                [self sendMyIntel:@"400 Bonus"];
-                [self sendMyIntel:@"Scrap Metal"];
+                [AppDelegate get].money+=80;
+                //[self sendMyIntel:@"800 Bonus"];
+                //[self sendMyIntel:@"Scrap Metal"];
+                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"800"];
             }
 			break;
     }
+}
+
+-(void) showBonus:(NSString*)bonus {
+    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:bonus];
 }
 
 -(void) menuAttack:(int)attack {
@@ -1140,12 +1149,16 @@ foundit:
 		case CODEINNOCENT: // Shot innocent
 			//if (![[AppDelegate get] perkEnabled:19]) {
             //1.7
-				[self sendMyIntel:@"Citizen Shot"];
-				[self sendMyIntel:@"Planes Incoming"];
-				if ([AppDelegate get].multiplayer>0 && ![[AppDelegate get] perkEnabled:36]) {
-					[AppDelegate get].money = 0;
-				}
-				[self launchInnocent];
+            [self sendMyIntel:@"Citizen Shot"];
+            [self sendMyIntel:@"Planes Incoming"];
+            if (([AppDelegate get].multiplayer>0 || ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode != 1)) && ![[AppDelegate get] perkEnabled:36]) {
+                [AppDelegate get].money = 0;
+                [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
+            }
+            if ([[AppDelegate get] perkEnabled:36]) {
+                [self sendMyIntel:@"Hush Money Paid"];
+            }
+            [self launchInnocent];
 			//}
 			break;		
 		case CODELOSE: // You Win
@@ -1154,17 +1167,18 @@ foundit:
 				[[AppDelegate get].gkHelper sendAttack:attack];
 			//[self unscheduleAllSelectors];
 			[self schedule: @selector(delayWin) interval: 1];
-			break;	
+			break;
         case CODESCRAPMETAL: // CODESCRAPMETAL
-            if ([AppDelegate get].multiplayer > 0 || [AppDelegate get].gameType == SURVIVAL) {
-                if ([[AppDelegate get] myPerk:38]) {
-                    [AppDelegate get].money+=40;
-                    [self sendMyIntel:@"400 Bonus"];
-                    [self sendMyIntel:@"Scrap Metal"];
-                }
-                if ([[AppDelegate get] perkEnabled:38] && [AppDelegate get].gameType != SURVIVAL)
+            if ([AppDelegate get].multiplayer > 0 && [[AppDelegate get] perkEnabled:38]) {
                     [[AppDelegate get].gkHelper sendAttack:attack];
             }
+            if ([[AppDelegate get] myPerk:38] && [AppDelegate get].gameType != SURVIVAL) {
+                    [AppDelegate get].money+=80;
+                    //[self sendMyIntel:@"400 Bonus"];
+                    //[self sendMyIntel:@"Scrap Metal"];
+                    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"800"];
+            }
+            break;
     }
     
     // 3Peat Penalty
@@ -1175,8 +1189,20 @@ foundit:
             else 
                 lastAttackCount=0;
             lastAttack = attack;
-            if (lastAttackCount>2)
+            if (lastAttackCount>2) {
+                lastAttackCount = 0;
+                //[self sendMyIntel:@"3Peat Penalty"];
+                [self sendMyIntel:@"Plane"];
                 [self launchPlane];
+            }
+        }
+    }
+    // Overdraft
+    if ([AppDelegate get].money<6.5 && [[AppDelegate get] perkEnabled:31]) {
+        [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
+        if ([[AppDelegate get] myPerk:38] && [AppDelegate get].gameType == SANDBOX) {
+            [AppDelegate get].money+=10;
+            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
         }
     }
 }
@@ -1239,8 +1265,8 @@ foundit:
 	}
     // Auto-Snipe
     if ([[AppDelegate get] myPerk:47]) {
-        self.position = ccp(pres.position.x,pres.position.y);
-        [self moveBGPostion:pres.position.x y:pres.position.y];
+        self.position = ccp(-sniperLocation.x,sniperLocation.y);
+        //[self moveBGPostion:sniperLocation.x y:sniperLocation.y];
     }
 }
 
@@ -1405,9 +1431,11 @@ foundit:
 }
 
 -(void)pressedArmageddon {
-	if ([AppDelegate get].multiplayer > 0) {
+	if ([AppDelegate get].multiplayer > 0 || ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode != 1)) {
 		[AppDelegate get].money = 0;
 		[[AppDelegate get].gkHelper sendAttack:CODEPERK1];
+        [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
+
 	}
 	[self launchArmageddon];
 }
@@ -1684,8 +1712,14 @@ foundit:
 - (int) shotFired {
     if ([[AppDelegate get] perkEnabled:41]) { // Ammo Depot
         shotsFired++;
-        if (machinegunCount < 1 && shotsFired == 9) {
-            [[AppDelegate get].gkHelper sendAttack:CODEAMMODEPOT];
+        if (machinegunCount < 1 && shotsFired == 5) {
+            if ([AppDelegate get].multiplayer > 0) {
+                [[AppDelegate get].gkHelper sendAttack:CODEAMMODEPOT];
+            }
+            else if ([AppDelegate get].gameType == SANDBOX) {
+                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
+                [AppDelegate get].money +=10;
+            }
             shotsFired = 0;
         }
     }
@@ -1888,7 +1922,7 @@ foundit:
 	CCLOG(@"ControlLayer");
     self = [super init];
     if (self != nil) {		
-		CGSize s = [[CCDirector sharedDirector] winSize];
+		//CGSize s = [[CCDirector sharedDirector] winSize];
 		if ([AppDelegate get].controls == 1) {
 			//Joystick
 			vStick = [[[Joystick alloc] init:0 y:50 w:320 h:420] retain];
@@ -1989,11 +2023,24 @@ foundit:
 	return self;
 }
 
+-(void)showInfo:(int)i {
+    Perk *p = [[AppDelegate get].perks objectAtIndex:i-1];
+    CCLayer *popup = [[[PopupLayer alloc] initWithMessage:p.d t:p.n] autorelease];
+    [self addChild:popup z:10];
+}
+
 -(void) setup {
     CGSize winSize = [[UIScreen mainScreen] bounds].size;
 	taunts = [[NSArray alloc] initWithObjects:@"You will lose",@"Nice try",@"lol", @"Too easy",@"This is fun!",@"I'm so good",@"Not even trying",@"Going down",@"Still tryin 2 win?",@"I'll be gentle",@"Embarrassing",@"Do I annoy you?",nil];
 	tauntIndex = 0;
 	
+    bonusSpriteLabel = [BonusSprite spriteWithFile:@"cinset.png"];
+    bonusSpriteLabel.position = ccp(110,70);
+    //bonusSpriteLabel.scaleX=1.6;
+    bonusSpriteLabel.scaleY=0.8;
+    [self addChild:bonusSpriteLabel];
+    [bonusSpriteLabel hide];
+    
 	levelLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat: 
 											  @"Day %2i", 0] fontName:[AppDelegate get].clearFont fontSize:14];
 	levelLabel.anchorPoint=ccp(0,0);
@@ -2164,6 +2211,19 @@ foundit:
         [self schedule:@selector(hiccup) interval:10];
 }
 
+-(void) showBonus:(NSString*)bonus {
+    [[AppDelegate get].soundEngine playSound:20 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN-0.5 loop:NO];
+    [bonusSpriteLabel updateLabel:bonus];
+    [self unschedule: @selector(hideBonus)];
+    [self schedule: @selector(hideBonus) interval: 2];
+}
+
+-(void) hideBonus {
+    [self unschedule: @selector(hideBonus)];
+    [bonusSpriteLabel hide];
+    
+}
+
 -(void)showEnemyMoney:(int)i {
     if (enemyMoneyLabel != nil) {
         [enemyMoneyLabel setString:[NSString stringWithFormat: @"%5i", (int) i * 10]];
@@ -2227,8 +2287,8 @@ foundit:
     bool showEnemyMoney = NO;
 	if ([AppDelegate get].loadout.s1 > 0) {
 		perkCount++;
-		Perk *x = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s1-1];
-		CCSprite *perk1 = [CCSprite spriteWithFile:x.img];
+		Perk *perk1 = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s1-1];
+		//CCSprite *perk1 = [CCSprite spriteWithFile:x.img];
 		perk1.scale=perkScale;
 		[self addChild:perk1 z:10];
 		perkX = perkX+perk1.contentSize.width/2+8;
@@ -2243,8 +2303,8 @@ foundit:
 	}
 	if ([AppDelegate get].loadout.s2 > 0) {
 		perkCount++;
-		Perk *x = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s2-1];
-		CCSprite *perk2 = [CCSprite spriteWithFile:x.img];
+		Perk *perk2 = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s2-1];
+		//CCSprite *perk2 = [CCSprite spriteWithFile:x.img];
 		perk2.scale=perkScale;
 		[self addChild:perk2 z:10];
 		perkX = perkX+perk2.contentSize.width/2+8;
@@ -2259,8 +2319,8 @@ foundit:
 	}
 	if ([AppDelegate get].loadout.s3 > 0) {
 		perkCount++;
-		Perk *x = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s3-1];
-		CCSprite *perk3 = [CCSprite spriteWithFile:x.img];
+		Perk *perk3 = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s3-1];
+		//CCSprite *perk3 = [CCSprite spriteWithFile:x.img];
 		perk3.scale=perkScale;
 		[self addChild:perk3 z:10];
 		perkX = perkX+perk3.contentSize.width/2+8;
@@ -2300,8 +2360,8 @@ foundit:
 			CCLOG(@"perk %d: %d", i,perkNO);
 			if (perkNO > 0) {
 				perkCount++;
-				Perk *x = [[AppDelegate get].perks objectAtIndex:perkNO-1];
-				CCSprite *perk1 = [CCSprite spriteWithFile:x.img];
+				Perk *perk1 = [[AppDelegate get].perks objectAtIndex:perkNO-1];
+				//CCSprite *perk1 = [CCSprite spriteWithFile:x.img];
 				perk1.scale=perkScale;
 				[self addChild:perk1 z:10];
 				perkX = perkX+perk1.contentSize.width/2+8;
@@ -2371,20 +2431,20 @@ foundit:
 	perkTitle.anchorPoint=ccp(0,0);
 	[self addChild:perkTitle z:3];
 
-	Perk *x1 = [[AppDelegate get].perks objectAtIndex:[p1 intValue]-1];
-	CCSprite *perk1 = [CCSprite spriteWithFile:x1.img];
+	Perk *perk1 = [[AppDelegate get].perks objectAtIndex:[p1 intValue]-1];
+	//CCSprite *perk1 = [CCSprite spriteWithFile:x1.img];
 	perk1.scale=perkScale;
 	perkX = perkX+perk1.contentSize.width/2+8;
 	perk1.position = ccp(perkX, perk1.contentSize.height/2-6);
 	[self addChild:perk1 z:10];
-	Perk *x2 = [[AppDelegate get].perks objectAtIndex:[p2 intValue]-1];
-	CCSprite *perk2 = [CCSprite spriteWithFile:x2.img];
+	Perk *perk2 = [[AppDelegate get].perks objectAtIndex:[p2 intValue]-1];
+	//CCSprite *perk2 = [CCSprite spriteWithFile:x2.img];
 	perk2.scale=perkScale;
 	[self addChild:perk2 z:10];
 	perkX = perkX+perk2.contentSize.width/2+8;
 	perk2.position = ccp(perkX, perk2.contentSize.height/2-6);
-	Perk *x3 = [[AppDelegate get].perks objectAtIndex:[p3 intValue]-1];
-	CCSprite *perk3 = [CCSprite spriteWithFile:x3.img];
+	Perk *perk3 = [[AppDelegate get].perks objectAtIndex:[p3 intValue]-1];
+	//CCSprite *perk3 = [CCSprite spriteWithFile:x3.img];
 	perk3.scale=perkScale;
 	[self addChild:perk3 z:10];
 	perkX = perkX+perk3.contentSize.width/2+8;
@@ -2459,9 +2519,6 @@ foundit:
 		[moneyLabel setString:@"99999"];
 	}
 	else {
-        if ([AppDelegate get].money<(MRATE*2) && [[AppDelegate get] perkEnabled:31]) {
-            [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
-        }
 		[AppDelegate get].money+=MRATE;
 		if ([[AppDelegate get] perkEnabled:10])
 			[AppDelegate get].money+=(MRATE*0.2f);

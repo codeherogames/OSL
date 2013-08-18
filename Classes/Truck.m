@@ -132,7 +132,7 @@
 		[self unschedule: @selector(move:)];
 		[self stopAllActions];
 		[self dead];
-
+        [[AppDelegate get].bgLayer menuAttack:CODESCRAPMETAL];
 	}
 	else
 	{
@@ -149,13 +149,22 @@
 	enemy1.type = FROMVEHICLE;
 	[enemy1 setPosition:ccp(self.contentSize.width-enemy1.contentSize.width-10,self.contentSize.height/2+enemy1.contentSize.height/2.5)];
 	[self reorderChild:enemy1 z:-2];
-
-	Enemy *enemy2 = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:@"hat1.png"];
-	enemy2.color = ccRED;
-	enemy2.type = FROMVEHICLE;
-	[enemy2 setPosition:ccp(self.contentSize.width-(enemy2.contentSize.width-10*2),self.contentSize.height/2+enemy2.contentSize.height/2.5)];
-	[self reorderChild:enemy2 z:-2];
-
+	[passengers addObject:enemy1];
+	enemy1.customTag = 0;
+    
+    if (![[AppDelegate get] perkEnabled:40]) {
+        Enemy *enemy2 = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:@"hat1.png"];
+        enemy2.color = ccRED;
+        enemy2.type = FROMVEHICLE;
+        [enemy2 setPosition:ccp(self.contentSize.width-(enemy2.contentSize.width-10*2),self.contentSize.height/2+enemy2.contentSize.height/2.5)];
+        [self reorderChild:enemy2 z:-2];
+        [passengers addObject:enemy2];
+        enemy2.customTag = 1;
+        if (self.flipX == TRUE) {
+            enemy2.flipX = TRUE;
+            enemy2.hat.flipX = TRUE;
+        }
+    }
 	Enemy *enemy3 = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:@"hat1.png"];
 	enemy3.color = ccRED;
 	enemy3.type = FROMVEHICLE;
@@ -164,17 +173,11 @@
 	enemy3.anchorPoint=ccp(0.5,0.5);
 	enemy3.customTag = 99;
 	//[passengerList addObject:enemy3];
-	[passengers addObject:enemy1];
-	enemy1.customTag = 0;
-	[passengers addObject:enemy2];
-	enemy2.customTag = 1;
-	
+
 	if (self.flipX == TRUE) {
 		CCLOG(@"Passengers Flipx");
 		enemy1.flipX = TRUE;
 		enemy1.hat.flipX = TRUE;
-		enemy2.flipX = TRUE;
-		enemy2.hat.flipX = TRUE;
 		enemy3.flipX = TRUE;
 		enemy3.hat.flipX = TRUE;
 	}
@@ -212,6 +215,7 @@
 	
 	if (i == 99) {
 		CCLOG(@"Driver Shot");
+        [super passengerDied:i];
 		self.currentState = PAUSE;
 		driverDied = 1;
 		[self unschedule: @selector(move:)];

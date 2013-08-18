@@ -7,6 +7,7 @@
 //
 
 #import "Perk.h"
+#import "GameScene.h"
 
 enum {
 	kLocked = 100,
@@ -26,7 +27,7 @@ enum {
 		self.d = dX;
 		self.x = xX;
 		self.c = cX;
-		self.s = sX;
+		self.s = 1;//sX;
 		self.m = mX;
 		/*highlight = [CCSprite spriteWithFile: @"w1px.png"];
 		 highlight.color = ccYELLOW;
@@ -99,17 +100,27 @@ enum {
 {
 	if ( [self containsTouchLocation:touch] ) {
 		CCLOG(@"touched:%i",self.x);
-		[[AppDelegate get].soundEngine playSound:2 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN loop:NO];
-		for (int i=0; i<[[AppDelegate get].perks count];i++) {
-			Perk *pk = [[AppDelegate get].perks objectAtIndex:i];
-			if (pk.x != self.x) {
-				[pk reset];
-			}
-		}
-		self.opacity=kUnlocked;
-		//highlight.visible=TRUE;
-		self.scale = 1;
-		[self.parent showInfo:self.x];
+        if (![self.parent isKindOfClass:[ControlLayer class]]) {
+            [[AppDelegate get].soundEngine playSound:2 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN loop:NO];
+            for (int i=0; i<[[AppDelegate get].perks count];i++) {
+                Perk *pk = [[AppDelegate get].perks objectAtIndex:i];
+                if (pk.x != self.x) {
+                    [pk reset];
+                }
+            }
+            self.opacity=kUnlocked;
+            //highlight.visible=TRUE;
+            self.scale = 1;
+            [self.parent showInfo:self.x];
+        }
+        else {
+            //NSDate *now = [NSDate date];
+            if (touch.tapCount == 2) {
+                [[AppDelegate get].soundEngine playSound:2 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN loop:NO];
+                [self.parent showInfo:self.x];
+            }
+        }
+        
 		return YES;
 	}
 	else {

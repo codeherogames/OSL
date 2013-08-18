@@ -17,7 +17,10 @@
 	self =  [super initWithFile:s l:l a:a];
 	if (self != nil) {
 		self.type = PLANE;
-		self.passengerCount = 6;
+        if ([[AppDelegate get] perkEnabled:40])
+            self.passengerCount = 5;
+        else
+            self.passengerCount = 6;
 	}
     return self;
 }
@@ -46,7 +49,8 @@
 		CCLOG(@"%@",c.name);
 		// Parachute landed.  Remove parachute
 		if (currentState == DROP) {
-			[self launchParachute];
+            if (self.pointCount <= self.passengerCount+1)
+                [self launchParachute];
 		}
 		
 		// Get current state

@@ -16,6 +16,8 @@
 #import "Truck.h"
 #import "TowTruck.h"
 #import "Sniper.h"
+#import "PopupLayer.h"
+#import "BonusSprite.h"
 
 @interface GameScene : CCScene {
 
@@ -106,6 +108,7 @@
 
 -(void)showEnemyMoney:(int)i;
 -(void)showAgentCount:(int)i;
+-(void) showBonus:(NSString*)bonus;
 
 @end
 
@@ -127,8 +130,10 @@
 	CCLabelBMFont *moneyLabel,*enemyMoneyLabel,*agentCountLabel;
 	NSArray *taunts;
 	CCMenu *aMenu,*gMenu;
+    BonusSprite *bonusSpriteLabel;
 }
 @property (nonatomic,retain) CCLabelTTF *info1,*info2,*info3,*info4;
+//@property (nonatomic,retain) BonusSprite *bonusSpriteLabel;
 -(void) setup;
 -(void) showPerks;
 -(void) showSurvivalPerks;
@@ -145,6 +150,8 @@
 -(void)showEnemyMoney;
 -(void)showAgentCount;
 -(void)showProximity:(int) i;
+-(void)showInfo:(int)i;
+-(void) showBonus:(NSString*)bonus;
 @end
 
 @interface ScopeLayer : CCLayer {

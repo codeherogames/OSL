@@ -75,7 +75,30 @@
 
 - (void) passengerDied: (int) i
 {
-	CCLOG(@"Passenger Died %i", i);	
+	CCLOG(@"Passenger Died %i, count:%i", i,[passengers count]);
+    // TRIFECTA or BOUNTBONUS check
+    if ([AppDelegate get].gameType != SURVIVAL) {
+        if ([[AppDelegate get] myPerk:44]) {
+            int passengerCount = 0;
+            for (Enemy *e in passengers) {
+                if (e.currentState != DEAD)
+                    passengerCount++;
+            }
+            if (passengerCount == 0) {
+                [AppDelegate get].money += 500;
+                //[[AppDelegate get].bgLayer sendMyIntel:@"5000 Bonus"];
+                //[[AppDelegate get].bgLayer sendMyIntel:@"Trifecta"];
+                [[AppDelegate get].bgLayer showBonus:@"5000"];
+            }
+            
+        }
+        if ([[AppDelegate get] myPerk:28]) {
+            [AppDelegate get].money += 80;
+            //[[AppDelegate get].bgLayer sendMyIntel:@"800 Bonus"];
+            //[[AppDelegate get].bgLayer sendMyIntel:@"Bounty Bonus"];
+            [[AppDelegate get].bgLayer showBonus:@"800"];
+        }
+    }
 }
 
 - (void) dead

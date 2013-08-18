@@ -144,6 +144,7 @@
         [passengers addObject:enemy2];
         enemy2.customTag = 1;
 	}
+    
 	Enemy *enemy3 = [[Enemy alloc] initWithFile: @"headOnly.png" l:self h:@"hat1.png"];
 	enemy3.color = ccRED;
 	enemy3.type = FROMHELICOPTER;
@@ -206,19 +207,7 @@
 	
 	if (i == 99) {
 		CCLOG(@"Driver Shot");
-        // TRIFECTA or BOUNTBONUS check
-        if ([AppDelegate get].gameType != SURVIVAL) {
-            if ([[AppDelegate get] perkEnabled:44] && [passengers count] == 0) {
-                    [AppDelegate get].money += 500;
-                    [[AppDelegate get].bgLayer sendMyIntel:@"5000 Bonus"];
-                    [[AppDelegate get].bgLayer sendMyIntel:@"Trifecta"];
-            }
-            if ([[AppDelegate get] perkEnabled:28]) {
-                [AppDelegate get].money += 80;
-                [[AppDelegate get].bgLayer sendMyIntel:@"800 Bonus"];
-                [[AppDelegate get].bgLayer sendMyIntel:@"Bounty Bonus"];
-            }
-        }
+        [super passengerDied:i];
 		self.currentState = PAUSE;
 		driverDied = 1;
 		[self unschedule: @selector(move:)];
