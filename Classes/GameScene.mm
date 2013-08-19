@@ -1265,7 +1265,7 @@ foundit:
 	}
     // Auto-Snipe
     if ([[AppDelegate get] myPerk:47]) {
-        self.position = ccp(-sniperLocation.x,sniperLocation.y);
+        self.position = ccp(sniperLocation.x,sniperLocation.y);
         //[self moveBGPostion:sniperLocation.x y:sniperLocation.y];
     }
 }
@@ -1758,9 +1758,9 @@ foundit:
                 if ([[AppDelegate get] myPerk:33]) {
                     int distance = GetApproxDistance(enemy.position, pres.position);
                     if (distance > 500) {
-                        int prize = int(distance *= 0.02f);
+                        int prize = int(distance *= 0.004f);
                         [AppDelegate get].money += prize;
-                        [self sendMyIntel:@"%i Bonus"];
+                        [self showBonus:[NSString stringWithFormat:@"%i",prize*10]];
                     }
                 }
                 break;
@@ -1768,7 +1768,7 @@ foundit:
         }
 	}
 	CCLOG(@"heashot=%i",headshot);
-	if (headshot == 0)
+	if (headshot == 0 && machinegunCount < 1)
 		[AppDelegate get].headshotStreak=0;
 	
 	if (gotHim > -1) {
@@ -1778,7 +1778,7 @@ foundit:
 		[[AppDelegate get].enemies removeObjectAtIndex:gotHim];
 		return [[AppDelegate get].enemies count];
 	}
-	else {
+	else if (machinegunCount < 1) {
 		[AppDelegate get].headshotStreak=0;
 		return gotHim;
 	}

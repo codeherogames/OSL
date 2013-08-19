@@ -85,10 +85,14 @@
                     passengerCount++;
             }
             if (passengerCount == 0) {
-                [AppDelegate get].money += 500;
-                //[[AppDelegate get].bgLayer sendMyIntel:@"5000 Bonus"];
-                //[[AppDelegate get].bgLayer sendMyIntel:@"Trifecta"];
-                [[AppDelegate get].bgLayer showBonus:@"5000"];
+                if ([[AppDelegate get] perkEnabled:40]) {
+                    [AppDelegate get].money += 200;
+                    [[AppDelegate get].bgLayer showBonus:@"2000"];
+                }
+                else {
+                    [AppDelegate get].money += 300;
+                    [[AppDelegate get].bgLayer showBonus:@"3000"];
+                }
             }
             
         }
