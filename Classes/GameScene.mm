@@ -499,6 +499,8 @@ outer:;
 	if ([AppDelegate get].multiplayer > 0) {
 		gameMins = 1;
 		[self schedule: @selector(doMins) interval: 60];
+    }
+    if ([AppDelegate get].gameType != SURVIVAL) {
 		myBeat = 0;
 		theirBeat = 0;
 		[self schedule: @selector(beat) interval: 10];
@@ -516,12 +518,20 @@ outer:;
 }
 
 -(void) beat {
-	myBeat++;
-	CCLOG(@"MyBeat:%i TheirBeat:%i",myBeat,theirBeat);
-	[[AppDelegate get].gkHelper sendAttack:HEARTBEAT];
-	if (myBeat - theirBeat > 3) {
-		[self onAttackReceived:HEARTBEAT pid:@"me"];
-	}
+    if ([AppDelegate get].gameType == SANDBOX) {
+        if ([[AppDelegate get] myPerk:42])
+            [self showEnemyMoney:[AppDelegate get].money];
+        if ([[AppDelegate get] myPerk:43])
+            [self showAgentCount:[self getEnemyCount]];
+    }
+    else {
+        myBeat++;
+        CCLOG(@"MyBeat:%i TheirBeat:%i",myBeat,theirBeat);
+        [[AppDelegate get].gkHelper sendAttack:HEARTBEAT];
+        if (myBeat - theirBeat > 3) {
+            [self onAttackReceived:HEARTBEAT pid:@"me"];
+        }
+    }
 }
 
 -(void) doMins {
@@ -550,6 +560,26 @@ outer:;
 		[self launchInverted];
 	}
 	gameMins++;
+}
+
+-(int) getEnemyCount {
+    int eCount = 0;
+    for (Enemy *e in [AppDelegate get].enemies) {
+        if (e.currentState != DEAD && e.type != 100 && e.type != FROMVEHICLE) {
+            eCount++;
+        }
+    }
+
+    for (Vehicle *v in vehicles) {
+        if (v.currentState != DEAD) {
+            if (v.type == PLANE || v.type == ARMOR)
+                eCount += [v.passengers count];
+            /*else
+             eCount += v.passengerCount;*/
+        }
+    }
+    eCount -= [AppDelegate get].jammers;
+    return eCount;
 }
 
 -(void) doHeadshot:(CGPoint) p i:(int) i {
@@ -1930,9 +1960,6 @@ foundit:
 		}
 		recoilRate = 15;
 		distance = 240;
-		
-        enemyMoneyLabel = nil;
-        agentCountLabel = nil;
         
 		if ([AppDelegate get].loadout.r == 1) {
 			distance /=3;
@@ -2034,9 +2061,9 @@ foundit:
 	taunts = [[NSArray alloc] initWithObjects:@"You will lose",@"Nice try",@"lol", @"Too easy",@"This is fun!",@"I'm so good",@"Not even trying",@"Going down",@"Still tryin 2 win?",@"I'll be gentle",@"Embarrassing",@"Do I annoy you?",nil];
 	tauntIndex = 0;
 	
+    //Bonus Money
     bonusSpriteLabel = [BonusSprite spriteWithFile:@"cinset.png"];
     bonusSpriteLabel.position = ccp(110,70);
-    //bonusSpriteLabel.scaleX=1.6;
     bonusSpriteLabel.scaleY=0.8;
     [self addChild:bonusSpriteLabel];
     [bonusSpriteLabel hide];
@@ -2062,7 +2089,23 @@ foundit:
 	[self addChild:gMenu];
 	
 
-	if ([AppDelegate get].gameType != SURVIVAL) {		
+	if ([AppDelegate get].gameType != SURVIVAL) {
+        //Agent Count
+        if ([[AppDelegate get] perkEnabled:43]) {
+            fieldReport = [BonusSprite spriteWithFile:@"cinset.png"];
+            fieldReport.position = ccp(240,100);
+            fieldReport.scaleY=0.8;
+            [fieldReport updateLabel:@"jim"];//[NSString stringWithFormat: @"%5i",0]];
+            [self addChild:fieldReport z:100];
+        }
+        //Enemy Money
+        if ([[AppDelegate get] perkEnabled:42]) {
+            enemyMoney = [BonusSprite spriteWithFile:@"cinset.png"];
+            enemyMoney.position = ccp([[UIScreen mainScreen] bounds].size.height/2,200);
+            enemyMoney.scaleY=0.8;
+            [enemyMoney updateLabel:[NSString stringWithFormat: @"%5i",0]];
+            [self addChild:enemyMoney z:100];
+        }
 		menuTray = [CCSprite spriteWithFile: @"menutray3.png"];
 		menuTray.position = ccp(menuTray.contentSize.width/2, 160);
 		[self addChild:menuTray z:11];
@@ -2225,14 +2268,14 @@ foundit:
 }
 
 -(void)showEnemyMoney:(int)i {
-    if (enemyMoneyLabel != nil) {
-        [enemyMoneyLabel setString:[NSString stringWithFormat: @"%5i", (int) i * 10]];
+    if (enemyMoney != nil) {
+        [enemyMoney updateLabel:[NSString stringWithFormat: @"%5i", (int) i * 10]];
     }
 }
 
 -(void)showAgentCount:(int)i {
-    if (agentCountLabel != nil) {
-        [agentCountLabel setString:[NSString stringWithFormat: @"%5i", (int) i]];
+    if (fieldReport != nil) {
+        [fieldReport updateLabel:[NSString stringWithFormat: @"%5i", (int) i]];
     }
 }
 
@@ -2261,30 +2304,13 @@ foundit:
 	[(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] zoomButtonPressed];
 }
 
--(void) setupEnemyMoney {
-    CGSize s = [[CCDirector sharedDirector] winSize];
-    enemyMoneyLabel = [CCLabelBMFont labelWithString:@"-----" fntFile:@"bombard.fnt"];
-    [enemyMoneyLabel setPosition:ccp(s.width/2, 10)];
-    enemyMoneyLabel.color = ccGREEN;
-    [self addChild:enemyMoneyLabel z:12];
-}
-
--(void) setupAgentCount {
-    CGSize s = [[CCDirector sharedDirector] winSize];
-    agentCountLabel = [CCLabelBMFont labelWithString:@"-----" fntFile:@"bombard.fnt"];
-    [agentCountLabel setPosition:ccp(s.width/2,s.height-10)];
-    agentCountLabel.color = ccGREEN;
-    [self addChild:agentCountLabel z:12];
-}
-
 -(void) showPerks {
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	//Perks
 	float perkX = menuTray.position.x+menuTray.contentSize.width/2-14;
 	float perkScale = 0.6;
 	int perkCount = 0;
-    bool showAgentCount = NO;
-    bool showEnemyMoney = NO;
+
 	if ([AppDelegate get].loadout.s1 > 0) {
 		perkCount++;
 		Perk *perk1 = [[AppDelegate get].perks objectAtIndex:[AppDelegate get].loadout.s1-1];
@@ -2293,13 +2319,6 @@ foundit:
 		[self addChild:perk1 z:10];
 		perkX = perkX+perk1.contentSize.width/2+8;
 		perk1.position = ccp(perkX, perk1.contentSize.height/2-6);
-        
-        if ([AppDelegate get].loadout.s1 == 42 && [[AppDelegate get] myPerk:42]) {
-            showEnemyMoney = YES;
-        }
-        if ([AppDelegate get].loadout.s1 == 43 && [[AppDelegate get] myPerk:43]) {
-            showAgentCount = YES;
-        }
 	}
 	if ([AppDelegate get].loadout.s2 > 0) {
 		perkCount++;
@@ -2309,13 +2328,6 @@ foundit:
 		[self addChild:perk2 z:10];
 		perkX = perkX+perk2.contentSize.width/2+8;
 		perk2.position = ccp(perkX, perk2.contentSize.height/2-6);
-        
-        if ([AppDelegate get].loadout.s2 == 42 && [[AppDelegate get] myPerk:42]) {
-            showEnemyMoney = YES;
-        }
-        if ([AppDelegate get].loadout.s2 == 43 && [[AppDelegate get] myPerk:43]) {
-            showAgentCount = YES;
-        }
 	}
 	if ([AppDelegate get].loadout.s3 > 0) {
 		perkCount++;
@@ -2325,13 +2337,6 @@ foundit:
 		[self addChild:perk3 z:10];
 		perkX = perkX+perk3.contentSize.width/2+8;
 		perk3.position = ccp(perkX, perk3.contentSize.height/2-6);
-        
-        if ([AppDelegate get].loadout.s3 == 42 && [[AppDelegate get] myPerk:42]) {
-            showEnemyMoney = YES;
-        }
-        if ([AppDelegate get].loadout.s3 == 43 && [[AppDelegate get] myPerk:43]) {
-            showAgentCount = YES;
-        }
 	}
     
 	if (perkCount > 0) {
@@ -2339,11 +2344,6 @@ foundit:
 		perkTitle.position = ccp(menuTray.position.x+menuTray.contentSize.width/2+4,36);
 		perkTitle.anchorPoint=ccp(0,0);
 		[self addChild:perkTitle z:3];
-        
-        if (showEnemyMoney)
-            [self showEnemyMoney];
-        if (showAgentCount)
-            [self showAgentCount];
 	}
 	
 	if (([[AppDelegate get] perkEnabled:21]) && [[AppDelegate get].opponentPerks count] > 0) {
@@ -2692,9 +2692,6 @@ foundit:
 			if ([(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] shotFired] == 0) {
 //
 			}
-
-			/*NSString *k = [NSString stringWithFormat:@"%2i",[[AppDelegate get].enemies count]];
-			[enemyLabel setString:k];*/
 			
 			[AppDelegate get].reload = 1;
 			if ([AppDelegate get].loadout.b != 1) {

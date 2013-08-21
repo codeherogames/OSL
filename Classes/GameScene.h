@@ -109,6 +109,7 @@
 -(void)showEnemyMoney:(int)i;
 -(void)showAgentCount:(int)i;
 -(void) showBonus:(NSString*)bonus;
+-(int)getEnemyCount;
 
 @end
 
@@ -127,10 +128,10 @@
 	CGPoint speedVector;
 	CCSprite *bullet,*menuTray,*zoomedInButton;
 	CCLabelTTF *info1,*info2,*info3,*info4,*levelLabel;
-	CCLabelBMFont *moneyLabel,*enemyMoneyLabel,*agentCountLabel;
+	CCLabelBMFont *moneyLabel;
 	NSArray *taunts;
 	CCMenu *aMenu,*gMenu;
-    BonusSprite *bonusSpriteLabel;
+    BonusSprite *bonusSpriteLabel,*fieldReport,*enemyMoney;
 }
 @property (nonatomic,retain) CCLabelTTF *info1,*info2,*info3,*info4;
 //@property (nonatomic,retain) BonusSprite *bonusSpriteLabel;
@@ -147,8 +148,8 @@
 -(void)hideArmageddon;
 -(void)hideMachinegun;
 -(void) hiccup;
--(void)showEnemyMoney;
--(void)showAgentCount;
+-(void)showEnemyMoney:(int)i;
+-(void)showAgentCount:(int)i;
 -(void)showProximity:(int) i;
 -(void)showInfo:(int)i;
 -(void) showBonus:(NSString*)bonus;

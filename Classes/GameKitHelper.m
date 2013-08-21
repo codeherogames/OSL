@@ -697,21 +697,8 @@ static GameKitHelper *instanceOfGameKitHelper;
 -(void) sendAttack:(int) i {
     int eCount=0;
     if ([[AppDelegate get] perkEnabled:43]) {
-        for (Enemy *e in [AppDelegate get].enemies) {
-            if (e.currentState != DEAD && e.tag != 100 && e.type != FROMVEHICLE) {
-                eCount++;
-            }
-        }
         BackgroundLayer *bgLayer = (BackgroundLayer*)[AppDelegate get].bgLayer;
-        for (Vehicle *v in bgLayer.vehicles) {
-            if (v.currentState != DEAD) {
-                if (v.type == PLANE || v.type == ARMOR)
-                    eCount += [v.passengers count];
-                /*else
-                    eCount += v.passengerCount;*/
-            }
-        }
-        eCount -= [AppDelegate get].jammers;
+        eCount = [BackgroundLayer getEnemyCount];
     }
     NSError *error = nil;
 	DataPacket packet;
