@@ -1086,7 +1086,7 @@ BOOL isGameCenterAPIAvailable()
             for (uint i=0; i<obj.count;i++) {
                 if (i < obj.count) {
                     Perk *p2 = [obj objectAtIndex:i];
-                    CCLOG(@"i:%i pcount:%i",i,perks.count);
+                    //CCLOG(@"i:%i pcount:%i",i,perks.count);
                 
                     Perk *p1 = [perks objectAtIndex:i];
                     p1.s = p2.s;
