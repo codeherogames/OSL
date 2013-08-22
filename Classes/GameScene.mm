@@ -308,7 +308,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	float sStartX = building2.position.x-(building2.contentSize.width/2)+98;
 	float sStartY = midBuildingY-building2.contentSize.height/2+156;
 	int sCount=0;
-	int sniperIndex = (int) arc4random() % 16;
+	sniperIndex = (int) arc4random() % 16;
 	CCLOG(@"sniperIndex:%d",sniperIndex);
 	for (int x=0; x<4;x++) {
 		for (int y=0; y<4;y++) {
@@ -325,6 +325,14 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 				//[sniperWindow addChild:sniper z:3];
 				[self addChild:sniper z:sniperWindow.zOrder+1];
 				[self hideSniper];
+                
+                ///////////////
+                CCLOG(@"sp:%f,%f",sniperLocation.x,sniperLocation.y);
+                CGPoint snipPos = [self convertToNodeSpace:sniperLocation];
+                CCLOG(@"snipPos:%f,%f",snipPos.x,snipPos.y);
+                CGPoint snipPosA = [self convertToNodeSpaceAR:sniperLocation];
+                CCLOG(@"snipPosA:%f,%f",snipPosA.x,snipPosA.y);
+                ///////////////
 				
 				CCSprite *sniperRifle = [CCSprite spriteWithFile:@"sniperrifle.png"];
 				sniperRifle.anchorPoint=ccp(0.5,0.5);
@@ -1295,7 +1303,20 @@ foundit:
 	}
     // Auto-Snipe
     if ([[AppDelegate get] myPerk:47]) {
-        self.position = ccp(sniperLocation.x,sniperLocation.y);
+        int adjustX = floor(sniperIndex / 4) * -126;
+        int adjustY = (sniperIndex % 4) * 96;
+        float newX = -318 + adjustX;
+        float newY = 222 - adjustY;
+
+
+        /*if ([AppDelegate get].scale == [AppDelegate get].minZoom) {
+            newX*=2;
+            newY*=2;
+        }*/
+        [AppDelegate get].scale = [AppDelegate get].minZoom;
+        [self zoomButtonPressed];
+        self.position = ccp(newX,newY);
+        CCLOG(@"selfposition2:%f,%f",self.position.x,self.position.y);
         //[self moveBGPostion:sniperLocation.x y:sniperLocation.y];
     }
 }
@@ -1755,6 +1776,8 @@ foundit:
     }
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
 	CCLOG(@"shot position: %f,%f",[[UIScreen mainScreen] bounds].size.height/2-location.x,160-location.y);
+    CCLOG(@"shot position2: %f,%f",location.x,location.y);
+    CCLOG(@"self position: %f,%f",self.position.x,self.position.y);
 	int gotHim = -1;
 	int headshot = 0;
 	//CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);

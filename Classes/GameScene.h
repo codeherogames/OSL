@@ -43,7 +43,7 @@
 	CCLabelTTF *headshotLabel;
 	NSArray *streakName;
 	Sniper *sniper;
-	int myBeat,theirBeat,lastAttack,lastAttackCount,shotsFired;
+	int myBeat,theirBeat,lastAttack,lastAttackCount,shotsFired,sniperIndex;
 	//CCLabelTTF *opponent,*opLabel;
 }
 

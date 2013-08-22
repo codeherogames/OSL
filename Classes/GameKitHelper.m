@@ -31,7 +31,7 @@ static NSString* kCachedAchievementsFile = @"CachedAchievements.archive";
 static GameKitHelper *instanceOfGameKitHelper;
 
 #pragma mark Singleton stuff
-+(id) alloc
+/*+(id) alloc
 {
 	@synchronized(self)	
 	{
@@ -58,6 +58,16 @@ static GameKitHelper *instanceOfGameKitHelper;
 	
 	// to avoid compiler warning
 	return nil;
+}*/
+
++(id) sharedGameKitHelper {
+    static GameKitHelper *sharedGameKitHelper;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedGameKitHelper =
+		[[GameKitHelper alloc] init];
+    });
+    return sharedGameKitHelper;
 }
 
 #pragma mark Init & Dealloc
@@ -755,7 +765,13 @@ static GameKitHelper *instanceOfGameKitHelper;
 	
 	NSError* error = nil;
 	NSData* packet = [NSData dataWithBytes:data length:length];
-	[currentMatch sendDataToAllPlayers:packet withDataMode:GKMatchSendDataUnreliable error:&error];
+	BOOL success = [currentMatch sendDataToAllPlayers:packet withDataMode:GKMatchSendDataReliable error:&error];
+    
+    if (!success) {
+        // try again, or review your code or wait for disconnection
+        CCLOG(@"sendDataToAllPlayers Error!");
+    }
+
 	[self setLastError:error];
 }
 
@@ -839,6 +855,18 @@ static GameKitHelper *instanceOfGameKitHelper;
 	return [UIApplication sharedApplication].keyWindow.rootViewController;
 }
 
+-(void) presentViewController:(UIViewController*)vc {
+    [[CCDirector sharedDirector] pause];
+	UIViewController* rootVC = [self getRootViewController];
+	[rootVC presentViewController:vc animated:YES completion:nil];
+}
+
+-(void) dismissModalViewController {
+    [[CCDirector sharedDirector] resume];
+    UIViewController* rootVC = [self getRootViewController];
+    [rootVC dismissViewControllerAnimated:YES completion:nil];
+}
+/*
 -(void) presentViewController:(UIViewController*)vc
 {
 	[[CCDirector sharedDirector] pause];
@@ -852,7 +880,7 @@ static GameKitHelper *instanceOfGameKitHelper;
 	UIViewController* rootVC = [self getRootViewController];
 	[rootVC dismissModalViewControllerAnimated:YES];
 }
-
+*/
 // Leaderboards
 
 -(void) showLeaderboard
@@ -956,7 +984,7 @@ static GameKitHelper *instanceOfGameKitHelper;
 	CCLOG(@"matchmakerViewController:didFindMatch");
 	[self dismissModalViewController];
 	[self setCurrentMatch:match];
-	if ( [match expectedPlayerCount] == 0 )
+	if (matchStarted == NO && [match expectedPlayerCount] == 0 )
 	{
 		//CCLOG(@"matchmakerViewController:didFindMatch:playersToInvite=%i",[match.playersToInvite count]);
 		CCLOG(@"matchmakerViewController:didFindMatch:matchStarted");
@@ -975,6 +1003,7 @@ static GameKitHelper *instanceOfGameKitHelper;
 		//matchStarted = YES;
 		//[self getPlayerAlias];  //blocking match?
 		
+        
 		if ([AppDelegate get].friendInvite == 1) {
 			CCLOG(@"matchmakerViewController:didFindMatch:matchStarted:FRIEND");
 			gotPerks = 1;
@@ -983,14 +1012,21 @@ static GameKitHelper *instanceOfGameKitHelper;
 		}
 		else {
 			CCLOG(@"matchmakerViewController:didFindMatch:matchStarted:INVITER");
-			[AppDelegate get].friendInvite = 1;
+			[AppDelegate get].friendInvite = -1;
 			gotPerks = 1;
 			[self sendGameVars];
 			[self sendPerks];
 			matchStarted = YES;
 		}
-
-		
+        /*
+            CCLOG(@"matchmakerViewController:matchStarted");
+            [[AppDelegate get].opponentPerks removeAllObjects];
+            gotPerks = 0;
+            if ([AppDelegate get].friendInvite != 1)
+                [self sendGameVars];
+            [self sendPerks];
+            matchStarted = YES;
+            //[delegate onStartMatch];*/
 		
 	}
 	//match.delegate = self;
