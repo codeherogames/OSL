@@ -318,21 +318,12 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 				sniperWindow = [CCSprite spriteWithFile:@"sniperwindow.png"];
 				[self addChild:sniperWindow z:2];
 				
-				
 				sniper = [[Sniper alloc] initWithFile: @"sniper.png"];	 
 				[sniper setPosition:ccp(-10000,-10000)];
 				sniper.color=ccRED;
 				//[sniperWindow addChild:sniper z:3];
 				[self addChild:sniper z:sniperWindow.zOrder+1];
 				[self hideSniper];
-                
-                ///////////////
-                CCLOG(@"sp:%f,%f",sniperLocation.x,sniperLocation.y);
-                CGPoint snipPos = [self convertToNodeSpace:sniperLocation];
-                CCLOG(@"snipPos:%f,%f",snipPos.x,snipPos.y);
-                CGPoint snipPosA = [self convertToNodeSpaceAR:sniperLocation];
-                CCLOG(@"snipPosA:%f,%f",snipPosA.x,snipPosA.y);
-                ///////////////
 				
 				CCSprite *sniperRifle = [CCSprite spriteWithFile:@"sniperrifle.png"];
 				sniperRifle.anchorPoint=ccp(0.5,0.5);
@@ -1308,16 +1299,10 @@ foundit:
         float newX = -318 + adjustX;
         float newY = 222 - adjustY;
 
-
-        /*if ([AppDelegate get].scale == [AppDelegate get].minZoom) {
-            newX*=2;
-            newY*=2;
-        }*/
         [AppDelegate get].scale = [AppDelegate get].minZoom;
         [self zoomButtonPressed];
         self.position = ccp(newX,newY);
-        CCLOG(@"selfposition2:%f,%f",self.position.x,self.position.y);
-        //[self moveBGPostion:sniperLocation.x y:sniperLocation.y];
+        //CCLOG(@"selfposition2:%f,%f",self.position.x,self.position.y);
     }
 }
 
