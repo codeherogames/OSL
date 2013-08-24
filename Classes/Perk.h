@@ -32,9 +32,9 @@ x 42: Insider Trading: Shows amount of money opponent has
 x 43: Field Report: Reports number of agents and citizens alive
 x 44: Trifecta: Shoot passengers, then driver gives 5000
 x 45: Circuits Busy: Delay Sniper Found alert 3 seconds
-46: Slippery Scope: Opponent scope over-responsive
+x 46: Slippery Scope: Opponent scope over-responsive
 x 47: Auto-Snipe: Auto-jumps scope to sniper when visible
-- 48: Proximity Indicator: Indicates agent proximity to Smitty
+x 48: Proximity Indicator: Indicates agent proximity to Smitty
 */
 @interface Perk : CCSprite <NSCoding,CCTargetedTouchDelegate> {
 	NSString *img,*n,*d;

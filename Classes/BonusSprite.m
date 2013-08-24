@@ -10,6 +10,7 @@
 
 
 @implementation BonusSprite
+@synthesize val;
 
 -(void) updateLabel:(NSString*) l {
     if (!bonusLabel) {

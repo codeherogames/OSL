@@ -420,7 +420,7 @@ outer:;
 	pres = [CCSprite spriteWithFile:@"stand.png"];
 	[pres setPosition:ccp(PREZX, FLOOR3Y-4)];
 	pres.color=ccBLACK;
-	[self addChild:pres z:1];
+	[self addChild:pres z:3];
 	CCSprite *patch = [CCSprite spriteWithFile:@"eyepatch.png"];
 	patch.anchorPoint=ccp(0.5,0);
 	[patch setPosition:ccp(pres.contentSize.width/2,34)];
@@ -430,7 +430,7 @@ outer:;
 	presHostage = [CCSprite spriteWithFile:@"parachuteguy.png"];
 	[presHostage setPosition:ccp(-10000,-10000)];
 	presHostage.color=ccBLACK;
-	[self addChild:presHostage z:1];
+	[self addChild:presHostage z:pres.zOrder];
 	
 	CCSprite *patch2 = [CCSprite spriteWithFile:@"eyepatch.png"];
 	patch2.anchorPoint=ccp(0.5,0);
@@ -440,7 +440,7 @@ outer:;
 	// Desk
 	CCSprite *desk = [CCSprite spriteWithFile:@"desk.png"];
 	[desk setPosition:ccp(PREZX, FLOOR3Y-desk.contentSize.height/2)];
-	[self addChild:desk z:1];
+	[self addChild:desk z:pres.zOrder];
 	
 	[self makeBuilding:1 y:4 cc:ccc3(186,153,8) cg:ccp(570,-700)];
 	[self makeBuilding:1 y:3 cc:ccc3(186,153,8) cg:ccp(520,-690)];
@@ -498,39 +498,22 @@ outer:;
 	if ([AppDelegate get].multiplayer > 0) {
 		gameMins = 1;
 		[self schedule: @selector(doMins) interval: 60];
-    }
-    if ([AppDelegate get].gameType != SURVIVAL) {
 		myBeat = 0;
 		theirBeat = 0;
-		[self schedule: @selector(beat) interval: 10];
+		[self schedule: @selector(beat) interval: 1];
+        
 	}
 	self.position = ccp(-pres.position.x,pres.position.y);
 }
 
-
--(void)showEnemyMoney:(int)i {
-    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showEnemyMoney:i];
-}
-
--(void)showAgentCount:(int)i {
-    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showAgentCount:i];
-}
-
 -(void) beat {
-    if ([AppDelegate get].gameType == SANDBOX) {
-        if ([[AppDelegate get] myPerk:42])
-            [self showEnemyMoney:[AppDelegate get].money];
-        if ([[AppDelegate get] myPerk:43])
-            [self showAgentCount:[self getEnemyCount]];
+    myBeat++;
+    CCLOG(@"MyBeat:%i TheirBeat:%i",myBeat,theirBeat);
+    [[AppDelegate get].gkHelper sendAttack:HEARTBEAT];
+    if (myBeat - theirBeat > 30) {
+        [self onAttackReceived:HEARTBEAT pid:@"me"];
     }
-    else {
-        myBeat++;
-        CCLOG(@"MyBeat:%i TheirBeat:%i",myBeat,theirBeat);
-        [[AppDelegate get].gkHelper sendAttack:HEARTBEAT];
-        if (myBeat - theirBeat > 3) {
-            [self onAttackReceived:HEARTBEAT pid:@"me"];
-        }
-    }
+    
 }
 
 -(void) doMins {
@@ -559,26 +542,6 @@ outer:;
 		[self launchInverted];
 	}
 	gameMins++;
-}
-
--(int) getEnemyCount {
-    int eCount = 0;
-    for (Enemy *e in [AppDelegate get].enemies) {
-        if (e.currentState != DEAD && e.type != 100 && e.type != FROMVEHICLE) {
-            eCount++;
-        }
-    }
-
-    for (Vehicle *v in vehicles) {
-        if (v.currentState != DEAD) {
-            if (v.type == PLANE || v.type == ARMOR)
-                eCount += [v.passengers count];
-            /*else
-             eCount += v.passengerCount;*/
-        }
-    }
-    eCount -= [AppDelegate get].jammers;
-    return eCount;
 }
 
 -(void) doHeadshot:(CGPoint) p i:(int) i {
@@ -1172,8 +1135,12 @@ foundit:
                 else
                     [[AppDelegate get].gkHelper sendAttack:attack];
             }
-			else if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL)
-				[self launchSniperFound];
+			else if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL) {
+				if ([[AppDelegate get] perkEnabled:45])
+                    [self schedule: @selector(delaySniperAlert) interval: 3];
+                else
+                    [self launchSniperFound];
+            }
 			break;
 		case CODEINNOCENT: // Shot innocent
 			//if (![[AppDelegate get] perkEnabled:19]) {
@@ -1238,9 +1205,12 @@ foundit:
 
 -(void) delaySniperAlert {
     [self unschedule: @selector(delaySniperAlert)];
-    if ([AppDelegate get].kidnappers > 0) {
-        [[AppDelegate get].gkHelper sendAttack:SNIPERFOUND];
-    }
+    //if ([AppDelegate get].kidnappers > 0) {
+        if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL)
+            [self launchSniperFound];
+        else
+            [[AppDelegate get].gkHelper sendAttack:SNIPERFOUND];
+    //}
 }
 
 -(void) delayWin {
@@ -1820,6 +1790,7 @@ foundit:
 		[AppDelegate get].headshotStreak=0;
 		return gotHim;
 	}
+    return gotHim;
 }
 
 -(void)towTruck: (Vehicle*) v {
@@ -1842,9 +1813,11 @@ foundit:
 }
 
 -(void) checkProximity {
+    if ([AppDelegate get].kidnappers > 0)
+        return;
     int closest = 99999;
 	for (Enemy *e in [AppDelegate get].enemies) {
-        if (e.currentState != DEAD) {
+        if (e.currentState != DEAD && e.type != 100 && e.type != CITIZEN) {
             int sighted = GetApproxDistance(pres.position,e.position);
             if (sighted < closest)
                 closest = sighted;
@@ -2061,7 +2034,7 @@ foundit:
 -(void)showInfo:(int)i {
     Perk *p = [[AppDelegate get].perks objectAtIndex:i-1];
     CCLayer *popup = [[[PopupLayer alloc] initWithMessage:p.d t:p.n] autorelease];
-    [self addChild:popup z:10];
+    [self addChild:popup z:100];
 }
 
 -(void) setup {
@@ -2095,24 +2068,37 @@ foundit:
 	gMenu = [CCMenu menuWithItems:mButton,nil];
 	gMenu.position = ccp(-10000, -10000);
 	[self addChild:gMenu];
+    
+    // Proximity indicator
+    if ([[AppDelegate get] perkEnabled:48]) {
+        //Bonus Money
+        proximiyIndicator = [CCSprite spriteWithFile:@"star.png"];
+        proximiyIndicator.position = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width-30);
+        proximiyIndicator.color = ccWHITE;
+        [self addChild:proximiyIndicator];
+    }
 	
 
 	if ([AppDelegate get].gameType != SURVIVAL) {
         //Agent Count
         if ([[AppDelegate get] perkEnabled:43]) {
             fieldReport = [BonusSprite spriteWithFile:@"cinset.png"];
-            fieldReport.position = ccp(240,100);
-            fieldReport.scaleY=0.8;
-            [fieldReport updateLabel:@"jim"];//[NSString stringWithFormat: @"%5i",0]];
+            fieldReport.position = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width-10);
+            fieldReport.scaleX = 0.5;
+            fieldReport.scaleY=0.5;
+            fieldReport.val = 0;
+            [fieldReport updateLabel:@"0"];//[NSString stringWithFormat: @"%5i",0]];
             [self addChild:fieldReport z:100];
         }
         //Enemy Money
         if ([[AppDelegate get] perkEnabled:42]) {
             enemyMoney = [BonusSprite spriteWithFile:@"cinset.png"];
-            enemyMoney.position = ccp([[UIScreen mainScreen] bounds].size.height/2,200);
-            enemyMoney.scaleY=0.8;
-            [enemyMoney updateLabel:[NSString stringWithFormat: @"%5i",0]];
+            enemyMoney.position = ccp([[UIScreen mainScreen] bounds].size.height/2,10);
+            enemyMoney.scaleX=0.5;
+            enemyMoney.scaleY=0.5;
+            enemyMoney.val = 0;
             [self addChild:enemyMoney z:100];
+            [enemyMoney updateLabel:[NSString stringWithFormat: @"%i",0]];
         }
 		menuTray = [CCSprite spriteWithFile: @"menutray3.png"];
 		menuTray.position = ccp(menuTray.contentSize.width/2, 160);
@@ -2276,14 +2262,16 @@ foundit:
 }
 
 -(void)showEnemyMoney:(int)i {
-    if (enemyMoney != nil) {
-        [enemyMoney updateLabel:[NSString stringWithFormat: @"%5i", (int) i * 10]];
+    if (enemyMoney != nil && enemyMoney.val != i) {
+        enemyMoney.val = i;
+        [enemyMoney updateLabel:[NSString stringWithFormat: @"Agents:%i", (int) i * 10]];
     }
 }
 
 -(void)showAgentCount:(int)i {
-    if (fieldReport != nil) {
-        [fieldReport updateLabel:[NSString stringWithFormat: @"%5i", (int) i]];
+    if (fieldReport != nil && fieldReport.val != i) {
+        fieldReport.val = i;
+        [fieldReport updateLabel:[NSString stringWithFormat: @"$%i", (int) i]];
     }
 }
 
@@ -2299,7 +2287,16 @@ foundit:
 
 -(void) showProximity:(int)i {
     //TODO: Set up proxmity indicator and color
-    CCLOG(@"proximity:%i",i);
+    //CCLOG(@"proximity:%i",i);
+    if (i<200)
+        proximiyIndicator.color = ccRED;
+    else if (i<400)
+        proximiyIndicator.color = ccORANGE;
+    else if (i<800)
+        proximiyIndicator.color = ccYELLOW;
+    else
+        proximiyIndicator.color = ccWHITE;
+
 }
 
 -(void) zoomButtonPressed: (id)sender {
@@ -2518,11 +2515,6 @@ foundit:
 }
 
 -(void) moneyProgress {
-	/*if ([AppDelegate get].money >= BMONEY)
-		bullet.color=ccc3(0,153,0);
-	else
-		bullet.color=ccGRAY;*/
-
 	if ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode == 1) {
 		[moneyLabel setString:@"99999"];
 	}
@@ -2546,6 +2538,13 @@ foundit:
 		else 
 			[moneyLabel setString:[NSString stringWithFormat: @"%5i", (int) [AppDelegate get].money * 10]];
 	}
+    if ([AppDelegate get].gameType == SANDBOX) {
+        if ([[AppDelegate get] myPerk:42])
+            [enemyMoney updateLabel:moneyLabel.string];
+        if ([[AppDelegate get] myPerk:43]) {
+            [self showAgentCount:[AppDelegate get].enemies.count-[AppDelegate get].jammers-1];
+        }
+    }
 }
 
 -(void) step: (ccTime) delta
@@ -2679,6 +2678,7 @@ foundit:
 
 -(void) fireButtonPressed: (id)sender {
 	CCLOG(@"Fire Button Pressed");
+
 	if ([AppDelegate get].reload == 0 && [AppDelegate get].money >= BMONEY) {
 		if ([AppDelegate get].gameType != SURVIVAL) {
             if ([[AppDelegate get] perkEnabled:25]) // Supply Lines

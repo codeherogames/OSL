@@ -23,7 +23,7 @@
 	CCSprite *shooting,*hat,*parachute,*zipping,*elite,*armor,*head;
 	NSString *owner;
     int dodgeLevel;
-    BOOL wasInside,fullAccessSet;
+    BOOL fullAccessSet;
 }
 
 @property (readwrite, nonatomic) int currentState,lastState,type,customTag,kidnapper,hits;
@@ -36,7 +36,7 @@
 @property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) CCSprite *hat;
 @property (readwrite, nonatomic) int dodgeLevel;
-@property (nonatomic, assign) BOOL wasInside,fullAccessSet;
+@property (nonatomic, assign) BOOL fullAccessSet;
 
 - (id) initWithFile: (NSString*) s l:(CCNode*)l h:(NSString*)h;
 - (void) startMoving: (CGPoint) startPoint;

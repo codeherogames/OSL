@@ -13,7 +13,7 @@
 @implementation Enemy
 @synthesize currentState,lastState,elapsed,duration,nextPosition,speedVector,type,customTag,kidnapper,hat,head;
 @synthesize c,layerPointer,shooting,parachute,zipping,zipPost,owner,hits;
-@synthesize actionClimb,animateClimb,actionFight1,animateFight1,actionWalk,animateWalk,elite,armor,dodgeLevel,wasInside,fullAccessSet;
+@synthesize actionClimb,animateClimb,actionFight1,animateFight1,actionWalk,animateWalk,elite,armor,dodgeLevel,fullAccessSet;
 //@synthesize emitter;
 - (id) initWithFile: (NSString*) s l:(CCNode*)l h:(NSString*)h
 {
@@ -38,7 +38,6 @@
 		self.shooting = [[CCSprite spriteWithFile:@"shooting2.png"] retain];
 		self.zipping = [[CCSprite spriteWithFile:@"climb2.png"] retain];
 		self.elite = nil;
-		self.wasInside = NO;
         self.fullAccessSet = NO;
         
 		if ([[AppDelegate get] perkEnabled:5]) {
@@ -101,13 +100,13 @@
 			hat = [CCSprite spriteWithFile:h];
 		}
 		
-		if ([[AppDelegate get] perkEnabled:6] && h == @"hat1.png") { // Predator
+		if ([[AppDelegate get] perkEnabled:6] && [h isEqualToString:@"hat1.png"]) { // Predator
 			self.opacity=20;
 			hat.color=ccBLACK;
 			head.opacity=self.opacity;
 		}
 
-		if (h == @"hat1.png")
+		if ([h isEqualToString:@"hat1.png"])
 			hat.anchorPoint=ccp(0.5,0.5);
 		else 
 			hat.anchorPoint=ccp(0.5,0.0);
@@ -156,18 +155,17 @@
 			[self unschedule: @selector(move:)];
 		}
 		else {
-			lastPosition = c.point;
             
 			// All Access
             if ([[AppDelegate get] perkEnabled:30] && self.type == CITIZEN && !fullAccessSet) {
-                if ([c.description isEqualToString:@"Cbuilding1F2Elevator"] || [c.description isEqualToString:@"Cbuilding1F4Elevator"]) {
+                if ([c.name isEqualToString:@"Cbuilding1F2Elevator"] || [c.name isEqualToString:@"Cbuilding1F4Elevator"]) {
                     fullAccessSet = YES;
 
                     // 3rd Floor
-                    CustomPoint *Cbuilding1F3Elevator = [[CustomPoint alloc] initWithData:WALKRATE p:ccp(ELEVATORX,FLOOR4Y) s:WALK z:ZIN n:@"Cbuilding1F3Elevator"];	
+                    CustomPoint *Cbuilding1F3Elevator = [[CustomPoint alloc] initWithData:WALKRATE p:ccp(ELEVATORX,FLOOR3Y) s:WALK z:ZIN n:@"Cbuilding1F3Elevator"];
                     
                     CustomPoint *nextFloor;
-                    if ([c.description isEqualToString:@"Cbuilding1F4Elevator"])
+                    if ([c.name isEqualToString:@"Cbuilding1F4Elevator"])
                         nextFloor = [c getLast];
                     else
                         nextFloor = [c getFirst];
@@ -183,12 +181,9 @@
                 }
             }
             // Sleeper Cell Perk
-            if ([[AppDelegate get] perkEnabled:34] && self.type == CITIZEN && lastPosition.y > SIDEWALK && [c.description isEqualToString:@"building1F1Door"]) {
-                wasInside = YES;
-            }
-            // Sleeper Cell Perk
-            if ([[AppDelegate get] perkEnabled:34] && self.type == CITIZEN && wasInside) {
+            if ([[AppDelegate get] perkEnabled:34] && self.type == CITIZEN && [c.name isEqualToString:@"Cbuilding1F1Door"] && lastPosition.y > c.point.y) {
                 self.type = AGENT;
+                [self removeChild:hat cleanup:YES];
                 hat = [CCSprite spriteWithFile:@"hat1.png"];
                 
                 if ([[AppDelegate get] perkEnabled:6]) { // Predator
@@ -199,10 +194,12 @@
                 
                 hat.anchorPoint=ccp(0.5,0.5);
                 [hat setPosition:ccp(self.contentSize.width/2,self.contentSize.height-hat.contentSize.height/2)];
-                
+                [self addChild:hat z:self.zOrder+1];
+                lastPosition = c.point;
                 c = [[[AppDelegate get].walkStartPoint objectAtIndex:0] getRandom];
             }
             else {
+                lastPosition = c.point;
                 c = [c getRandom];  
             }
             

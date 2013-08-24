@@ -705,16 +705,13 @@ static GameKitHelper *instanceOfGameKitHelper;
 }
 
 -(void) sendAttack:(int) i {
-    int eCount=0;
-    if ([[AppDelegate get] perkEnabled:43]) {
-        BackgroundLayer *bgLayer = (BackgroundLayer*)[AppDelegate get].bgLayer;
-        eCount = [BackgroundLayer getEnemyCount];
-    }
+    if ([AppDelegate get].multiplayer==0)
+        return;
     NSError *error = nil;
 	DataPacket packet;
 	packet.type = 1;
 	packet.one = i;
-	packet.two = eCount;
+	packet.two = [AppDelegate get].enemies.count-[AppDelegate get].jammers-1;
 	packet.three = [AppDelegate get].money;
     //NSData *packet = [NSData dataWithBytes:&packet length:sizeof(packet)];
     [self sendDataToAllPlayers: &packet length:sizeof(packet)];

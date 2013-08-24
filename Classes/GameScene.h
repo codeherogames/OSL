@@ -106,10 +106,7 @@
 -(void)launchMachinegun;
 -(void)launchSecurity;
 
--(void)showEnemyMoney:(int)i;
--(void)showAgentCount:(int)i;
 -(void) showBonus:(NSString*)bonus;
--(int)getEnemyCount;
 
 @end
 
@@ -126,7 +123,7 @@
 	CCMenu *launchMenu;
 	float elapsed, distance,recoilRate;
 	CGPoint speedVector;
-	CCSprite *bullet,*menuTray,*zoomedInButton;
+	CCSprite *bullet,*menuTray,*zoomedInButton,*proximiyIndicator;
 	CCLabelTTF *info1,*info2,*info3,*info4,*levelLabel;
 	CCLabelBMFont *moneyLabel;
 	NSArray *taunts;

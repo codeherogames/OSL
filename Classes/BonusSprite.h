@@ -12,6 +12,9 @@
 @interface BonusSprite : CCSprite {
     CCLabelBMFont *bonusLabel;
 }
+
+@property (nonatomic, assign) int val;
+
 -(void) updateLabel:(NSString*) l;
 -(void) hide;
 @end
