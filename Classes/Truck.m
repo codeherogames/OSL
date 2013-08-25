@@ -147,6 +147,7 @@
 	Enemy *enemy1 = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:@"hat1.png"];
 	enemy1.color = ccRED;
 	enemy1.type = FROMVEHICLE;
+    enemy1.currentState = DRIVE;
 	[enemy1 setPosition:ccp(self.contentSize.width-enemy1.contentSize.width-10,self.contentSize.height/2+enemy1.contentSize.height/2.5)];
 	[self reorderChild:enemy1 z:-2];
 	[passengers addObject:enemy1];
@@ -156,6 +157,7 @@
         Enemy *enemy2 = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:@"hat1.png"];
         enemy2.color = ccRED;
         enemy2.type = FROMVEHICLE;
+        enemy2.currentState = DRIVE;
         [enemy2 setPosition:ccp(self.contentSize.width-(enemy2.contentSize.width-10*2),self.contentSize.height/2+enemy2.contentSize.height/2.5)];
         [self reorderChild:enemy2 z:-2];
         [passengers addObject:enemy2];
@@ -168,6 +170,7 @@
 	Enemy *enemy3 = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:@"hat1.png"];
 	enemy3.color = ccRED;
 	enemy3.type = FROMVEHICLE;
+    enemy3.currentState = DRIVE;
 	[enemy3 setPosition:ccp(self.contentSize.width/2-10,self.contentSize.height/2+enemy3.contentSize.height/3-6)];
 	[self reorderChild:enemy3 z:-2];
 	enemy3.anchorPoint=ccp(0.5,0.5);

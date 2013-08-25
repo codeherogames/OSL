@@ -19,7 +19,7 @@ enum {
 
 - (id) initWithFile: (NSString*) iX nX:(NSString*) nX dX:(NSString*)dX xX:(int)xX cX:(int)cX sX:(int)sX mX:(int)mX
 {
-	CCLOG(@"--------------Perk init:%@",iX);
+	CCLOG(@"--------------Perk init:%@ : %@ : %@",iX,nX,dX);
 	self =  [super initWithFile:iX];
 	if (self != nil) {
 		self.img = iX;
@@ -57,7 +57,7 @@ enum {
 - (void)onEnter
 {
 	CCLOG(@"onEnter adding Perk myButtontouchdispatcher");
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
 	CGSize sz = [self contentSize];
 	rect = CGRectMake(-sz.width / 2, -sz.height / 2, sz.width, sz.height);
 	[super onEnter];

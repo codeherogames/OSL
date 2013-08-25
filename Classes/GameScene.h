@@ -33,7 +33,7 @@
 	float lastAngleX,lastAngleY;
 	int invertKills,dirtKills,atPresident,gameMins;
 	CGPoint sniperLocation;
-	CCSprite *sniperWindow,*billboard,*pres,*presHostage;
+	CCSprite *sniperWindow,*billboard,*pres,*presHostage,*desk;
 	int jammerID,alertID,countDown,officePartyCount,mutinyCount,security1,security2,machinegunCount;
 	bool m_paused,machinegunAvailable,bombAvailable,securityAvailable;
 	NSMutableArray *vehicles;
@@ -169,7 +169,9 @@
 float findAngle(CGPoint pt1, CGPoint pt2);
 @end
 
-@interface MidgroundLayer : CCLayer {}
+@interface MidgroundLayer : CCLayer {
+    bool gettingDarker;
+}
 - (void) makeBuilding:(int)x y:(int)y cc:(ccColor3B)cc cg:(CGPoint)cg;
 - (void) moveBGPostion: (float) x y: (float) y;
 - (void) setZoom:(float) z;

@@ -126,6 +126,7 @@
 	Enemy *enemy1 = [[Enemy alloc] initWithFile: @"headOnly.png" l:self h:@"hat1.png"];
 	enemy1.color = ccRED;
 	enemy1.type = FROMHELICOPTER;
+    enemy1.currentState = DRIVE;
 	[enemy1 setPosition:ccp(self.contentSize.width/2,self.contentSize.height/3)];
 	[self reorderChild:enemy1 z:-2];
     [passengers addObject:enemy1];

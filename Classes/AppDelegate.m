@@ -1250,7 +1250,7 @@ BOOL isGameCenterAPIAvailable()
 	NSData *codedData = [[[NSData alloc] initWithContentsOfFile:myPath] autorelease];
 	[myPath release];
     if (codedData == nil) {
-		CCLOG(@"no data");  //Handles this better
+		CCLOG(@"no data");  //Handle this better
 		return nil;
 	}
 	else {

@@ -438,7 +438,7 @@ outer:;
 	[presHostage addChild:patch2 z:presHostage.zOrder+1];
 	
 	// Desk
-	CCSprite *desk = [CCSprite spriteWithFile:@"desk.png"];
+	desk = [CCSprite spriteWithFile:@"desk.png"];
 	[desk setPosition:ccp(PREZX, FLOOR3Y-desk.contentSize.height/2)];
 	[self addChild:desk z:pres.zOrder];
 	
@@ -470,12 +470,9 @@ outer:;
 	
 	//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
 	countDown = -1;
-	if ([AppDelegate get].gameType == SURVIVAL) {
-		[self schedule: @selector(checkHostage) interval: 0.1];
-	}
-	else {
-		[self schedule: @selector(checkHostage) interval: 0.1];
-	}
+
+    [self schedule: @selector(checkHostage) interval: 0.1];
+
 	if ([[AppDelegate get] perkEnabled:8]) {
 		[self launchGrunt];
 		if ([AppDelegate get].multiplayer > 0 && [[AppDelegate get] myPerk:16]) {
@@ -504,6 +501,7 @@ outer:;
         
 	}
 	self.position = ccp(-pres.position.x,pres.position.y);
+    
 }
 
 -(void) beat {
@@ -1267,6 +1265,7 @@ foundit:
         int adjustX = floor(sniperIndex / 4) * -126;
         int adjustY = (sniperIndex % 4) * 96;
         float newX = -318 + adjustX;
+        newX+=(([[UIScreen mainScreen] bounds].size.height-480)/2);
         float newY = 222 - adjustY;
 
         [AppDelegate get].scale = [AppDelegate get].minZoom;
@@ -1729,10 +1728,7 @@ foundit:
             shotsFired = 0;
         }
     }
-	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CCLOG(@"shot position: %f,%f",[[UIScreen mainScreen] bounds].size.height/2-location.x,160-location.y);
-    CCLOG(@"shot position2: %f,%f",location.x,location.y);
-    CCLOG(@"self position: %f,%f",self.position.x,self.position.y);
+    
 	int gotHim = -1;
 	int headshot = 0;
 	//CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);
@@ -1756,17 +1752,31 @@ foundit:
                 gotHim = i;
                 if (dirtKills > 0) {
                     dirtKills--;
-                    if (dirtKills == 0 && ![[AppDelegate get] perkEnabled:27]) // Permanent Scope
+                    if (dirtKills == 0/* && ![[AppDelegate get] perkEnabled:27]*/) // Permanent Scope
                         [(ScopeLayer*) [self.parent getChildByTag:kScopeLayer] blurryOff];
                     
                 }
                 if (invertKills > 0)
                     invertKills--;
                 
-                if ([[AppDelegate get] myPerk:33]) {
-                    int distance = GetApproxDistance(enemy.position, pres.position);
-                    if (distance > 500) {
-                        int prize = int(distance *= 0.004f);
+                if ([[AppDelegate get] myPerk:33] && enemy.type != CITIZEN) {
+                    int distance = GetApproxDistance([enemy convertToWorldSpace:CGPointZero], [desk convertToWorldSpace:CGPointZero]) / [AppDelegate get].scale;
+                    CCLOG(@"Distance:%i",distance);
+                    
+                    if (distance > 450) {
+                        int prize = 0;
+                        if (distance < 700)
+                            prize = 1;
+                        else if (distance < 900)
+                            prize = 2;
+                        else if (distance < 1200)
+                            prize = 3;
+                        else if (distance < 1480)
+                            prize = 4;
+                        else if (distance < 1580)
+                            prize = 6;
+                        else
+                            prize = 10;
                         [AppDelegate get].money += prize;
                         [self showBonus:[NSString stringWithFormat:@"%i",prize*10]];
                     }
@@ -1816,13 +1826,15 @@ foundit:
     if ([AppDelegate get].kidnappers > 0)
         return;
     int closest = 99999;
-	for (Enemy *e in [AppDelegate get].enemies) {
-        if (e.currentState != DEAD && e.type != 100 && e.type != CITIZEN) {
-            int sighted = GetApproxDistance(pres.position,e.position);
-            if (sighted < closest)
-                closest = sighted;
+	for (Enemy *enemy in [AppDelegate get].enemies) {
+        if (enemy.currentState != DEAD && enemy.type != 100 && enemy.type != CITIZEN) {
+            int distance = GetApproxDistance([enemy convertToWorldSpace:CGPointZero], [desk convertToWorldSpace:CGPointZero]) / [AppDelegate get].scale;
+            CCLOG(@"Distance Vehicle:%i",distance);
+
+            if (distance < closest)
+                closest = distance;
         }
-	}	
+	}
     [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showProximity:closest];
 }
 
@@ -1839,9 +1851,9 @@ foundit:
     }
 	else {
 		if (i < 6)
-			c.opacity += 30;
+			c.opacity += 40;
 		else {
-			c.opacity -= 30;
+			c.opacity -= 40;
 		}
 	}
 	//CCLOG(@"daytime:%i,opacity:%i",i,c.opacity);
@@ -2072,9 +2084,11 @@ foundit:
     // Proximity indicator
     if ([[AppDelegate get] perkEnabled:48]) {
         //Bonus Money
-        proximiyIndicator = [CCSprite spriteWithFile:@"star.png"];
-        proximiyIndicator.position = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width-30);
-        proximiyIndicator.color = ccWHITE;
+        proximiyIndicator = [CCSprite spriteWithFile:@"proximityCircle.png"];
+        proximiyIndicator.position = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width/2);
+        proximiyIndicator.scale = 1.16;
+        proximiyIndicator.color = ccBLACK;
+        proximiyIndicator.opacity = 0;
         [self addChild:proximiyIndicator];
     }
 	
@@ -2286,16 +2300,20 @@ foundit:
 }
 
 -(void) showProximity:(int)i {
-    //TODO: Set up proxmity indicator and color
-    //CCLOG(@"proximity:%i",i);
-    if (i<200)
+    if (i<700)
+        proximiyIndicator.opacity = 255;
+    if (i<100)
         proximiyIndicator.color = ccRED;
-    else if (i<400)
+    else if (i<300)
         proximiyIndicator.color = ccORANGE;
-    else if (i<800)
+    else if (i<500)
         proximiyIndicator.color = ccYELLOW;
-    else
-        proximiyIndicator.color = ccWHITE;
+    else if (i<700)
+        proximiyIndicator.color = ccGREEN;
+    else {
+        proximiyIndicator.color = ccBLACK;
+        proximiyIndicator.opacity = 0;
+    }
 
 }
 
@@ -2857,16 +2875,6 @@ foundit:
 		//scope.opacity=255;
         [scope setPosition:ccp(s.width/2, s.height/2)];
         [self addChild:scope z:5];
-        
-        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && (s.width == 568)) {
-            CCSprite *extraPadding = [CCSprite spriteWithFile:@"b1px.png"];
-            extraPadding.scaleX=44;
-            extraPadding.scaleY=320;
-            extraPadding.anchorPoint=ccp(1,0.5);
-            [extraPadding setPosition:ccp(480+88, s.height/2)];
-            [self addChild:extraPadding z:5];
-            extraPadding.opacity=212;
-        }
 		
 		machinegun = [CCSprite spriteWithFile:@"machinegun.png"];
 		[machinegun setPosition:ccp(s.width/2, s.height/2-machinegun.contentSize.height/2)];
@@ -3009,10 +3017,44 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		[self makeBuilding:3 y:6 cc:ccc3(198,142,137) cg:ccp(1200, -920)];
 		//Tower2
 		[self makeBuilding:1 y:6 cc:ccc3(20,160,239) cg:ccp(750, -710)];
+        if ([[AppDelegate get] perkEnabled:27] && [AppDelegate get].gameType != SURVIVAL) {
+            [self schedule: @selector(nightTime) interval: 2];
+        }
 	}
 	return self;
 }
 
+-(void) nightTime {
+    CCSprite *c = (CCSprite*) [self getChildByTag:NIGHTSPRITE];
+    if (c == nil) {
+        gettingDarker = YES;
+        c = [CCSprite spriteWithFile:@"b1px.png"];
+        //c.color=ccc3(43,69,127);
+        [c setScaleY:50000];
+        [c setScaleX:50000];
+        [c setPosition:ccp([[UIScreen mainScreen] bounds].size.height/2, 160)];
+        c.opacity = 0;
+        [self addChild:c z:500 tag:NIGHTSPRITE];
+    }
+	if (gettingDarker) {
+        if (c.opacity <= 220) {
+            c.opacity += 10;
+        }
+        else {
+            c.opacity -=10;
+            gettingDarker=NO;
+        }
+    }
+    else if (!gettingDarker) {
+        if (c.opacity > 10) {
+            c.opacity -= 10;
+        }
+        else {
+            c.opacity += 10;
+            gettingDarker=YES;
+        }
+    }
+}
 - (void) moveBGPostion:(float) x y:(float) y {
 	self.position = ccp(x,y);
 }
@@ -3079,12 +3121,7 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		[self makeBuilding:1 y:6 cc:ccc3(64,103,185) cg:ccp(-520, -800)];
 		[self makeBuilding:3 y:4 cc:ccc3(185,185,185) cg:ccp(-820, -800)];
 		//Left
-        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
-            [self makeBuilding:2 y:16 cc:ccc3(210,180,137) cg:ccp(MINX-4-IPHONE5OFFSET, -800)];
-        }
-        else {
-            [self makeBuilding:2 y:16 cc:ccc3(210,180,137) cg:ccp(MINX, -800)];
-        }
+        [self makeBuilding:2 y:16 cc:ccc3(210,180,137) cg:ccp(MINX-4-(([[UIScreen mainScreen] bounds].size.height-480)/2), -800)];
 		//Right
 		[self makeBuilding:3 y:17 cc:ccc3(255,223,206) cg:ccp(MAXX, -800)];
 		

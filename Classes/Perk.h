@@ -13,7 +13,7 @@
 /*
 x 25: Supply Lines: 1/2 price ammo
 x 26: Double Sabotage: 6 shots to disable sabotage
-x 27: Permanent Ink: Permanent Scope Smudge
+x 27: End of Days: Opponent screen cycles day and night
 x 28: Bounty Bonus: Shooting driver gives 800
 x 29: Greed Hurts: 3peat penalty
 x 30: All Access: Citizens allowed on 3rd floor
