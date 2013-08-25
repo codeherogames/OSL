@@ -128,6 +128,22 @@ enum {
 	}
 }
 
+-(void) flash {
+    flashCount = 3;
+    [self schedule: @selector(doFlash) interval: 0.3];
+}
+
+-(void)doFlash {
+
+    if (flashCount == 0)
+        self.opacity = 255;
+    else if (flashCount % 2 == 1)
+        self.opacity = 0;
+    else
+        self.opacity = 255;
+    flashCount--;
+}
+
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	

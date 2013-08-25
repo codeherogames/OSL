@@ -105,9 +105,7 @@
 -(void)launchArmageddon;
 -(void)launchMachinegun;
 -(void)launchSecurity;
-
--(void) showBonus:(NSString*)bonus;
-
+-(void) showBonus:(NSString*)bonus withPerk:(int)i;
 @end
 
 @interface ForegroundLayer : CCLayer {}
@@ -150,6 +148,7 @@
 -(void)showProximity:(int) i;
 -(void)showInfo:(int)i;
 -(void) showBonus:(NSString*)bonus;
+-(void) showBonus:(NSString*)bonus withPerk:(int)i;
 @end
 
 @interface ScopeLayer : CCLayer {

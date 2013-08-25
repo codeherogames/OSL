@@ -542,6 +542,10 @@ outer:;
 	gameMins++;
 }
 
+-(void) showBonus:(NSString*)bonus withPerk:(int)i {
+    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:bonus withPerk:i];
+}
+
 -(void) doHeadshot:(CGPoint) p i:(int) i {
 	if ([AppDelegate get].headshotStreak > 2) {
 		[AppDelegate get].money+=5*[AppDelegate get].headshotStreak;
@@ -687,6 +691,7 @@ foundit:
 	CCLOG(@"forcedAction");
     //1.7
 	[AppDelegate get].money += 50; //30;
+    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"500" withPerk:24];
 }
 
 -(void) doCountdown {
@@ -836,27 +841,19 @@ foundit:
 			[AppDelegate get].money+=10;
             //[self sendMyIntel:@"100 Bonus"];
 			//[self sendMyIntel:@"Overdraft"];
-            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
+            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100" withPerk:31];
 			break;
         case CODEAMMODEPOT: // ammo depot
 			[AppDelegate get].money+=10;
-            /*[self sendMyIntel:@"100 Bonus"];
-			[self sendMyIntel:@"Ammo Depot"];*/
-            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
+            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100" withPerk:41];
 			break;
         case CODESCRAPMETAL: // CODESCRAPMETAL
             if ([[AppDelegate get] myPerk:38]) {
-                [AppDelegate get].money+=80;
-                //[self sendMyIntel:@"800 Bonus"];
-                //[self sendMyIntel:@"Scrap Metal"];
-                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"800"];
+                [AppDelegate get].money+=100;
+                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"1000" withPerk:38];
             }
 			break;
     }
-}
-
--(void) showBonus:(NSString*)bonus {
-    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:bonus];
 }
 
 -(void) menuAttack:(int)attack {
@@ -1085,7 +1082,7 @@ foundit:
         case CODEPERK1: // Armageddon
 			if ([AppDelegate get].money-T5 >-1 && bombAvailable) {
 				[self sendMyIntel:@"Armageddon Ready"];
-				if ([AppDelegate get].multiplayer > 0) {
+				if ([AppDelegate get].multiplayer > 0 || ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode != 1)) {
 					[AppDelegate get].money-=T5;
 					bombAvailable = FALSE;
 					[[AppDelegate get].gkHelper sendAttack:CODEPERK1TAKEN];
@@ -1167,10 +1164,8 @@ foundit:
                     [[AppDelegate get].gkHelper sendAttack:attack];
             }
             if ([[AppDelegate get] myPerk:38] && [AppDelegate get].gameType != SURVIVAL) {
-                    [AppDelegate get].money+=80;
-                    //[self sendMyIntel:@"400 Bonus"];
-                    //[self sendMyIntel:@"Scrap Metal"];
-                    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"800"];
+                    [AppDelegate get].money+=100;
+                    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"1000" withPerk:38];
             }
             break;
     }
@@ -1183,7 +1178,7 @@ foundit:
             else 
                 lastAttackCount=0;
             lastAttack = attack;
-            if (lastAttackCount>2) {
+            if (lastAttackCount==2) {
                 lastAttackCount = 0;
                 //[self sendMyIntel:@"3Peat Penalty"];
                 [self sendMyIntel:@"Plane"];
@@ -1194,9 +1189,9 @@ foundit:
     // Overdraft
     if ([AppDelegate get].money<6.5 && [[AppDelegate get] perkEnabled:31]) {
         [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
-        if ([[AppDelegate get] myPerk:38] && [AppDelegate get].gameType == SANDBOX) {
+        if ([[AppDelegate get] myPerk:31] && [AppDelegate get].gameType == SANDBOX) {
             [AppDelegate get].money+=10;
-            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
+            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100" withPerk:31];
         }
     }
 }
@@ -1439,8 +1434,12 @@ foundit:
 	if ([AppDelegate get].multiplayer > 0 || ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode != 1)) {
 		[AppDelegate get].money = 0;
 		[[AppDelegate get].gkHelper sendAttack:CODEPERK1];
-        [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
-
+        if ([[AppDelegate get] perkEnabled:31]) {
+            [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
+            if ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode != 1) {
+                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100" withPerk:31];
+            }
+        }
 	}
 	[self launchArmageddon];
 }
@@ -1722,7 +1721,7 @@ foundit:
                 [[AppDelegate get].gkHelper sendAttack:CODEAMMODEPOT];
             }
             else if ([AppDelegate get].gameType == SANDBOX) {
-                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100"];
+                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"100" withPerk:41];
                 [AppDelegate get].money +=10;
             }
             shotsFired = 0;
@@ -1778,7 +1777,7 @@ foundit:
                         else
                             prize = 10;
                         [AppDelegate get].money += prize;
-                        [self showBonus:[NSString stringWithFormat:@"%i",prize*10]];
+                        [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:[NSString stringWithFormat:@"%i",prize*10] withPerk:33];
                     }
                 }
                 break;
@@ -2053,13 +2052,6 @@ foundit:
     CGSize winSize = [[UIScreen mainScreen] bounds].size;
 	taunts = [[NSArray alloc] initWithObjects:@"You will lose",@"Nice try",@"lol", @"Too easy",@"This is fun!",@"I'm so good",@"Not even trying",@"Going down",@"Still tryin 2 win?",@"I'll be gentle",@"Embarrassing",@"Do I annoy you?",nil];
 	tauntIndex = 0;
-	
-    //Bonus Money
-    bonusSpriteLabel = [BonusSprite spriteWithFile:@"cinset.png"];
-    bonusSpriteLabel.position = ccp(110,70);
-    bonusSpriteLabel.scaleY=0.8;
-    [self addChild:bonusSpriteLabel];
-    [bonusSpriteLabel hide];
     
 	levelLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat: 
 											  @"Day %2i", 0] fontName:[AppDelegate get].clearFont fontSize:14];
@@ -2118,6 +2110,14 @@ foundit:
 		menuTray.position = ccp(menuTray.contentSize.width/2, 160);
 		[self addChild:menuTray z:11];
 		
+        //Bonus Money
+        bonusSpriteLabel = [BonusSprite spriteWithFile:@"cinset.png"];
+        bonusSpriteLabel.position = ccp(menuTray.position.x+menuTray.contentSize.width,64);
+        bonusSpriteLabel.scaleY=0.6;
+        bonusSpriteLabel.scaleX=0.6;
+        [self addChild:bonusSpriteLabel];
+        [bonusSpriteLabel hide];
+        
 		if ([AppDelegate get].playerLevel != 0 || [AppDelegate get].gameType == SANDBOX)
 			[self showPerks];
 		[self addChild:[AppDelegate get].glassSlider z:10];
@@ -2267,6 +2267,12 @@ foundit:
     [bonusSpriteLabel updateLabel:bonus];
     [self unschedule: @selector(hideBonus)];
     [self schedule: @selector(hideBonus) interval: 2];
+}
+
+-(void) showBonus:(NSString*)bonus withPerk:(int)i {
+    Perk *perk = [[AppDelegate get].perks objectAtIndex:i-1];
+    [perk flash];
+    [self showBonus:bonus];
 }
 
 -(void) hideBonus {

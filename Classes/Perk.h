@@ -38,7 +38,7 @@ x 48: Proximity Indicator: Indicates agent proximity to Smitty
 */
 @interface Perk : CCSprite <NSCoding,CCTargetedTouchDelegate> {
 	NSString *img,*n,*d;
-	int x,c,s,m;
+	int x,c,s,m,flashCount;
 	CGRect rect;
 	//CCSprite *highlight;
 }
@@ -48,5 +48,6 @@ x 48: Proximity Indicator: Indicates agent proximity to Smitty
 
 -(void) reset;
 -(void) showHighlight;
+-(void) flash;
 - (id) initWithFile: (NSString*) iX nX:(NSString*) nX dX:(NSString*)dX xX:(int)xX cX:(int)cX sX:(int)sX mX:(int)mX;
 @end

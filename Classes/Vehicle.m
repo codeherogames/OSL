@@ -85,22 +85,20 @@
                     passengerCount++;
             }
             if (passengerCount == 0) {
-                if ([[AppDelegate get] perkEnabled:40]) {
+                if ([[AppDelegate get] perkEnabled:40]) { //Trifecta
                     [AppDelegate get].money += 200;
-                    [[AppDelegate get].bgLayer showBonus:@"2000"];
+                    [[AppDelegate get].bgLayer showBonus:@"2000" withPerk:40];
                 }
                 else {
                     [AppDelegate get].money += 300;
-                    [[AppDelegate get].bgLayer showBonus:@"3000"];
+                    [[AppDelegate get].bgLayer showBonus:@"3000" withPerk:40];
                 }
             }
             
         }
-        if ([[AppDelegate get] myPerk:28]) {
+        if ([[AppDelegate get] myPerk:28]) { //Bounty
             [AppDelegate get].money += 80;
-            //[[AppDelegate get].bgLayer sendMyIntel:@"800 Bonus"];
-            //[[AppDelegate get].bgLayer sendMyIntel:@"Bounty Bonus"];
-            [[AppDelegate get].bgLayer showBonus:@"800"];
+            [[AppDelegate get].bgLayer showBonus:@"800" withPerk:28];
         }
     }
 }
