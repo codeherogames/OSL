@@ -849,8 +849,8 @@ foundit:
 			break;
         case CODESCRAPMETAL: // CODESCRAPMETAL
             if ([[AppDelegate get] myPerk:38]) {
-                [AppDelegate get].money+=100;
-                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"1000" withPerk:38];
+                [AppDelegate get].money+=40;
+                [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"400" withPerk:38];
             }
 			break;
     }
@@ -1164,8 +1164,8 @@ foundit:
                     [[AppDelegate get].gkHelper sendAttack:attack];
             }
             if ([[AppDelegate get] myPerk:38] && [AppDelegate get].gameType != SURVIVAL) {
-                    [AppDelegate get].money+=100;
-                    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"1000" withPerk:38];
+                    [AppDelegate get].money+=40;
+                    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"400" withPerk:38];
             }
             break;
     }

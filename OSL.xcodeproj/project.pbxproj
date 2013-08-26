@@ -5206,6 +5206,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: James Dailey (JTZQJ9SM9C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Dailey (JTZQJ9SM9C)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5233,6 +5235,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = OSL;
+				PROVISIONING_PROFILE = "4183D0E8-A4C8-42E2-A6FE-162A49263807";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4183D0E8-A4C8-42E2-A6FE-162A49263807";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -5241,6 +5245,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: James Dailey (JTZQJ9SM9C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Dailey (JTZQJ9SM9C)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5266,6 +5272,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = OSL;
+				PROVISIONING_PROFILE = "4183D0E8-A4C8-42E2-A6FE-162A49263807";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4183D0E8-A4C8-42E2-A6FE-162A49263807";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
@@ -5298,7 +5306,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: James Dailey";
+				CODE_SIGN_IDENTITY = "iPhone Developer: James Dailey (JTZQJ9SM9C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Dailey (JTZQJ9SM9C)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5324,7 +5333,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = OSL;
-				PROVISIONING_PROFILE = "4A835F99-8253-4BDE-AE84-CE3B68BEDFA6";
+				PROVISIONING_PROFILE = "4183D0E8-A4C8-42E2-A6FE-162A49263807";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4183D0E8-A4C8-42E2-A6FE-162A49263807";
 				VALIDATE_PRODUCT = YES;
 				WARNING_CFLAGS = "-Wall";
 			};

@@ -564,6 +564,7 @@
     // Add for Page
     for (int i=0; i<24;i++) {
         Perk *pk = [[AppDelegate get].perks objectAtIndex:i+offset];
+        [pk unscheduleAllSelectors];
         x++;
         if (i>0 && i % columns == 0) {
             y++;
