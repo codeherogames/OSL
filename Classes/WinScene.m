@@ -13,9 +13,9 @@
 #import "Mission1.h"
 #import "MissionSplash.h"
 #import "PopupLayer.h"
-#import "SHK.h"
+/*#import "SHK.h"
 #import "SHKFacebook.h"
-#import "SHKTwitter.h"
+#import "SHKTwitter.h"*/
 
 @implementation WinScene
 - (id) init {
@@ -250,16 +250,16 @@
 				   title:[NSString stringWithFormat:@"I just defeated '%@' in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]
 			 description:[NSString stringWithFormat:@"I just defeated '%@' in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];*/
 	//[[LocalyticsSession sharedLocalyticsSession] tagEvent:@"Twitter"];
-	SHKItem *item = [SHKItem URL:[NSURL URLWithString:SHKMyAppURL] title:[NSString stringWithFormat:@"I just defeated '%@' in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];
-	[SHKTwitter shareItem:item];
+	/*SHKItem *item = [SHKItem URL:[NSURL URLWithString:SHKMyAppURL] title:[NSString stringWithFormat:@"I just defeated '%@' in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];
+	[SHKTwitter shareItem:item];*/
 }
 
 -(void)facebookMultiplayer: (id)sender {
 	NSString *p = [AppDelegate get].currentOpponent;
 	if (p == nil)
 		p = @"another opponent";
-	SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"I just defeated '%@' head to head in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];
-	[SHKFacebook shareItem:item];
+	/*SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"I just defeated '%@' head to head in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];
+	[SHKFacebook shareItem:item];*/
 	/*[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
 			 withService:@"facebook"
 				   title:[NSString stringWithFormat:@"I just defeated '%@' head to head in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]

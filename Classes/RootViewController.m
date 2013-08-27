@@ -117,10 +117,8 @@
 	// BUG: This won't work if the EAGLView is not fullscreen
 	///
 	CGRect screenRect = [[UIScreen mainScreen] bounds];
-	CGRect rect;
-	//JD added
-	rect.size.width = 0;
-	rect.size.height = 0;
+	CGRect rect = CGRectZero;
+
 	if(toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)		
 		rect = screenRect;
 	

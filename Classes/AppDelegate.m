@@ -25,7 +25,7 @@
 #import "Scope.h"
 #import "Ammo.h"
 #import "Extras.h"
-#import "TutorialSplash.h";
+#import "TutorialSplash.h"
 #import "Reachability.h"
 #import "ConnectingScene.h"
 
@@ -58,7 +58,7 @@
 	[[director openGLView] swapBuffers];
 	CC_ENABLE_DEFAULT_GL_STATES();
 	
-#endif // GAME_AUTOROTATION == kGameAutorotationUIViewController	
+#endif // GAME_AUTOROTATION == kGameAutorotationUIViewController
 }
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
@@ -233,7 +233,18 @@
 	
 	[window makeKeyAndVisible];
 	
-	//[TapjoyConnect requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0" secretKey:@"UWIj5ZSXO6CVNN16htpl"];
+    // Tapjoy Connect Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tjcConnectSuccess:)
+                                                 name:TJC_CONNECT_SUCCESS
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tjcConnectFail:)
+                                                 name:TJC_CONNECT_FAILED
+                                               object:nil];
+	[Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
+                    secretKey:@"UWIj5ZSXO6CVNN16htpl"
+                    options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) }];
 
 	
 	//Init
@@ -241,6 +252,17 @@
 	
 	// Run the intro Scene
 	//[[CCDirector sharedDirector] runWithScene: [MenuScene node]];	
+}
+
+-(void)tjcConnectSuccess:(NSNotification*)notifyObj
+{
+	NSLog(@"Tapjoy connect Succeeded");
+}
+
+
+- (void)tjcConnectFail:(NSNotification*)notifyObj
+{
+	NSLog(@"Tapjoy connect Failed");
 }
 
 BOOL isGameCenterAPIAvailable()
@@ -389,7 +411,7 @@ BOOL isGameCenterAPIAvailable()
 {
 	NSNumber *tp = notifyObj.object;
 	tjg = [tp intValue];
-	//[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
 	// Print out the updated points value.
 	CCLOG(@"Points: %i", tjg);
 	if(tjg > 0) {
@@ -407,7 +429,7 @@ BOOL isGameCenterAPIAvailable()
 {
 	CCLOG(@"UpdatedPoints");
 	NSNumber *tp = notifyObj.object;
-	//[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_SPEND_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_SPEND_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
 	if([tp intValue] == 0) {
 		if ([[[CCDirector sharedDirector] runningScene] respondsToSelector:@selector(go)]) {
 			[[[CCDirector sharedDirector] runningScene] go];

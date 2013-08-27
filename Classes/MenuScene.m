@@ -20,9 +20,11 @@
 #import "MyMenuButton.h"
 #import "ChildMenuButton.h"
 #import "PopupLayer.h"
-#import "SHK.h"
+#import <Tapjoy/Tapjoy.h>
+
+/*#import "SHK.h"
 #import "SHKFacebook.h"
-#import "SHKTwitter.h"
+#import "SHKTwitter.h"*/
 
 @implementation MenuScene
 - (id) init {
@@ -152,10 +154,10 @@
 			[self schedule: @selector(loopNews) interval: 10];
 		}
 		// This method requests the tapjoy server for current virtual currency of the user.
-		//[TapjoyConnect getTapPoints];
+		[Tapjoy getTapPoints];
 		
 		// A notification method must be set to retrieve the points.
-		//[[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(getPoints:) name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(getPoints:) name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
     }
     return self;
 }
@@ -173,14 +175,14 @@
 }
 
 -(void)twitter: (id)sender {
-	SHKItem *item = [SHKItem URL:[NSURL URLWithString:SHKMyAppURL] title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
-	[SHKTwitter shareItem:item];
+	/*SHKItem *item = [SHKItem URL:[NSURL URLWithString:SHKMyAppURL] title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
+	[SHKTwitter shareItem:item];*/
 	//[[LocalyticsSession sharedLocalyticsSession] tagEvent:@"Twitter"];
 }
 
 -(void)facebook: (id)sender {
-	SHKItem *item = [SHKItem text:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
-	[SHKFacebook shareItem:item];
+/*	SHKItem *item = [SHKItem text:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
+	[SHKFacebook shareItem:item];*/
 	
 	/*[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
 			 withService:@"facebook"

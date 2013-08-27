@@ -10,8 +10,8 @@
 #import "HelpScene.h"
 #import "TutorialSplash.h"
 #import "MenuScene.h"
-#import "SHKTwitter.h"
-#import "SHKFacebook.h"
+/*#import "SHKTwitter.h"
+#import "SHKFacebook.h"*/
 
 @implementation PreHelpScene
 - (id) init {
@@ -85,12 +85,12 @@
 }
 
 -(void)twlogout: (id)sender {
-	[SHKTwitter logout];
+//	[SHKTwitter logout];
 	[AppDelegate showNotification:@"Logged Out From Twitter"];
 }
 
 -(void)fblogout: (id)sender {
-	[SHKFacebook logout];
+//	[SHKFacebook logout];
 	[AppDelegate showNotification:@"Logged Out From Facebook"];
 }
 

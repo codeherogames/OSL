@@ -20,8 +20,9 @@
 //#import "LocalyticsSession.h"
 #import "CustomPoint.h"
 #import "DeviceDetection.h"
-#import "SHK.h"
+//#import "SHK.h"
 //#import "TapjoyConnect.h"
+#include <Tapjoy/Tapjoy.h>
 
 @class RootViewController;
 @class MyMenuButton;

@@ -5,6 +5,7 @@
 #import "EquipmentScene.h"
 #import "PerkScene.h"
 #import "GoldScene.h"
+#import <Tapjoy/Tapjoy.h>
 
 @implementation CustomScene
 
@@ -110,7 +111,7 @@
 }
 
 -(void)showTap: (id)sender {
-	//[TapjoyConnect showOffersWithViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+	[Tapjoy showOffersWithViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
 -(void) customPop {
@@ -130,8 +131,8 @@
 { 
 	CCLOG(@"Button index %i",buttonIndex);
 	if (buttonIndex != 0) {
-		/*[TapjoyConnect spendTapPoints:[AppDelegate get].tjg];
-		[[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(getUpdatedPoints:) name:TJC_SPEND_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];*/
+		[Tapjoy spendTapPoints:[AppDelegate get].tjg];
+		[[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(getUpdatedPoints:) name:TJC_SPEND_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
 	}
 }
 
