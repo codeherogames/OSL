@@ -170,6 +170,7 @@
 	}
 	if ([[AppDelegate get] perkEnabled:1])
 		[armor setPosition:enemy3.position];
+    self.passengerCount = passengers.count;
 }
 
 - (void) dropOff
@@ -225,6 +226,9 @@
 		}
 		[self fall:STREET];
 	}
+    else {
+        self.passengerCount--;
+    }
 }
 
 - (void) fall:(float) where

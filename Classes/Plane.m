@@ -10,7 +10,6 @@
 
 
 @implementation Plane
-@synthesize passengerCount;
 - (id) initWithFile: (NSString*) s l:(CCLayer*)l a:(NSArray*)a
 {
 	CCLOG(@"--------------Plane init");

@@ -129,7 +129,7 @@ enum {
 }
 
 -(void) flash {
-    [self unscheduleAllSelectors];
+    //[self unschedule:@selector(doFlash)];
     flashCount = 3;
     [self schedule: @selector(doFlash) interval: 0.3];
 }
@@ -138,7 +138,7 @@ enum {
 
     if (flashCount == 0) {
         self.opacity = 255;
-        [self unscheduleAllSelectors];
+        [self unschedule:@selector(doFlash)];
     }
     else if (flashCount % 2 == 1)
         self.opacity = 0;

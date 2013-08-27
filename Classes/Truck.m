@@ -186,6 +186,7 @@
 	}
 	if ([[AppDelegate get] perkEnabled:1])
 		[armor setPosition:enemy3.position];
+    self.passengerCount = passengers.count;
 }
 
 - (void) dropOff
@@ -230,6 +231,9 @@
 			[self.layerPointer towTruck:self];
 		}
 	}
+    else {
+        self.passengerCount--;
+    }
 }
 
 - (void) dead

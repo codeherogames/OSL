@@ -10,7 +10,7 @@
 
 
 @implementation Armored
-@synthesize passengerCount,tire1, tire2;
+@synthesize tire1, tire2;
 - (id) initWithFile: (NSString*) s l:(CCLayer*)l a:(NSArray*)a
 
 {

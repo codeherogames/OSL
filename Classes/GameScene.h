@@ -106,6 +106,8 @@
 -(void)launchMachinegun;
 -(void)launchSecurity;
 -(void) showBonus:(NSString*)bonus withPerk:(int)i;
+-(void)showEnemyMoney:(int)i;
+-(void)showAgentCount:(int)i;
 @end
 
 @interface ForegroundLayer : CCLayer {}

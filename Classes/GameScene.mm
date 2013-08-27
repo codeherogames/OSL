@@ -542,6 +542,14 @@ outer:;
 	gameMins++;
 }
 
+
+-(void)showEnemyMoney:(int)i {
+    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showEnemyMoney:i];
+}
+
+-(void)showAgentCount:(int)i {
+    [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showAgentCount:i];
+}
 -(void) showBonus:(NSString*)bonus withPerk:(int)i {
     [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:bonus withPerk:i];
 }
@@ -1144,14 +1152,18 @@ foundit:
             [self sendMyIntel:@"Planes Incoming"];
             if (([AppDelegate get].multiplayer>0 || ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode != 1)) && ![[AppDelegate get] perkEnabled:36]) {
                 [AppDelegate get].money = 0;
-                [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
+                if ([[AppDelegate get] perkEnabled:31])
+                    [[AppDelegate get].gkHelper sendAttack:CODEOVERDRAFT];
             }
             if ([[AppDelegate get] perkEnabled:36]) {
                 [self sendMyIntel:@"Hush Money Paid"];
+                Perk *perk = [[AppDelegate get].perks objectAtIndex:35];//-1
+                [perk flash];
+                
             }
             [self launchInnocent];
 			//}
-			break;		
+			break;
 		case CODELOSE: // You Win
 			CCLOG(@"CODELOSE");
 			if ([AppDelegate get].multiplayer > 0)
@@ -1197,13 +1209,21 @@ foundit:
 }
 
 -(void) delaySniperAlert {
-    [self unschedule: @selector(delaySniperAlert)];
-    //if ([AppDelegate get].kidnappers > 0) {
+
+    bool foundKidnapper = NO;
+    for (Enemy *e in [AppDelegate get].enemies) {
+        if (e.kidnapper == 1) {
+            foundKidnapper = YES;
+            break;
+        }
+    }
+    if (foundKidnapper) {
         if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL)
             [self launchSniperFound];
         else
             [[AppDelegate get].gkHelper sendAttack:SNIPERFOUND];
-    //}
+    }
+    [self unschedule: @selector(delaySniperAlert)];
 }
 
 -(void) delayWin {
@@ -1670,8 +1690,13 @@ foundit:
 		}
 	}
 	
-	x = x/(([AppDelegate get].sensitivity+1) * 5);
-	y = y/(([AppDelegate get].sensitivity+1) * 5);
+    
+    float slipFactor = 1;
+    if ([[AppDelegate get] perkEnabled:46])
+        slipFactor = 0.5;
+    
+	x = x/(([AppDelegate get].sensitivity+slipFactor) * 5);
+	y = y/(([AppDelegate get].sensitivity+slipFactor) * 5);
 	
 	if (![[AppDelegate get] perkEnabled:12])
 		if (invertKills > 0 || [[AppDelegate get] perkEnabled:4]) {
@@ -2246,7 +2271,6 @@ foundit:
 		levelType=0;
 		[AppDelegate get].recon=1;
 		currentInterval = 15;
-		//[AppDelegate get].money = 1000;
         if ([AppDelegate get].survivalMode == 1) {
             [self showSurvivalPerks];
             currentInterval = 8;

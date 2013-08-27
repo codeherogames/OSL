@@ -14,9 +14,7 @@
 #import "Vehicle.h"
 
 @interface Plane : Vehicle {
-	int passengerCount;
 }
-@property (readwrite, nonatomic) int passengerCount;
 - (void) launchParachute;
 @end
 	

@@ -23,6 +23,7 @@
 	int pointCount;
 	NSArray *points;
 	CCSprite *armor;
+    int passengerCount;
 }
 
 @property (readwrite, nonatomic) int currentState,lastState,type,pointCount;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) NSMutableArray *passengers;
 @property (nonatomic, retain) NSArray *points;
 @property (nonatomic, retain) CCSprite *armor;
+@property (readwrite, nonatomic) int passengerCount;
 
 - (id) initWithFile: (NSString*) s l:(CCLayer*)l a:(NSArray*)a;
 - (void) startMoving: (CGPoint) startPoint;

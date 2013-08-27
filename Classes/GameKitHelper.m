@@ -794,7 +794,7 @@ static GameKitHelper *instanceOfGameKitHelper;
 	if (packet->type == 1) {
 		CCLOG(@"match didReceiveData: attack: %d", packet->one);
 		int attack = packet->one;
-		[delegate onAttackReceived:attack pid:playerID m:packet->two a:packet->three];
+		[delegate onAttackReceived:attack pid:playerID m:packet->three a:packet->two];
 	}
 	else if (packet->type == 2) {
 		NSNumber *one = [NSNumber numberWithInteger:packet->one];

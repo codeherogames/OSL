@@ -10,7 +10,7 @@
 
 @implementation Vehicle
 @synthesize currentState,lastState,elapsed,duration,nextPosition,speedVector,type,lastX,passengers;
-@synthesize c,layerPointer,points,pointCount,armor;
+@synthesize c,layerPointer,points,pointCount,armor,passengerCount;
 
 - (id) initWithFile: (NSString*) s l:(CCLayer*)l a:(NSArray*)a
 {
@@ -77,28 +77,27 @@
 {
 	CCLOG(@"Passenger Died %i, count:%i", i,[passengers count]);
     // TRIFECTA or BOUNTBONUS check
+    int trifectaBonus = 0;
     if ([AppDelegate get].gameType != SURVIVAL) {
-        if ([[AppDelegate get] myPerk:44]) {
-            int passengerCount = 0;
-            for (Enemy *e in passengers) {
-                if (e.currentState != DEAD)
-                    passengerCount++;
-            }
+        if ([[AppDelegate get] myPerk:44]) { //Trifecta
             if (passengerCount == 0) {
-                if ([[AppDelegate get] perkEnabled:40]) { //Trifecta
+                if ([[AppDelegate get] perkEnabled:40]) { //Seat Taken
                     [AppDelegate get].money += 200;
-                    [[AppDelegate get].bgLayer showBonus:@"2000" withPerk:40];
+                    trifectaBonus = 2000;
+                    [[AppDelegate get].bgLayer showBonus:@"2000" withPerk:44];
                 }
                 else {
                     [AppDelegate get].money += 300;
-                    [[AppDelegate get].bgLayer showBonus:@"3000" withPerk:40];
+                    trifectaBonus = 3000;
+                    [[AppDelegate get].bgLayer showBonus:@"3000" withPerk:44];
                 }
             }
             
         }
         if ([[AppDelegate get] myPerk:28]) { //Bounty
             [AppDelegate get].money += 80;
-            [[AppDelegate get].bgLayer showBonus:@"800" withPerk:28];
+            [[AppDelegate get].bgLayer showBonus:[NSString stringWithFormat:@"%i",800+trifectaBonus] withPerk:28];
+            
         }
     }
 }

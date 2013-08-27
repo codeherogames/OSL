@@ -14,10 +14,8 @@
 #import "Vehicle.h"
 
 @interface Armored : Vehicle {
-	int passengerCount;
 	CCSprite *tire1, *tire2;
 }
 @property (nonatomic, retain) CCSprite *tire1, *tire2;
-@property (readwrite, nonatomic) int passengerCount;
 
 @end
