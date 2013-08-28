@@ -31,41 +31,19 @@
 
 - (id) init
 {
-	/*
-	CGSize size = [[CCDirector sharedDirector] winSize];
-	self = [self initWithColor:ccc4(42, 68, 148, 180) width:size.width height:24];
+	
+	CGSize size = [[UIScreen mainScreen] bounds].size;
+	self = [self initWithColor:ccc4(42, 68, 148, 180) width:size.height height:20];
 	if (self != nil) {
 		title_ = [CCLabelTTF labelWithString:@" " fontName:@"Arial" fontSize:12];
 		[title_ setIsRelativeAnchorPoint:NO];
 		[title_ setAnchorPoint:CGPointZero];
 		[title_ setPosition:ccp(52, 3)];
-		
+
 		message_ = [CCLabelTTF labelWithString:@" " fontName:@"Arial" fontSize:15];
 		[message_ setIsRelativeAnchorPoint:NO];
 		[message_ setAnchorPoint:CGPointZero];
-		[message_ setPosition:ccp(52, 3)];
-		
-		image_ = [CCSprite node];
-		[image_ setPosition:ccp(26, 19)];
-		
-		[self addChild:title_];
-		[self addChild:message_];
-		[self addChild:image_];
-	}
-	return self;
-	 */
-	CGSize size = [[CCDirector sharedDirector] winSize];
-	self = [self initWithColor:ccc4(42, 68, 148, 180) width:size.width height:20];
-	if (self != nil) {
-		title_ = [CCLabelTTF labelWithString:@" " fontName:@"Arial" fontSize:12];
-		[title_ setIsRelativeAnchorPoint:NO];
-		[title_ setAnchorPoint:CGPointZero];
-		[title_ setPosition:ccp(52, 20)];
-		
-		message_ = [CCLabelTTF labelWithString:@" " fontName:@"Arial" fontSize:18];
-		[message_ setIsRelativeAnchorPoint:NO];
-		[message_ setAnchorPoint:CGPointZero];
-		[message_ setPosition:ccp(52, 0)];
+		[message_ setPosition:ccp(self.contentSize.width/2, 0)];
 		
 		image_ = [CCSprite node];
 		[image_ setPosition:ccp(26, 19)];
@@ -80,6 +58,7 @@
 - (void) setTitle:(NSString*)title message:(NSString*)message texture:(CCTexture2D*)texture{
 	[title_ setString:title];
 	[message_ setString:message];
+    [message_ setPosition:ccp(self.contentSize.width/2-message_.contentSize.width/2, 0)];
 	if(texture){
 		CGRect rect = CGRectZero;
 		rect.size = texture.contentSize;

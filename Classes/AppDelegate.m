@@ -28,6 +28,7 @@
 #import "TutorialSplash.h"
 #import "Reachability.h"
 #import "ConnectingScene.h"
+#import "AddThis.h"
 
 @implementation AppDelegate
 
@@ -205,7 +206,7 @@
 	//[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGB5A1];
 	
 	// Removes the startup flicker
-	[self removeStartupFlicker];
+	//[self removeStartupFlicker];
 
    /** Init CCNotifications (very easy) **/
    CCNotifications *notifications = [CCNotifications sharedManager];
@@ -246,7 +247,19 @@
                     secretKey:@"UWIj5ZSXO6CVNN16htpl"
                     options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) }];
 
+
+    [AddThisSDK setAddThisPubId:@"ra-4dd55f4e73a4e25b"];
+    //Facebook connect settings
+	//CHANGE THIS FACEBOOK API KEY TO YOUR OWN!!
+	[AddThisSDK setFacebookAPIKey:@"163842680351096"];
+	[AddThisSDK setFacebookAuthenticationMode:ATFacebookAuthenticationTypeFBConnect];
 	
+	//CHANGE THIS TWITTER API KEYS TO YOUR OWN!!
+	[AddThisSDK setTwitterConsumerKey:@"Ra7VP0zX8Q8nc3zb5JVxIA"];
+	[AddThisSDK setTwitterConsumerSecret:@"mUVRXyJGRdcdtUGDKXHbwzkmayPnYj7WCoOdJcDvWg"];
+	[AddThisSDK setTwitterCallBackURL:@"http://twitter.com"];
+    [AddThisSDK setTwitterViaText:@"CodeHeroGames"];
+    
 	//Init
 	[self loadingInit];
 	
@@ -283,7 +296,7 @@ BOOL isGameCenterAPIAvailable()
 {
 	CCLOG(@"ShowNotification: %@",m);
 	//Complex method
-	[[CCNotifications sharedManager] addWithTitle:@"hi" message:m image:nil tag:9999 animate:YES waitUntilDone:YES];
+	[[CCNotifications sharedManager] addWithTitle:@"" message:m image:nil tag:9999 animate:YES waitUntilDone:YES];
 }
 
 - (void) notification:(ccNotificationData*)notification newState:(char)state

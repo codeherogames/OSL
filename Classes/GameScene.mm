@@ -1276,7 +1276,7 @@ foundit:
 		countDown = COUNTDOWN;
 	}
     // Auto-Snipe
-    if ([[AppDelegate get] myPerk:47]) {
+    if ([[AppDelegate get] myPerk:47] && [AppDelegate get].gameType != SURVIVAL) {
         int adjustX = floor(sniperIndex / 4) * -126;
         int adjustY = (sniperIndex % 4) * 96;
         float newX = -318 + adjustX;

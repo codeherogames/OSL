@@ -21,6 +21,7 @@
 #import "ChildMenuButton.h"
 #import "PopupLayer.h"
 #import <Tapjoy/Tapjoy.h>
+#import "AddThis.h"
 
 /*#import "SHK.h"
 #import "SHKFacebook.h"
@@ -175,6 +176,10 @@
 }
 
 -(void)twitter: (id)sender {
+    [AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+			 withService:@"twitter"
+				   title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"
+			 description:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
 	/*SHKItem *item = [SHKItem URL:[NSURL URLWithString:SHKMyAppURL] title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
 	[SHKTwitter shareItem:item];*/
 	//[[LocalyticsSession sharedLocalyticsSession] tagEvent:@"Twitter"];
@@ -184,10 +189,10 @@
 /*	SHKItem *item = [SHKItem text:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
 	[SHKFacebook shareItem:item];*/
 	
-	/*[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+	[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
 			 withService:@"facebook"
 				   title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"
-			 description:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];*/
+			 description:@""];
 	//[[LocalyticsSession sharedLocalyticsSession] tagEvent:@"Facebook"];
 }
 
