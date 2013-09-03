@@ -1,0 +1,4240 @@
+{
+    "xcode_project": "OSL.xcodeproj", 
+    "sources": [
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Ammo.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/AppDelegate.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Armored.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/BombTruck.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/ChildMenuButton.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/ComingSoon.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/ComputerScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/ConnectingScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/CreditScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/CustomPoint.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/CustomScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/DeviceDetection.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Enemy.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/EnemyM2.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/EnemyM3.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/EnemyParatrooper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/EnemyTimed.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/EquipmentScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Extras.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/GameKitHelper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc++", 
+            "header_paths": [], 
+            "source": "Classes/GameScene.mm", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/GlassSlider.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/GoldScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Helicopter.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/HelpScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/IAPHelper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/JDMenuItem.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Joystick.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/LinearPoint.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Loadout.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/LoseScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MBProgressHUD.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MenuScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Mission1.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MissionScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MissionSplash.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MultiScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MyDial.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MyIAPHelper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MyMenuButton.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/MyToggle.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/NSDataAES256.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Perk.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/PerkScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Plane.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/PlayScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/PopupLayer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/PreHelpScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Radio.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Rifle.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/RootViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Scope.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/SettingsScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Sniper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Stats.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/StatsScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/SurvivalMenuScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/TextMenuItem.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/TowTruck.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Truck.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/TruckMission.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/TutorialScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/TutorialSplash.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Vector.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/Vehicle.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Classes/WinScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Base Sharer Classes/SHKOAuthSharer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Base Sharer Classes/SHKSharer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Categories/UIWebView+SHK.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/Keychain/SFHFKeychainUtils.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/Categories/NSMutableURLRequest+Parameters.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/Categories/NSString+URLEncoding.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/Categories/NSURL+Base.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "c", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/Crytpo/Base64Transcoder.c", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "c", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/Crytpo/hmac.c", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "c", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/Crytpo/sha1.c", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAAsynchronousDataFetcher.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAConsumer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OADataFetcher.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAHMAC_SHA1SignatureProvider.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAMutableURLRequest.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAPlaintextSignatureProvider.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OARequestParameter.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAServiceTicket.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/OAuth/OAToken.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/Helpers/SHKRequest.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/SHK.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/SHKItem.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Core/SHKOfflineSharer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Customize UI/SHKCustomFormController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Customize UI/SHKCustomFormFieldCell.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Customize UI/SHKCustomShareMenu.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Customize UI/SHKCustomShareMenuCell.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Reachability/Reachability.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Actions/Copy/SHKCopy.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Actions/Email/SHKMail.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Actions/Open in Safari/SHKSafari.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Actions/Save to Album/SHKPhotoAlbum.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Delicious/SHKDelicious.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBConnectGlobal.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBDialog.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBFeedDialog.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBLoginButton.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBLoginDialog.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBPermissionDialog.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBRequest.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBSession.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBStreamDialog.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/FBConnect/FBXMLHandler.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/SHKFBStreamDialog.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Facebook/SHKFacebook.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Google Reader/SHKGoogleReader.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Instapaper/SHKInstapaper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Pinboard/SHKPinboard.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Read It Later/SHKReadItLater.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Tumblr/SHKTumblr.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Twitter/SHKTwitter.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/Sharers/Services/Twitter/SHKTwitterForm.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKActionSheet.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKActivityIndicator.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKFormController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKFormFieldCell.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKFormFieldSettings.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKOAuthView.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKShareMenu.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "ShareKit/UI/SHKViewControllerWrapper.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Story.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/CCNotifications.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/notificationDesign.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "main.m", 
+            "flags": [], 
+            "defines": {}
+        }
+    ], 
+    "infoplists": [
+        "./Resources/Info.plist"
+    ], 
+    "libs": [], 
+    "defines": {
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 40300
+    }, 
+    "pchs": [
+        "./OSL_Prefix.pch"
+    ], 
+    "assets": [
+        {
+            "asset": "Resources/Icon.png", 
+            "target": "Icon.png"
+        }, 
+        {
+            "asset": "Resources/fps_images.png", 
+            "target": "fps_images.png"
+        }, 
+        {
+            "asset": "Resources/Icon@2x.png", 
+            "target": "Icon@2x.png"
+        }, 
+        {
+            "asset": "Resources/Icon-Small.png", 
+            "target": "Icon-Small.png"
+        }, 
+        {
+            "asset": "Resources/Icon-Small-50.png", 
+            "target": "Icon-Small-50.png"
+        }, 
+        {
+            "asset": "Resources/Icon-Small@2x.png", 
+            "target": "Icon-Small@2x.png"
+        }, 
+        {
+            "asset": "Resources/Icon-72.png", 
+            "target": "Icon-72.png"
+        }, 
+        {
+            "asset": "Resources/iTunesArtwork", 
+            "target": "iTunesArtwork"
+        }, 
+        {
+            "asset": "Resources/sitting.png", 
+            "target": "sitting.png"
+        }, 
+        {
+            "asset": "Resources/gun.png", 
+            "target": "gun.png"
+        }, 
+        {
+            "asset": "Resources/shooting.png", 
+            "target": "shooting.png"
+        }, 
+        {
+            "asset": "Resources/truck1.png", 
+            "target": "truck1.png"
+        }, 
+        {
+            "asset": "Resources/plane.png", 
+            "target": "plane.png"
+        }, 
+        {
+            "asset": "Resources/hummer.png", 
+            "target": "hummer.png"
+        }, 
+        {
+            "asset": "Resources/parachuteguy.png", 
+            "target": "parachuteguy.png"
+        }, 
+        {
+            "asset": "Resources/climb1.png", 
+            "target": "climb1.png"
+        }, 
+        {
+            "asset": "Resources/climb2.png", 
+            "target": "climb2.png"
+        }, 
+        {
+            "asset": "Resources/climb3.png", 
+            "target": "climb3.png"
+        }, 
+        {
+            "asset": "Resources/scope1.png", 
+            "target": "scope1.png"
+        }, 
+        {
+            "asset": "Resources/walk3.png", 
+            "target": "walk3.png"
+        }, 
+        {
+            "asset": "Resources/walk2.png", 
+            "target": "walk2.png"
+        }, 
+        {
+            "asset": "Resources/walk1.png", 
+            "target": "walk1.png"
+        }, 
+        {
+            "asset": "Resources/scopeblack.png", 
+            "target": "scopeblack.png"
+        }, 
+        {
+            "asset": "Resources/bldgfloor.png", 
+            "target": "bldgfloor.png"
+        }, 
+        {
+            "asset": "Resources/g1px.png", 
+            "target": "g1px.png"
+        }, 
+        {
+            "asset": "Resources/b1px.png", 
+            "target": "b1px.png"
+        }, 
+        {
+            "asset": "Resources/w1px.png", 
+            "target": "w1px.png"
+        }, 
+        {
+            "asset": "Resources/parachute.png", 
+            "target": "parachute.png"
+        }, 
+        {
+            "asset": "Resources/bullet.png", 
+            "target": "bullet.png"
+        }, 
+        {
+            "asset": "Resources/blood.png", 
+            "target": "blood.png"
+        }, 
+        {
+            "asset": "Resources/reload.wav", 
+            "target": "reload.wav"
+        }, 
+        {
+            "asset": "Resources/zoom.png", 
+            "target": "zoom.png"
+        }, 
+        {
+            "asset": "Resources/fireButtonChrome.png", 
+            "target": "fireButtonChrome.png"
+        }, 
+        {
+            "asset": "Resources/zoom1.png", 
+            "target": "zoom1.png"
+        }, 
+        {
+            "asset": "Resources/reflex.png", 
+            "target": "reflex.png"
+        }, 
+        {
+            "asset": "Resources/glassSlider.png", 
+            "target": "glassSlider.png"
+        }, 
+        {
+            "asset": "Resources/chopper1.png", 
+            "target": "chopper1.png"
+        }, 
+        {
+            "asset": "Resources/chopper2.png", 
+            "target": "chopper2.png"
+        }, 
+        {
+            "asset": "Resources/fingerprint.png", 
+            "target": "fingerprint.png"
+        }, 
+        {
+            "asset": "Resources/close.wav", 
+            "target": "close.wav"
+        }, 
+        {
+            "asset": "Resources/buttonClick.wav", 
+            "target": "buttonClick.wav"
+        }, 
+        {
+            "asset": "Resources/open.wav", 
+            "target": "open.wav"
+        }, 
+        {
+            "asset": "Resources/buttonupgradepressed.png", 
+            "target": "buttonupgradepressed.png"
+        }, 
+        {
+            "asset": "Resources/buttonupgradedisabled.png", 
+            "target": "buttonupgradedisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonupgrade.png", 
+            "target": "buttonupgrade.png"
+        }, 
+        {
+            "asset": "Resources/buttonscopepressed.png", 
+            "target": "buttonscopepressed.png"
+        }, 
+        {
+            "asset": "Resources/buttonscopedisabled.png", 
+            "target": "buttonscopedisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonscope.png", 
+            "target": "buttonscope.png"
+        }, 
+        {
+            "asset": "Resources/buttonradiopressed.png", 
+            "target": "buttonradiopressed.png"
+        }, 
+        {
+            "asset": "Resources/buttonradiodisabled.png", 
+            "target": "buttonradiodisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonradio.png", 
+            "target": "buttonradio.png"
+        }, 
+        {
+            "asset": "Resources/buttonmanpressed.png", 
+            "target": "buttonmanpressed.png"
+        }, 
+        {
+            "asset": "Resources/buttonmandisabled.png", 
+            "target": "buttonmandisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonman.png", 
+            "target": "buttonman.png"
+        }, 
+        {
+            "asset": "Resources/buttonchopperpressed.png", 
+            "target": "buttonchopperpressed.png"
+        }, 
+        {
+            "asset": "Resources/buttonchopperdisabled.png", 
+            "target": "buttonchopperdisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonchopper.png", 
+            "target": "buttonchopper.png"
+        }, 
+        {
+            "asset": "Resources/bulletdisabled.png", 
+            "target": "bulletdisabled.png"
+        }, 
+        {
+            "asset": "Resources/bulletenabled.png", 
+            "target": "bulletenabled.png"
+        }, 
+        {
+            "asset": "Resources/menutray3.png", 
+            "target": "menutray3.png"
+        }, 
+        {
+            "asset": "Resources/rickroll.wav", 
+            "target": "rickroll.wav"
+        }, 
+        {
+            "asset": "Resources/wingedfooticon.png", 
+            "target": "wingedfooticon.png"
+        }, 
+        {
+            "asset": "Resources/staricon.png", 
+            "target": "staricon.png"
+        }, 
+        {
+            "asset": "Resources/shieldicon.png", 
+            "target": "shieldicon.png"
+        }, 
+        {
+            "asset": "Resources/planeicon.png", 
+            "target": "planeicon.png"
+        }, 
+        {
+            "asset": "Resources/truckicon.png", 
+            "target": "truckicon.png"
+        }, 
+        {
+            "asset": "Resources/choppericon.png", 
+            "target": "choppericon.png"
+        }, 
+        {
+            "asset": "Resources/fingerprinticon.png", 
+            "target": "fingerprinticon.png"
+        }, 
+        {
+            "asset": "Resources/walkietalkieicon.png", 
+            "target": "walkietalkieicon.png"
+        }, 
+        {
+            "asset": "Resources/NOwalkietalkieicon.png", 
+            "target": "NOwalkietalkieicon.png"
+        }, 
+        {
+            "asset": "Resources/scopeicon.png", 
+            "target": "scopeicon.png"
+        }, 
+        {
+            "asset": "Resources/guyicon.png", 
+            "target": "guyicon.png"
+        }, 
+        {
+            "asset": "Resources/citizenicon.png", 
+            "target": "citizenicon.png"
+        }, 
+        {
+            "asset": "Resources/parachuteicon.png", 
+            "target": "parachuteicon.png"
+        }, 
+        {
+            "asset": "Resources/towtruck.png", 
+            "target": "towtruck.png"
+        }, 
+        {
+            "asset": "Resources/sunglasses.png", 
+            "target": "sunglasses.png"
+        }, 
+        {
+            "asset": "Resources/menutray3-hd.png", 
+            "target": "menutray3-hd.png"
+        }, 
+        {
+            "asset": "Resources/wingedfooticon-hd.png", 
+            "target": "wingedfooticon-hd.png"
+        }, 
+        {
+            "asset": "Resources/citizenicon-hd.png", 
+            "target": "citizenicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/choppericon-hd.png", 
+            "target": "choppericon-hd.png"
+        }, 
+        {
+            "asset": "Resources/fingerprinticon-hd.png", 
+            "target": "fingerprinticon-hd.png"
+        }, 
+        {
+            "asset": "Resources/guyicon-hd.png", 
+            "target": "guyicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/jumpingguyicon-hd.png", 
+            "target": "jumpingguyicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/hummericon-hd.png", 
+            "target": "hummericon-hd.png"
+        }, 
+        {
+            "asset": "Resources/NOwalkietalkieicon-hd.png", 
+            "target": "NOwalkietalkieicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/parachuteicon-hd.png", 
+            "target": "parachuteicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/planeicon-hd.png", 
+            "target": "planeicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/scopeicon-hd.png", 
+            "target": "scopeicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/staricon-hd.png", 
+            "target": "staricon-hd.png"
+        }, 
+        {
+            "asset": "Resources/shieldicon-hd.png", 
+            "target": "shieldicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/truckicon-hd.png", 
+            "target": "truckicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/walkietalkieicon-hd.png", 
+            "target": "walkietalkieicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonupgradepressed-hd.png", 
+            "target": "buttonupgradepressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonupgradedisabled-hd.png", 
+            "target": "buttonupgradedisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonupgrade-hd.png", 
+            "target": "buttonupgrade-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonscopepressed-hd.png", 
+            "target": "buttonscopepressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonscopedisabled-hd.png", 
+            "target": "buttonscopedisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonscope-hd.png", 
+            "target": "buttonscope-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonradiopressed-hd.png", 
+            "target": "buttonradiopressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonradiodisabled-hd.png", 
+            "target": "buttonradiodisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonradio-hd.png", 
+            "target": "buttonradio-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonmanpressed-hd.png", 
+            "target": "buttonmanpressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonmandisabled-hd.png", 
+            "target": "buttonmandisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonman-hd.png", 
+            "target": "buttonman-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonchopperpressed-hd.png", 
+            "target": "buttonchopperpressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonchopperdisabled-hd.png", 
+            "target": "buttonchopperdisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonchopper-hd.png", 
+            "target": "buttonchopper-hd.png"
+        }, 
+        {
+            "asset": "Resources/glassSlider-hd.png", 
+            "target": "glassSlider-hd.png"
+        }, 
+        {
+            "asset": "Resources/chopper2-hd.png", 
+            "target": "chopper2-hd.png"
+        }, 
+        {
+            "asset": "Resources/chopper1-hd.png", 
+            "target": "chopper1-hd.png"
+        }, 
+        {
+            "asset": "Resources/reflex-hd.png", 
+            "target": "reflex-hd.png"
+        }, 
+        {
+            "asset": "Resources/zoom-hd.png", 
+            "target": "zoom-hd.png"
+        }, 
+        {
+            "asset": "Resources/zoom1-hd.png", 
+            "target": "zoom1-hd.png"
+        }, 
+        {
+            "asset": "Resources/fireButtonChrome-hd.png", 
+            "target": "fireButtonChrome-hd.png"
+        }, 
+        {
+            "asset": "Resources/scopeblack-hd.png", 
+            "target": "scopeblack-hd.png"
+        }, 
+        {
+            "asset": "Resources/scope1-hd.png", 
+            "target": "scope1-hd.png"
+        }, 
+        {
+            "asset": "Resources/walk2-hd.png", 
+            "target": "walk2-hd.png"
+        }, 
+        {
+            "asset": "Resources/walk3-hd.png", 
+            "target": "walk3-hd.png"
+        }, 
+        {
+            "asset": "Resources/parachute-hd.png", 
+            "target": "parachute-hd.png"
+        }, 
+        {
+            "asset": "Resources/walk1-hd.png", 
+            "target": "walk1-hd.png"
+        }, 
+        {
+            "asset": "Resources/climb1-hd.png", 
+            "target": "climb1-hd.png"
+        }, 
+        {
+            "asset": "Resources/climb2-hd.png", 
+            "target": "climb2-hd.png"
+        }, 
+        {
+            "asset": "Resources/climb3-hd.png", 
+            "target": "climb3-hd.png"
+        }, 
+        {
+            "asset": "Resources/truck1-hd.png", 
+            "target": "truck1-hd.png"
+        }, 
+        {
+            "asset": "Resources/gun-hd.png", 
+            "target": "gun-hd.png"
+        }, 
+        {
+            "asset": "Resources/shooting-hd.png", 
+            "target": "shooting-hd.png"
+        }, 
+        {
+            "asset": "Resources/parachuteguy-hd.png", 
+            "target": "parachuteguy-hd.png"
+        }, 
+        {
+            "asset": "Resources/hummer-hd.png", 
+            "target": "hummer-hd.png"
+        }, 
+        {
+            "asset": "Resources/bldg2-hd.png", 
+            "target": "bldg2-hd.png"
+        }, 
+        {
+            "asset": "Resources/mainbldg1-hd.png", 
+            "target": "mainbldg1-hd.png"
+        }, 
+        {
+            "asset": "Resources/mainbldgfloor-hd.png", 
+            "target": "mainbldgfloor-hd.png"
+        }, 
+        {
+            "asset": "Resources/bldg2.png", 
+            "target": "bldg2.png"
+        }, 
+        {
+            "asset": "Resources/mainbldgfloor.png", 
+            "target": "mainbldgfloor.png"
+        }, 
+        {
+            "asset": "Resources/mainbldg1.png", 
+            "target": "mainbldg1.png"
+        }, 
+        {
+            "asset": "Resources/cube-hd.png", 
+            "target": "cube-hd.png"
+        }, 
+        {
+            "asset": "Resources/sniperrifle-hd.png", 
+            "target": "sniperrifle-hd.png"
+        }, 
+        {
+            "asset": "Resources/cube.png", 
+            "target": "cube.png"
+        }, 
+        {
+            "asset": "Resources/sniperrifle.png", 
+            "target": "sniperrifle.png"
+        }, 
+        {
+            "asset": "Resources/sniperwindow-hd.png", 
+            "target": "sniperwindow-hd.png"
+        }, 
+        {
+            "asset": "Resources/sniperwindow.png", 
+            "target": "sniperwindow.png"
+        }, 
+        {
+            "asset": "Resources/sniper-hd.png", 
+            "target": "sniper-hd.png"
+        }, 
+        {
+            "asset": "Resources/punch4-hd.png", 
+            "target": "punch4-hd.png"
+        }, 
+        {
+            "asset": "Resources/punch1-hd.png", 
+            "target": "punch1-hd.png"
+        }, 
+        {
+            "asset": "Resources/punch2-hd.png", 
+            "target": "punch2-hd.png"
+        }, 
+        {
+            "asset": "Resources/sniper.png", 
+            "target": "sniper.png"
+        }, 
+        {
+            "asset": "Resources/punch4.png", 
+            "target": "punch4.png"
+        }, 
+        {
+            "asset": "Resources/punch1.png", 
+            "target": "punch1.png"
+        }, 
+        {
+            "asset": "Resources/punch2.png", 
+            "target": "punch2.png"
+        }, 
+        {
+            "asset": "Resources/roofElevator-hd.png", 
+            "target": "roofElevator-hd.png"
+        }, 
+        {
+            "asset": "Resources/plane-hd.png", 
+            "target": "plane-hd.png"
+        }, 
+        {
+            "asset": "Resources/roofElevator.png", 
+            "target": "roofElevator.png"
+        }, 
+        {
+            "asset": "Resources/fingerprint-hd.png", 
+            "target": "fingerprint-hd.png"
+        }, 
+        {
+            "asset": "Resources/bullet-hd.png", 
+            "target": "bullet-hd.png"
+        }, 
+        {
+            "asset": "Resources/blackinset-hd.png", 
+            "target": "blackinset-hd.png"
+        }, 
+        {
+            "asset": "Resources/blackinset.png", 
+            "target": "blackinset.png"
+        }, 
+        {
+            "asset": "Resources/GearsOfPeace.ttf", 
+            "target": "GearsOfPeace.ttf"
+        }, 
+        {
+            "asset": "Resources/menuBackground-hd.png", 
+            "target": "menuBackground-hd.png"
+        }, 
+        {
+            "asset": "Resources/missionfailed-hd.png", 
+            "target": "missionfailed-hd.png"
+        }, 
+        {
+            "asset": "Resources/cityscape-hd.png", 
+            "target": "cityscape-hd.png"
+        }, 
+        {
+            "asset": "Resources/missionfailed.png", 
+            "target": "missionfailed.png"
+        }, 
+        {
+            "asset": "Resources/menuBackground.png", 
+            "target": "menuBackground.png"
+        }, 
+        {
+            "asset": "Resources/cityscape.png", 
+            "target": "cityscape.png"
+        }, 
+        {
+            "asset": "Resources/cocos2d-hd.png", 
+            "target": "cocos2d-hd.png"
+        }, 
+        {
+            "asset": "Resources/cocos2d.png", 
+            "target": "cocos2d.png"
+        }, 
+        {
+            "asset": "Resources/missioncompleted-hd.png", 
+            "target": "missioncompleted-hd.png"
+        }, 
+        {
+            "asset": "Resources/missioncompleted.png", 
+            "target": "missioncompleted.png"
+        }, 
+        {
+            "asset": "Resources/radiojammer.png", 
+            "target": "radiojammer.png"
+        }, 
+        {
+            "asset": "Resources/radiojammer-hd.png", 
+            "target": "radiojammer-hd.png"
+        }, 
+        {
+            "asset": "Resources/desk-hd.png", 
+            "target": "desk-hd.png"
+        }, 
+        {
+            "asset": "Resources/desk.png", 
+            "target": "desk.png"
+        }, 
+        {
+            "asset": "Resources/acog.png", 
+            "target": "acog.png"
+        }, 
+        {
+            "asset": "Resources/acog-hd.png", 
+            "target": "acog-hd.png"
+        }, 
+        {
+            "asset": "Resources/hummericon.png", 
+            "target": "hummericon.png"
+        }, 
+        {
+            "asset": "Resources/stand.png", 
+            "target": "stand.png"
+        }, 
+        {
+            "asset": "Resources/stand-hd.png", 
+            "target": "stand-hd.png"
+        }, 
+        {
+            "asset": "Resources/jammer.png", 
+            "target": "jammer.png"
+        }, 
+        {
+            "asset": "Resources/jammer-hd.png", 
+            "target": "jammer-hd.png"
+        }, 
+        {
+            "asset": "Resources/kneel.png", 
+            "target": "kneel.png"
+        }, 
+        {
+            "asset": "Resources/kneel-hd.png", 
+            "target": "kneel-hd.png"
+        }, 
+        {
+            "asset": "Resources/sitting-hd.png", 
+            "target": "sitting-hd.png"
+        }, 
+        {
+            "asset": "Resources/headOnly.png", 
+            "target": "headOnly.png"
+        }, 
+        {
+            "asset": "Resources/headOnly-hd.png", 
+            "target": "headOnly-hd.png"
+        }, 
+        {
+            "asset": "Resources/escalator.png", 
+            "target": "escalator.png"
+        }, 
+        {
+            "asset": "Resources/escalator-hd.png", 
+            "target": "escalator-hd.png"
+        }, 
+        {
+            "asset": "Resources/cube2.png", 
+            "target": "cube2.png"
+        }, 
+        {
+            "asset": "Resources/cube2-hd.png", 
+            "target": "cube2-hd.png"
+        }, 
+        {
+            "asset": "Resources/walk4.png", 
+            "target": "walk4.png"
+        }, 
+        {
+            "asset": "Resources/walk4-hd.png", 
+            "target": "walk4-hd.png"
+        }, 
+        {
+            "asset": "Resources/walk5.png", 
+            "target": "walk5.png"
+        }, 
+        {
+            "asset": "Resources/walk5-hd.png", 
+            "target": "walk5-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat11.png", 
+            "target": "hat11.png"
+        }, 
+        {
+            "asset": "Resources/hat8.png", 
+            "target": "hat8.png"
+        }, 
+        {
+            "asset": "Resources/hat8-hd.png", 
+            "target": "hat8-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat14.png", 
+            "target": "hat14.png"
+        }, 
+        {
+            "asset": "Resources/hat13.png", 
+            "target": "hat13.png"
+        }, 
+        {
+            "asset": "Resources/hat13-hd.png", 
+            "target": "hat13-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat12.png", 
+            "target": "hat12.png"
+        }, 
+        {
+            "asset": "Resources/hat12-hd.png", 
+            "target": "hat12-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat11-hd.png", 
+            "target": "hat11-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat10.png", 
+            "target": "hat10.png"
+        }, 
+        {
+            "asset": "Resources/hat10-hd.png", 
+            "target": "hat10-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat9.png", 
+            "target": "hat9.png"
+        }, 
+        {
+            "asset": "Resources/hat9-hd.png", 
+            "target": "hat9-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat7.png", 
+            "target": "hat7.png"
+        }, 
+        {
+            "asset": "Resources/hat7-hd.png", 
+            "target": "hat7-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat6.png", 
+            "target": "hat6.png"
+        }, 
+        {
+            "asset": "Resources/hat6-hd.png", 
+            "target": "hat6-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat5.png", 
+            "target": "hat5.png"
+        }, 
+        {
+            "asset": "Resources/hat5-hd.png", 
+            "target": "hat5-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat4-hd.png", 
+            "target": "hat4-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat14-hd.png", 
+            "target": "hat14-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat4.png", 
+            "target": "hat4.png"
+        }, 
+        {
+            "asset": "Resources/hat3.png", 
+            "target": "hat3.png"
+        }, 
+        {
+            "asset": "Resources/hat3-hd.png", 
+            "target": "hat3-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat2.png", 
+            "target": "hat2.png"
+        }, 
+        {
+            "asset": "Resources/hat2-hd.png", 
+            "target": "hat2-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat1.png", 
+            "target": "hat1.png"
+        }, 
+        {
+            "asset": "Resources/hat1-hd.png", 
+            "target": "hat1-hd.png"
+        }, 
+        {
+            "asset": "Resources/g1px-hd.png", 
+            "target": "g1px-hd.png"
+        }, 
+        {
+            "asset": "Resources/w1px-hd.png", 
+            "target": "w1px-hd.png"
+        }, 
+        {
+            "asset": "Resources/b1px-hd.png", 
+            "target": "b1px-hd.png"
+        }, 
+        {
+            "asset": "Resources/ziplineicon.png", 
+            "target": "ziplineicon.png"
+        }, 
+        {
+            "asset": "Resources/ziplineicon-hd.png", 
+            "target": "ziplineicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/gun0.png", 
+            "target": "gun0.png"
+        }, 
+        {
+            "asset": "Resources/gun0-hd.png", 
+            "target": "gun0-hd.png"
+        }, 
+        {
+            "asset": "Resources/gun1.png", 
+            "target": "gun1.png"
+        }, 
+        {
+            "asset": "Resources/gun1-hd.png", 
+            "target": "gun1-hd.png"
+        }, 
+        {
+            "asset": "Resources/gun2.png", 
+            "target": "gun2.png"
+        }, 
+        {
+            "asset": "Resources/gun2-hd.png", 
+            "target": "gun2-hd.png"
+        }, 
+        {
+            "asset": "Resources/fence.png", 
+            "target": "fence.png"
+        }, 
+        {
+            "asset": "Resources/fence-hd.png", 
+            "target": "fence-hd.png"
+        }, 
+        {
+            "asset": "Resources/towtruck-hd.png", 
+            "target": "towtruck-hd.png"
+        }, 
+        {
+            "asset": "Default.png", 
+            "target": "Default.png"
+        }, 
+        {
+            "asset": "Resources/elevatorhalf.png", 
+            "target": "elevatorhalf.png"
+        }, 
+        {
+            "asset": "Resources/elevatorhalf-hd.png", 
+            "target": "elevatorhalf-hd.png"
+        }, 
+        {
+            "asset": "Resources/blood-hd.png", 
+            "target": "blood-hd.png"
+        }, 
+        {
+            "asset": "Resources/alarm.wav", 
+            "target": "alarm.wav"
+        }, 
+        {
+            "asset": "Resources/shooting2-hd.png", 
+            "target": "shooting2-hd.png"
+        }, 
+        {
+            "asset": "Resources/shooting2.png", 
+            "target": "shooting2.png"
+        }, 
+        {
+            "asset": "Resources/tire.png", 
+            "target": "tire.png"
+        }, 
+        {
+            "asset": "Resources/tire-hd.png", 
+            "target": "tire-hd.png"
+        }, 
+        {
+            "asset": "Resources/hubcap.png", 
+            "target": "hubcap.png"
+        }, 
+        {
+            "asset": "Resources/hubcap-hd.png", 
+            "target": "hubcap-hd.png"
+        }, 
+        {
+            "asset": "Resources/paper.png", 
+            "target": "paper.png"
+        }, 
+        {
+            "asset": "Resources/paper-hd.png", 
+            "target": "paper-hd.png"
+        }, 
+        {
+            "asset": "Resources/MKStencilsansBlack.ttf", 
+            "target": "MKStencilsansBlack.ttf"
+        }, 
+        {
+            "asset": "Resources/t1px-hd.png", 
+            "target": "t1px-hd.png"
+        }, 
+        {
+            "asset": "Resources/t1px.png", 
+            "target": "t1px.png"
+        }, 
+        {
+            "asset": "Resources/eyepatch.png", 
+            "target": "eyepatch.png"
+        }, 
+        {
+            "asset": "Resources/eyepatch-hd.png", 
+            "target": "eyepatch-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat19.png", 
+            "target": "hat19.png"
+        }, 
+        {
+            "asset": "Resources/hat19-hd.png", 
+            "target": "hat19-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat18.png", 
+            "target": "hat18.png"
+        }, 
+        {
+            "asset": "Resources/hat18-hd.png", 
+            "target": "hat18-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat17.png", 
+            "target": "hat17.png"
+        }, 
+        {
+            "asset": "Resources/hat17-hd.png", 
+            "target": "hat17-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat16.png", 
+            "target": "hat16.png"
+        }, 
+        {
+            "asset": "Resources/hat16-hd.png", 
+            "target": "hat16-hd.png"
+        }, 
+        {
+            "asset": "Resources/hat15.png", 
+            "target": "hat15.png"
+        }, 
+        {
+            "asset": "Resources/hat15-hd.png", 
+            "target": "hat15-hd.png"
+        }, 
+        {
+            "asset": "Resources/pagecurl.png", 
+            "target": "pagecurl.png"
+        }, 
+        {
+            "asset": "Resources/pagecurl-hd.png", 
+            "target": "pagecurl-hd.png"
+        }, 
+        {
+            "asset": "Resources/eagle.png", 
+            "target": "eagle.png"
+        }, 
+        {
+            "asset": "Resources/eagle-hd.png", 
+            "target": "eagle-hd.png"
+        }, 
+        {
+            "asset": "Resources/billboard.png", 
+            "target": "billboard.png"
+        }, 
+        {
+            "asset": "Resources/billboard-hd.png", 
+            "target": "billboard-hd.png"
+        }, 
+        {
+            "asset": "Resources/thumbup.png", 
+            "target": "thumbup.png"
+        }, 
+        {
+            "asset": "Resources/thumb.png", 
+            "target": "thumb.png"
+        }, 
+        {
+            "asset": "Resources/helpAlert-hd.png", 
+            "target": "helpAlert-hd.png"
+        }, 
+        {
+            "asset": "Resources/helpAlert.png", 
+            "target": "helpAlert.png"
+        }, 
+        {
+            "asset": "Resources/thumb-hd.png", 
+            "target": "thumb-hd.png"
+        }, 
+        {
+            "asset": "Resources/background2.png", 
+            "target": "background2.png"
+        }, 
+        {
+            "asset": "Resources/background1.png", 
+            "target": "background1.png"
+        }, 
+        {
+            "asset": "Resources/background1-hd.png", 
+            "target": "background1-hd.png"
+        }, 
+        {
+            "asset": "Resources/background2-hd.png", 
+            "target": "background2-hd.png"
+        }, 
+        {
+            "asset": "Resources/Cmain-hd.png", 
+            "target": "Cmain-hd.png"
+        }, 
+        {
+            "asset": "Resources/Cmain.png", 
+            "target": "Cmain.png"
+        }, 
+        {
+            "asset": "Resources/Cbuttonhighlighted-hd.png", 
+            "target": "Cbuttonhighlighted-hd.png"
+        }, 
+        {
+            "asset": "Resources/Cbuttonhighlighted.png", 
+            "target": "Cbuttonhighlighted.png"
+        }, 
+        {
+            "asset": "Resources/Cbutton.png", 
+            "target": "Cbutton.png"
+        }, 
+        {
+            "asset": "Resources/Cbutton-hd.png", 
+            "target": "Cbutton-hd.png"
+        }, 
+        {
+            "asset": "Resources/Carrow.png", 
+            "target": "Carrow.png"
+        }, 
+        {
+            "asset": "Resources/Carrow-hd.png", 
+            "target": "Carrow-hd.png"
+        }, 
+        {
+            "asset": "Resources/fire.png", 
+            "target": "fire.png"
+        }, 
+        {
+            "asset": "Resources/fire-hd.png", 
+            "target": "fire-hd.png"
+        }, 
+        {
+            "asset": "Resources/bluedot.png", 
+            "target": "bluedot.png"
+        }, 
+        {
+            "asset": "Resources/bluedot-hd.png", 
+            "target": "bluedot-hd.png"
+        }, 
+        {
+            "asset": "Resources/precision.png", 
+            "target": "precision.png"
+        }, 
+        {
+            "asset": "Resources/precision-hd.png", 
+            "target": "precision-hd.png"
+        }, 
+        {
+            "asset": "Resources/bipod.png", 
+            "target": "bipod.png"
+        }, 
+        {
+            "asset": "Resources/bipod-hd.png", 
+            "target": "bipod-hd.png"
+        }, 
+        {
+            "asset": "Resources/beeper.png", 
+            "target": "beeper.png"
+        }, 
+        {
+            "asset": "Resources/beeper-hd.png", 
+            "target": "beeper-hd.png"
+        }, 
+        {
+            "asset": "Resources/shotbot.png", 
+            "target": "shotbot.png"
+        }, 
+        {
+            "asset": "Resources/shotbot-hd.png", 
+            "target": "shotbot-hd.png"
+        }, 
+        {
+            "asset": "Resources/ammo3.png", 
+            "target": "ammo3.png"
+        }, 
+        {
+            "asset": "Resources/ammo3-hd.png", 
+            "target": "ammo3-hd.png"
+        }, 
+        {
+            "asset": "Resources/ammo2.png", 
+            "target": "ammo2.png"
+        }, 
+        {
+            "asset": "Resources/ammo2-hd.png", 
+            "target": "ammo2-hd.png"
+        }, 
+        {
+            "asset": "Resources/ammo1.png", 
+            "target": "ammo1.png"
+        }, 
+        {
+            "asset": "Resources/ammo1-hd.png", 
+            "target": "ammo1-hd.png"
+        }, 
+        {
+            "asset": "Resources/ammo0.png", 
+            "target": "ammo0.png"
+        }, 
+        {
+            "asset": "Resources/ammo0-hd.png", 
+            "target": "ammo0-hd.png"
+        }, 
+        {
+            "asset": "Resources/reddot.png", 
+            "target": "reddot.png"
+        }, 
+        {
+            "asset": "Resources/reddot-hd.png", 
+            "target": "reddot-hd.png"
+        }, 
+        {
+            "asset": "Resources/credbox2.png", 
+            "target": "credbox2.png"
+        }, 
+        {
+            "asset": "Resources/credbox2-hd.png", 
+            "target": "credbox2-hd.png"
+        }, 
+        {
+            "asset": "Resources/credbox1.png", 
+            "target": "credbox1.png"
+        }, 
+        {
+            "asset": "Resources/credbox1-hd.png", 
+            "target": "credbox1-hd.png"
+        }, 
+        {
+            "asset": "Resources/cinset.png", 
+            "target": "cinset.png"
+        }, 
+        {
+            "asset": "Resources/cinset-hd.png", 
+            "target": "cinset-hd.png"
+        }, 
+        {
+            "asset": "Resources/cbluebox.png", 
+            "target": "cbluebox.png"
+        }, 
+        {
+            "asset": "Resources/cbluebox-hd.png", 
+            "target": "cbluebox-hd.png"
+        }, 
+        {
+            "asset": "Resources/BOMBARD_.ttf", 
+            "target": "BOMBARD_.ttf"
+        }, 
+        {
+            "asset": "Resources/BOXOUTLINE.png", 
+            "target": "BOXOUTLINE.png"
+        }, 
+        {
+            "asset": "Resources/BOX.png", 
+            "target": "BOX.png"
+        }, 
+        {
+            "asset": "Resources/BOX-HD.png", 
+            "target": "BOX-HD.png"
+        }, 
+        {
+            "asset": "Resources/BOXOUTLINE-HD.png", 
+            "target": "BOXOUTLINE-HD.png"
+        }, 
+        {
+            "asset": "Resources/perkscreen.png", 
+            "target": "perkscreen.png"
+        }, 
+        {
+            "asset": "Resources/perkscreen-hd.png", 
+            "target": "perkscreen-hd.png"
+        }, 
+        {
+            "asset": "Resources/perkinset.png", 
+            "target": "perkinset.png"
+        }, 
+        {
+            "asset": "Resources/perkinset-hd.png", 
+            "target": "perkinset-hd.png"
+        }, 
+        {
+            "asset": "Resources/yield.png", 
+            "target": "yield.png"
+        }, 
+        {
+            "asset": "Resources/shadow-hd.png", 
+            "target": "shadow-hd.png"
+        }, 
+        {
+            "asset": "Resources/shadow.png", 
+            "target": "shadow.png"
+        }, 
+        {
+            "asset": "Resources/scopesabotage.png", 
+            "target": "scopesabotage.png"
+        }, 
+        {
+            "asset": "Resources/scopesabotage-hd.png", 
+            "target": "scopesabotage-hd.png"
+        }, 
+        {
+            "asset": "Resources/recontaunt.png", 
+            "target": "recontaunt.png"
+        }, 
+        {
+            "asset": "Resources/recontaunt-hd.png", 
+            "target": "recontaunt-hd.png"
+        }, 
+        {
+            "asset": "Resources/powerwalkers-hd.png", 
+            "target": "powerwalkers-hd.png"
+        }, 
+        {
+            "asset": "Resources/powerwalkers.png", 
+            "target": "powerwalkers.png"
+        }, 
+        {
+            "asset": "Resources/personalloan.png", 
+            "target": "personalloan.png"
+        }, 
+        {
+            "asset": "Resources/personalloan-hd.png", 
+            "target": "personalloan-hd.png"
+        }, 
+        {
+            "asset": "Resources/officeparty-hd.png", 
+            "target": "officeparty-hd.png"
+        }, 
+        {
+            "asset": "Resources/mutiny.png", 
+            "target": "mutiny.png"
+        }, 
+        {
+            "asset": "Resources/mutiny-hd.png", 
+            "target": "mutiny-hd.png"
+        }, 
+        {
+            "asset": "Resources/mobrule-hd.png", 
+            "target": "mobrule-hd.png"
+        }, 
+        {
+            "asset": "Resources/mobrule.png", 
+            "target": "mobrule.png"
+        }, 
+        {
+            "asset": "Resources/gunsafe.png", 
+            "target": "gunsafe.png"
+        }, 
+        {
+            "asset": "Resources/gunsafe-hd.png", 
+            "target": "gunsafe-hd.png"
+        }, 
+        {
+            "asset": "Resources/greatwall-hd.png", 
+            "target": "greatwall-hd.png"
+        }, 
+        {
+            "asset": "Resources/yield-hd.png", 
+            "target": "yield-hd.png"
+        }, 
+        {
+            "asset": "Resources/greatwall.png", 
+            "target": "greatwall.png"
+        }, 
+        {
+            "asset": "Resources/encryptedrecon.png", 
+            "target": "encryptedrecon.png"
+        }, 
+        {
+            "asset": "Resources/encryptedrecon-hd.png", 
+            "target": "encryptedrecon-hd.png"
+        }, 
+        {
+            "asset": "Resources/eliteparatrooper.png", 
+            "target": "eliteparatrooper.png"
+        }, 
+        {
+            "asset": "Resources/eliteparatrooper-hd.png", 
+            "target": "eliteparatrooper-hd.png"
+        }, 
+        {
+            "asset": "Resources/eliteagents.png", 
+            "target": "eliteagents.png"
+        }, 
+        {
+            "asset": "Resources/eliteagents-hd.png", 
+            "target": "eliteagents-hd.png"
+        }, 
+        {
+            "asset": "Resources/dividends.png", 
+            "target": "dividends.png"
+        }, 
+        {
+            "asset": "Resources/copycat.png", 
+            "target": "copycat.png"
+        }, 
+        {
+            "asset": "Resources/copycat-hd.png", 
+            "target": "copycat-hd.png"
+        }, 
+        {
+            "asset": "Resources/dividends-hd.png", 
+            "target": "dividends-hd.png"
+        }, 
+        {
+            "asset": "Resources/conscription.png", 
+            "target": "conscription.png"
+        }, 
+        {
+            "asset": "Resources/conscription-hd.png", 
+            "target": "conscription-hd.png"
+        }, 
+        {
+            "asset": "Resources/bodyguard.png", 
+            "target": "bodyguard.png"
+        }, 
+        {
+            "asset": "Resources/armorall.png", 
+            "target": "armorall.png"
+        }, 
+        {
+            "asset": "Resources/bodyguard-hd.png", 
+            "target": "bodyguard-hd.png"
+        }, 
+        {
+            "asset": "Resources/armorall-hd.png", 
+            "target": "armorall-hd.png"
+        }, 
+        {
+            "asset": "Resources/emptyslot.png", 
+            "target": "emptyslot.png"
+        }, 
+        {
+            "asset": "Resources/emptyslot-hd.png", 
+            "target": "emptyslot-hd.png"
+        }, 
+        {
+            "asset": "Resources/officeparty.png", 
+            "target": "officeparty.png"
+        }, 
+        {
+            "asset": "Resources/ds1x.png", 
+            "target": "ds1x.png"
+        }, 
+        {
+            "asset": "Resources/dr1x.png", 
+            "target": "dr1x.png"
+        }, 
+        {
+            "asset": "Resources/dp1x.png", 
+            "target": "dp1x.png"
+        }, 
+        {
+            "asset": "Resources/dl1x.png", 
+            "target": "dl1x.png"
+        }, 
+        {
+            "asset": "Resources/de1x.png", 
+            "target": "de1x.png"
+        }, 
+        {
+            "asset": "Resources/da1x.png", 
+            "target": "da1x.png"
+        }, 
+        {
+            "asset": "Resources/pageturn.wav", 
+            "target": "pageturn.wav"
+        }, 
+        {
+            "asset": "Resources/ExplodingRing.plist", 
+            "target": "ExplodingRing.plist"
+        }, 
+        {
+            "asset": "Resources/securityicon.png", 
+            "target": "securityicon.png"
+        }, 
+        {
+            "asset": "Resources/securityicon-hd.png", 
+            "target": "securityicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/machinegunicon.png", 
+            "target": "machinegunicon.png"
+        }, 
+        {
+            "asset": "Resources/machinegunicon-hd.png", 
+            "target": "machinegunicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/armageddonicon.png", 
+            "target": "armageddonicon.png"
+        }, 
+        {
+            "asset": "Resources/armageddonicon-hd.png", 
+            "target": "armageddonicon-hd.png"
+        }, 
+        {
+            "asset": "Resources/snow.png", 
+            "target": "snow.png"
+        }, 
+        {
+            "asset": "Resources/snow-hd.png", 
+            "target": "snow-hd.png"
+        }, 
+        {
+            "asset": "Resources/squareborder.png", 
+            "target": "squareborder.png"
+        }, 
+        {
+            "asset": "Resources/squareborder-hd.png", 
+            "target": "squareborder-hd.png"
+        }, 
+        {
+            "asset": "Resources/dt1x.png", 
+            "target": "dt1x.png"
+        }, 
+        {
+            "asset": "Resources/snowstorm.png", 
+            "target": "snowstorm.png"
+        }, 
+        {
+            "asset": "Resources/snowstorm-hd.png", 
+            "target": "snowstorm-hd.png"
+        }, 
+        {
+            "asset": "Resources/led.png", 
+            "target": "led.png"
+        }, 
+        {
+            "asset": "Resources/led-hd.png", 
+            "target": "led-hd.png"
+        }, 
+        {
+            "asset": "Resources/reparations.png", 
+            "target": "reparations.png"
+        }, 
+        {
+            "asset": "Resources/reparations-hd.png", 
+            "target": "reparations-hd.png"
+        }, 
+        {
+            "asset": "Resources/scope0.png", 
+            "target": "scope0.png"
+        }, 
+        {
+            "asset": "Resources/scope0-hd.png", 
+            "target": "scope0-hd.png"
+        }, 
+        {
+            "asset": "Resources/scope2.png", 
+            "target": "scope2.png"
+        }, 
+        {
+            "asset": "Resources/scope2-hd.png", 
+            "target": "scope2-hd.png"
+        }, 
+        {
+            "asset": "Resources/beep.wav", 
+            "target": "beep.wav"
+        }, 
+        {
+            "asset": "Resources/machinegun.png", 
+            "target": "machinegun.png"
+        }, 
+        {
+            "asset": "Resources/machinegun-hd.png", 
+            "target": "machinegun-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonlongh.png", 
+            "target": "buttonlongh.png"
+        }, 
+        {
+            "asset": "Resources/buttonlong.png", 
+            "target": "buttonlong.png"
+        }, 
+        {
+            "asset": "Resources/buttonlong-hd.png", 
+            "target": "buttonlong-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonh-hd.png", 
+            "target": "buttonh-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonh.png", 
+            "target": "buttonh.png"
+        }, 
+        {
+            "asset": "Resources/button.png", 
+            "target": "button.png"
+        }, 
+        {
+            "asset": "Resources/button-hd.png", 
+            "target": "button-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonlongh-hd.png", 
+            "target": "buttonlongh-hd.png"
+        }, 
+        {
+            "asset": "Resources/sneakpeek.png", 
+            "target": "sneakpeek.png"
+        }, 
+        {
+            "asset": "Resources/sneakpeek-hd.png", 
+            "target": "sneakpeek-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonmachinegun-hd.png", 
+            "target": "buttonmachinegun-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonmachinegun.png", 
+            "target": "buttonmachinegun.png"
+        }, 
+        {
+            "asset": "Resources/buttonarmageddonpressed.png", 
+            "target": "buttonarmageddonpressed.png"
+        }, 
+        {
+            "asset": "Resources/buttonarmageddonpressed-hd.png", 
+            "target": "buttonarmageddonpressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonarmageddon.png", 
+            "target": "buttonarmageddon.png"
+        }, 
+        {
+            "asset": "Resources/buttonarmageddon-hd.png", 
+            "target": "buttonarmageddon-hd.png"
+        }, 
+        {
+            "asset": "Resources/strongarm.png", 
+            "target": "strongarm.png"
+        }, 
+        {
+            "asset": "Resources/strongarm-hd.png", 
+            "target": "strongarm-hd.png"
+        }, 
+        {
+            "asset": "Resources/blood.plist", 
+            "target": "blood.plist"
+        }, 
+        {
+            "asset": "Resources/foo.ttf", 
+            "target": "foo.ttf"
+        }, 
+        {
+            "asset": "Resources/flag.png", 
+            "target": "flag.png"
+        }, 
+        {
+            "asset": "Resources/flag-hd.png", 
+            "target": "flag-hd.png"
+        }, 
+        {
+            "asset": "Resources/headshot.wav", 
+            "target": "headshot.wav"
+        }, 
+        {
+            "asset": "Resources/zoomOut.wav", 
+            "target": "zoomOut.wav"
+        }, 
+        {
+            "asset": "Resources/zoomIn.wav", 
+            "target": "zoomIn.wav"
+        }, 
+        {
+            "asset": "Resources/bgmusic.wav", 
+            "target": "bgmusic.wav"
+        }, 
+        {
+            "asset": "Resources/gunshot.wav", 
+            "target": "gunshot.wav"
+        }, 
+        {
+            "asset": "Resources/armageddonMono.wav", 
+            "target": "armageddonMono.wav"
+        }, 
+        {
+            "asset": "Resources/gogetsome.wav", 
+            "target": "gogetsome.wav"
+        }, 
+        {
+            "asset": "Resources/unstoppable.wav", 
+            "target": "unstoppable.wav"
+        }, 
+        {
+            "asset": "Resources/godlike.wav", 
+            "target": "godlike.wav"
+        }, 
+        {
+            "asset": "Resources/massacre.wav", 
+            "target": "massacre.wav"
+        }, 
+        {
+            "asset": "Resources/dominating.wav", 
+            "target": "dominating.wav"
+        }, 
+        {
+            "asset": "Resources/killstreak.wav", 
+            "target": "killstreak.wav"
+        }, 
+        {
+            "asset": "Resources/multikill.wav", 
+            "target": "multikill.wav"
+        }, 
+        {
+            "asset": "Resources/buttonmachinegundisabled.png", 
+            "target": "buttonmachinegundisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonmachinegundisabled-hd.png", 
+            "target": "buttonmachinegundisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/buttonarmageddondisabled.png", 
+            "target": "buttonarmageddondisabled.png"
+        }, 
+        {
+            "asset": "Resources/buttonarmageddondisabled-hd.png", 
+            "target": "buttonarmageddondisabled-hd.png"
+        }, 
+        {
+            "asset": "Resources/windowside.png", 
+            "target": "windowside.png"
+        }, 
+        {
+            "asset": "Resources/window-hd.png", 
+            "target": "window-hd.png"
+        }, 
+        {
+            "asset": "Resources/windowside-hd.png", 
+            "target": "windowside-hd.png"
+        }, 
+        {
+            "asset": "Resources/window.png", 
+            "target": "window.png"
+        }, 
+        {
+            "asset": "Resources/arrow1.png", 
+            "target": "arrow1.png"
+        }, 
+        {
+            "asset": "Resources/head.png", 
+            "target": "head.png"
+        }, 
+        {
+            "asset": "Resources/head-hd.png", 
+            "target": "head-hd.png"
+        }, 
+        {
+            "asset": "Resources/arrow1-hd.png", 
+            "target": "arrow1-hd.png"
+        }, 
+        {
+            "asset": "Resources/splash.png", 
+            "target": "splash.png"
+        }, 
+        {
+            "asset": "Resources/splash-hd.png", 
+            "target": "splash-hd.png"
+        }, 
+        {
+            "asset": "Resources/checkmark-hd.png", 
+            "target": "checkmark-hd.png"
+        }, 
+        {
+            "asset": "Resources/checkmark.png", 
+            "target": "checkmark.png"
+        }, 
+        {
+            "asset": "Resources/success.wav", 
+            "target": "success.wav"
+        }, 
+        {
+            "asset": "Resources/bodyshot.wav", 
+            "target": "bodyshot.wav"
+        }, 
+        {
+            "asset": "Resources/flag1.png", 
+            "target": "flag1.png"
+        }, 
+        {
+            "asset": "Resources/flag1-hd.png", 
+            "target": "flag1-hd.png"
+        }, 
+        {
+            "asset": "Resources/tree.png", 
+            "target": "tree.png"
+        }, 
+        {
+            "asset": "Resources/tree-hd.png", 
+            "target": "tree-hd.png"
+        }, 
+        {
+            "asset": "Resources/adminbuilding.png", 
+            "target": "adminbuilding.png"
+        }, 
+        {
+            "asset": "Resources/adminbuilding-hd.png", 
+            "target": "adminbuilding-hd.png"
+        }, 
+        {
+            "asset": "Resources/smoke.plist", 
+            "target": "smoke.plist"
+        }, 
+        {
+            "asset": "Resources/questionmark.png", 
+            "target": "questionmark.png"
+        }, 
+        {
+            "asset": "Resources/questionmark-hd.png", 
+            "target": "questionmark-hd.png"
+        }, 
+        {
+            "asset": "Resources/coin.wav", 
+            "target": "coin.wav"
+        }, 
+        {
+            "asset": "Resources/nos.png", 
+            "target": "nos.png"
+        }, 
+        {
+            "asset": "Resources/forcedaction.png", 
+            "target": "forcedaction.png"
+        }, 
+        {
+            "asset": "Resources/forcedaction-hd.png", 
+            "target": "forcedaction-hd.png"
+        }, 
+        {
+            "asset": "Resources/nos-hd.png", 
+            "target": "nos-hd.png"
+        }, 
+        {
+            "asset": "Resources/windowguy.png", 
+            "target": "windowguy.png"
+        }, 
+        {
+            "asset": "Resources/windowguy-hd.png", 
+            "target": "windowguy-hd.png"
+        }, 
+        {
+            "asset": "Resources/gamecenter.png", 
+            "target": "gamecenter.png"
+        }, 
+        {
+            "asset": "Resources/gamecenter-hd.png", 
+            "target": "gamecenter-hd.png"
+        }, 
+        {
+            "asset": "Resources/smallExplosion.plist", 
+            "target": "smallExplosion.plist"
+        }, 
+        {
+            "asset": "Resources/particleTexture.png", 
+            "target": "particleTexture.png"
+        }, 
+        {
+            "asset": "Resources/particleTexture-hd.png", 
+            "target": "particleTexture-hd.png"
+        }, 
+        {
+            "asset": "Resources/newspaper.png", 
+            "target": "newspaper.png"
+        }, 
+        {
+            "asset": "Resources/newspaper-hd.png", 
+            "target": "newspaper-hd.png"
+        }, 
+        {
+            "asset": "Resources/star.png", 
+            "target": "star.png"
+        }, 
+        {
+            "asset": "Resources/star-hd.png", 
+            "target": "star-hd.png"
+        }, 
+        {
+            "asset": "Resources/padlock.png", 
+            "target": "padlock.png"
+        }, 
+        {
+            "asset": "Resources/padlock-hd.png", 
+            "target": "padlock-hd.png"
+        }, 
+        {
+            "asset": "Resources/missionmenu.png", 
+            "target": "missionmenu.png"
+        }, 
+        {
+            "asset": "Resources/missionmenu-hd.png", 
+            "target": "missionmenu-hd.png"
+        }, 
+        {
+            "asset": "Resources/gift.png", 
+            "target": "gift.png"
+        }, 
+        {
+            "asset": "Resources/fruitbasket.png", 
+            "target": "fruitbasket.png"
+        }, 
+        {
+            "asset": "Resources/fruitbasket-hd.png", 
+            "target": "fruitbasket-hd.png"
+        }, 
+        {
+            "asset": "Resources/gift-hd.png", 
+            "target": "gift-hd.png"
+        }, 
+        {
+            "asset": "Resources/flowers.png", 
+            "target": "flowers.png"
+        }, 
+        {
+            "asset": "Resources/flowers-hd.png", 
+            "target": "flowers-hd.png"
+        }, 
+        {
+            "asset": "Resources/briefcase.png", 
+            "target": "briefcase.png"
+        }, 
+        {
+            "asset": "Resources/briefcase-hd.png", 
+            "target": "briefcase-hd.png"
+        }, 
+        {
+            "asset": "Resources/bigExplosion.plist", 
+            "target": "bigExplosion.plist"
+        }, 
+        {
+            "asset": "Resources/bigExplosion-hd.png", 
+            "target": "bigExplosion-hd.png"
+        }, 
+        {
+            "asset": "Resources/bigExplosion.png", 
+            "target": "bigExplosion.png"
+        }, 
+        {
+            "asset": "Resources/adminbuildingMini.png", 
+            "target": "adminbuildingMini.png"
+        }, 
+        {
+            "asset": "Resources/fireButtonChromePressed.png", 
+            "target": "fireButtonChromePressed.png"
+        }, 
+        {
+            "asset": "Resources/adminbuildingMini-hd.png", 
+            "target": "adminbuildingMini-hd.png"
+        }, 
+        {
+            "asset": "Resources/fireButtonChromePressed-hd.png", 
+            "target": "fireButtonChromePressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/crate.png", 
+            "target": "crate.png"
+        }, 
+        {
+            "asset": "Resources/crate-hd.png", 
+            "target": "crate-hd.png"
+        }, 
+        {
+            "asset": "Resources/missionmenuPressed.png", 
+            "target": "missionmenuPressed.png"
+        }, 
+        {
+            "asset": "Resources/missionmenuPressed-hd.png", 
+            "target": "missionmenuPressed-hd.png"
+        }, 
+        {
+            "asset": "Resources/bombard.png", 
+            "target": "bombard.png"
+        }, 
+        {
+            "asset": "Resources/bombard.fnt", 
+            "target": "bombard.fnt"
+        }, 
+        {
+            "asset": "Resources/bombard-hd.png", 
+            "target": "bombard-hd.png"
+        }, 
+        {
+            "asset": "Resources/bombard-hd.fnt", 
+            "target": "bombard-hd.fnt"
+        }, 
+        {
+            "asset": "Resources/fbButton.png", 
+            "target": "fbButton.png"
+        }, 
+        {
+            "asset": "Resources/twitterButton.png", 
+            "target": "twitterButton.png"
+        }, 
+        {
+            "asset": "Resources/fbButton-hd.png", 
+            "target": "fbButton-hd.png"
+        }, 
+        {
+            "asset": "Resources/twitterButton-hd.png", 
+            "target": "twitterButton-hd.png"
+        }, 
+        {
+            "asset": "ShareKit/Core/SHKSharers.plist", 
+            "target": "SHKSharers.plist"
+        }, 
+        {
+            "asset": "ShareKit/Localization/de.lproj/Localizable.strings", 
+            "target": "de.lproj/Localizable.strings"
+        }, 
+        {
+            "asset": "ShareKit/Localization/en.lproj/Localizable.strings", 
+            "target": "en.lproj/Localizable.strings"
+        }, 
+        {
+            "asset": "ShareKit/Sharers/Services/Facebook/FBConnect/FBConnect.bundle", 
+            "target": "FBConnect.bundle"
+        }, 
+        {
+            "asset": "Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }
+    ], 
+    "type": "app", 
+    "header_paths": [
+        {
+            "type": "iquote", 
+            "header_path": "OSL-generated-files.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "OSL-own-target-headers.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "OSL-all-target-headers.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "iquote", 
+            "header_path": "OSL-project-headers.hmap", 
+            "hmap": {
+                "GlassSlider.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GlassSlider.h", 
+                    "key": "GlassSlider.h"
+                }, 
+                "TutorialScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TutorialScene.h", 
+                    "key": "TutorialScene.h"
+                }, 
+                "LinearPoint.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "LinearPoint.h", 
+                    "key": "LinearPoint.h"
+                }, 
+                "CCTextureCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureCache.h", 
+                    "key": "CCTextureCache.h"
+                }, 
+                "SHKActivityIndicator.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKActivityIndicator.h", 
+                    "key": "SHKActivityIndicator.h"
+                }, 
+                "SHKCustomFormFieldCell.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomFormFieldCell.h", 
+                    "key": "SHKCustomFormFieldCell.h"
+                }, 
+                "SHKInstapaper.h": {
+                    "prefix": "ShareKit/Sharers/Services/Instapaper/", 
+                    "suffix": "SHKInstapaper.h", 
+                    "key": "SHKInstapaper.h"
+                }, 
+                "MBProgressHUD.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MBProgressHUD.h", 
+                    "key": "MBProgressHUD.h"
+                }, 
+                "TowTruck.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TowTruck.h", 
+                    "key": "TowTruck.h"
+                }, 
+                "CCTMXTiledMap.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXTiledMap.h", 
+                    "key": "CCTMXTiledMap.h"
+                }, 
+                "CCTouchDelegateProtocol.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDelegateProtocol.h", 
+                    "key": "CCTouchDelegateProtocol.h"
+                }, 
+                "OAPlaintextSignatureProvider.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAPlaintextSignatureProvider.h", 
+                    "key": "OAPlaintextSignatureProvider.h"
+                }, 
+                "EnemyM3.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyM3.h", 
+                    "key": "EnemyM3.h"
+                }, 
+                "CDAudioManager.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDAudioManager.h", 
+                    "key": "CDAudioManager.h"
+                }, 
+                "MissionSplash.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MissionSplash.h", 
+                    "key": "MissionSplash.h"
+                }, 
+                "FBSession.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBSession.h", 
+                    "key": "FBSession.h"
+                }, 
+                "CocosDenshion.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CocosDenshion.h", 
+                    "key": "CocosDenshion.h"
+                }, 
+                "CCActionProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionProgressTimer.h", 
+                    "key": "CCActionProgressTimer.h"
+                }, 
+                "WinScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "WinScene.h", 
+                    "key": "WinScene.h"
+                }, 
+                "CDataScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "CDataScanner_Extensions.h", 
+                    "key": "CDataScanner_Extensions.h"
+                }, 
+                "CCAtlasNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAtlasNode.h", 
+                    "key": "CCAtlasNode.h"
+                }, 
+                "ComingSoon.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ComingSoon.h", 
+                    "key": "ComingSoon.h"
+                }, 
+                "CCLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLayer.h", 
+                    "key": "CCLayer.h"
+                }, 
+                "SHKPhotoAlbum.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Save to Album/", 
+                    "suffix": "SHKPhotoAlbum.h", 
+                    "key": "SHKPhotoAlbum.h"
+                }, 
+                "OSL_Prefix.pch": {
+                    "prefix": "./", 
+                    "suffix": "OSL_Prefix.pch", 
+                    "key": "OSL_Prefix.pch"
+                }, 
+                "ccConfig.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccConfig.h", 
+                    "key": "ccConfig.h"
+                }, 
+                "FontLabelStringDrawing.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabelStringDrawing.h", 
+                    "key": "FontLabelStringDrawing.h"
+                }, 
+                "CCAnimationCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimationCache.h", 
+                    "key": "CCAnimationCache.h"
+                }, 
+                "CCSpriteSheet.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteSheet.h", 
+                    "key": "CCSpriteSheet.h"
+                }, 
+                "FBConnectGlobal.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBConnectGlobal.h", 
+                    "key": "FBConnectGlobal.h"
+                }, 
+                "cocos2d.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "cocos2d.h", 
+                    "key": "cocos2d.h"
+                }, 
+                "CCGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrid.h", 
+                    "key": "CCGrid.h"
+                }, 
+                "uthash.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "uthash.h", 
+                    "key": "uthash.h"
+                }, 
+                "ccTypes.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccTypes.h", 
+                    "key": "ccTypes.h"
+                }, 
+                "SHKRequest.h": {
+                    "prefix": "ShareKit/Core/Helpers/", 
+                    "suffix": "SHKRequest.h", 
+                    "key": "SHKRequest.h"
+                }, 
+                "SHKCustomShareMenu.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomShareMenu.h", 
+                    "key": "SHKCustomShareMenu.h"
+                }, 
+                "CCTransition.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransition.h", 
+                    "key": "CCTransition.h"
+                }, 
+                "FBDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBDialog.h", 
+                    "key": "FBDialog.h"
+                }, 
+                "SHKCustomShareMenuCell.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomShareMenuCell.h", 
+                    "key": "SHKCustomShareMenuCell.h"
+                }, 
+                "NSDictionary_JSONExtensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSDictionary_JSONExtensions.h", 
+                    "key": "NSDictionary_JSONExtensions.h"
+                }, 
+                "CCSpriteFrameCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrameCache.h", 
+                    "key": "CCSpriteFrameCache.h"
+                }, 
+                "TextMenuItem.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TextMenuItem.h", 
+                    "key": "TextMenuItem.h"
+                }, 
+                "MacGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "MacGLView.h", 
+                    "key": "MacGLView.h"
+                }, 
+                "FBFeedDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBFeedDialog.h", 
+                    "key": "FBFeedDialog.h"
+                }, 
+                "SHKSafari.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Open in Safari/", 
+                    "suffix": "SHKSafari.h", 
+                    "key": "SHKSafari.h"
+                }, 
+                "CCGrabber.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrabber.h", 
+                    "key": "CCGrabber.h"
+                }, 
+                "IAPHelper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "IAPHelper.h", 
+                    "key": "IAPHelper.h"
+                }, 
+                "CCProtocols.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProtocols.h", 
+                    "key": "CCProtocols.h"
+                }, 
+                "CCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCArray.h", 
+                    "key": "CCArray.h"
+                }, 
+                "SHKGoogleReader.h": {
+                    "prefix": "ShareKit/Sharers/Services/Google Reader/", 
+                    "suffix": "SHKGoogleReader.h", 
+                    "key": "SHKGoogleReader.h"
+                }, 
+                "ccCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccCArray.h", 
+                    "key": "ccCArray.h"
+                }, 
+                "CCMenu.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenu.h", 
+                    "key": "CCMenu.h"
+                }, 
+                "ES1Renderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ES1Renderer.h", 
+                    "key": "ES1Renderer.h"
+                }, 
+                "CustomScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "CustomScene.h", 
+                    "key": "CustomScene.h"
+                }, 
+                "ZipUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ZipUtils.h", 
+                    "key": "ZipUtils.h"
+                }, 
+                "MenuScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MenuScene.h", 
+                    "key": "MenuScene.h"
+                }, 
+                "MultiScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MultiScene.h", 
+                    "key": "MultiScene.h"
+                }, 
+                "SHKFBStreamDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/", 
+                    "suffix": "SHKFBStreamDialog.h", 
+                    "key": "SHKFBStreamDialog.h"
+                }, 
+                "FBConnect.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBConnect.h", 
+                    "key": "FBConnect.h"
+                }, 
+                "FBPermissionDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBPermissionDialog.h", 
+                    "key": "FBPermissionDialog.h"
+                }, 
+                "ZAttributedString.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedString.h", 
+                    "key": "ZAttributedString.h"
+                }, 
+                "CCTouchDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDispatcher.h", 
+                    "key": "CCTouchDispatcher.h"
+                }, 
+                "Perk.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Perk.h", 
+                    "key": "Perk.h"
+                }, 
+                "SHKSharer.h": {
+                    "prefix": "ShareKit/Core/Base Sharer Classes/", 
+                    "suffix": "SHKSharer.h", 
+                    "key": "SHKSharer.h"
+                }, 
+                "SHKDelicious.h": {
+                    "prefix": "ShareKit/Sharers/Services/Delicious/", 
+                    "suffix": "SHKDelicious.h", 
+                    "key": "SHKDelicious.h"
+                }, 
+                "CDOpenALSupport.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDOpenALSupport.h", 
+                    "key": "CDOpenALSupport.h"
+                }, 
+                "SFHFKeychainUtils.h": {
+                    "prefix": "ShareKit/Core/Helpers/Keychain/", 
+                    "suffix": "SFHFKeychainUtils.h", 
+                    "key": "SFHFKeychainUtils.h"
+                }, 
+                "EnemyTimed.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyTimed.h", 
+                    "key": "EnemyTimed.h"
+                }, 
+                "CCRibbon.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRibbon.h", 
+                    "key": "CCRibbon.h"
+                }, 
+                "Scope.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Scope.h", 
+                    "key": "Scope.h"
+                }, 
+                "Mission1.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Mission1.h", 
+                    "key": "Mission1.h"
+                }, 
+                "NSURL+Base.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Categories/", 
+                    "suffix": "NSURL+Base.h", 
+                    "key": "NSURL+Base.h"
+                }, 
+                "SHKTwitterForm.h": {
+                    "prefix": "ShareKit/Sharers/Services/Twitter/", 
+                    "suffix": "SHKTwitterForm.h", 
+                    "key": "SHKTwitterForm.h"
+                }, 
+                "TransformUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TransformUtils.h", 
+                    "key": "TransformUtils.h"
+                }, 
+                "NSString+URLEncoding.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Categories/", 
+                    "suffix": "NSString+URLEncoding.h", 
+                    "key": "NSString+URLEncoding.h"
+                }, 
+                "CCSprite.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSprite.h", 
+                    "key": "CCSprite.h"
+                }, 
+                "FBStreamDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBStreamDialog.h", 
+                    "key": "FBStreamDialog.h"
+                }, 
+                "ESRenderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ESRenderer.h", 
+                    "key": "ESRenderer.h"
+                }, 
+                "BombTruck.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "BombTruck.h", 
+                    "key": "BombTruck.h"
+                }, 
+                "EnemyM2.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyM2.h", 
+                    "key": "EnemyM2.h"
+                }, 
+                "SHKFormController.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKFormController.h", 
+                    "key": "SHKFormController.h"
+                }, 
+                "CCParallaxNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParallaxNode.h", 
+                    "key": "CCParallaxNode.h"
+                }, 
+                "Helicopter.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Helicopter.h", 
+                    "key": "Helicopter.h"
+                }, 
+                "CCProfiling.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCProfiling.h", 
+                    "key": "CCProfiling.h"
+                }, 
+                "CCParticleSystemPoint.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemPoint.h", 
+                    "key": "CCParticleSystemPoint.h"
+                }, 
+                "CCConfiguration.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCConfiguration.h", 
+                    "key": "CCConfiguration.h"
+                }, 
+                "CCRenderTexture.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRenderTexture.h", 
+                    "key": "CCRenderTexture.h"
+                }, 
+                "CCDirectorMac.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCDirectorMac.h", 
+                    "key": "CCDirectorMac.h"
+                }, 
+                "NSScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSScanner_Extensions.h", 
+                    "key": "NSScanner_Extensions.h"
+                }, 
+                "CCActionGrid3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid3D.h", 
+                    "key": "CCActionGrid3D.h"
+                }, 
+                "SHKActionSheet.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKActionSheet.h", 
+                    "key": "SHKActionSheet.h"
+                }, 
+                "TGAlib.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TGAlib.h", 
+                    "key": "TGAlib.h"
+                }, 
+                "PlayScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PlayScene.h", 
+                    "key": "PlayScene.h"
+                }, 
+                "utlist.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "utlist.h", 
+                    "key": "utlist.h"
+                }, 
+                "CCGL.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCGL.h", 
+                    "key": "CCGL.h"
+                }, 
+                "SHKFormFieldSettings.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKFormFieldSettings.h", 
+                    "key": "SHKFormFieldSettings.h"
+                }, 
+                "CJSONSerializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONSerializer.h", 
+                    "key": "CJSONSerializer.h"
+                }, 
+                "sha1.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Crytpo/", 
+                    "suffix": "sha1.h", 
+                    "key": "sha1.h"
+                }, 
+                "NSMutableURLRequest+Parameters.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Categories/", 
+                    "suffix": "NSMutableURLRequest+Parameters.h", 
+                    "key": "NSMutableURLRequest+Parameters.h"
+                }, 
+                "CCScene.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScene.h", 
+                    "key": "CCScene.h"
+                }, 
+                "SHKMail.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Email/", 
+                    "suffix": "SHKMail.h", 
+                    "key": "SHKMail.h"
+                }, 
+                "MyMenuButton.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyMenuButton.h", 
+                    "key": "MyMenuButton.h"
+                }, 
+                "PreHelpScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PreHelpScene.h", 
+                    "key": "PreHelpScene.h"
+                }, 
+                "TruckMission.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TruckMission.h", 
+                    "key": "TruckMission.h"
+                }, 
+                "StatsScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "StatsScene.h", 
+                    "key": "StatsScene.h"
+                }, 
+                "Plane.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Plane.h", 
+                    "key": "Plane.h"
+                }, 
+                "CCActionTiledGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTiledGrid.h", 
+                    "key": "CCActionTiledGrid.h"
+                }, 
+                "CJSONScanner.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONScanner.h", 
+                    "key": "CJSONScanner.h"
+                }, 
+                "OpenGL_Internal.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "OpenGL_Internal.h", 
+                    "key": "OpenGL_Internal.h"
+                }, 
+                "Truck.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Truck.h", 
+                    "key": "Truck.h"
+                }, 
+                "CCActionPageTurn3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionPageTurn3D.h", 
+                    "key": "CCActionPageTurn3D.h"
+                }, 
+                "CCParticleSystem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystem.h", 
+                    "key": "CCParticleSystem.h"
+                }, 
+                "OAAsynchronousDataFetcher.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAAsynchronousDataFetcher.h", 
+                    "key": "OAAsynchronousDataFetcher.h"
+                }, 
+                "SimpleAudioEngine.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "SimpleAudioEngine.h", 
+                    "key": "SimpleAudioEngine.h"
+                }, 
+                "ZFont.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZFont.h", 
+                    "key": "ZFont.h"
+                }, 
+                "OAHMAC_SHA1SignatureProvider.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAHMAC_SHA1SignatureProvider.h", 
+                    "key": "OAHMAC_SHA1SignatureProvider.h"
+                }, 
+                "GameConfig.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GameConfig.h", 
+                    "key": "GameConfig.h"
+                }, 
+                "OAuthConsumer.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAuthConsumer.h", 
+                    "key": "OAuthConsumer.h"
+                }, 
+                "MissionScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MissionScene.h", 
+                    "key": "MissionScene.h"
+                }, 
+                "OAConsumer.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAConsumer.h", 
+                    "key": "OAConsumer.h"
+                }, 
+                "SHKTwitter.h": {
+                    "prefix": "ShareKit/Sharers/Services/Twitter/", 
+                    "suffix": "SHKTwitter.h", 
+                    "key": "SHKTwitter.h"
+                }, 
+                "CreditScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "CreditScene.h", 
+                    "key": "CreditScene.h"
+                }, 
+                "CCParticleExamples.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleExamples.h", 
+                    "key": "CCParticleExamples.h"
+                }, 
+                "LoseScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "LoseScene.h", 
+                    "key": "LoseScene.h"
+                }, 
+                "Armored.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Armored.h", 
+                    "key": "Armored.h"
+                }, 
+                "SHKOAuthView.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKOAuthView.h", 
+                    "key": "SHKOAuthView.h"
+                }, 
+                "CCAnimation.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimation.h", 
+                    "key": "CCAnimation.h"
+                }, 
+                "ConnectingScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ConnectingScene.h", 
+                    "key": "ConnectingScene.h"
+                }, 
+                "MyDial.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyDial.h", 
+                    "key": "MyDial.h"
+                }, 
+                "JDMenuItem.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "JDMenuItem.h", 
+                    "key": "JDMenuItem.h"
+                }, 
+                "CCCompatibility.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCompatibility.h", 
+                    "key": "CCCompatibility.h"
+                }, 
+                "GoldScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GoldScene.h", 
+                    "key": "GoldScene.h"
+                }, 
+                "ZAttributedStringPrivate.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedStringPrivate.h", 
+                    "key": "ZAttributedStringPrivate.h"
+                }, 
+                "OADataFetcher.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OADataFetcher.h", 
+                    "key": "OADataFetcher.h"
+                }, 
+                "Extras.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Extras.h", 
+                    "key": "Extras.h"
+                }, 
+                "CCLabelBMFont.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelBMFont.h", 
+                    "key": "CCLabelBMFont.h"
+                }, 
+                "CCActionEase.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionEase.h", 
+                    "key": "CCActionEase.h"
+                }, 
+                "CCActionInterval.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInterval.h", 
+                    "key": "CCActionInterval.h"
+                }, 
+                "SHK.h": {
+                    "prefix": "ShareKit/Core/", 
+                    "suffix": "SHK.h", 
+                    "key": "SHK.h"
+                }, 
+                "hmac.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Crytpo/", 
+                    "suffix": "hmac.h", 
+                    "key": "hmac.h"
+                }, 
+                "OAMutableURLRequest.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAMutableURLRequest.h", 
+                    "key": "OAMutableURLRequest.h"
+                }, 
+                "NSDataAES256.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "NSDataAES256.h", 
+                    "key": "NSDataAES256.h"
+                }, 
+                "SHKReadItLater.h": {
+                    "prefix": "ShareKit/Sharers/Services/Read It Later/", 
+                    "suffix": "SHKReadItLater.h", 
+                    "key": "SHKReadItLater.h"
+                }, 
+                "OARequestParameter.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OARequestParameter.h", 
+                    "key": "OARequestParameter.h"
+                }, 
+                "ChildMenuButton.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ChildMenuButton.h", 
+                    "key": "ChildMenuButton.h"
+                }, 
+                "EAGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "EAGLView.h", 
+                    "key": "EAGLView.h"
+                }, 
+                "CCActionManager.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionManager.h", 
+                    "key": "CCActionManager.h"
+                }, 
+                "CCMotionStreak.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMotionStreak.h", 
+                    "key": "CCMotionStreak.h"
+                }, 
+                "CCFileUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCFileUtils.h", 
+                    "key": "CCFileUtils.h"
+                }, 
+                "SHKConfig.h": {
+                    "prefix": "ShareKit/", 
+                    "suffix": "SHKConfig.h", 
+                    "key": "SHKConfig.h"
+                }, 
+                "CCDirectorIOS.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCDirectorIOS.h", 
+                    "key": "CCDirectorIOS.h"
+                }, 
+                "SHKCopy.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Copy/", 
+                    "suffix": "SHKCopy.h", 
+                    "key": "SHKCopy.h"
+                }, 
+                "SHKViewControllerWrapper.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKViewControllerWrapper.h", 
+                    "key": "SHKViewControllerWrapper.h"
+                }, 
+                "FBXMLHandler.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBXMLHandler.h", 
+                    "key": "FBXMLHandler.h"
+                }, 
+                "GameScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GameScene.h", 
+                    "key": "GameScene.h"
+                }, 
+                "SHKShareMenu.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKShareMenu.h", 
+                    "key": "SHKShareMenu.h"
+                }, 
+                "CCAction.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAction.h", 
+                    "key": "CCAction.h"
+                }, 
+                "SHKOAuthSharer.h": {
+                    "prefix": "ShareKit/Core/Base Sharer Classes/", 
+                    "suffix": "SHKOAuthSharer.h", 
+                    "key": "SHKOAuthSharer.h"
+                }, 
+                "Base64Transcoder.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Crytpo/", 
+                    "suffix": "Base64Transcoder.h", 
+                    "key": "Base64Transcoder.h"
+                }, 
+                "ComputerScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ComputerScene.h", 
+                    "key": "ComputerScene.h"
+                }, 
+                "Ammo.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Ammo.h", 
+                    "key": "Ammo.h"
+                }, 
+                "OASignatureProviding.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OASignatureProviding.h", 
+                    "key": "OASignatureProviding.h"
+                }, 
+                "DeviceDetection.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "DeviceDetection.h", 
+                    "key": "DeviceDetection.h"
+                }, 
+                "CCTMXXMLParser.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXXMLParser.h", 
+                    "key": "CCTMXXMLParser.h"
+                }, 
+                "CCTransitionRadial.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionRadial.h", 
+                    "key": "CCTransitionRadial.h"
+                }, 
+                "FBRequest.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBRequest.h", 
+                    "key": "FBRequest.h"
+                }, 
+                "CCActionCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionCamera.h", 
+                    "key": "CCActionCamera.h"
+                }, 
+                "OAServiceTicket.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAServiceTicket.h", 
+                    "key": "OAServiceTicket.h"
+                }, 
+                "CDConfig.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDConfig.h", 
+                    "key": "CDConfig.h"
+                }, 
+                "CCLabelTTF.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelTTF.h", 
+                    "key": "CCLabelTTF.h"
+                }, 
+                "RootViewController.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "RootViewController.h", 
+                    "key": "RootViewController.h"
+                }, 
+                "PopupLayer.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PopupLayer.h", 
+                    "key": "PopupLayer.h"
+                }, 
+                "Stats.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Stats.h", 
+                    "key": "Stats.h"
+                }, 
+                "Joystick.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Joystick.h", 
+                    "key": "Joystick.h"
+                }, 
+                "CGPointExtension.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CGPointExtension.h", 
+                    "key": "CGPointExtension.h"
+                }, 
+                "CCActionTween.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTween.h", 
+                    "key": "CCActionTween.h"
+                }, 
+                "HelpScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "HelpScene.h", 
+                    "key": "HelpScene.h"
+                }, 
+                "EquipmentScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EquipmentScene.h", 
+                    "key": "EquipmentScene.h"
+                }, 
+                "Vector.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Vector.h", 
+                    "key": "Vector.h"
+                }, 
+                "SHKFormFieldCell.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKFormFieldCell.h", 
+                    "key": "SHKFormFieldCell.h"
+                }, 
+                "CCProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProgressTimer.h", 
+                    "key": "CCProgressTimer.h"
+                }, 
+                "SettingsScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "SettingsScene.h", 
+                    "key": "SettingsScene.h"
+                }, 
+                "CCNS.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCNS.h", 
+                    "key": "CCNS.h"
+                }, 
+                "OAToken.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAToken.h", 
+                    "key": "OAToken.h"
+                }, 
+                "CCTileMapAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTileMapAtlas.h", 
+                    "key": "CCTileMapAtlas.h"
+                }, 
+                "SHKCustomFormController.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomFormController.h", 
+                    "key": "SHKCustomFormController.h"
+                }, 
+                "CCTMXLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXLayer.h", 
+                    "key": "CCTMXLayer.h"
+                }, 
+                "PerkScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PerkScene.h", 
+                    "key": "PerkScene.h"
+                }, 
+                "MyToggle.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyToggle.h", 
+                    "key": "MyToggle.h"
+                }, 
+                "CCActionInstant.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInstant.h", 
+                    "key": "CCActionInstant.h"
+                }, 
+                "CCSpriteFrame.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrame.h", 
+                    "key": "CCSpriteFrame.h"
+                }, 
+                "CCScheduler.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScheduler.h", 
+                    "key": "CCScheduler.h"
+                }, 
+                "TutorialSplash.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TutorialSplash.h", 
+                    "key": "TutorialSplash.h"
+                }, 
+                "NSCharacterSet_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSCharacterSet_Extensions.h", 
+                    "key": "NSCharacterSet_Extensions.h"
+                }, 
+                "CCTexturePVR.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexturePVR.h", 
+                    "key": "CCTexturePVR.h"
+                }, 
+                "CCBlockSupport.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCBlockSupport.h", 
+                    "key": "CCBlockSupport.h"
+                }, 
+                "glu.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "glu.h", 
+                    "key": "glu.h"
+                }, 
+                "FontLabel.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabel.h", 
+                    "key": "FontLabel.h"
+                }, 
+                "CDataScanner.h": {
+                    "prefix": "libs/TouchJSON/", 
+                    "suffix": "CDataScanner.h", 
+                    "key": "CDataScanner.h"
+                }, 
+                "CCTransitionPageTurn.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionPageTurn.h", 
+                    "key": "CCTransitionPageTurn.h"
+                }, 
+                "Radio.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Radio.h", 
+                    "key": "Radio.h"
+                }, 
+                "SHKItem.h": {
+                    "prefix": "ShareKit/Core/", 
+                    "suffix": "SHKItem.h", 
+                    "key": "SHKItem.h"
+                }, 
+                "base64.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "base64.h", 
+                    "key": "base64.h"
+                }, 
+                "CCNotifications.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCNotifications.h", 
+                    "key": "CCNotifications.h"
+                }, 
+                "CCDrawingPrimitives.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDrawingPrimitives.h", 
+                    "key": "CCDrawingPrimitives.h"
+                }, 
+                "FontManager.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontManager.h", 
+                    "key": "FontManager.h"
+                }, 
+                "EnemyParatrooper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyParatrooper.h", 
+                    "key": "EnemyParatrooper.h"
+                }, 
+                "SHKOfflineSharer.h": {
+                    "prefix": "ShareKit/Core/", 
+                    "suffix": "SHKOfflineSharer.h", 
+                    "key": "SHKOfflineSharer.h"
+                }, 
+                "CCParticleSystemQuad.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemQuad.h", 
+                    "key": "CCParticleSystemQuad.h"
+                }, 
+                "ccMacros.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccMacros.h", 
+                    "key": "ccMacros.h"
+                }, 
+                "Enemy.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Enemy.h", 
+                    "key": "Enemy.h"
+                }, 
+                "CCDirector.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDirector.h", 
+                    "key": "CCDirector.h"
+                }, 
+                "Vehicle.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Vehicle.h", 
+                    "key": "Vehicle.h"
+                }, 
+                "CustomPoint.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "CustomPoint.h", 
+                    "key": "CustomPoint.h"
+                }, 
+                "SurvivalMenuScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "SurvivalMenuScene.h", 
+                    "key": "SurvivalMenuScene.h"
+                }, 
+                "CCLabelAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelAtlas.h", 
+                    "key": "CCLabelAtlas.h"
+                }, 
+                "AppDelegate.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "AppDelegate.h", 
+                    "key": "AppDelegate.h"
+                }, 
+                "SHKPinboard.h": {
+                    "prefix": "ShareKit/Sharers/Services/Pinboard/", 
+                    "suffix": "SHKPinboard.h", 
+                    "key": "SHKPinboard.h"
+                }, 
+                "Rifle.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Rifle.h", 
+                    "key": "Rifle.h"
+                }, 
+                "MyIAPHelper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyIAPHelper.h", 
+                    "key": "MyIAPHelper.h"
+                }, 
+                "Reachability.h": {
+                    "prefix": "ShareKit/Reachability/", 
+                    "suffix": "Reachability.h", 
+                    "key": "Reachability.h"
+                }, 
+                "CCTexture2D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexture2D.h", 
+                    "key": "CCTexture2D.h"
+                }, 
+                "Sniper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Sniper.h", 
+                    "key": "Sniper.h"
+                }, 
+                "CCTextureAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureAtlas.h", 
+                    "key": "CCTextureAtlas.h"
+                }, 
+                "CCSpriteBatchNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteBatchNode.h", 
+                    "key": "CCSpriteBatchNode.h"
+                }, 
+                "FBLoginDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBLoginDialog.h", 
+                    "key": "FBLoginDialog.h"
+                }, 
+                "Story.h": {
+                    "prefix": "./", 
+                    "suffix": "Story.h", 
+                    "key": "Story.h"
+                }, 
+                "SHKFacebook.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/", 
+                    "suffix": "SHKFacebook.h", 
+                    "key": "SHKFacebook.h"
+                }, 
+                "notificationDesign.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "notificationDesign.h", 
+                    "key": "notificationDesign.h"
+                }, 
+                "UIWebView+SHK.h": {
+                    "prefix": "ShareKit/Core/Categories/", 
+                    "suffix": "UIWebView+SHK.h", 
+                    "key": "UIWebView+SHK.h"
+                }, 
+                "CJSONDeserializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONDeserializer.h", 
+                    "key": "CJSONDeserializer.h"
+                }, 
+                "Loadout.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Loadout.h", 
+                    "key": "Loadout.h"
+                }, 
+                "CCNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCNode.h", 
+                    "key": "CCNode.h"
+                }, 
+                "FBLoginButton.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBLoginButton.h", 
+                    "key": "FBLoginButton.h"
+                }, 
+                "ccUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccUtils.h", 
+                    "key": "ccUtils.h"
+                }, 
+                "CCActionGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid.h", 
+                    "key": "CCActionGrid.h"
+                }, 
+                "CCEventDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCEventDispatcher.h", 
+                    "key": "CCEventDispatcher.h"
+                }, 
+                "GameKitHelper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GameKitHelper.h", 
+                    "key": "GameKitHelper.h"
+                }, 
+                "CCTouchHandler.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchHandler.h", 
+                    "key": "CCTouchHandler.h"
+                }, 
+                "SHKTumblr.h": {
+                    "prefix": "ShareKit/Sharers/Services/Tumblr/", 
+                    "suffix": "SHKTumblr.h", 
+                    "key": "SHKTumblr.h"
+                }, 
+                "CCMenuItem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenuItem.h", 
+                    "key": "CCMenuItem.h"
+                }, 
+                "CCCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCamera.h", 
+                    "key": "CCCamera.h"
+                }, 
+                "CCTMXObjectGroup.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXObjectGroup.h", 
+                    "key": "CCTMXObjectGroup.h"
+                }
+            }
+        }
+    ], 
+    "modules": [], 
+    "version": "1", 
+    "flags": [
+        "-fwritable-strings", 
+        "-funroll-loops", 
+        "-fasm-blocks", 
+        {
+            "flag": "-std=c99", 
+            "not_type": "c++"
+        }, 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wno-deprecated-declarations", 
+        "-Wreturn-type", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }
+    ], 
+    "deps": [
+        "UIKit"
+    ], 
+    "config": {
+        "APPLICATION_IDENTIFIER": "osl", 
+        "TEMPLATE_VALUES": {
+            "PRODUCT_NAME": "OSL", 
+            "EXECUTABLE_NAME": "OSL"
+        }, 
+        "LONG_VERSION": "1.8", 
+        "SHORT_VERSION": "2", 
+        "APPLICATION_NAME": "OSL", 
+        "APPLICATION_FULL_NAME": "OSL"
+    }
+}

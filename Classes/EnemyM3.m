@@ -176,7 +176,7 @@
 - (void) startMovingWithPoints: (NSArray*) points
 {
 	
-	self.c = [[points objectAtIndex:(arc4random() % [points count])] retain];
+	self.c = [[points objectAtIndex:(uint)(arc4random() % [points count])] retain];
 	//CCLOG(@"%@",c.name);
 	//self.position = c.point;
 	//CCLOG(@"%f,%f",self.position.x,self.position.y);

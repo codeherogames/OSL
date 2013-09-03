@@ -694,7 +694,6 @@
 		6D47285117CE71DE009B9BF4 /* FBSBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D47282717CE71DE009B9BF4 /* FBSBJsonParser.m */; };
 		6D47285217CE71DE009B9BF4 /* FBSBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D47282917CE71DE009B9BF4 /* FBSBJsonWriter.m */; };
 		6D65C71C17CBF42E002BBDF2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D65C71A17CBF42E002BBDF2 /* Reachability.m */; };
-		6D65C72317CBF88B002BBDF2 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D65C72017CBF782002BBDF2 /* Tapjoy.framework */; };
 		6D939DBF17CBEC3D003BC4BA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D939DBE17CBEC3D003BC4BA /* CFNetwork.framework */; };
 		6D939DC117CBEC69003BC4BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D939DC017CBEC69003BC4BA /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6DB8796217CD320000FA31DC /* TJCclose_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB8796017CD320000FA31DC /* TJCclose_button.png */; };
@@ -757,6 +756,9 @@
 		B71B8A1417BDF2E600243670 /* 47.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B89FD17BDF2E600243670 /* 47.png */; };
 		B71B8A1517BDF2E600243670 /* 48.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B89FE17BDF2E600243670 /* 48.png */; };
 		B71B8A1817C1513000243670 /* BonusSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B8A1717C1513000243670 /* BonusSprite.m */; };
+		B79C66DF17D23C0000B80D63 /* Tapjoy.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = B79C66DE17D23C0000B80D63 /* Tapjoy.embeddedframework */; };
+		B79C66E117D23C2100B80D63 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79C66E017D23C2100B80D63 /* Tapjoy.framework */; };
+		B79C66E317D415E100B80D63 /* hiccup.wav in Resources */ = {isa = PBXBuildFile; fileRef = B79C66E217D415E100B80D63 /* hiccup.wav */; };
 		B7ECF65317C8EB45004ACDBD /* proximityCircle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B7ECF65117C8EB41004ACDBD /* proximityCircle-hd.png */; };
 		B7ECF65417C8EB45004ACDBD /* proximityCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = B7ECF65217C8EB43004ACDBD /* proximityCircle.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
@@ -1786,8 +1788,6 @@
 		6D47282917CE71DE009B9BF4 /* FBSBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSBJsonWriter.m; sourceTree = "<group>"; };
 		6D65C71A17CBF42E002BBDF2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		6D65C71B17CBF42E002BBDF2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		6D65C71F17CBF782002BBDF2 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
-		6D65C72017CBF782002BBDF2 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
 		6D939DBE17CBEC3D003BC4BA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6D939DC017CBEC69003BC4BA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6DB8796017CD320000FA31DC /* TJCclose_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TJCclose_button.png; path = ../Classes/TJCclose_button.png; sourceTree = "<group>"; };
@@ -1851,6 +1851,9 @@
 		B71B89FE17BDF2E600243670 /* 48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 48.png; sourceTree = "<group>"; };
 		B71B8A1617C1513000243670 /* BonusSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusSprite.h; sourceTree = "<group>"; };
 		B71B8A1717C1513000243670 /* BonusSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusSprite.m; sourceTree = "<group>"; };
+		B79C66DE17D23C0000B80D63 /* Tapjoy.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tapjoy.embeddedframework; sourceTree = "<group>"; };
+		B79C66E017D23C2100B80D63 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tapjoy.framework; path = Tapjoy.embeddedframework/Tapjoy.framework; sourceTree = "<group>"; };
+		B79C66E217D415E100B80D63 /* hiccup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hiccup.wav; sourceTree = "<group>"; };
 		B7ECF65117C8EB41004ACDBD /* proximityCircle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "proximityCircle-hd.png"; sourceTree = "<group>"; };
 		B7ECF65217C8EB43004ACDBD /* proximityCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = proximityCircle.png; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -2042,6 +2045,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79C66E117D23C2100B80D63 /* Tapjoy.framework in Frameworks */,
 				6D4727C717CE70B4009B9BF4 /* Accounts.framework in Frameworks */,
 				6D2A62B517CBE543007275ED /* AdSupport.framework in Frameworks */,
 				6D939DBF17CBEC3D003BC4BA /* CFNetwork.framework in Frameworks */,
@@ -2065,7 +2069,6 @@
 				DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */,
 				DCCBF1B90F6022AE0040855A /* Foundation.framework in Frameworks */,
 				DCCBF1BF0F6022AE0040855A /* UIKit.framework in Frameworks */,
-				6D65C72317CBF88B002BBDF2 /* Tapjoy.framework in Frameworks */,
 				DCCBF1BB0F6022AE0040855A /* OpenGLES.framework in Frameworks */,
 				DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */,
 				DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */,
@@ -2107,8 +2110,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B79C66E017D23C2100B80D63 /* Tapjoy.framework */,
+				B79C66DE17D23C0000B80D63 /* Tapjoy.embeddedframework */,
 				6D0EFCE717CE6CC600059A23 /* AddThis */,
-				6D65C71D17CBF782002BBDF2 /* Tapjoy.embeddedframework */,
 				506EDAA3102F461B00A389B3 /* cocos2d Sources */,
 				2D500B1D0D5A766B00DBA0E3 /* Classes */,
 				504DFC6810AF1739006D82FE /* LICENSE.cocos2d */,
@@ -2978,6 +2982,7 @@
 		38F5C92012E92AB9004221B4 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				B79C66E217D415E100B80D63 /* hiccup.wav */,
 				38CD3A821378E53B00A8E54D /* coin.wav */,
 				38C702891367BD3E00E5234F /* bodyshot.wav */,
 				383EF01F1363958B00D4264B /* success.wav */,
@@ -3341,23 +3346,6 @@
 				6D47282917CE71DE009B9BF4 /* FBSBJsonWriter.m */,
 			);
 			path = JSON;
-			sourceTree = "<group>";
-		};
-		6D65C71D17CBF782002BBDF2 /* Tapjoy.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				6D65C71E17CBF782002BBDF2 /* Resources */,
-				6D65C72017CBF782002BBDF2 /* Tapjoy.framework */,
-			);
-			path = Tapjoy.embeddedframework;
-			sourceTree = "<group>";
-		};
-		6D65C71E17CBF782002BBDF2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6D65C71F17CBF782002BBDF2 /* TapjoyResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		E02BB764126CC223006E46A2 /* cocos2d */ = {
@@ -4314,6 +4302,8 @@
 				6D27C37317CE6F1E0088E935 /* FacebookSDKResources.bundle in Resources */,
 				6D47282C17CE71DE009B9BF4 /* LICENSE in Resources */,
 				6D47282D17CE71DE009B9BF4 /* README in Resources */,
+				B79C66DF17D23C0000B80D63 /* Tapjoy.embeddedframework in Resources */,
+				B79C66E317D415E100B80D63 /* hiccup.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

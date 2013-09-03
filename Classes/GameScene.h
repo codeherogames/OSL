@@ -36,7 +36,7 @@
 	CCSprite *sniperWindow,*billboard,*pres,*presHostage,*desk;
 	int jammerID,alertID,countDown,officePartyCount,mutinyCount,security1,security2,machinegunCount;
 	bool m_paused,machinegunAvailable,bombAvailable,securityAvailable;
-	NSMutableArray *vehicles;
+	NSMutableArray *vehicles,*traffic;
 	CCSprite *securityGuard1, *securityGuard2,*rope,*zipline;
 	CCAnimation *animateFight1, *animateFight2;
 	id actionFight1,actionFight2;
@@ -47,7 +47,7 @@
 	//CCLabelTTF *opponent,*opLabel;
 }
 
-@property (nonatomic,assign) NSMutableArray *vehicles;
+@property (nonatomic,assign) NSMutableArray *vehicles,*traffic;
 
 //- (void) setSchedule;
 -(void) setup;
@@ -121,7 +121,7 @@
 	int bulletCount,currentInterval,levelType;
 	uint tauntIndex;
 	CCMenu *launchMenu;
-	float elapsed, distance,recoilRate;
+	float elapsed, distance,recoilRate,hiccupElapsed;
 	CGPoint speedVector;
 	CCSprite *bullet,*menuTray,*zoomedInButton,*proximiyIndicator;
 	CCLabelTTF *info1,*info2,*info3,*info4,*levelLabel;

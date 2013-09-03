@@ -1,0 +1,3568 @@
+{
+    "xcode_project": "OSL.xcodeproj", 
+    "sources": [
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/CocosDenshion/CDAudioManager.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/CocosDenshion/CDOpenALSupport.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/CocosDenshion/CocosDenshion.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/CocosDenshion/SimpleAudioEngine.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/FontLabel/FontLabel.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/FontLabel/FontLabelStringDrawing.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/FontLabel/FontManager.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/FontLabel/ZAttributedString.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/FontLabel/ZFont.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/CDataScanner.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/Extensions/CDataScanner_Extensions.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/Extensions/NSCharacterSet_Extensions.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/Extensions/NSDictionary_JSONExtensions.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/Extensions/NSScanner_Extensions.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/JSON/CJSONDeserializer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/JSON/CJSONScanner.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/TouchJSON/JSON/CJSONSerializer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCAction.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionCamera.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionEase.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionGrid.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionGrid3D.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionInstant.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionInterval.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionManager.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionPageTurn3D.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionProgressTimer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionTiledGrid.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCActionTween.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCAnimation.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCAnimationCache.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCAtlasNode.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCBlockSupport.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCCamera.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCCompatibility.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCConfiguration.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCDirector.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCDrawingPrimitives.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCGrabber.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCGrid.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCLabelAtlas.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCLabelBMFont.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCLabelTTF.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCLayer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCMenu.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCMenuItem.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCMotionStreak.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCNode.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCParallaxNode.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCParticleExamples.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCParticleSystem.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCParticleSystemPoint.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCParticleSystemQuad.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCProgressTimer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCRenderTexture.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCRibbon.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCScene.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCScheduler.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCSprite.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCSpriteBatchNode.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCSpriteFrame.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCSpriteFrameCache.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCSpriteSheet.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTMXLayer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTMXObjectGroup.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTMXTiledMap.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTMXXMLParser.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTexture2D.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTextureAtlas.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTextureCache.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTexturePVR.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTileMapAtlas.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTransition.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTransitionPageTurn.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/CCTransitionRadial.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/Mac/CCDirectorMac.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/Mac/CCEventDispatcher.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/Mac/MacGLView.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/iOS/CCDirectorIOS.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/iOS/CCTouchDispatcher.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/iOS/CCTouchHandler.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/iOS/EAGLView.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/iOS/ES1Renderer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "c", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Platforms/iOS/glu.c", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/CCArray.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/CCFileUtils.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/CCProfiling.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/CGPointExtension.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/TGAlib.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/TransformUtils.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/ZipUtils.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "c", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/base64.c", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "c", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/Support/ccUtils.c", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "libs/cocos2d/cocos2d.m", 
+            "flags": [], 
+            "defines": {}
+        }
+    ], 
+    "infoplists": [], 
+    "libs": [], 
+    "defines": {
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 30100
+    }, 
+    "pchs": [], 
+    "assets": [
+        {
+            "asset": "../../../../var/folders/fx/hfyb8f_s1nbg6yzh6v2f8bm00000gn/T/tmpqN8eXp/TARGET_BUILD_DIR/libcocos2d libraries.a", 
+            "target": "../../../../../../../../Users/jamesdailey/Development/OSL/normal"
+        }
+    ], 
+    "type": "static-lib", 
+    "header_paths": [
+        {
+            "type": "iquote", 
+            "header_path": "cocos2d libraries-generated-files.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "cocos2d libraries-own-target-headers.hmap", 
+            "hmap": {
+                "CCTextureCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureCache.h", 
+                    "key": "CCTextureCache.h"
+                }, 
+                "cocos2d libraries/CCParticleSystemPoint.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemPoint.h", 
+                    "key": "cocos2d libraries/CCParticleSystemPoint.h"
+                }, 
+                "CCTMXTiledMap.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXTiledMap.h", 
+                    "key": "CCTMXTiledMap.h"
+                }, 
+                "CCTouchDelegateProtocol.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDelegateProtocol.h", 
+                    "key": "CCTouchDelegateProtocol.h"
+                }, 
+                "cocos2d libraries/TGAlib.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TGAlib.h", 
+                    "key": "cocos2d libraries/TGAlib.h"
+                }, 
+                "CDAudioManager.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDAudioManager.h", 
+                    "key": "CDAudioManager.h"
+                }, 
+                "CocosDenshion.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CocosDenshion.h", 
+                    "key": "CocosDenshion.h"
+                }, 
+                "CCActionProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionProgressTimer.h", 
+                    "key": "CCActionProgressTimer.h"
+                }, 
+                "cocos2d libraries/CDataScanner.h": {
+                    "prefix": "libs/TouchJSON/", 
+                    "suffix": "CDataScanner.h", 
+                    "key": "cocos2d libraries/CDataScanner.h"
+                }, 
+                "CCActionPageTurn3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionPageTurn3D.h", 
+                    "key": "CCActionPageTurn3D.h"
+                }, 
+                "CCAtlasNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAtlasNode.h", 
+                    "key": "CCAtlasNode.h"
+                }, 
+                "CCLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLayer.h", 
+                    "key": "CCLayer.h"
+                }, 
+                "cocos2d libraries/CCTexture2D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexture2D.h", 
+                    "key": "cocos2d libraries/CCTexture2D.h"
+                }, 
+                "cocos2d libraries/CCLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLayer.h", 
+                    "key": "cocos2d libraries/CCLayer.h"
+                }, 
+                "CCMenu.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenu.h", 
+                    "key": "CCMenu.h"
+                }, 
+                "ccConfig.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccConfig.h", 
+                    "key": "ccConfig.h"
+                }, 
+                "CCAnimationCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimationCache.h", 
+                    "key": "CCAnimationCache.h"
+                }, 
+                "CCSpriteSheet.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteSheet.h", 
+                    "key": "CCSpriteSheet.h"
+                }, 
+                "cocos2d.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "cocos2d.h", 
+                    "key": "cocos2d.h"
+                }, 
+                "cocos2d libraries/CDOpenALSupport.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDOpenALSupport.h", 
+                    "key": "cocos2d libraries/CDOpenALSupport.h"
+                }, 
+                "CCGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrid.h", 
+                    "key": "CCGrid.h"
+                }, 
+                "uthash.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "uthash.h", 
+                    "key": "uthash.h"
+                }, 
+                "ccTypes.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccTypes.h", 
+                    "key": "ccTypes.h"
+                }, 
+                "cocos2d libraries/CCConfiguration.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCConfiguration.h", 
+                    "key": "cocos2d libraries/CCConfiguration.h"
+                }, 
+                "cocos2d libraries/CGPointExtension.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CGPointExtension.h", 
+                    "key": "cocos2d libraries/CGPointExtension.h"
+                }, 
+                "cocos2d libraries/CCSprite.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSprite.h", 
+                    "key": "cocos2d libraries/CCSprite.h"
+                }, 
+                "cocos2d libraries/CCSpriteBatchNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteBatchNode.h", 
+                    "key": "cocos2d libraries/CCSpriteBatchNode.h"
+                }, 
+                "CCTransition.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransition.h", 
+                    "key": "CCTransition.h"
+                }, 
+                "NSDictionary_JSONExtensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSDictionary_JSONExtensions.h", 
+                    "key": "NSDictionary_JSONExtensions.h"
+                }, 
+                "cocos2d libraries/FontManager.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontManager.h", 
+                    "key": "cocos2d libraries/FontManager.h"
+                }, 
+                "MacGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "MacGLView.h", 
+                    "key": "MacGLView.h"
+                }, 
+                "cocos2d libraries/CCActionInterval.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInterval.h", 
+                    "key": "cocos2d libraries/CCActionInterval.h"
+                }, 
+                "cocos2d libraries/CCCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCamera.h", 
+                    "key": "cocos2d libraries/CCCamera.h"
+                }, 
+                "CCTouchHandler.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchHandler.h", 
+                    "key": "CCTouchHandler.h"
+                }, 
+                "cocos2d libraries/CDataScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "CDataScanner_Extensions.h", 
+                    "key": "cocos2d libraries/CDataScanner_Extensions.h"
+                }, 
+                "cocos2d libraries/MacGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "MacGLView.h", 
+                    "key": "cocos2d libraries/MacGLView.h"
+                }, 
+                "CCProtocols.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProtocols.h", 
+                    "key": "CCProtocols.h"
+                }, 
+                "cocos2d libraries/CCParticleSystemQuad.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemQuad.h", 
+                    "key": "cocos2d libraries/CCParticleSystemQuad.h"
+                }, 
+                "cocos2d libraries/CCMenu.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenu.h", 
+                    "key": "cocos2d libraries/CCMenu.h"
+                }, 
+                "CCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCArray.h", 
+                    "key": "CCArray.h"
+                }, 
+                "CDataScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "CDataScanner_Extensions.h", 
+                    "key": "CDataScanner_Extensions.h"
+                }, 
+                "ccCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccCArray.h", 
+                    "key": "ccCArray.h"
+                }, 
+                "cocos2d libraries/ccUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccUtils.h", 
+                    "key": "cocos2d libraries/ccUtils.h"
+                }, 
+                "ES1Renderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ES1Renderer.h", 
+                    "key": "ES1Renderer.h"
+                }, 
+                "CCActionTween.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTween.h", 
+                    "key": "CCActionTween.h"
+                }, 
+                "CJSONDeserializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONDeserializer.h", 
+                    "key": "CJSONDeserializer.h"
+                }, 
+                "cocos2d libraries/CJSONScanner.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONScanner.h", 
+                    "key": "cocos2d libraries/CJSONScanner.h"
+                }, 
+                "cocos2d libraries/CCSpriteFrameCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrameCache.h", 
+                    "key": "cocos2d libraries/CCSpriteFrameCache.h"
+                }, 
+                "cocos2d libraries/CCActionProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionProgressTimer.h", 
+                    "key": "cocos2d libraries/CCActionProgressTimer.h"
+                }, 
+                "cocos2d libraries/CCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCArray.h", 
+                    "key": "cocos2d libraries/CCArray.h"
+                }, 
+                "cocos2d libraries/CCProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProgressTimer.h", 
+                    "key": "cocos2d libraries/CCProgressTimer.h"
+                }, 
+                "ZAttributedString.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedString.h", 
+                    "key": "ZAttributedString.h"
+                }, 
+                "cocos2d libraries/CCNS.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCNS.h", 
+                    "key": "cocos2d libraries/CCNS.h"
+                }, 
+                "cocos2d libraries/CCParticleExamples.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleExamples.h", 
+                    "key": "cocos2d libraries/CCParticleExamples.h"
+                }, 
+                "cocos2d libraries/CCTextureAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureAtlas.h", 
+                    "key": "cocos2d libraries/CCTextureAtlas.h"
+                }, 
+                "CDOpenALSupport.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDOpenALSupport.h", 
+                    "key": "CDOpenALSupport.h"
+                }, 
+                "CCRibbon.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRibbon.h", 
+                    "key": "CCRibbon.h"
+                }, 
+                "cocos2d libraries/CCLabelAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelAtlas.h", 
+                    "key": "cocos2d libraries/CCLabelAtlas.h"
+                }, 
+                "SimpleAudioEngine.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "SimpleAudioEngine.h", 
+                    "key": "SimpleAudioEngine.h"
+                }, 
+                "cocos2d libraries/CCAnimationCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimationCache.h", 
+                    "key": "cocos2d libraries/CCAnimationCache.h"
+                }, 
+                "cocos2d libraries/CCTextureCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureCache.h", 
+                    "key": "cocos2d libraries/CCTextureCache.h"
+                }, 
+                "CCEventDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCEventDispatcher.h", 
+                    "key": "CCEventDispatcher.h"
+                }, 
+                "TransformUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TransformUtils.h", 
+                    "key": "TransformUtils.h"
+                }, 
+                "cocos2d libraries/cocos2d.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "cocos2d.h", 
+                    "key": "cocos2d libraries/cocos2d.h"
+                }, 
+                "CCSprite.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSprite.h", 
+                    "key": "CCSprite.h"
+                }, 
+                "ESRenderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ESRenderer.h", 
+                    "key": "ESRenderer.h"
+                }, 
+                "cocos2d libraries/CCActionGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid.h", 
+                    "key": "cocos2d libraries/CCActionGrid.h"
+                }, 
+                "cocos2d libraries/ZAttributedString.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedString.h", 
+                    "key": "cocos2d libraries/ZAttributedString.h"
+                }, 
+                "cocos2d libraries/TransformUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TransformUtils.h", 
+                    "key": "cocos2d libraries/TransformUtils.h"
+                }, 
+                "CCParallaxNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParallaxNode.h", 
+                    "key": "CCParallaxNode.h"
+                }, 
+                "cocos2d libraries/CCActionCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionCamera.h", 
+                    "key": "cocos2d libraries/CCActionCamera.h"
+                }, 
+                "cocos2d libraries/ZAttributedStringPrivate.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedStringPrivate.h", 
+                    "key": "cocos2d libraries/ZAttributedStringPrivate.h"
+                }, 
+                "cocos2d libraries/ESRenderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ESRenderer.h", 
+                    "key": "cocos2d libraries/ESRenderer.h"
+                }, 
+                "CCProfiling.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCProfiling.h", 
+                    "key": "CCProfiling.h"
+                }, 
+                "cocos2d libraries/CCTMXObjectGroup.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXObjectGroup.h", 
+                    "key": "cocos2d libraries/CCTMXObjectGroup.h"
+                }, 
+                "CCParticleSystemPoint.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemPoint.h", 
+                    "key": "CCParticleSystemPoint.h"
+                }, 
+                "CCConfiguration.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCConfiguration.h", 
+                    "key": "CCConfiguration.h"
+                }, 
+                "CCRenderTexture.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRenderTexture.h", 
+                    "key": "CCRenderTexture.h"
+                }, 
+                "CCDirectorMac.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCDirectorMac.h", 
+                    "key": "CCDirectorMac.h"
+                }, 
+                "NSScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSScanner_Extensions.h", 
+                    "key": "NSScanner_Extensions.h"
+                }, 
+                "CCActionGrid3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid3D.h", 
+                    "key": "CCActionGrid3D.h"
+                }, 
+                "TGAlib.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TGAlib.h", 
+                    "key": "TGAlib.h"
+                }, 
+                "cocos2d libraries/CCLabelBMFont.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelBMFont.h", 
+                    "key": "cocos2d libraries/CCLabelBMFont.h"
+                }, 
+                "utlist.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "utlist.h", 
+                    "key": "utlist.h"
+                }, 
+                "cocos2d libraries/uthash.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "uthash.h", 
+                    "key": "cocos2d libraries/uthash.h"
+                }, 
+                "CCTouchDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDispatcher.h", 
+                    "key": "CCTouchDispatcher.h"
+                }, 
+                "CJSONSerializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONSerializer.h", 
+                    "key": "CJSONSerializer.h"
+                }, 
+                "CCScene.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScene.h", 
+                    "key": "CCScene.h"
+                }, 
+                "cocos2d libraries/ZipUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ZipUtils.h", 
+                    "key": "cocos2d libraries/ZipUtils.h"
+                }, 
+                "cocos2d libraries/CCParticleSystem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystem.h", 
+                    "key": "cocos2d libraries/CCParticleSystem.h"
+                }, 
+                "CCActionTiledGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTiledGrid.h", 
+                    "key": "CCActionTiledGrid.h"
+                }, 
+                "cocos2d libraries/CCActionPageTurn3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionPageTurn3D.h", 
+                    "key": "cocos2d libraries/CCActionPageTurn3D.h"
+                }, 
+                "cocos2d libraries/CCTMXLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXLayer.h", 
+                    "key": "cocos2d libraries/CCTMXLayer.h"
+                }, 
+                "OpenGL_Internal.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "OpenGL_Internal.h", 
+                    "key": "OpenGL_Internal.h"
+                }, 
+                "cocos2d libraries/ccConfig.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccConfig.h", 
+                    "key": "cocos2d libraries/ccConfig.h"
+                }, 
+                "cocos2d libraries/CCRibbon.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRibbon.h", 
+                    "key": "cocos2d libraries/CCRibbon.h"
+                }, 
+                "CCParticleSystem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystem.h", 
+                    "key": "CCParticleSystem.h"
+                }, 
+                "cocos2d libraries/FontLabel.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabel.h", 
+                    "key": "cocos2d libraries/FontLabel.h"
+                }, 
+                "cocos2d libraries/CDConfig.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDConfig.h", 
+                    "key": "cocos2d libraries/CDConfig.h"
+                }, 
+                "cocos2d libraries/CCRenderTexture.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRenderTexture.h", 
+                    "key": "cocos2d libraries/CCRenderTexture.h"
+                }, 
+                "ZFont.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZFont.h", 
+                    "key": "ZFont.h"
+                }, 
+                "cocos2d libraries/EAGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "EAGLView.h", 
+                    "key": "cocos2d libraries/EAGLView.h"
+                }, 
+                "cocos2d libraries/ccCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccCArray.h", 
+                    "key": "cocos2d libraries/ccCArray.h"
+                }, 
+                "cocos2d libraries/CCTransitionPageTurn.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionPageTurn.h", 
+                    "key": "cocos2d libraries/CCTransitionPageTurn.h"
+                }, 
+                "CGPointExtension.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CGPointExtension.h", 
+                    "key": "CGPointExtension.h"
+                }, 
+                "cocos2d libraries/CJSONSerializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONSerializer.h", 
+                    "key": "cocos2d libraries/CJSONSerializer.h"
+                }, 
+                "cocos2d libraries/CCTouchDelegateProtocol.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDelegateProtocol.h", 
+                    "key": "cocos2d libraries/CCTouchDelegateProtocol.h"
+                }, 
+                "cocos2d libraries/CCActionTween.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTween.h", 
+                    "key": "cocos2d libraries/CCActionTween.h"
+                }, 
+                "cocos2d libraries/CCLabelTTF.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelTTF.h", 
+                    "key": "cocos2d libraries/CCLabelTTF.h"
+                }, 
+                "cocos2d libraries/CCCompatibility.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCompatibility.h", 
+                    "key": "cocos2d libraries/CCCompatibility.h"
+                }, 
+                "cocos2d libraries/CCActionManager.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionManager.h", 
+                    "key": "cocos2d libraries/CCActionManager.h"
+                }, 
+                "cocos2d libraries/CCTileMapAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTileMapAtlas.h", 
+                    "key": "cocos2d libraries/CCTileMapAtlas.h"
+                }, 
+                "cocos2d libraries/ES1Renderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ES1Renderer.h", 
+                    "key": "cocos2d libraries/ES1Renderer.h"
+                }, 
+                "CCAnimation.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimation.h", 
+                    "key": "CCAnimation.h"
+                }, 
+                "FontLabelStringDrawing.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabelStringDrawing.h", 
+                    "key": "FontLabelStringDrawing.h"
+                }, 
+                "CCCompatibility.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCompatibility.h", 
+                    "key": "CCCompatibility.h"
+                }, 
+                "ZAttributedStringPrivate.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedStringPrivate.h", 
+                    "key": "ZAttributedStringPrivate.h"
+                }, 
+                "cocos2d libraries/CCNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCNode.h", 
+                    "key": "cocos2d libraries/CCNode.h"
+                }, 
+                "ZipUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ZipUtils.h", 
+                    "key": "ZipUtils.h"
+                }, 
+                "CCLabelBMFont.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelBMFont.h", 
+                    "key": "CCLabelBMFont.h"
+                }, 
+                "CCActionEase.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionEase.h", 
+                    "key": "CCActionEase.h"
+                }, 
+                "cocos2d libraries/CCTMXTiledMap.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXTiledMap.h", 
+                    "key": "cocos2d libraries/CCTMXTiledMap.h"
+                }, 
+                "cocos2d libraries/CCParallaxNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParallaxNode.h", 
+                    "key": "cocos2d libraries/CCParallaxNode.h"
+                }, 
+                "CCActionInterval.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInterval.h", 
+                    "key": "CCActionInterval.h"
+                }, 
+                "CCGL.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCGL.h", 
+                    "key": "CCGL.h"
+                }, 
+                "cocos2d libraries/CCMotionStreak.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMotionStreak.h", 
+                    "key": "cocos2d libraries/CCMotionStreak.h"
+                }, 
+                "cocos2d libraries/OpenGL_Internal.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "OpenGL_Internal.h", 
+                    "key": "cocos2d libraries/OpenGL_Internal.h"
+                }, 
+                "cocos2d libraries/CCDirectorMac.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCDirectorMac.h", 
+                    "key": "cocos2d libraries/CCDirectorMac.h"
+                }, 
+                "cocos2d libraries/NSDictionary_JSONExtensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSDictionary_JSONExtensions.h", 
+                    "key": "cocos2d libraries/NSDictionary_JSONExtensions.h"
+                }, 
+                "cocos2d libraries/CCProtocols.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProtocols.h", 
+                    "key": "cocos2d libraries/CCProtocols.h"
+                }, 
+                "EAGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "EAGLView.h", 
+                    "key": "EAGLView.h"
+                }, 
+                "CCActionManager.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionManager.h", 
+                    "key": "CCActionManager.h"
+                }, 
+                "cocos2d libraries/CCDirectorIOS.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCDirectorIOS.h", 
+                    "key": "cocos2d libraries/CCDirectorIOS.h"
+                }, 
+                "CCMotionStreak.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMotionStreak.h", 
+                    "key": "CCMotionStreak.h"
+                }, 
+                "CCFileUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCFileUtils.h", 
+                    "key": "CCFileUtils.h"
+                }, 
+                "cocos2d libraries/glu.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "glu.h", 
+                    "key": "cocos2d libraries/glu.h"
+                }, 
+                "cocos2d libraries/NSScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSScanner_Extensions.h", 
+                    "key": "cocos2d libraries/NSScanner_Extensions.h"
+                }, 
+                "CCDirectorIOS.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCDirectorIOS.h", 
+                    "key": "CCDirectorIOS.h"
+                }, 
+                "cocos2d libraries/CCActionEase.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionEase.h", 
+                    "key": "cocos2d libraries/CCActionEase.h"
+                }, 
+                "CCTMXObjectGroup.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXObjectGroup.h", 
+                    "key": "CCTMXObjectGroup.h"
+                }, 
+                "cocos2d libraries/CCActionTiledGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTiledGrid.h", 
+                    "key": "cocos2d libraries/CCActionTiledGrid.h"
+                }, 
+                "cocos2d libraries/CCScene.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScene.h", 
+                    "key": "cocos2d libraries/CCScene.h"
+                }, 
+                "cocos2d libraries/base64.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "base64.h", 
+                    "key": "cocos2d libraries/base64.h"
+                }, 
+                "cocos2d libraries/CCTMXXMLParser.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXXMLParser.h", 
+                    "key": "cocos2d libraries/CCTMXXMLParser.h"
+                }, 
+                "CCAction.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAction.h", 
+                    "key": "CCAction.h"
+                }, 
+                "CCSpriteBatchNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteBatchNode.h", 
+                    "key": "CCSpriteBatchNode.h"
+                }, 
+                "cocos2d libraries/CJSONDeserializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONDeserializer.h", 
+                    "key": "cocos2d libraries/CJSONDeserializer.h"
+                }, 
+                "cocos2d libraries/SimpleAudioEngine.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "SimpleAudioEngine.h", 
+                    "key": "cocos2d libraries/SimpleAudioEngine.h"
+                }, 
+                "NSCharacterSet_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSCharacterSet_Extensions.h", 
+                    "key": "NSCharacterSet_Extensions.h"
+                }, 
+                "CCTMXXMLParser.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXXMLParser.h", 
+                    "key": "CCTMXXMLParser.h"
+                }, 
+                "CCTransitionRadial.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionRadial.h", 
+                    "key": "CCTransitionRadial.h"
+                }, 
+                "cocos2d libraries/CCDirector.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDirector.h", 
+                    "key": "cocos2d libraries/CCDirector.h"
+                }, 
+                "CCActionCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionCamera.h", 
+                    "key": "CCActionCamera.h"
+                }, 
+                "cocos2d libraries/CCAnimation.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimation.h", 
+                    "key": "cocos2d libraries/CCAnimation.h"
+                }, 
+                "CDConfig.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDConfig.h", 
+                    "key": "CDConfig.h"
+                }, 
+                "CCLabelTTF.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelTTF.h", 
+                    "key": "CCLabelTTF.h"
+                }, 
+                "CCDrawingPrimitives.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDrawingPrimitives.h", 
+                    "key": "CCDrawingPrimitives.h"
+                }, 
+                "cocos2d libraries/CCMenuItem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenuItem.h", 
+                    "key": "cocos2d libraries/CCMenuItem.h"
+                }, 
+                "cocos2d libraries/CCActionInstant.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInstant.h", 
+                    "key": "cocos2d libraries/CCActionInstant.h"
+                }, 
+                "cocos2d libraries/CCFileUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCFileUtils.h", 
+                    "key": "cocos2d libraries/CCFileUtils.h"
+                }, 
+                "cocos2d libraries/ccTypes.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccTypes.h", 
+                    "key": "cocos2d libraries/ccTypes.h"
+                }, 
+                "CCNS.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCNS.h", 
+                    "key": "CCNS.h"
+                }, 
+                "cocos2d libraries/CCProfiling.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCProfiling.h", 
+                    "key": "cocos2d libraries/CCProfiling.h"
+                }, 
+                "CCTileMapAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTileMapAtlas.h", 
+                    "key": "CCTileMapAtlas.h"
+                }, 
+                "CCTMXLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXLayer.h", 
+                    "key": "CCTMXLayer.h"
+                }, 
+                "cocos2d libraries/CDAudioManager.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDAudioManager.h", 
+                    "key": "cocos2d libraries/CDAudioManager.h"
+                }, 
+                "cocos2d libraries/CCTouchHandler.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchHandler.h", 
+                    "key": "cocos2d libraries/CCTouchHandler.h"
+                }, 
+                "cocos2d libraries/CCAtlasNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAtlasNode.h", 
+                    "key": "cocos2d libraries/CCAtlasNode.h"
+                }, 
+                "CCActionInstant.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInstant.h", 
+                    "key": "CCActionInstant.h"
+                }, 
+                "CCSpriteFrame.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrame.h", 
+                    "key": "CCSpriteFrame.h"
+                }, 
+                "CCScheduler.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScheduler.h", 
+                    "key": "CCScheduler.h"
+                }, 
+                "cocos2d libraries/CCActionGrid3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid3D.h", 
+                    "key": "cocos2d libraries/CCActionGrid3D.h"
+                }, 
+                "CCTexturePVR.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexturePVR.h", 
+                    "key": "CCTexturePVR.h"
+                }, 
+                "CCBlockSupport.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCBlockSupport.h", 
+                    "key": "CCBlockSupport.h"
+                }, 
+                "glu.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "glu.h", 
+                    "key": "glu.h"
+                }, 
+                "FontLabel.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabel.h", 
+                    "key": "FontLabel.h"
+                }, 
+                "CDataScanner.h": {
+                    "prefix": "libs/TouchJSON/", 
+                    "suffix": "CDataScanner.h", 
+                    "key": "CDataScanner.h"
+                }, 
+                "CCTransitionPageTurn.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionPageTurn.h", 
+                    "key": "CCTransitionPageTurn.h"
+                }, 
+                "cocos2d libraries/CCAction.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAction.h", 
+                    "key": "cocos2d libraries/CCAction.h"
+                }, 
+                "base64.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "base64.h", 
+                    "key": "base64.h"
+                }, 
+                "CJSONScanner.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONScanner.h", 
+                    "key": "CJSONScanner.h"
+                }, 
+                "cocos2d libraries/CCGrabber.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrabber.h", 
+                    "key": "cocos2d libraries/CCGrabber.h"
+                }, 
+                "FontManager.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontManager.h", 
+                    "key": "FontManager.h"
+                }, 
+                "cocos2d libraries/ccMacros.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccMacros.h", 
+                    "key": "cocos2d libraries/ccMacros.h"
+                }, 
+                "cocos2d libraries/CCGL.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCGL.h", 
+                    "key": "cocos2d libraries/CCGL.h"
+                }, 
+                "CCParticleSystemQuad.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemQuad.h", 
+                    "key": "CCParticleSystemQuad.h"
+                }, 
+                "ccMacros.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccMacros.h", 
+                    "key": "ccMacros.h"
+                }, 
+                "CCLabelAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelAtlas.h", 
+                    "key": "CCLabelAtlas.h"
+                }, 
+                "cocos2d libraries/CCTouchDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDispatcher.h", 
+                    "key": "cocos2d libraries/CCTouchDispatcher.h"
+                }, 
+                "cocos2d libraries/CCTexturePVR.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexturePVR.h", 
+                    "key": "cocos2d libraries/CCTexturePVR.h"
+                }, 
+                "CCSpriteFrameCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrameCache.h", 
+                    "key": "CCSpriteFrameCache.h"
+                }, 
+                "CCParticleExamples.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleExamples.h", 
+                    "key": "CCParticleExamples.h"
+                }, 
+                "cocos2d libraries/FontLabelStringDrawing.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabelStringDrawing.h", 
+                    "key": "cocos2d libraries/FontLabelStringDrawing.h"
+                }, 
+                "CCTexture2D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexture2D.h", 
+                    "key": "CCTexture2D.h"
+                }, 
+                "cocos2d libraries/CCGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrid.h", 
+                    "key": "cocos2d libraries/CCGrid.h"
+                }, 
+                "CCTextureAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureAtlas.h", 
+                    "key": "CCTextureAtlas.h"
+                }, 
+                "cocos2d libraries/CCEventDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCEventDispatcher.h", 
+                    "key": "cocos2d libraries/CCEventDispatcher.h"
+                }, 
+                "cocos2d libraries/CCSpriteFrame.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrame.h", 
+                    "key": "cocos2d libraries/CCSpriteFrame.h"
+                }, 
+                "cocos2d libraries/utlist.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "utlist.h", 
+                    "key": "cocos2d libraries/utlist.h"
+                }, 
+                "cocos2d libraries/NSCharacterSet_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSCharacterSet_Extensions.h", 
+                    "key": "cocos2d libraries/NSCharacterSet_Extensions.h"
+                }, 
+                "cocos2d libraries/CCScheduler.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScheduler.h", 
+                    "key": "cocos2d libraries/CCScheduler.h"
+                }, 
+                "cocos2d libraries/CCSpriteSheet.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteSheet.h", 
+                    "key": "cocos2d libraries/CCSpriteSheet.h"
+                }, 
+                "cocos2d libraries/CocosDenshion.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CocosDenshion.h", 
+                    "key": "cocos2d libraries/CocosDenshion.h"
+                }, 
+                "cocos2d libraries/CCDrawingPrimitives.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDrawingPrimitives.h", 
+                    "key": "cocos2d libraries/CCDrawingPrimitives.h"
+                }, 
+                "CCProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProgressTimer.h", 
+                    "key": "CCProgressTimer.h"
+                }, 
+                "cocos2d libraries/ZFont.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZFont.h", 
+                    "key": "cocos2d libraries/ZFont.h"
+                }, 
+                "CCNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCNode.h", 
+                    "key": "CCNode.h"
+                }, 
+                "CCGrabber.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrabber.h", 
+                    "key": "CCGrabber.h"
+                }, 
+                "ccUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccUtils.h", 
+                    "key": "ccUtils.h"
+                }, 
+                "CCActionGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid.h", 
+                    "key": "CCActionGrid.h"
+                }, 
+                "CCDirector.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDirector.h", 
+                    "key": "CCDirector.h"
+                }, 
+                "cocos2d libraries/CCBlockSupport.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCBlockSupport.h", 
+                    "key": "cocos2d libraries/CCBlockSupport.h"
+                }, 
+                "cocos2d libraries/CCTransition.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransition.h", 
+                    "key": "cocos2d libraries/CCTransition.h"
+                }, 
+                "CCMenuItem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenuItem.h", 
+                    "key": "CCMenuItem.h"
+                }, 
+                "CCCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCamera.h", 
+                    "key": "CCCamera.h"
+                }, 
+                "cocos2d libraries/CCTransitionRadial.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionRadial.h", 
+                    "key": "cocos2d libraries/CCTransitionRadial.h"
+                }
+            }
+        }, 
+        {
+            "type": "I", 
+            "header_path": "cocos2d libraries-all-target-headers.hmap", 
+            "hmap": {
+                "cocos2d libraries/CCParticleSystemPoint.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemPoint.h", 
+                    "key": "cocos2d libraries/CCParticleSystemPoint.h"
+                }, 
+                "cocos2d libraries/TGAlib.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TGAlib.h", 
+                    "key": "cocos2d libraries/TGAlib.h"
+                }, 
+                "cocos2d libraries/CCAction.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAction.h", 
+                    "key": "cocos2d libraries/CCAction.h"
+                }, 
+                "cocos2d libraries/CDataScanner.h": {
+                    "prefix": "libs/TouchJSON/", 
+                    "suffix": "CDataScanner.h", 
+                    "key": "cocos2d libraries/CDataScanner.h"
+                }, 
+                "cocos2d libraries/CCTexture2D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexture2D.h", 
+                    "key": "cocos2d libraries/CCTexture2D.h"
+                }, 
+                "cocos2d libraries/CCNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCNode.h", 
+                    "key": "cocos2d libraries/CCNode.h"
+                }, 
+                "cocos2d libraries/CDOpenALSupport.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDOpenALSupport.h", 
+                    "key": "cocos2d libraries/CDOpenALSupport.h"
+                }, 
+                "cocos2d libraries/CCConfiguration.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCConfiguration.h", 
+                    "key": "cocos2d libraries/CCConfiguration.h"
+                }, 
+                "cocos2d libraries/CGPointExtension.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CGPointExtension.h", 
+                    "key": "cocos2d libraries/CGPointExtension.h"
+                }, 
+                "cocos2d libraries/CCSprite.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSprite.h", 
+                    "key": "cocos2d libraries/CCSprite.h"
+                }, 
+                "cocos2d libraries/CCSpriteBatchNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteBatchNode.h", 
+                    "key": "cocos2d libraries/CCSpriteBatchNode.h"
+                }, 
+                "cocos2d libraries/FontManager.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontManager.h", 
+                    "key": "cocos2d libraries/FontManager.h"
+                }, 
+                "cocos2d libraries/CCSpriteFrame.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrame.h", 
+                    "key": "cocos2d libraries/CCSpriteFrame.h"
+                }, 
+                "cocos2d libraries/CCCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCamera.h", 
+                    "key": "cocos2d libraries/CCCamera.h"
+                }, 
+                "cocos2d libraries/CDataScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "CDataScanner_Extensions.h", 
+                    "key": "cocos2d libraries/CDataScanner_Extensions.h"
+                }, 
+                "cocos2d libraries/MacGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "MacGLView.h", 
+                    "key": "cocos2d libraries/MacGLView.h"
+                }, 
+                "cocos2d libraries/CCParticleSystemQuad.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemQuad.h", 
+                    "key": "cocos2d libraries/CCParticleSystemQuad.h"
+                }, 
+                "cocos2d libraries/CCMenu.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenu.h", 
+                    "key": "cocos2d libraries/CCMenu.h"
+                }, 
+                "cocos2d libraries/ccUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccUtils.h", 
+                    "key": "cocos2d libraries/ccUtils.h"
+                }, 
+                "cocos2d libraries/CJSONScanner.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONScanner.h", 
+                    "key": "cocos2d libraries/CJSONScanner.h"
+                }, 
+                "cocos2d libraries/CCSpriteFrameCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrameCache.h", 
+                    "key": "cocos2d libraries/CCSpriteFrameCache.h"
+                }, 
+                "cocos2d libraries/CCActionProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionProgressTimer.h", 
+                    "key": "cocos2d libraries/CCActionProgressTimer.h"
+                }, 
+                "cocos2d libraries/CCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCArray.h", 
+                    "key": "cocos2d libraries/CCArray.h"
+                }, 
+                "cocos2d libraries/CCProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProgressTimer.h", 
+                    "key": "cocos2d libraries/CCProgressTimer.h"
+                }, 
+                "cocos2d libraries/CCParticleExamples.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleExamples.h", 
+                    "key": "cocos2d libraries/CCParticleExamples.h"
+                }, 
+                "cocos2d libraries/CCTextureAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureAtlas.h", 
+                    "key": "cocos2d libraries/CCTextureAtlas.h"
+                }, 
+                "cocos2d libraries/CCLabelAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelAtlas.h", 
+                    "key": "cocos2d libraries/CCLabelAtlas.h"
+                }, 
+                "cocos2d libraries/CCAnimationCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimationCache.h", 
+                    "key": "cocos2d libraries/CCAnimationCache.h"
+                }, 
+                "cocos2d libraries/CCTextureCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureCache.h", 
+                    "key": "cocos2d libraries/CCTextureCache.h"
+                }, 
+                "cocos2d libraries/CCActionGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid.h", 
+                    "key": "cocos2d libraries/CCActionGrid.h"
+                }, 
+                "cocos2d libraries/ZAttributedString.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedString.h", 
+                    "key": "cocos2d libraries/ZAttributedString.h"
+                }, 
+                "cocos2d libraries/TransformUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TransformUtils.h", 
+                    "key": "cocos2d libraries/TransformUtils.h"
+                }, 
+                "cocos2d libraries/CCActionCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionCamera.h", 
+                    "key": "cocos2d libraries/CCActionCamera.h"
+                }, 
+                "cocos2d libraries/ZAttributedStringPrivate.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedStringPrivate.h", 
+                    "key": "cocos2d libraries/ZAttributedStringPrivate.h"
+                }, 
+                "cocos2d libraries/ESRenderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ESRenderer.h", 
+                    "key": "cocos2d libraries/ESRenderer.h"
+                }, 
+                "cocos2d libraries/utlist.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "utlist.h", 
+                    "key": "cocos2d libraries/utlist.h"
+                }, 
+                "cocos2d libraries/CCLabelBMFont.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelBMFont.h", 
+                    "key": "cocos2d libraries/CCLabelBMFont.h"
+                }, 
+                "cocos2d libraries/uthash.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "uthash.h", 
+                    "key": "cocos2d libraries/uthash.h"
+                }, 
+                "cocos2d libraries/CCNS.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCNS.h", 
+                    "key": "cocos2d libraries/CCNS.h"
+                }, 
+                "cocos2d libraries/cocos2d.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "cocos2d.h", 
+                    "key": "cocos2d libraries/cocos2d.h"
+                }, 
+                "cocos2d libraries/ZipUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ZipUtils.h", 
+                    "key": "cocos2d libraries/ZipUtils.h"
+                }, 
+                "cocos2d libraries/CCParticleSystem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystem.h", 
+                    "key": "cocos2d libraries/CCParticleSystem.h"
+                }, 
+                "cocos2d libraries/CCActionPageTurn3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionPageTurn3D.h", 
+                    "key": "cocos2d libraries/CCActionPageTurn3D.h"
+                }, 
+                "cocos2d libraries/CCTMXLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXLayer.h", 
+                    "key": "cocos2d libraries/CCTMXLayer.h"
+                }, 
+                "cocos2d libraries/ccConfig.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccConfig.h", 
+                    "key": "cocos2d libraries/ccConfig.h"
+                }, 
+                "cocos2d libraries/CCRibbon.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRibbon.h", 
+                    "key": "cocos2d libraries/CCRibbon.h"
+                }, 
+                "cocos2d libraries/CDConfig.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDConfig.h", 
+                    "key": "cocos2d libraries/CDConfig.h"
+                }, 
+                "cocos2d libraries/CCRenderTexture.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRenderTexture.h", 
+                    "key": "cocos2d libraries/CCRenderTexture.h"
+                }, 
+                "cocos2d libraries/CCDirectorMac.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCDirectorMac.h", 
+                    "key": "cocos2d libraries/CCDirectorMac.h"
+                }, 
+                "cocos2d libraries/EAGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "EAGLView.h", 
+                    "key": "cocos2d libraries/EAGLView.h"
+                }, 
+                "cocos2d libraries/ccCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccCArray.h", 
+                    "key": "cocos2d libraries/ccCArray.h"
+                }, 
+                "cocos2d libraries/CCTransitionPageTurn.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionPageTurn.h", 
+                    "key": "cocos2d libraries/CCTransitionPageTurn.h"
+                }, 
+                "cocos2d libraries/CCLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLayer.h", 
+                    "key": "cocos2d libraries/CCLayer.h"
+                }, 
+                "cocos2d libraries/CCActionTween.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTween.h", 
+                    "key": "cocos2d libraries/CCActionTween.h"
+                }, 
+                "cocos2d libraries/CCLabelTTF.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelTTF.h", 
+                    "key": "cocos2d libraries/CCLabelTTF.h"
+                }, 
+                "cocos2d libraries/CCCompatibility.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCompatibility.h", 
+                    "key": "cocos2d libraries/CCCompatibility.h"
+                }, 
+                "cocos2d libraries/CCActionManager.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionManager.h", 
+                    "key": "cocos2d libraries/CCActionManager.h"
+                }, 
+                "cocos2d libraries/CCTileMapAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTileMapAtlas.h", 
+                    "key": "cocos2d libraries/CCTileMapAtlas.h"
+                }, 
+                "cocos2d libraries/ES1Renderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ES1Renderer.h", 
+                    "key": "cocos2d libraries/ES1Renderer.h"
+                }, 
+                "cocos2d libraries/CJSONSerializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONSerializer.h", 
+                    "key": "cocos2d libraries/CJSONSerializer.h"
+                }, 
+                "cocos2d libraries/FontLabel.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabel.h", 
+                    "key": "cocos2d libraries/FontLabel.h"
+                }, 
+                "cocos2d libraries/CCParallaxNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParallaxNode.h", 
+                    "key": "cocos2d libraries/CCParallaxNode.h"
+                }, 
+                "cocos2d libraries/CCMotionStreak.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMotionStreak.h", 
+                    "key": "cocos2d libraries/CCMotionStreak.h"
+                }, 
+                "cocos2d libraries/OpenGL_Internal.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "OpenGL_Internal.h", 
+                    "key": "cocos2d libraries/OpenGL_Internal.h"
+                }, 
+                "cocos2d libraries/base64.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "base64.h", 
+                    "key": "cocos2d libraries/base64.h"
+                }, 
+                "cocos2d libraries/NSDictionary_JSONExtensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSDictionary_JSONExtensions.h", 
+                    "key": "cocos2d libraries/NSDictionary_JSONExtensions.h"
+                }, 
+                "cocos2d libraries/CCProtocols.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProtocols.h", 
+                    "key": "cocos2d libraries/CCProtocols.h"
+                }, 
+                "cocos2d libraries/CCActionTiledGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTiledGrid.h", 
+                    "key": "cocos2d libraries/CCActionTiledGrid.h"
+                }, 
+                "cocos2d libraries/CCDirectorIOS.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCDirectorIOS.h", 
+                    "key": "cocos2d libraries/CCDirectorIOS.h"
+                }, 
+                "cocos2d libraries/glu.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "glu.h", 
+                    "key": "cocos2d libraries/glu.h"
+                }, 
+                "cocos2d libraries/NSScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSScanner_Extensions.h", 
+                    "key": "cocos2d libraries/NSScanner_Extensions.h"
+                }, 
+                "cocos2d libraries/CCActionEase.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionEase.h", 
+                    "key": "cocos2d libraries/CCActionEase.h"
+                }, 
+                "cocos2d libraries/CCScene.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScene.h", 
+                    "key": "cocos2d libraries/CCScene.h"
+                }, 
+                "cocos2d libraries/CCTMXXMLParser.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXXMLParser.h", 
+                    "key": "cocos2d libraries/CCTMXXMLParser.h"
+                }, 
+                "cocos2d libraries/CJSONDeserializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONDeserializer.h", 
+                    "key": "cocos2d libraries/CJSONDeserializer.h"
+                }, 
+                "cocos2d libraries/SimpleAudioEngine.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "SimpleAudioEngine.h", 
+                    "key": "cocos2d libraries/SimpleAudioEngine.h"
+                }, 
+                "cocos2d libraries/CCTransitionRadial.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionRadial.h", 
+                    "key": "cocos2d libraries/CCTransitionRadial.h"
+                }, 
+                "cocos2d libraries/CCDirector.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDirector.h", 
+                    "key": "cocos2d libraries/CCDirector.h"
+                }, 
+                "cocos2d libraries/CCActionInstant.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInstant.h", 
+                    "key": "cocos2d libraries/CCActionInstant.h"
+                }, 
+                "cocos2d libraries/CCFileUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCFileUtils.h", 
+                    "key": "cocos2d libraries/CCFileUtils.h"
+                }, 
+                "cocos2d libraries/ccTypes.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccTypes.h", 
+                    "key": "cocos2d libraries/ccTypes.h"
+                }, 
+                "cocos2d libraries/CCProfiling.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCProfiling.h", 
+                    "key": "cocos2d libraries/CCProfiling.h"
+                }, 
+                "cocos2d libraries/CCActionInterval.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInterval.h", 
+                    "key": "cocos2d libraries/CCActionInterval.h"
+                }, 
+                "cocos2d libraries/CDAudioManager.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDAudioManager.h", 
+                    "key": "cocos2d libraries/CDAudioManager.h"
+                }, 
+                "cocos2d libraries/CCTouchHandler.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchHandler.h", 
+                    "key": "cocos2d libraries/CCTouchHandler.h"
+                }, 
+                "cocos2d libraries/CCAtlasNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAtlasNode.h", 
+                    "key": "cocos2d libraries/CCAtlasNode.h"
+                }, 
+                "cocos2d libraries/CCActionGrid3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid3D.h", 
+                    "key": "cocos2d libraries/CCActionGrid3D.h"
+                }, 
+                "cocos2d libraries/CCAnimation.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimation.h", 
+                    "key": "cocos2d libraries/CCAnimation.h"
+                }, 
+                "cocos2d libraries/CCMenuItem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenuItem.h", 
+                    "key": "cocos2d libraries/CCMenuItem.h"
+                }, 
+                "cocos2d libraries/ccMacros.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccMacros.h", 
+                    "key": "cocos2d libraries/ccMacros.h"
+                }, 
+                "cocos2d libraries/CCGL.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCGL.h", 
+                    "key": "cocos2d libraries/CCGL.h"
+                }, 
+                "cocos2d libraries/CCTouchDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDispatcher.h", 
+                    "key": "cocos2d libraries/CCTouchDispatcher.h"
+                }, 
+                "cocos2d libraries/CCTexturePVR.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexturePVR.h", 
+                    "key": "cocos2d libraries/CCTexturePVR.h"
+                }, 
+                "cocos2d libraries/FontLabelStringDrawing.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabelStringDrawing.h", 
+                    "key": "cocos2d libraries/FontLabelStringDrawing.h"
+                }, 
+                "cocos2d libraries/CCGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrid.h", 
+                    "key": "cocos2d libraries/CCGrid.h"
+                }, 
+                "cocos2d libraries/CCTouchDelegateProtocol.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDelegateProtocol.h", 
+                    "key": "cocos2d libraries/CCTouchDelegateProtocol.h"
+                }, 
+                "cocos2d libraries/CCEventDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCEventDispatcher.h", 
+                    "key": "cocos2d libraries/CCEventDispatcher.h"
+                }, 
+                "cocos2d libraries/CCTMXTiledMap.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXTiledMap.h", 
+                    "key": "cocos2d libraries/CCTMXTiledMap.h"
+                }, 
+                "cocos2d libraries/NSCharacterSet_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSCharacterSet_Extensions.h", 
+                    "key": "cocos2d libraries/NSCharacterSet_Extensions.h"
+                }, 
+                "cocos2d libraries/CCScheduler.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScheduler.h", 
+                    "key": "cocos2d libraries/CCScheduler.h"
+                }, 
+                "cocos2d libraries/CCSpriteSheet.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteSheet.h", 
+                    "key": "cocos2d libraries/CCSpriteSheet.h"
+                }, 
+                "cocos2d libraries/CocosDenshion.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CocosDenshion.h", 
+                    "key": "cocos2d libraries/CocosDenshion.h"
+                }, 
+                "cocos2d libraries/CCDrawingPrimitives.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDrawingPrimitives.h", 
+                    "key": "cocos2d libraries/CCDrawingPrimitives.h"
+                }, 
+                "cocos2d libraries/ZFont.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZFont.h", 
+                    "key": "cocos2d libraries/ZFont.h"
+                }, 
+                "cocos2d libraries/CCGrabber.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrabber.h", 
+                    "key": "cocos2d libraries/CCGrabber.h"
+                }, 
+                "cocos2d libraries/CCTMXObjectGroup.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXObjectGroup.h", 
+                    "key": "cocos2d libraries/CCTMXObjectGroup.h"
+                }, 
+                "cocos2d libraries/CCBlockSupport.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCBlockSupport.h", 
+                    "key": "cocos2d libraries/CCBlockSupport.h"
+                }, 
+                "cocos2d libraries/CCTransition.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransition.h", 
+                    "key": "cocos2d libraries/CCTransition.h"
+                }
+            }
+        }, 
+        {
+            "type": "iquote", 
+            "header_path": "cocos2d libraries-project-headers.hmap", 
+            "hmap": {
+                "GlassSlider.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GlassSlider.h", 
+                    "key": "GlassSlider.h"
+                }, 
+                "TutorialScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TutorialScene.h", 
+                    "key": "TutorialScene.h"
+                }, 
+                "LinearPoint.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "LinearPoint.h", 
+                    "key": "LinearPoint.h"
+                }, 
+                "CCTextureCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureCache.h", 
+                    "key": "CCTextureCache.h"
+                }, 
+                "SHKActivityIndicator.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKActivityIndicator.h", 
+                    "key": "SHKActivityIndicator.h"
+                }, 
+                "SHKCustomFormFieldCell.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomFormFieldCell.h", 
+                    "key": "SHKCustomFormFieldCell.h"
+                }, 
+                "SHKInstapaper.h": {
+                    "prefix": "ShareKit/Sharers/Services/Instapaper/", 
+                    "suffix": "SHKInstapaper.h", 
+                    "key": "SHKInstapaper.h"
+                }, 
+                "MBProgressHUD.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MBProgressHUD.h", 
+                    "key": "MBProgressHUD.h"
+                }, 
+                "TowTruck.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TowTruck.h", 
+                    "key": "TowTruck.h"
+                }, 
+                "CCTMXTiledMap.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXTiledMap.h", 
+                    "key": "CCTMXTiledMap.h"
+                }, 
+                "CCTouchDelegateProtocol.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDelegateProtocol.h", 
+                    "key": "CCTouchDelegateProtocol.h"
+                }, 
+                "OAPlaintextSignatureProvider.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAPlaintextSignatureProvider.h", 
+                    "key": "OAPlaintextSignatureProvider.h"
+                }, 
+                "EnemyM3.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyM3.h", 
+                    "key": "EnemyM3.h"
+                }, 
+                "CDAudioManager.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDAudioManager.h", 
+                    "key": "CDAudioManager.h"
+                }, 
+                "MissionSplash.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MissionSplash.h", 
+                    "key": "MissionSplash.h"
+                }, 
+                "FBSession.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBSession.h", 
+                    "key": "FBSession.h"
+                }, 
+                "CocosDenshion.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CocosDenshion.h", 
+                    "key": "CocosDenshion.h"
+                }, 
+                "CCActionProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionProgressTimer.h", 
+                    "key": "CCActionProgressTimer.h"
+                }, 
+                "WinScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "WinScene.h", 
+                    "key": "WinScene.h"
+                }, 
+                "CDataScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "CDataScanner_Extensions.h", 
+                    "key": "CDataScanner_Extensions.h"
+                }, 
+                "CCAtlasNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAtlasNode.h", 
+                    "key": "CCAtlasNode.h"
+                }, 
+                "ComingSoon.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ComingSoon.h", 
+                    "key": "ComingSoon.h"
+                }, 
+                "CCLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLayer.h", 
+                    "key": "CCLayer.h"
+                }, 
+                "SHKPhotoAlbum.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Save to Album/", 
+                    "suffix": "SHKPhotoAlbum.h", 
+                    "key": "SHKPhotoAlbum.h"
+                }, 
+                "OSL_Prefix.pch": {
+                    "prefix": "./", 
+                    "suffix": "OSL_Prefix.pch", 
+                    "key": "OSL_Prefix.pch"
+                }, 
+                "ccConfig.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccConfig.h", 
+                    "key": "ccConfig.h"
+                }, 
+                "FontLabelStringDrawing.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabelStringDrawing.h", 
+                    "key": "FontLabelStringDrawing.h"
+                }, 
+                "CCAnimationCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimationCache.h", 
+                    "key": "CCAnimationCache.h"
+                }, 
+                "CCSpriteSheet.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteSheet.h", 
+                    "key": "CCSpriteSheet.h"
+                }, 
+                "FBConnectGlobal.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBConnectGlobal.h", 
+                    "key": "FBConnectGlobal.h"
+                }, 
+                "cocos2d.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "cocos2d.h", 
+                    "key": "cocos2d.h"
+                }, 
+                "CCGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrid.h", 
+                    "key": "CCGrid.h"
+                }, 
+                "uthash.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "uthash.h", 
+                    "key": "uthash.h"
+                }, 
+                "ccTypes.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccTypes.h", 
+                    "key": "ccTypes.h"
+                }, 
+                "SHKRequest.h": {
+                    "prefix": "ShareKit/Core/Helpers/", 
+                    "suffix": "SHKRequest.h", 
+                    "key": "SHKRequest.h"
+                }, 
+                "SHKCustomShareMenu.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomShareMenu.h", 
+                    "key": "SHKCustomShareMenu.h"
+                }, 
+                "CCTransition.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransition.h", 
+                    "key": "CCTransition.h"
+                }, 
+                "FBDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBDialog.h", 
+                    "key": "FBDialog.h"
+                }, 
+                "SHKCustomShareMenuCell.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomShareMenuCell.h", 
+                    "key": "SHKCustomShareMenuCell.h"
+                }, 
+                "NSDictionary_JSONExtensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSDictionary_JSONExtensions.h", 
+                    "key": "NSDictionary_JSONExtensions.h"
+                }, 
+                "CCSpriteFrameCache.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrameCache.h", 
+                    "key": "CCSpriteFrameCache.h"
+                }, 
+                "TextMenuItem.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TextMenuItem.h", 
+                    "key": "TextMenuItem.h"
+                }, 
+                "MacGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "MacGLView.h", 
+                    "key": "MacGLView.h"
+                }, 
+                "FBFeedDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBFeedDialog.h", 
+                    "key": "FBFeedDialog.h"
+                }, 
+                "SHKSafari.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Open in Safari/", 
+                    "suffix": "SHKSafari.h", 
+                    "key": "SHKSafari.h"
+                }, 
+                "CCGrabber.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCGrabber.h", 
+                    "key": "CCGrabber.h"
+                }, 
+                "IAPHelper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "IAPHelper.h", 
+                    "key": "IAPHelper.h"
+                }, 
+                "CCProtocols.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProtocols.h", 
+                    "key": "CCProtocols.h"
+                }, 
+                "CCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCArray.h", 
+                    "key": "CCArray.h"
+                }, 
+                "SHKGoogleReader.h": {
+                    "prefix": "ShareKit/Sharers/Services/Google Reader/", 
+                    "suffix": "SHKGoogleReader.h", 
+                    "key": "SHKGoogleReader.h"
+                }, 
+                "ccCArray.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccCArray.h", 
+                    "key": "ccCArray.h"
+                }, 
+                "CCMenu.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenu.h", 
+                    "key": "CCMenu.h"
+                }, 
+                "ES1Renderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ES1Renderer.h", 
+                    "key": "ES1Renderer.h"
+                }, 
+                "CustomScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "CustomScene.h", 
+                    "key": "CustomScene.h"
+                }, 
+                "ZipUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ZipUtils.h", 
+                    "key": "ZipUtils.h"
+                }, 
+                "MenuScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MenuScene.h", 
+                    "key": "MenuScene.h"
+                }, 
+                "MultiScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MultiScene.h", 
+                    "key": "MultiScene.h"
+                }, 
+                "SHKFBStreamDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/", 
+                    "suffix": "SHKFBStreamDialog.h", 
+                    "key": "SHKFBStreamDialog.h"
+                }, 
+                "FBConnect.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBConnect.h", 
+                    "key": "FBConnect.h"
+                }, 
+                "FBPermissionDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBPermissionDialog.h", 
+                    "key": "FBPermissionDialog.h"
+                }, 
+                "ZAttributedString.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedString.h", 
+                    "key": "ZAttributedString.h"
+                }, 
+                "CCTouchDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchDispatcher.h", 
+                    "key": "CCTouchDispatcher.h"
+                }, 
+                "Perk.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Perk.h", 
+                    "key": "Perk.h"
+                }, 
+                "SHKSharer.h": {
+                    "prefix": "ShareKit/Core/Base Sharer Classes/", 
+                    "suffix": "SHKSharer.h", 
+                    "key": "SHKSharer.h"
+                }, 
+                "SHKDelicious.h": {
+                    "prefix": "ShareKit/Sharers/Services/Delicious/", 
+                    "suffix": "SHKDelicious.h", 
+                    "key": "SHKDelicious.h"
+                }, 
+                "CDOpenALSupport.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDOpenALSupport.h", 
+                    "key": "CDOpenALSupport.h"
+                }, 
+                "SFHFKeychainUtils.h": {
+                    "prefix": "ShareKit/Core/Helpers/Keychain/", 
+                    "suffix": "SFHFKeychainUtils.h", 
+                    "key": "SFHFKeychainUtils.h"
+                }, 
+                "EnemyTimed.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyTimed.h", 
+                    "key": "EnemyTimed.h"
+                }, 
+                "CCRibbon.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRibbon.h", 
+                    "key": "CCRibbon.h"
+                }, 
+                "Scope.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Scope.h", 
+                    "key": "Scope.h"
+                }, 
+                "Mission1.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Mission1.h", 
+                    "key": "Mission1.h"
+                }, 
+                "NSURL+Base.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Categories/", 
+                    "suffix": "NSURL+Base.h", 
+                    "key": "NSURL+Base.h"
+                }, 
+                "SHKTwitterForm.h": {
+                    "prefix": "ShareKit/Sharers/Services/Twitter/", 
+                    "suffix": "SHKTwitterForm.h", 
+                    "key": "SHKTwitterForm.h"
+                }, 
+                "TransformUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TransformUtils.h", 
+                    "key": "TransformUtils.h"
+                }, 
+                "NSString+URLEncoding.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Categories/", 
+                    "suffix": "NSString+URLEncoding.h", 
+                    "key": "NSString+URLEncoding.h"
+                }, 
+                "CCSprite.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSprite.h", 
+                    "key": "CCSprite.h"
+                }, 
+                "FBStreamDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBStreamDialog.h", 
+                    "key": "FBStreamDialog.h"
+                }, 
+                "ESRenderer.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "ESRenderer.h", 
+                    "key": "ESRenderer.h"
+                }, 
+                "BombTruck.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "BombTruck.h", 
+                    "key": "BombTruck.h"
+                }, 
+                "EnemyM2.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyM2.h", 
+                    "key": "EnemyM2.h"
+                }, 
+                "SHKFormController.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKFormController.h", 
+                    "key": "SHKFormController.h"
+                }, 
+                "CCParallaxNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParallaxNode.h", 
+                    "key": "CCParallaxNode.h"
+                }, 
+                "Helicopter.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Helicopter.h", 
+                    "key": "Helicopter.h"
+                }, 
+                "CCProfiling.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCProfiling.h", 
+                    "key": "CCProfiling.h"
+                }, 
+                "CCParticleSystemPoint.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemPoint.h", 
+                    "key": "CCParticleSystemPoint.h"
+                }, 
+                "CCConfiguration.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCConfiguration.h", 
+                    "key": "CCConfiguration.h"
+                }, 
+                "CCRenderTexture.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCRenderTexture.h", 
+                    "key": "CCRenderTexture.h"
+                }, 
+                "CCDirectorMac.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCDirectorMac.h", 
+                    "key": "CCDirectorMac.h"
+                }, 
+                "NSScanner_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSScanner_Extensions.h", 
+                    "key": "NSScanner_Extensions.h"
+                }, 
+                "CCActionGrid3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid3D.h", 
+                    "key": "CCActionGrid3D.h"
+                }, 
+                "SHKActionSheet.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKActionSheet.h", 
+                    "key": "SHKActionSheet.h"
+                }, 
+                "TGAlib.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "TGAlib.h", 
+                    "key": "TGAlib.h"
+                }, 
+                "PlayScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PlayScene.h", 
+                    "key": "PlayScene.h"
+                }, 
+                "utlist.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "utlist.h", 
+                    "key": "utlist.h"
+                }, 
+                "CCGL.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCGL.h", 
+                    "key": "CCGL.h"
+                }, 
+                "SHKFormFieldSettings.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKFormFieldSettings.h", 
+                    "key": "SHKFormFieldSettings.h"
+                }, 
+                "CJSONSerializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONSerializer.h", 
+                    "key": "CJSONSerializer.h"
+                }, 
+                "sha1.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Crytpo/", 
+                    "suffix": "sha1.h", 
+                    "key": "sha1.h"
+                }, 
+                "NSMutableURLRequest+Parameters.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Categories/", 
+                    "suffix": "NSMutableURLRequest+Parameters.h", 
+                    "key": "NSMutableURLRequest+Parameters.h"
+                }, 
+                "CCScene.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScene.h", 
+                    "key": "CCScene.h"
+                }, 
+                "SHKMail.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Email/", 
+                    "suffix": "SHKMail.h", 
+                    "key": "SHKMail.h"
+                }, 
+                "MyMenuButton.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyMenuButton.h", 
+                    "key": "MyMenuButton.h"
+                }, 
+                "PreHelpScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PreHelpScene.h", 
+                    "key": "PreHelpScene.h"
+                }, 
+                "TruckMission.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TruckMission.h", 
+                    "key": "TruckMission.h"
+                }, 
+                "StatsScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "StatsScene.h", 
+                    "key": "StatsScene.h"
+                }, 
+                "Plane.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Plane.h", 
+                    "key": "Plane.h"
+                }, 
+                "CCActionTiledGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTiledGrid.h", 
+                    "key": "CCActionTiledGrid.h"
+                }, 
+                "CJSONScanner.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONScanner.h", 
+                    "key": "CJSONScanner.h"
+                }, 
+                "OpenGL_Internal.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "OpenGL_Internal.h", 
+                    "key": "OpenGL_Internal.h"
+                }, 
+                "Truck.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Truck.h", 
+                    "key": "Truck.h"
+                }, 
+                "CCActionPageTurn3D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionPageTurn3D.h", 
+                    "key": "CCActionPageTurn3D.h"
+                }, 
+                "CCParticleSystem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystem.h", 
+                    "key": "CCParticleSystem.h"
+                }, 
+                "OAAsynchronousDataFetcher.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAAsynchronousDataFetcher.h", 
+                    "key": "OAAsynchronousDataFetcher.h"
+                }, 
+                "SimpleAudioEngine.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "SimpleAudioEngine.h", 
+                    "key": "SimpleAudioEngine.h"
+                }, 
+                "ZFont.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZFont.h", 
+                    "key": "ZFont.h"
+                }, 
+                "OAHMAC_SHA1SignatureProvider.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAHMAC_SHA1SignatureProvider.h", 
+                    "key": "OAHMAC_SHA1SignatureProvider.h"
+                }, 
+                "GameConfig.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GameConfig.h", 
+                    "key": "GameConfig.h"
+                }, 
+                "OAuthConsumer.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAuthConsumer.h", 
+                    "key": "OAuthConsumer.h"
+                }, 
+                "MissionScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MissionScene.h", 
+                    "key": "MissionScene.h"
+                }, 
+                "OAConsumer.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAConsumer.h", 
+                    "key": "OAConsumer.h"
+                }, 
+                "SHKTwitter.h": {
+                    "prefix": "ShareKit/Sharers/Services/Twitter/", 
+                    "suffix": "SHKTwitter.h", 
+                    "key": "SHKTwitter.h"
+                }, 
+                "CreditScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "CreditScene.h", 
+                    "key": "CreditScene.h"
+                }, 
+                "CCParticleExamples.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleExamples.h", 
+                    "key": "CCParticleExamples.h"
+                }, 
+                "LoseScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "LoseScene.h", 
+                    "key": "LoseScene.h"
+                }, 
+                "Armored.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Armored.h", 
+                    "key": "Armored.h"
+                }, 
+                "SHKOAuthView.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKOAuthView.h", 
+                    "key": "SHKOAuthView.h"
+                }, 
+                "CCAnimation.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAnimation.h", 
+                    "key": "CCAnimation.h"
+                }, 
+                "ConnectingScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ConnectingScene.h", 
+                    "key": "ConnectingScene.h"
+                }, 
+                "MyDial.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyDial.h", 
+                    "key": "MyDial.h"
+                }, 
+                "JDMenuItem.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "JDMenuItem.h", 
+                    "key": "JDMenuItem.h"
+                }, 
+                "CCCompatibility.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCompatibility.h", 
+                    "key": "CCCompatibility.h"
+                }, 
+                "GoldScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GoldScene.h", 
+                    "key": "GoldScene.h"
+                }, 
+                "ZAttributedStringPrivate.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "ZAttributedStringPrivate.h", 
+                    "key": "ZAttributedStringPrivate.h"
+                }, 
+                "OADataFetcher.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OADataFetcher.h", 
+                    "key": "OADataFetcher.h"
+                }, 
+                "Extras.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Extras.h", 
+                    "key": "Extras.h"
+                }, 
+                "CCLabelBMFont.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelBMFont.h", 
+                    "key": "CCLabelBMFont.h"
+                }, 
+                "CCActionEase.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionEase.h", 
+                    "key": "CCActionEase.h"
+                }, 
+                "CCActionInterval.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInterval.h", 
+                    "key": "CCActionInterval.h"
+                }, 
+                "SHK.h": {
+                    "prefix": "ShareKit/Core/", 
+                    "suffix": "SHK.h", 
+                    "key": "SHK.h"
+                }, 
+                "hmac.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Crytpo/", 
+                    "suffix": "hmac.h", 
+                    "key": "hmac.h"
+                }, 
+                "OAMutableURLRequest.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAMutableURLRequest.h", 
+                    "key": "OAMutableURLRequest.h"
+                }, 
+                "NSDataAES256.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "NSDataAES256.h", 
+                    "key": "NSDataAES256.h"
+                }, 
+                "SHKReadItLater.h": {
+                    "prefix": "ShareKit/Sharers/Services/Read It Later/", 
+                    "suffix": "SHKReadItLater.h", 
+                    "key": "SHKReadItLater.h"
+                }, 
+                "OARequestParameter.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OARequestParameter.h", 
+                    "key": "OARequestParameter.h"
+                }, 
+                "ChildMenuButton.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ChildMenuButton.h", 
+                    "key": "ChildMenuButton.h"
+                }, 
+                "EAGLView.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "EAGLView.h", 
+                    "key": "EAGLView.h"
+                }, 
+                "CCActionManager.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionManager.h", 
+                    "key": "CCActionManager.h"
+                }, 
+                "CCMotionStreak.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMotionStreak.h", 
+                    "key": "CCMotionStreak.h"
+                }, 
+                "CCFileUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCFileUtils.h", 
+                    "key": "CCFileUtils.h"
+                }, 
+                "SHKConfig.h": {
+                    "prefix": "ShareKit/", 
+                    "suffix": "SHKConfig.h", 
+                    "key": "SHKConfig.h"
+                }, 
+                "CCDirectorIOS.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCDirectorIOS.h", 
+                    "key": "CCDirectorIOS.h"
+                }, 
+                "SHKCopy.h": {
+                    "prefix": "ShareKit/Sharers/Actions/Copy/", 
+                    "suffix": "SHKCopy.h", 
+                    "key": "SHKCopy.h"
+                }, 
+                "SHKViewControllerWrapper.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKViewControllerWrapper.h", 
+                    "key": "SHKViewControllerWrapper.h"
+                }, 
+                "FBXMLHandler.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBXMLHandler.h", 
+                    "key": "FBXMLHandler.h"
+                }, 
+                "GameScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GameScene.h", 
+                    "key": "GameScene.h"
+                }, 
+                "SHKShareMenu.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKShareMenu.h", 
+                    "key": "SHKShareMenu.h"
+                }, 
+                "CCAction.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCAction.h", 
+                    "key": "CCAction.h"
+                }, 
+                "SHKOAuthSharer.h": {
+                    "prefix": "ShareKit/Core/Base Sharer Classes/", 
+                    "suffix": "SHKOAuthSharer.h", 
+                    "key": "SHKOAuthSharer.h"
+                }, 
+                "Base64Transcoder.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/Crytpo/", 
+                    "suffix": "Base64Transcoder.h", 
+                    "key": "Base64Transcoder.h"
+                }, 
+                "ComputerScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "ComputerScene.h", 
+                    "key": "ComputerScene.h"
+                }, 
+                "Ammo.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Ammo.h", 
+                    "key": "Ammo.h"
+                }, 
+                "OASignatureProviding.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OASignatureProviding.h", 
+                    "key": "OASignatureProviding.h"
+                }, 
+                "DeviceDetection.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "DeviceDetection.h", 
+                    "key": "DeviceDetection.h"
+                }, 
+                "CCTMXXMLParser.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXXMLParser.h", 
+                    "key": "CCTMXXMLParser.h"
+                }, 
+                "CCTransitionRadial.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionRadial.h", 
+                    "key": "CCTransitionRadial.h"
+                }, 
+                "FBRequest.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBRequest.h", 
+                    "key": "FBRequest.h"
+                }, 
+                "CCActionCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionCamera.h", 
+                    "key": "CCActionCamera.h"
+                }, 
+                "OAServiceTicket.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAServiceTicket.h", 
+                    "key": "OAServiceTicket.h"
+                }, 
+                "CDConfig.h": {
+                    "prefix": "libs/CocosDenshion/", 
+                    "suffix": "CDConfig.h", 
+                    "key": "CDConfig.h"
+                }, 
+                "CCLabelTTF.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelTTF.h", 
+                    "key": "CCLabelTTF.h"
+                }, 
+                "RootViewController.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "RootViewController.h", 
+                    "key": "RootViewController.h"
+                }, 
+                "PopupLayer.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PopupLayer.h", 
+                    "key": "PopupLayer.h"
+                }, 
+                "Stats.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Stats.h", 
+                    "key": "Stats.h"
+                }, 
+                "Joystick.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Joystick.h", 
+                    "key": "Joystick.h"
+                }, 
+                "CGPointExtension.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CGPointExtension.h", 
+                    "key": "CGPointExtension.h"
+                }, 
+                "CCActionTween.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionTween.h", 
+                    "key": "CCActionTween.h"
+                }, 
+                "HelpScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "HelpScene.h", 
+                    "key": "HelpScene.h"
+                }, 
+                "EquipmentScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EquipmentScene.h", 
+                    "key": "EquipmentScene.h"
+                }, 
+                "Vector.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Vector.h", 
+                    "key": "Vector.h"
+                }, 
+                "SHKFormFieldCell.h": {
+                    "prefix": "ShareKit/UI/", 
+                    "suffix": "SHKFormFieldCell.h", 
+                    "key": "SHKFormFieldCell.h"
+                }, 
+                "CCProgressTimer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCProgressTimer.h", 
+                    "key": "CCProgressTimer.h"
+                }, 
+                "SettingsScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "SettingsScene.h", 
+                    "key": "SettingsScene.h"
+                }, 
+                "CCNS.h": {
+                    "prefix": "libs/cocos2d/Platforms/", 
+                    "suffix": "CCNS.h", 
+                    "key": "CCNS.h"
+                }, 
+                "OAToken.h": {
+                    "prefix": "ShareKit/Core/Helpers/OAuth/", 
+                    "suffix": "OAToken.h", 
+                    "key": "OAToken.h"
+                }, 
+                "CCTileMapAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTileMapAtlas.h", 
+                    "key": "CCTileMapAtlas.h"
+                }, 
+                "SHKCustomFormController.h": {
+                    "prefix": "ShareKit/Customize UI/", 
+                    "suffix": "SHKCustomFormController.h", 
+                    "key": "SHKCustomFormController.h"
+                }, 
+                "CCTMXLayer.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXLayer.h", 
+                    "key": "CCTMXLayer.h"
+                }, 
+                "PerkScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "PerkScene.h", 
+                    "key": "PerkScene.h"
+                }, 
+                "MyToggle.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyToggle.h", 
+                    "key": "MyToggle.h"
+                }, 
+                "CCActionInstant.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionInstant.h", 
+                    "key": "CCActionInstant.h"
+                }, 
+                "CCSpriteFrame.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteFrame.h", 
+                    "key": "CCSpriteFrame.h"
+                }, 
+                "CCScheduler.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCScheduler.h", 
+                    "key": "CCScheduler.h"
+                }, 
+                "TutorialSplash.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "TutorialSplash.h", 
+                    "key": "TutorialSplash.h"
+                }, 
+                "NSCharacterSet_Extensions.h": {
+                    "prefix": "libs/TouchJSON/Extensions/", 
+                    "suffix": "NSCharacterSet_Extensions.h", 
+                    "key": "NSCharacterSet_Extensions.h"
+                }, 
+                "CCTexturePVR.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexturePVR.h", 
+                    "key": "CCTexturePVR.h"
+                }, 
+                "CCBlockSupport.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCBlockSupport.h", 
+                    "key": "CCBlockSupport.h"
+                }, 
+                "glu.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "glu.h", 
+                    "key": "glu.h"
+                }, 
+                "FontLabel.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontLabel.h", 
+                    "key": "FontLabel.h"
+                }, 
+                "CDataScanner.h": {
+                    "prefix": "libs/TouchJSON/", 
+                    "suffix": "CDataScanner.h", 
+                    "key": "CDataScanner.h"
+                }, 
+                "CCTransitionPageTurn.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTransitionPageTurn.h", 
+                    "key": "CCTransitionPageTurn.h"
+                }, 
+                "Radio.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Radio.h", 
+                    "key": "Radio.h"
+                }, 
+                "SHKItem.h": {
+                    "prefix": "ShareKit/Core/", 
+                    "suffix": "SHKItem.h", 
+                    "key": "SHKItem.h"
+                }, 
+                "base64.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "base64.h", 
+                    "key": "base64.h"
+                }, 
+                "CCNotifications.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "CCNotifications.h", 
+                    "key": "CCNotifications.h"
+                }, 
+                "CCDrawingPrimitives.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDrawingPrimitives.h", 
+                    "key": "CCDrawingPrimitives.h"
+                }, 
+                "FontManager.h": {
+                    "prefix": "libs/FontLabel/", 
+                    "suffix": "FontManager.h", 
+                    "key": "FontManager.h"
+                }, 
+                "EnemyParatrooper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "EnemyParatrooper.h", 
+                    "key": "EnemyParatrooper.h"
+                }, 
+                "SHKOfflineSharer.h": {
+                    "prefix": "ShareKit/Core/", 
+                    "suffix": "SHKOfflineSharer.h", 
+                    "key": "SHKOfflineSharer.h"
+                }, 
+                "CCParticleSystemQuad.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCParticleSystemQuad.h", 
+                    "key": "CCParticleSystemQuad.h"
+                }, 
+                "ccMacros.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "ccMacros.h", 
+                    "key": "ccMacros.h"
+                }, 
+                "Enemy.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Enemy.h", 
+                    "key": "Enemy.h"
+                }, 
+                "CCDirector.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCDirector.h", 
+                    "key": "CCDirector.h"
+                }, 
+                "Vehicle.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Vehicle.h", 
+                    "key": "Vehicle.h"
+                }, 
+                "CustomPoint.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "CustomPoint.h", 
+                    "key": "CustomPoint.h"
+                }, 
+                "SurvivalMenuScene.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "SurvivalMenuScene.h", 
+                    "key": "SurvivalMenuScene.h"
+                }, 
+                "CCLabelAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCLabelAtlas.h", 
+                    "key": "CCLabelAtlas.h"
+                }, 
+                "AppDelegate.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "AppDelegate.h", 
+                    "key": "AppDelegate.h"
+                }, 
+                "SHKPinboard.h": {
+                    "prefix": "ShareKit/Sharers/Services/Pinboard/", 
+                    "suffix": "SHKPinboard.h", 
+                    "key": "SHKPinboard.h"
+                }, 
+                "Rifle.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Rifle.h", 
+                    "key": "Rifle.h"
+                }, 
+                "MyIAPHelper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "MyIAPHelper.h", 
+                    "key": "MyIAPHelper.h"
+                }, 
+                "Reachability.h": {
+                    "prefix": "ShareKit/Reachability/", 
+                    "suffix": "Reachability.h", 
+                    "key": "Reachability.h"
+                }, 
+                "CCTexture2D.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTexture2D.h", 
+                    "key": "CCTexture2D.h"
+                }, 
+                "Sniper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Sniper.h", 
+                    "key": "Sniper.h"
+                }, 
+                "CCTextureAtlas.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTextureAtlas.h", 
+                    "key": "CCTextureAtlas.h"
+                }, 
+                "CCSpriteBatchNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCSpriteBatchNode.h", 
+                    "key": "CCSpriteBatchNode.h"
+                }, 
+                "FBLoginDialog.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBLoginDialog.h", 
+                    "key": "FBLoginDialog.h"
+                }, 
+                "Story.h": {
+                    "prefix": "./", 
+                    "suffix": "Story.h", 
+                    "key": "Story.h"
+                }, 
+                "SHKFacebook.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/", 
+                    "suffix": "SHKFacebook.h", 
+                    "key": "SHKFacebook.h"
+                }, 
+                "notificationDesign.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "notificationDesign.h", 
+                    "key": "notificationDesign.h"
+                }, 
+                "UIWebView+SHK.h": {
+                    "prefix": "ShareKit/Core/Categories/", 
+                    "suffix": "UIWebView+SHK.h", 
+                    "key": "UIWebView+SHK.h"
+                }, 
+                "CJSONDeserializer.h": {
+                    "prefix": "libs/TouchJSON/JSON/", 
+                    "suffix": "CJSONDeserializer.h", 
+                    "key": "CJSONDeserializer.h"
+                }, 
+                "Loadout.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "Loadout.h", 
+                    "key": "Loadout.h"
+                }, 
+                "CCNode.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCNode.h", 
+                    "key": "CCNode.h"
+                }, 
+                "FBLoginButton.h": {
+                    "prefix": "ShareKit/Sharers/Services/Facebook/FBConnect/", 
+                    "suffix": "FBLoginButton.h", 
+                    "key": "FBLoginButton.h"
+                }, 
+                "ccUtils.h": {
+                    "prefix": "libs/cocos2d/Support/", 
+                    "suffix": "ccUtils.h", 
+                    "key": "ccUtils.h"
+                }, 
+                "CCActionGrid.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCActionGrid.h", 
+                    "key": "CCActionGrid.h"
+                }, 
+                "CCEventDispatcher.h": {
+                    "prefix": "libs/cocos2d/Platforms/Mac/", 
+                    "suffix": "CCEventDispatcher.h", 
+                    "key": "CCEventDispatcher.h"
+                }, 
+                "GameKitHelper.h": {
+                    "prefix": "Classes/", 
+                    "suffix": "GameKitHelper.h", 
+                    "key": "GameKitHelper.h"
+                }, 
+                "CCTouchHandler.h": {
+                    "prefix": "libs/cocos2d/Platforms/iOS/", 
+                    "suffix": "CCTouchHandler.h", 
+                    "key": "CCTouchHandler.h"
+                }, 
+                "SHKTumblr.h": {
+                    "prefix": "ShareKit/Sharers/Services/Tumblr/", 
+                    "suffix": "SHKTumblr.h", 
+                    "key": "SHKTumblr.h"
+                }, 
+                "CCMenuItem.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCMenuItem.h", 
+                    "key": "CCMenuItem.h"
+                }, 
+                "CCCamera.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCCamera.h", 
+                    "key": "CCCamera.h"
+                }, 
+                "CCTMXObjectGroup.h": {
+                    "prefix": "libs/cocos2d/", 
+                    "suffix": "CCTMXObjectGroup.h", 
+                    "key": "CCTMXObjectGroup.h"
+                }
+            }
+        }
+    ], 
+    "modules": [], 
+    "version": "1", 
+    "flags": [
+        "-fwritable-strings", 
+        "-funroll-loops", 
+        "-fasm-blocks", 
+        {
+            "flag": "-std=c99", 
+            "not_type": "c++"
+        }, 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wno-deprecated-declarations", 
+        "-Wreturn-type", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }
+    ], 
+    "deps": [
+        "UIKit"
+    ], 
+    "config": {}
+}

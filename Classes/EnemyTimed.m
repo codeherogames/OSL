@@ -162,7 +162,7 @@
 - (void) startMovingWithPoints: (NSArray*) points
 {
 	doNothing = 0;
-	self.c = [[points objectAtIndex:(arc4random() % [points count])] retain];
+	self.c = [[points objectAtIndex:(uint)(arc4random() % [points count])] retain];
 	self.position = c.point;
 	[self schedule: @selector(move:)];
 }

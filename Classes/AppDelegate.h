@@ -34,7 +34,7 @@
 	CDSoundEngine  *soundEngine;
 	
 	int controls, sensitivity, gameType, tagCounter, reload,lastActionButton,multiplayer,tutorialState,playerLevel,playerWager,currentMission,lowRes,missionPage,friendInvite,sandboxMode,gameState,survivalMode;
-	int recon,anti,jammers,currentLevel,allowRotate,help,helpPage,headshotStreak,killStreak,tjg;
+	int recon,anti,jammers,currentLevel,allowRotate,help,helpPage,headshotStreak,killStreak,tjg,nightVision;
 	float scale,minZoom,maxZoom,money;
 	NSMutableArray *enemies,*actionButtons;
 	NSMutableArray *walkStartPoint,*planeStartPoint,*vehicleStartPoint,*heliStartPoint,*roofStartPoint,*citizenStartPoint,*jumperStartPoint;
@@ -59,7 +59,7 @@
 @property (nonatomic, retain) CDSoundEngine *soundEngine;
 @property (nonatomic, retain) CDAudioManager *am;
 
-@property (nonatomic, assign) int controls,sensitivity,gameType,tagCounter,reload,lastActionButton,recon,anti,kidnappers,jammers,currentLevel,allowRotate,multiplayer,help,helpPage,headshotStreak,tutorialState,killStreak,playerLevel,playerWager,currentMission,lowRes,missionPage,friendInvite,sandboxMode,survivalMode,gameState,gkAvailable,tjg;
+@property (nonatomic, assign) int controls,sensitivity,gameType,tagCounter,reload,lastActionButton,recon,anti,kidnappers,jammers,currentLevel,allowRotate,multiplayer,help,helpPage,headshotStreak,tutorialState,killStreak,playerLevel,playerWager,currentMission,lowRes,missionPage,friendInvite,sandboxMode,survivalMode,gameState,gkAvailable,tjg,nightVision;
 @property (nonatomic, assign) float scale,minZoom,maxZoom,money;
 @property (nonatomic, retain) NSMutableArray *enemies,*actionButtons;
 @property (nonatomic, retain) NSMutableArray *vehicleStartPoint,*walkStartPoint,*planeStartPoint,*heliStartPoint,*roofStartPoint,*citizenStartPoint,*jumperStartPoint;

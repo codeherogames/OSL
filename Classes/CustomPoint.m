@@ -28,7 +28,7 @@
 {
 	if ([self.nextPoints count] == 0)
 		return 0;
-	int tmp = arc4random() % [self.nextPoints count];
+	int tmp = (uint)(arc4random() % [self.nextPoints count]);
 	//CCLOG(@"max:%i tmp:%i",[self.nextPoints count],tmp);
 	return [nextPoints objectAtIndex:tmp];
 }
@@ -51,15 +51,9 @@
 
 - (unsigned int) randomNumberFrom: (unsigned int) minValue to: (unsigned int) maxValue
 {
-	//return (arc4random() % maxValue) + 1;
-	//return ((arc4random() % ((maxValue)-(minValue)+1)) + (minValue));
-	/*double probability = rand() / 4294967296.0;
-	double range = maxValue - minValue + 1;
-	return range * probability + minValue;*/
-	int tmp = arc4random() % maxValue;
-	CCLOG(@"max:%i tmp:%i",maxValue,tmp);
-	return tmp; //arc4random() % (maxValue+1);
-	//return  (rand())/RAND_MAX * maxValue;
+	int tmp = (uint)(arc4random() % maxValue);
+	//CCLOG(@"max:%i tmp:%i",maxValue,tmp);
+	return tmp;
 }
 
 @end

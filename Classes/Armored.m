@@ -10,7 +10,7 @@
 
 
 @implementation Armored
-@synthesize tire1, tire2;
+@synthesize tire1, tire2,isTraffic;
 - (id) initWithFile: (NSString*) s l:(CCLayer*)l a:(NSArray*)a
 
 {
@@ -39,6 +39,7 @@
 
 - (void) move:(ccTime) dt
 {
+
   if (self.currentState != PAUSE) {
 	elapsed += dt;
 	if (elapsed >= duration)
@@ -57,7 +58,14 @@
 		}
 		lastX = c.point.x;
 		pointCount++;
-		c = [self.points objectAtIndex:pointCount];		
+		c = [self.points objectAtIndex:pointCount];
+        /*if (self.isTraffic) {
+            while (c.currentState == PAUSE) {
+                lastX = c.point.x;
+                pointCount++;
+                c = [self.points objectAtIndex:pointCount];
+            }
+        }*/
 		
 		// Get current state
 		self.currentState = c.currentState;
@@ -65,24 +73,24 @@
 		CCLOG(@"%@",c.name);
 		// Pause to drop
 		if (currentState == PAUSE) {
-			CCLOG(@"DropOff");
-			[self stopAllActions];
-			[self schedule: @selector(dropOff) interval: 1];
+            CCLOG(@"DropOff");
+            [self stopAllActions];
+            [self schedule: @selector(dropOff) interval: 1];
 		}
 		else {
 			// Get next position
 			nextPosition= c.point;
 		}
-		
-		duration = sqrt((self.position.x - nextPosition.x) *  (self.position.x - nextPosition.x) + 
-						(self.position.y - nextPosition.y) *  (self.position.y - nextPosition.y)) / VEHICLE2RATE;
-		duration = duration * 0.8;
-		if ([[AppDelegate get] perkEnabled:23]) {
-			duration*=.8;
-		}
-		CCLOG(@"rate: %f duration: %f", VEHICLE2RATE, duration);
-		CGPoint velocity = ccpSub( nextPosition, self.position );
-		speedVector = ccp(velocity.x/duration,velocity.y/duration);
+        
+        duration = sqrt((self.position.x - nextPosition.x) *  (self.position.x - nextPosition.x) +
+                        (self.position.y - nextPosition.y) *  (self.position.y - nextPosition.y)) / VEHICLE2RATE;
+        duration = duration * 0.8;
+        if ([[AppDelegate get] perkEnabled:23] && !isTraffic) {
+            duration*=.8;
+        }
+        CCLOG(@"rate: %f duration: %f", VEHICLE2RATE, duration);
+        CGPoint velocity = ccpSub( nextPosition, self.position );
+        speedVector = ccp(velocity.x/duration,velocity.y/duration);
 	}
 	else
 	{
@@ -99,17 +107,37 @@
   }// Pause
 }
 
+-(void) setTraffic {
+    NSArray *newPoints = [NSArray arrayWithObjects:[[CustomPoint alloc] initWithData:VEHICLE1RATE p:ccp(MAXX,SIDEWALK) s:DRIVE z:ZOUT n:@"streetRight"],[[CustomPoint alloc] initWithData:VEHICLE1RATE p:ccp(MINX,SIDEWALK) s:DRIVE z:ZOUT n:@"streetLeft"],nil];
+
+    int tmp = (uint)(arc4random() % 2);
+    if (tmp == 0 || [AppDelegate get].gameType == MISSIONS || [AppDelegate get].gameType == TUTORIAL) {
+        self.points = newPoints;
+        self.flipX = FALSE;
+    }
+    else {
+        self.points = [[newPoints reverseObjectEnumerator] allObjects];
+        self.flipX = TRUE;
+    }
+}
+
 - (void) dropOff
 {
-	Enemy *enemy = [[Enemy alloc] initWithFile: @"walk1.png" l:self.layerPointer h:@"hat1.png"];
-	enemy.color = ccRED;
-	enemy.type = 3;
-	[enemy startMoving:ccp(self.position.x,self.position.y)];
-	passengerCount--;
-	if (passengerCount == 0) {
-		[self unschedule: @selector(dropOff)];
-		self.currentState = DRIVE;
-	}
+    Enemy *enemy = [[Enemy alloc] initWithFile: @"walk1.png" l:self.layerPointer h:@"hat1.png"];
+    enemy.color = ccRED;
+    enemy.type = 3;
+    [enemy startMoving:ccp(self.position.x,self.position.y)];
+    passengerCount--;
+    if (passengerCount == 0) {
+        [self unschedule: @selector(dropOff)];
+        self.currentState = DRIVE;
+    }
+}
+
+-(bool)wasShot {
+    CGPoint headLoc = [self convertToWorldSpace:CGPointZero];    
+	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width/2);
+	return (CGRectContainsPoint(CGRectMake(headLoc.x,headLoc.y, self.contentSize.width*[AppDelegate get].scale,self.contentSize.height*[AppDelegate get].scale), point));
 }
 
 - (void) dead

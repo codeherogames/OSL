@@ -94,7 +94,7 @@
 		[self addChild:head z:self.zOrder+1];
 		
 		if (h == nil) {
-			hat = [CCSprite spriteWithFile:[NSString stringWithFormat:@"hat%i.png", (arc4random() % 17)+2]];
+			hat = [CCSprite spriteWithFile:[NSString stringWithFormat:@"hat%i.png", (uint)(arc4random() % 17)+2]];
 		}
 		else {
 			hat = [CCSprite spriteWithFile:h];
@@ -114,6 +114,14 @@
 		//[hat setPosition:ccp(self.contentSize.width/2,self.contentSize.height)];
 		[self addChild:hat z:self.zOrder+1];
 		
+        if ([AppDelegate get].nightVision == 1) {
+            for (CCSprite *n in [self children]) {
+                if ([n isKindOfClass:[CCSprite class]]) {
+                    n.color = ccWHITE;
+                }
+            }
+            self.color = ccWHITE;
+        }
 		/*hat.anchorPoint=ccp(0.5,0.5);
 		[hat setPosition:ccp(head.contentSize.width/2,head.contentSize.height-hat.contentSize.height/2)];
 		[head addChild:hat z:head.zOrder+1];*/
@@ -389,13 +397,13 @@
 		self.c =  [[[CustomPoint alloc] initWithData:INSTANTRATE p:startPoint s:WALK z:ZOUT n:@"Exit Helicopter"] retain];
 		[c.nextPoints addObject:nextPoint];*/
 		self.c =  [[[CustomPoint alloc] initWithData:INSTANTRATE p:startPoint s:WALK z:ZOUT n:@"Exit Vehicle"] retain];
-		CustomPoint *nextPoint = [[[AppDelegate get].roofStartPoint objectAtIndex:(arc4random() % 2)] retain];
+		CustomPoint *nextPoint = [[[AppDelegate get].roofStartPoint objectAtIndex:(uint)(arc4random() % 2)] retain];
 		[c.nextPoints addObject:nextPoint];
 	}
 	else if (self.type == CITIZEN) {
 		self.opacity=255;
 		if (startPoint.x == 0 && startPoint.y == 0)
-			self.c = [[[AppDelegate get].citizenStartPoint objectAtIndex:(arc4random() % 2)] retain];
+			self.c = [[[AppDelegate get].citizenStartPoint objectAtIndex:(uint)(arc4random() % 2)] retain];
 		else
 			self.c =  [AppDelegate get].Cbuilding1F4Elevator;
 	}
@@ -408,7 +416,7 @@
 		[c.nextPoints addObject:nextPoint];
 	}
 	else {
-		self.c = [[[AppDelegate get].walkStartPoint objectAtIndex:(arc4random() % 2)] retain];
+		self.c = [[[AppDelegate get].walkStartPoint objectAtIndex:(uint)(arc4random() % 2)] retain];
 	}
 	
 	//CCLOG(@"%@",c.name);
@@ -419,7 +427,7 @@
 
 - (void) startMovingWithPoints: (NSArray*) points
 {
-	self.c = [[points objectAtIndex:(arc4random() % [points count])] retain];
+	self.c = [[points objectAtIndex:(uint)(arc4random() % [points count])] retain];
 	//CCLOG(@"%@",c.name);
 	self.position = c.point;
 	//CCLOG(@"%f,%f",self.position.x,self.position.y);
@@ -705,8 +713,7 @@
 	if (![[AppDelegate get] perkEnabled:5])
 		return NO;
     dodgeLevel+=10;
-    //return ((arc4random() % 100) > 69);
-	return ((arc4random() % 100) > dodgeLevel);
+	return ((uint)(arc4random() % 100) > dodgeLevel);
 }
 
 - (void) fall:(float) where

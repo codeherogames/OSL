@@ -17,6 +17,7 @@
 	CCLOG(@"--------------Radio init");
 	self =  [super initWithFile:s];
 	if (self != nil) {
+        self.currentState = PAUSE;
 		[self randomPosition];
 		[l addChild:self z:3];
 		self.layerPointer = l;
@@ -36,8 +37,8 @@ return self;
 }
 
 -(void) randomPosition {
-	float x = 1.0 * (ELEVATORX + 80) + arc4random() % (BUILDINGDOOR-ELEVATORX-40);
-	int yR = arc4random() % 5 + 1;
+	float x = 1.0 * (ELEVATORX + 80) + (arc4random() % (BUILDINGDOOR-ELEVATORX-40));
+	int yR = (uint)(arc4random() % 5) + 1;
 	float y = FLOOR1Y;
 	switch (yR)
     {
@@ -65,10 +66,11 @@ return self;
 {
 	CCLOG(@"Check if jammer shot");
 	CGPoint location = [self convertToWorldSpace:CGPointZero];
-	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,160);
-	//float myScale = 2;
-	//CCLOG(@"self position %f,%f, location position %f, %f",self.position.x,self.position.y,location.x,location.y);
-	if (CGRectContainsPoint(CGRectMake(location.x, location.y, self.contentSize.width*[AppDelegate get].scale, self.contentSize.height*[AppDelegate get].scale), point)) {		CCLOG(@"Radio Shot!!");
+	CGPoint point = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width/2);
+	
+	if (CGRectContainsPoint(CGRectMake(location.x,location.y+self.contentSize.height*[AppDelegate get].scale, self.contentSize.width*[AppDelegate get].scale,-self.contentSize.height*[AppDelegate get].scale), point))
+    {
+        CCLOG(@"Radio Shot!!");
 		CCParticleSystemQuad *emitter = [CCParticleSystemQuad particleWithFile:@"smallExplosion.plist"];
 		emitter.autoRemoveOnFinish = YES;
 		emitter.position = ccp(self.position.x,self.position.y);

@@ -141,7 +141,9 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	emitter.emissionRate = emitter.totalParticles/emitter.life;
 	
 	emitter.texture = [[CCTextureCache sharedTextureCache] addImage: @"snow.png"];
-	[self addChild: emitter z:3];}
+	[self addChild: emitter z:3];
+}
+
 
 -(void) handleDisconnect {
 	[AppDelegate get].gameState = NOGAME;
@@ -160,7 +162,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 @end
 
 @implementation BackgroundLayer
-@synthesize vehicles;
+@synthesize vehicles,traffic;
 - (id) init {
 	CCLOG(@"BackgroundLayer");
     self = [super init];
@@ -177,6 +179,9 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 		[self setScale:[AppDelegate get].scale];
 		
 		vehicles = [[NSMutableArray alloc] init];
+        if ([[AppDelegate get] perkEnabled:43]) {
+            traffic = [[NSMutableArray alloc] init];
+        }
 		invertKills=0;
 		dirtKills=0;
 		atPresident = 0;
@@ -308,7 +313,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	float sStartX = building2.position.x-(building2.contentSize.width/2)+98;
 	float sStartY = midBuildingY-building2.contentSize.height/2+156;
 	int sCount=0;
-	sniperIndex = (int) arc4random() % 16;
+	sniperIndex = (uint)(arc4random() % 16);
 	CCLOG(@"sniperIndex:%d",sniperIndex);
 	for (int x=0; x<4;x++) {
 		for (int y=0; y<4;y++) {
@@ -343,7 +348,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 		}
 	}
 outer:;
-	//CCLOG(@"sniperlocation:%f",sniperLocation.x);
+	CCLOG(@"sniperlocation:%f",sniperLocation.x);
 	
 	if ([AppDelegate get].lowRes == 1)
 		[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
@@ -491,6 +496,11 @@ outer:;
 		[self launchSecurity];
 	}
 	
+    //Traffic
+    if ([[AppDelegate get] perkEnabled:43]) {
+		[self schedule: @selector(doTraffic) interval: 1];
+	}
+    
 	//timer
 	if ([AppDelegate get].multiplayer > 0) {
 		gameMins = 1;
@@ -502,6 +512,13 @@ outer:;
 	}
 	self.position = ccp(-pres.position.x,pres.position.y);
     
+    if ([AppDelegate get].nightVision == 1) {
+        for (CCSprite *n in [self children]) {
+            if ([n isKindOfClass:[CCSprite class]]) {
+                n.color = ccGREEN;
+            }
+        }
+    }
 }
 
 -(void) beat {
@@ -542,6 +559,19 @@ outer:;
 	gameMins++;
 }
 
+-(void)doTraffic {
+    [self unschedule:@selector(doTraffic)];
+    CCLOG(@"traffic");
+	Armored *vehicle = [[Armored alloc] initWithFile: @"hummer.png" l:self a:[AppDelegate get].vehicleStartPoint];
+    vehicle.isTraffic = YES;
+    vehicle.passengerCount = 0;
+	[self addChild:vehicle z:8];
+    [vehicle setTraffic];
+	[traffic addObject:vehicle];
+	[vehicle startMoving:ccp(0,0)];
+    int newInterval = (uint) (arc4random() % 10);
+    [self schedule: @selector(doTraffic) interval: newInterval];
+}
 
 -(void)showEnemyMoney:(int)i {
     [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showEnemyMoney:i];
@@ -730,6 +760,7 @@ foundit:
 	sniperWindow.position = sniperLocation;
 	//CGPoint x = [sniperWindow convertToWorldSpace:CGPointZero];
 	sniper.position=ccp(sniperWindow.position.x-sniperWindow.contentSize.width/2+34,sniperWindow.position.y-sniperWindow.contentSize.height/2+12);
+    CCLOG(@"sw:%f",sniperLocation.x);
 	if ([AppDelegate get].gameType != SURVIVAL)
 		[(ScopeLayer*) [self.parent getChildByTag:kScopeLayer] showSniper];
 }
@@ -1195,6 +1226,8 @@ foundit:
                 //[self sendMyIntel:@"3Peat Penalty"];
                 [self sendMyIntel:@"Plane"];
                 [self launchPlane];
+                [self sendMyIntel:@"Armored Vehicle"];
+                [self launchArmor];
             }
         }
     }
@@ -1259,13 +1292,8 @@ foundit:
 }
 
 -(void) sendMyIntel:(NSString*)s {
-/*	if ([[AppDelegate get] perkEnabled:15] && ![[AppDelegate get] perkEnabled:15]) {
-		int tauntIndex = (arc4random() % [taunts count]);
-		[(ControlLayer*) [self.parent getChildByTag:kControlLayer] updateInfo:[taunts objectAtIndex:tauntIndex] cc:ccYELLOW];
-	}
-	else {*/
+
 		[(ControlLayer*) [self.parent getChildByTag:kControlLayer] updateInfo:s cc:ccGREEN];
-	//}
 }
 
 -(void)launchSniperFound {
@@ -1339,7 +1367,7 @@ foundit:
 	Enemy *enemy = [[Enemy alloc] initWithFile: @"parachuteguy.png" l:self h:@"hat1.png"];
 	[enemy setType:PARACHUTER];
 	enemy.color = ccRED;
-	int start = arc4random() % ([[AppDelegate get].planeStartPoint count]-1) + 1;
+	int start = (uint)(arc4random() % ([[AppDelegate get].planeStartPoint count]-1)) + 1;
 	LinearPoint *p = [[AppDelegate get].planeStartPoint objectAtIndex:start];
 	[enemy startMoving:p.point];
 	[self sendIntel:@"Paratrooper"];
@@ -1393,7 +1421,7 @@ foundit:
 		[self sendIntel:@"Shoot 3 jammers"];
 		for (int x=0; x<3;x++) {
 			Radio *radio = [[Radio alloc] initWithFile: @"jammer.png" l:self];
-			[radio release];
+            [radio release];
 		}
 		if ([AppDelegate get].anti == 0)
 			jammerID = [[AppDelegate get].soundEngine playSound:7 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN loop:YES];
@@ -1681,19 +1709,19 @@ foundit:
 	// Adjust x,y
 	if (machinegunCount > 0) {
 		if (machinegunCount % 2 == 0) {
-			x += (arc4random() % 30);
-			y -= (arc4random() % 30);
+			x += (uint)(arc4random() % 30);
+			y -= (uint)(arc4random() % 30);
 		}
 		else {
-			x -= (arc4random() % 30);
-			y += (arc4random() % 30);
+			x -= (uint)(arc4random() % 30);
+			y += (uint)(arc4random() % 30);
 		}
 	}
 	
     
     float slipFactor = 1;
-    if ([[AppDelegate get] perkEnabled:46])
-        slipFactor = 0.5;
+    if ([[AppDelegate get] perkEnabled:46] && ![[AppDelegate get] perkEnabled:12])
+        slipFactor = 0.6;
     
 	x = x/(([AppDelegate get].sensitivity+slipFactor) * 5);
 	y = y/(([AppDelegate get].sensitivity+slipFactor) * 5);
@@ -1755,60 +1783,72 @@ foundit:
     
 	int gotHim = -1;
 	int headshot = 0;
-	//CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);
-	for (int i = 0; i < (int) [[AppDelegate get].enemies count]; i++) {
-		Enemy *enemy = [[AppDelegate get].enemies objectAtIndex:i];
-        if (enemy.currentState != DEAD) {
-            int wasShot = [enemy checkIfShot];
-            //CCLOG(@"wasShot=%i",wasShot);
-            if (wasShot > 0) {
-                if (wasShot > 1 && enemy.type != CITIZEN) {
-                    headshot=1;
-                    //CCLOG(@"heashotStreakBefore=%i",[AppDelegate get].headshotStreak);
-                    [AppDelegate get].headshotStreak++;
-                    if ([AppDelegate get].gameType == SURVIVAL) {
-                        if ([AppDelegate get].headshotStreak > [AppDelegate get].killStreak)
-                            [AppDelegate get].killStreak = [AppDelegate get].headshotStreak;
-                    }
-                    [self doHeadshot:enemy.position i:wasShot];
-                    //CCLOG(@"heashotStreakAfter=%i",[AppDelegate get].headshotStreak);
-                }
-                gotHim = i;
-                if (dirtKills > 0) {
-                    dirtKills--;
-                    if (dirtKills == 0/* && ![[AppDelegate get] perkEnabled:27]*/) // Permanent Scope
-                        [(ScopeLayer*) [self.parent getChildByTag:kScopeLayer] blurryOff];
-                    
-                }
-                if (invertKills > 0)
-                    invertKills--;
-                
-                if ([[AppDelegate get] myPerk:33] && enemy.type != CITIZEN) {
-                    int distance = GetApproxDistance([enemy convertToWorldSpace:CGPointZero], [desk convertToWorldSpace:CGPointZero]) / [AppDelegate get].scale;
-                    CCLOG(@"Distance:%i",distance);
-                    
-                    if (distance > 450) {
-                        int prize = 0;
-                        if (distance < 700)
-                            prize = 1;
-                        else if (distance < 900)
-                            prize = 2;
-                        else if (distance < 1200)
-                            prize = 3;
-                        else if (distance < 1480)
-                            prize = 4;
-                        else if (distance < 1580)
-                            prize = 6;
-                        else
-                            prize = 10;
-                        [AppDelegate get].money += prize;
-                        [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:[NSString stringWithFormat:@"%i",prize*10] withPerk:33];
-                    }
-                }
+    
+    bool shotTraffic = NO;
+    if ([[AppDelegate get] perkEnabled:43]) {
+        for (Armored *a in traffic) {
+            if ([a wasShot]) {
+                shotTraffic = YES;
                 break;
             }
         }
-	}
+    }
+    if (!shotTraffic) {
+        //CCLOG(@"enemies count %i",[[AppDelegate get].enemies count]);
+        for (int i = 0; i < (int) [[AppDelegate get].enemies count]; i++) {
+            Enemy *enemy = [[AppDelegate get].enemies objectAtIndex:i];
+            if (enemy.currentState != DEAD) {
+                int wasShot = [enemy checkIfShot];
+                //CCLOG(@"wasShot=%i",wasShot);
+                if (wasShot > 0) {
+                    if (wasShot > 1 && enemy.type != CITIZEN) {
+                        headshot=1;
+                        //CCLOG(@"heashotStreakBefore=%i",[AppDelegate get].headshotStreak);
+                        [AppDelegate get].headshotStreak++;
+                        if ([AppDelegate get].gameType == SURVIVAL) {
+                            if ([AppDelegate get].headshotStreak > [AppDelegate get].killStreak)
+                                [AppDelegate get].killStreak = [AppDelegate get].headshotStreak;
+                        }
+                        [self doHeadshot:enemy.position i:wasShot];
+                        //CCLOG(@"heashotStreakAfter=%i",[AppDelegate get].headshotStreak);
+                    }
+                    gotHim = i;
+                    if (dirtKills > 0) {
+                        dirtKills--;
+                        if (dirtKills == 0/* && ![[AppDelegate get] perkEnabled:27]*/) // Permanent Scope
+                            [(ScopeLayer*) [self.parent getChildByTag:kScopeLayer] blurryOff];
+                        
+                    }
+                    if (invertKills > 0)
+                        invertKills--;
+                    
+                    if ([[AppDelegate get] myPerk:33] && enemy.type != CITIZEN) {
+                        int distance = GetApproxDistance([enemy convertToWorldSpace:CGPointZero], [desk convertToWorldSpace:CGPointZero]) / [AppDelegate get].scale;
+                        CCLOG(@"Distance:%i",distance);
+                        
+                        if (distance > 450) {
+                            int prize = 0;
+                            if (distance < 700)
+                                prize = 1;
+                            else if (distance < 900)
+                                prize = 2;
+                            else if (distance < 1200)
+                                prize = 3;
+                            else if (distance < 1480)
+                                prize = 4;
+                            else if (distance < 1580)
+                                prize = 6;
+                            else
+                                prize = 10;
+                            [AppDelegate get].money += prize;
+                            [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:[NSString stringWithFormat:@"%i",prize*10] withPerk:33];
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+    }
 	CCLOG(@"heashot=%i",headshot);
 	if (headshot == 0 && machinegunCount < 1)
 		[AppDelegate get].headshotStreak=0;
@@ -1957,7 +1997,7 @@ foundit:
 ///////////////////////////////////////////
 
 - (void) dealloc {
-	CCLOG(@"dealloc GameLayer"); 
+	CCLOG(@"dealloc BackgroundLayer"); 
 	[super dealloc];
 }
 
@@ -2283,7 +2323,7 @@ foundit:
 	}
 	
     if ([[AppDelegate get] perkEnabled:32])
-        [self schedule:@selector(hiccup) interval:10];
+        [self schedule:@selector(hiccup) interval:8];
 }
 
 -(void) showBonus:(NSString*)bonus {
@@ -2317,16 +2357,6 @@ foundit:
         fieldReport.val = i;
         [fieldReport updateLabel:[NSString stringWithFormat: @"$%i", (int) i]];
     }
-}
-
--(void) hiccup {
- 	if ([AppDelegate get].scale == 1)
-		zoomedInButton.visible=FALSE;
-	else {
-		zoomedInButton.visible=TRUE;
-	}
-    
-	[(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] zoomButtonPressed];   
 }
 
 -(void) showProximity:(int)i {
@@ -2443,15 +2473,15 @@ foundit:
                                                             [NSNumber numberWithInt:23],
                                                             nil];
 	
-    uint one = (int) (arc4random() % perkChoices.count);
-	uint two = (int) (arc4random() % perkChoices.count);
+    uint one = (uint)(arc4random() % perkChoices.count);
+	uint two = (uint)(arc4random() % perkChoices.count);
     if (two == one) {
         if (one == perkChoices.count-1)
             two = 0;
         else
             two = one+1;
     }
-	uint three = (int) (arc4random() % perkChoices.count);
+	uint three = (uint)(arc4random() % perkChoices.count);
     if (three == one) {
         if (one == perkChoices.count-1)
             three = 0;
@@ -2619,7 +2649,7 @@ foundit:
             NSString *c = [NSString stringWithFormat:@"Day %4i",[AppDelegate get].currentLevel-1];
             [levelLabel setString:c];
             levelType = 1;
-            [(BackgroundLayer*) ([AppDelegate get].bgLayer) onAttackReceived:CODEINVERTED + (arc4random() % 2) pid:@"me"];
+            [(BackgroundLayer*) ([AppDelegate get].bgLayer) onAttackReceived:CODEINVERTED + (uint)(arc4random() % 2) pid:@"me"];
         }
         //CCLOG(@"level type: %i",levelType);
         int launch = 0;
@@ -2631,11 +2661,11 @@ foundit:
             case 5:
             case 6:
             case 7:
-                launch = (arc4random() % 4) + 1;
+                launch = (uint)(arc4random() % 4) + 1;
                 break;
             case 4:
             case 8: 
-                launch = CODEARMOR + (arc4random() % 4);
+                launch = CODEARMOR + (uint)(arc4random() % 4);
                 break;
         }
         CCLOG(@"launch: %i",launch);
@@ -2670,7 +2700,7 @@ foundit:
             NSString *c = [NSString stringWithFormat:@"Day %4i",[AppDelegate get].currentLevel-1];
             [levelLabel setString:c];
             levelType = 1;
-            [(BackgroundLayer*) ([AppDelegate get].bgLayer) onAttackReceived:CODEINVERTED + (arc4random() % 2) pid:@"me"];
+            [(BackgroundLayer*) ([AppDelegate get].bgLayer) onAttackReceived:CODEINVERTED + (uint)(arc4random() % 2) pid:@"me"];
         }
         CCLOG(@"level type: %i",levelType);
         int launch = 0;
@@ -2682,11 +2712,11 @@ foundit:
             case 5:
             case 6:
             case 7:
-                launch = (arc4random() % 4) + 1;
+                launch = (uint)(arc4random() % 4) + 1;
                 break;
             case 4:
             case 8: 
-                launch = CODEARMOR + (arc4random() % 4);
+                launch = CODEARMOR + (uint)(arc4random() % 4);
                 break;
         }
         //CCLOG(@"launch: %i",launch);
@@ -2794,6 +2824,34 @@ foundit:
 		
 		elapsed++;
 	}
+}
+
+- (void) doHiccup
+{
+	if (hiccupElapsed >= 15)
+	{
+		CCLOG(@"hiccup: done");
+		[self unschedule: @selector(doHiccup)];
+	}
+	else
+	{
+		[(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] moveBGPostion:0 y:(300/15)];
+		
+		hiccupElapsed++;
+	}
+}
+
+-(void) hiccup {
+    [[AppDelegate get].soundEngine playSound:23 sourceGroupId:0 pitch:1.0f pan:0.0f gain:DEFGAIN loop:NO];
+/* 	if ([AppDelegate get].scale == 1)
+		zoomedInButton.visible=FALSE;
+	else {
+		zoomedInButton.visible=TRUE;
+	}*/
+    [(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] moveBGPostion:20 y:-600];
+    hiccupElapsed = 0;
+    [self schedule: @selector(doHiccup) interval: .03];
+	//[(BackgroundLayer*) [self.parent getChildByTag:kBackgroundLayer] zoomButtonPressed];
 }
 
 -(void)nothing: (id)sender {
@@ -3050,6 +3108,13 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
         if ([[AppDelegate get] perkEnabled:27] && [AppDelegate get].gameType != SURVIVAL) {
             [self schedule: @selector(nightTime) interval: 2];
         }
+        if ([AppDelegate get].nightVision == 1) {
+            for (CCSprite *n in [self children]) {
+                if ([n isKindOfClass:[CCSprite class]]) {
+                    n.color = ccGREEN;
+                }
+            }
+        }
 	}
 	return self;
 }
@@ -3067,7 +3132,7 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
         [self addChild:c z:500 tag:NIGHTSPRITE];
     }
 	if (gettingDarker) {
-        if (c.opacity <= 220) {
+        if (c.opacity <= 190) {
             c.opacity += 10;
         }
         else {
@@ -3170,6 +3235,13 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		[tree2 setPosition:ccp(-220, -125)];
         [self addChild:tree2 z:1];
 */
+        if ([AppDelegate get].nightVision == 1) {
+            for (CCSprite *n in [self children]) {
+                if ([n isKindOfClass:[CCSprite class]]) {
+                    n.color = ccGREEN;
+                }
+            }
+        }
 	}
 	return self;
 }
@@ -3270,7 +3342,14 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		[water setScaleY:400];
 		[water setScaleX:3000];
 		water.color= ccc3(168,225,255);
-		[self addChild:water z:0];			
+		[self addChild:water z:0];
+        if ([AppDelegate get].nightVision == 1) {
+            for (CCSprite *n in [self children]) {
+                if ([n isKindOfClass:[CCSprite class]]) {
+                    n.color = ccGREEN;
+                }
+            }
+        }
 	}
 	return self;
 }

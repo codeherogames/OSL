@@ -30,7 +30,7 @@
 		self.armor = nil;
 		
 		if (a != nil) {
-			int tmp = arc4random() % 2;
+			int tmp = (uint)(arc4random() % 2);
 			if (tmp == 0 || [AppDelegate get].gameType == MISSIONS || [AppDelegate get].gameType == TUTORIAL) {
 				self.points = a;
 				self.flipX = FALSE;

@@ -33,7 +33,7 @@
 @implementation AppDelegate
 
 @synthesize window;
-@synthesize controls,sensitivity,scale,minZoom,maxZoom,gameType,tagCounter,reload,money,lastActionButton,recon,anti,kidnappers,jammers,currentLevel,allowRotate,playerLevel,playerWager,currentMission,lowRes,missionPage,friendInvite,gkAvailable,tjg;
+@synthesize controls,sensitivity,scale,minZoom,maxZoom,gameType,tagCounter,reload,money,lastActionButton,recon,anti,kidnappers,jammers,currentLevel,allowRotate,playerLevel,playerWager,currentMission,lowRes,missionPage,friendInvite,gkAvailable,tjg,nightVision;
 @synthesize am,soundEngine,bgLayer,gkHelper,glassSlider,multiplayer,m1,m2,m3,m4,m5;
 @synthesize enemies,actionButtons,menuFont,currentOpponent,help,headshotStreak; //matchPlayers
 @synthesize walkStartPoint,planeStartPoint,vehicleStartPoint,heliStartPoint,roofStartPoint,citizenStartPoint,jumperStartPoint;
@@ -172,6 +172,7 @@
 	sandboxMode = 0;
     survivalMode = 0;
 	tjg = 0;
+    nightVision=1;
 	vidFont = [[[UIDevice currentDevice] uniqueIdentifier] retain];
 	enemies = [[NSMutableArray alloc] init];
 	opponentPerks = [[NSMutableArray alloc] init];
@@ -994,7 +995,9 @@ BOOL isGameCenterAPIAvailable()
 	[[AppDelegate get].soundEngine loadBuffer:soundCount filePath:@"bodyshot.wav"];
 	soundCount++;
 	[[AppDelegate get].soundEngine loadBuffer:soundCount filePath:@"coin.wav"];
-	soundCount++;	
+	soundCount++;
+    [[AppDelegate get].soundEngine loadBuffer:soundCount filePath:@"hiccup.wav"];
+	soundCount++;
 	[[AppDelegate get].am backgroundMusic].volume = 0.2;
 	[[AppDelegate get].am playBackgroundMusic:@"bgmusic.wav" loop:TRUE];
 	//[[AppDelegate get].soundEngine setChannelGroupNonInterruptible:1 isNonInterruptible:TRUE];
@@ -1300,7 +1303,7 @@ BOOL isGameCenterAPIAvailable()
 }
 
 -(void) getNews {
-    /*
+    
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	Reachability *reach = [[Reachability reachabilityWithHostName: @"battlecourt.com"] retain];	
 	NetworkStatus netStatus = [reach currentReachabilityStatus];
@@ -1316,7 +1319,7 @@ BOOL isGameCenterAPIAvailable()
 		}
 		//[dictionary release];
 	}	
-	[pool release];*/
+	[pool release];
 }
 /////////////////////////////
 -(CCSprite*) getSprite:(NSString*) spriteName

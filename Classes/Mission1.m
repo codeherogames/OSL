@@ -98,7 +98,7 @@ enum {
 		CCSprite *tree = [CCSprite spriteWithFile:@"tree.png"];
 		tree.scale = 2;
 		float randX = startX + i * (tree.contentSize.width*2);
-		float randY = arc4random() % 100;
+		float randY = (uint)(arc4random() % 100);
 		[tree setPosition:ccp(randX,building.position.y-100+randY)];	
 		[self addChild:tree z:0];
 	}
@@ -143,7 +143,7 @@ enum {
 		[vehicles addObject:truck1];
 		[truck1 startMoving:ccp(0,0)];
 		
-		int sniperIndex = (uint) arc4random() % 12;
+		int sniperIndex = (uint) (arc4random() % 12);
 		int counter = 0;
 		for (int x=0;x<6;x++) {
 			for (int y=0;y<2;y++) {
@@ -185,8 +185,8 @@ enum {
 		startX = -400; //800
 		for (int j=0; j<3;j++) {
 			for (int i=0; i<20;i++) {
-				int img = (uint) arc4random() % 3;
-				int xPlus = (uint) arc4random() % 60;
+				int img = (uint) (arc4random() % 3);
+				int xPlus = (uint) (arc4random() % 60);
 				Enemy *enemy;
 				if (img == 2)
 					enemy = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:nil];
@@ -212,19 +212,19 @@ enum {
 		[vehicles addObject:truck1];
 		[truck1 startMoving:ccp(0,0)];
 		
-		int sniperIndex = (uint) arc4random() % 12;
+		int sniperIndex = (uint) (arc4random() % 12);
 		
-		int sniperIndex1 = (uint) arc4random() % 12;
+		int sniperIndex1 = (uint) (arc4random() % 12);
 		while (sniperIndex1 == sniperIndex)
-			sniperIndex1 = (uint) arc4random() % 12;
+			sniperIndex1 = (uint) (arc4random() % 12);
 		
-		int sniperIndex2 = (uint) arc4random() % 12;
+		int sniperIndex2 = (uint) (arc4random() % 12);
 		while (sniperIndex2 == sniperIndex || sniperIndex2 == sniperIndex1)
-			sniperIndex2 = (uint) arc4random() % 12;
+			sniperIndex2 = (uint) (arc4random() % 12);
 		
-		int sniperIndex3 = (uint) arc4random() % 12;
+		int sniperIndex3 = (uint) (arc4random() % 12);
 		while (sniperIndex3 == sniperIndex || sniperIndex3 == sniperIndex1 ||sniperIndex3 == sniperIndex2)
-			sniperIndex3 = (uint) arc4random() % 12;
+			sniperIndex3 = (uint) (arc4random() % 12);
 		
 		int counter = 0;
 		for (int x=0;x<6;x++) {
@@ -267,8 +267,8 @@ enum {
 		startX = -400; //800
 		for (int j=0; j<3;j++) {
 			for (int i=0; i<20;i++) {
-				int img = (uint) arc4random() % 3;
-				int xPlus = (uint) arc4random() % 60;
+				int img = (uint) (arc4random() % 3);
+				int xPlus = (uint) (arc4random() % 60);
 				Enemy *enemy;
 				if (img == 2)
 					enemy = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:nil];
@@ -305,8 +305,8 @@ enum {
 		startX = -100; //800
 		for (int j=0; j<8;j++) {
 			for (int i=0; i<20;i++) {
-				int img = (uint) arc4random() % 3;
-				int xPlus = (uint) arc4random() % 30;
+				int img = (uint) (arc4random() % 3);
+				int xPlus = (uint) (arc4random() % 30);
 				Enemy *enemy;
 				if (img == 2)
 					enemy = [[Enemy alloc] initWithFile: @"walk1.png" l:self h:nil];
@@ -501,8 +501,8 @@ enum {
 	}
 	else if ([AppDelegate get].currentMission == 4 || [AppDelegate get].currentMission == 9) {
 		timedCount = 0;
-		int side = (uint) arc4random() % 2;
-		int randY = (uint) arc4random() % 80;
+		int side = (uint) (arc4random() % 2);
+		int randY = (uint) (arc4random() % 80);
 		if (side == 0) {
 			NSArray *truckRoute =  [[NSMutableArray alloc] initWithObjects:[[LinearPoint alloc] initWithData:VEHICLE1RATE p:ccp(s.width/2-self.contentSize.width*3,STREET-40+randY) s:DRIVE z:ZOUT n:@"streetRight"],[[LinearPoint alloc] initWithData:VEHICLE1RATE p:ccp(200,STREET+40) s:DRIVE z:ZOUT n:@"streetLeft"],nil];
 			BombTruck *vehicle = [[BombTruck alloc] initWithFile: @"truck1.png" l:self a:truckRoute];
@@ -538,7 +538,7 @@ enum {
 		EnemyParatrooper *enemy = [[EnemyParatrooper alloc] initWithFile: @"parachuteguy.png" l:self h:@"hat1.png"];
 		[enemy setType:TARGET];
 		enemy.color = ccRED;
-		int start = arc4random() % ([[AppDelegate get].planeStartPoint count]-1) + 1;
+		int start = (uint)(arc4random() % ([[AppDelegate get].planeStartPoint count]-1)) + 1;
 		LinearPoint *p = [[AppDelegate get].planeStartPoint objectAtIndex:start];
 		[enemy startMoving:p.point];
 		
@@ -554,7 +554,7 @@ enum {
 		EnemyParatrooper *enemy = [[EnemyParatrooper alloc] initWithFile: @"parachuteguy.png" l:self h:@"hat1.png"];
 		[enemy setType:TARGET];
 		enemy.color = ccRED;
-		int start = arc4random() % ([[AppDelegate get].planeStartPoint count]-1) + 1;
+		int start = (uint)(arc4random() % ([[AppDelegate get].planeStartPoint count]-1)) + 1;
 		LinearPoint *p = [[AppDelegate get].planeStartPoint objectAtIndex:start];
 		[enemy startMoving:p.point];
 	}
@@ -566,8 +566,8 @@ enum {
 
 -(void) truckLaunch {
 	CGSize s = [[CCDirector sharedDirector] winSize];
-	int side = (uint) arc4random() % 2;
-	int randY = (uint) arc4random() % 80;
+	int side = (uint) (arc4random() % 2);
+	int randY = (uint) (arc4random() % 80);
 	if (side == 0) {
 		NSArray *truckRoute =  [[NSMutableArray alloc] initWithObjects:[[LinearPoint alloc] initWithData:VEHICLE1RATE p:ccp(s.width/2-self.contentSize.width*3,STREET-40+randY) s:DRIVE z:ZOUT n:@"streetRight"],[[LinearPoint alloc] initWithData:VEHICLE1RATE p:ccp(200,STREET+40) s:DRIVE z:ZOUT n:@"streetLeft"],nil];
 		BombTruck *vehicle = [[BombTruck alloc] initWithFile: @"truck1.png" l:self a:truckRoute];
@@ -661,7 +661,7 @@ enum {
 	for (int i = 2; i<14;i++) {
 		Enemy *e = [[AppDelegate get].enemies objectAtIndex:i];
 		if (e.type != FROMVEHICLE) {
-			int show = (uint) arc4random() % 2;
+			int show = (uint) (arc4random() % 2);
 			if (show == 1) {
 				e.visible = TRUE;
 				if (e.type == TARGET) {

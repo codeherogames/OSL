@@ -15,7 +15,11 @@
 
 @interface Armored : Vehicle {
 	CCSprite *tire1, *tire2;
+    bool isTraffic;
 }
 @property (nonatomic, retain) CCSprite *tire1, *tire2;
+@property (nonatomic, assign) bool isTraffic;
 
+-(void) setTraffic;
+-(bool) wasShot;
 @end

@@ -269,7 +269,7 @@
 }
 
 - (void) dealloc {
-	CCLOG(@"dealloc WinScene"); 
+	CCLOG(@"dealloc WinLayer"); 
 	[AppDelegate get].friendInvite = 0;
 	[super dealloc];
 }
