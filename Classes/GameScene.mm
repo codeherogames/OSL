@@ -35,6 +35,7 @@ enum {
 	kControlLayer = 5004,
 	kSkylineLayer = 5005,
 	kPauseLayer = 5006,
+    kTargetLayer = 5007,
 	kButtonMenu = 6000,
 };
 
@@ -103,7 +104,9 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	[self addChild:[BackgroundLayer node] z:1 tag:kBackgroundLayer];
 	[self addChild:[ForegroundLayer node] z:1 tag:kForegroundLayer];
 	[self addChild:[MidgroundLayer node] z:2 tag:kMidgroundLayer];
+    [self addChild:[TargetLayer node] z:3 tag:kTargetLayer];
 	[self addChild:[ScopeLayer node] z:4 tag:kScopeLayer];
+
 	[AppDelegate get].bgLayer = (BackgroundLayer*) [self getChildByTag:kBackgroundLayer];
 }
 
@@ -557,6 +560,10 @@ outer:;
 		[self launchInverted];
 	}
 	gameMins++;
+}
+
+-(CCLayer*)getFrontMostLayer {
+    return (TargetLayer*)[self.parent getChildByTag:kTargetLayer];
 }
 
 -(void)doTraffic {
@@ -1273,12 +1280,14 @@ foundit:
 		[(ForegroundLayer*) [self.parent getChildByTag:kForegroundLayer] setZoom:[AppDelegate get].minZoom];
 		[(MidgroundLayer*) [self.parent getChildByTag:kMidgroundLayer] setZoom:[AppDelegate get].minZoom];
 		[(SkylineLayer*) [self.parent getChildByTag:kSkylineLayer] setZoom:[AppDelegate get].minZoom];
+        [(TargetLayer*) [self.parent getChildByTag:kTargetLayer] setZoom:[AppDelegate get].minZoom];
 	}
 	else {
 		[self setZoom:[AppDelegate get].maxZoom];
 		[(ForegroundLayer*) [self.parent getChildByTag:kForegroundLayer] setZoom:[AppDelegate get].maxZoom];
 		[(MidgroundLayer*) [self.parent getChildByTag:kMidgroundLayer] setZoom:[AppDelegate get].maxZoom];
 		[(SkylineLayer*) [self.parent getChildByTag:kSkylineLayer] setZoom:[AppDelegate get].maxZoom];
+        [(TargetLayer*) [self.parent getChildByTag:kTargetLayer] setZoom:[AppDelegate get].maxZoom];
 	}
 }
 
@@ -1759,6 +1768,7 @@ foundit:
 	
 	//self.position = ccp(round(x),round(y));
 	self.position = ccp(x,y);
+    [(TargetLayer*) [self.parent getChildByTag:kTargetLayer] moveBGPostion:x y:y];
 	//CCLOG(@"x:%f y:%f",x,y);
 	[(ForegroundLayer*) [self.parent getChildByTag:kForegroundLayer] moveBGPostion:x*1.1 y:y*1.1];
 	[(MidgroundLayer*) [self.parent getChildByTag:kMidgroundLayer] moveBGPostion:x*1.2 y:y*1.2];
@@ -2109,7 +2119,7 @@ foundit:
 
 -(void)showInfo:(int)i {
     Perk *p = [[AppDelegate get].perks objectAtIndex:i-1];
-    CCLayer *popup = [[[PopupLayer alloc] initWithMessage:p.d t:p.n] autorelease];
+    CCLayer *popup = [[[PopupLayer alloc] initWithMessage:p.ed t:p.n] autorelease];
     [self addChild:popup z:100];
 }
 
@@ -3443,4 +3453,47 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 }
 
 @end
+
+@implementation TargetLayer
+- (id) init {
+	CCLOG(@"TargetLayer");
+    self = [super init];
+    if (self != nil) {
+		[self setScale:[AppDelegate get].scale];
+        
+	}
+	return self;
+}
+
+- (void) moveBGPostion:(float) x y:(float) y {
+	self.position = ccp(x,y);
+}
+
+- (void) setZoom:(float) z {
+	CGPoint orig = self.position;
+	float xDiff,yDiff;
+	xDiff = self.position.x - 0;
+	yDiff = self.position.y - 0;
+	//CCLOG(@"diff x:%f y:%f",xDiff,yDiff);
+	if (z == 1) {
+		//CCLOG(@"diff scale x:%f y:%f",xDiff*0.5f,yDiff*0.5f);
+		orig.x += xDiff;
+		orig.y += yDiff;
+	}
+	else {
+		orig.x -= xDiff*z;
+		orig.y -= yDiff*z;
+	}
+	[AppDelegate get].scale = z;
+	self.scale = z;
+	self.position = ccp(orig.x,orig.y);
+}
+
+- (void) dealloc {
+	CCLOG(@"dealloc TargetLayer");
+	[super dealloc];
+}
+
+@end
+
 

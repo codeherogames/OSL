@@ -33,7 +33,7 @@
         }
 		if ([AppDelegate get].lowRes == 1)
 			[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-		CCLayer *popup = [[[PopupLayer alloc] initWithMessage:@"Perks are used in multiplayer and sandbox modes.  They can give you an ability or be a detriment to your opponent.  Locked perks are dimmed until unlocked.  Choose a perk to see the description in the bottom left.  Purchase the perk and then Enable the perk to use it.  You can assign perks to unlocked slots on the bottom right." t:@"What are Perks?"] autorelease];
+		CCLayer *popup = [[[PopupLayer alloc] initWithMessage:@"Perks are used in multiplayer and sandbox modes.  They can give you an ability or be a detriment to your opponent.  Locked perks are dimmed until unlocked.  Choose a perk to see the description in the bottom left.  Click More to see full description.  Purchase the perk and then Enable the perk to use it.  You can assign perks to unlocked slots on the bottom right." t:@"What are Perks?"] autorelease];
 		[self addChild:popup z:10];
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
     }
@@ -253,7 +253,7 @@
 			if (pk1.c > [AppDelegate get].loadout.g)
 				pkStatus = @"Buy Gold";
 			else
-				pkStatus = @"Purchase";
+				pkStatus = @"Buy 300G";
 		}
 		else if ([AppDelegate get].loadout.s1 == pk1.x || [AppDelegate get].loadout.s2 == pk1.x || [AppDelegate get].loadout.s3 == pk1.x) {
 			pkStatus = @"UnEquip";
@@ -262,13 +262,26 @@
 		[pButton setColor:ccYELLOW];
 		pButton.position=ccp(purchaseMenu.position.x,purchaseMenu.position.y);
 		[self addChild:pButton z:1];	
-		
-		CCLabelTTF *myP = [CCLabelTTF labelWithString:@"300G" fontName:[AppDelegate get].clearFont fontSize:16];
+        
+        JDMenuItem *moreButton = [JDMenuItem itemFromNormalImage:@"Cbuttonhighlighted.png" selectedImage:@"Cbutton.png"
+                                                        target:self
+                                                      selector:@selector(showPerkDescription:)];
+        moreButton.scaleX = 0.4;
+        //moreButton.color = ccBLUE;
+		CCMenu *moreMenu = [CCMenu menuWithItems:moreButton,nil];
+		moreMenu.position = ccp(purchaseMenu.position.x+70,purchaseMenu.position.y);
+		[self addChild:moreMenu];
+        CCLabelTTF *myP = [CCLabelTTF labelWithString:@"More" fontName:[AppDelegate get].clearFont fontSize:16];
 		[myP setColor:ccYELLOW];
-		myP.position=ccp(purchaseMenu.position.x+70,purchaseMenu.position.y);
+		myP.position=ccp(moreMenu.position.x,moreMenu.position.y);
 		[self addChild:myP z:1];
     }
     return self;
+}
+
+-(void)showPerkDescription: (id)sender {
+    CCLayer *popup = [[[PopupLayer alloc] initWithMessage:pk1.ed t:pk1.n] autorelease];
+    [self addChild:popup z:100];
 }
 
 -(void)purchaseEquip: (id)sender {
@@ -300,7 +313,7 @@
 			[pButton setString:@"UnEquip"];	
 		}
 	}
-	else if (pButton.string == @"Purchase") {
+	else if (pButton.string == @"Buy 300G") {
 		if ([AppDelegate get].loadout.g >= x.c) {
 			[AppDelegate get].loadout.g -= x.c;
 			x.s = 1;
@@ -521,7 +534,7 @@
 		if (pk1.c > [AppDelegate get].loadout.g)
 			pkStatus = @"Buy Gold";
 		else
-			pkStatus = @"Purchase";
+			pkStatus = @"Buy 300G";
 	}
 	else if ([AppDelegate get].loadout.s1 == selected || [AppDelegate get].loadout.s2 == selected || [AppDelegate get].loadout.s3 == selected) {
 		pkStatus = @"UnEquip";

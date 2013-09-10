@@ -172,7 +172,7 @@
 	sandboxMode = 0;
     survivalMode = 0;
 	tjg = 0;
-    nightVision=1;
+    nightVision=0;
 	vidFont = [[[UIDevice currentDevice] uniqueIdentifier] retain];
 	enemies = [[NSMutableArray alloc] init];
 	opponentPerks = [[NSMutableArray alloc] init];

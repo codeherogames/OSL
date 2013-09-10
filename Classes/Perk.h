@@ -37,13 +37,13 @@ x 47: Auto-Snipe: Auto-jumps scope to sniper when visible
 x 48: Proximity Indicator: Indicates agent proximity to Smitty
 */
 @interface Perk : CCSprite <NSCoding,CCTargetedTouchDelegate> {
-	NSString *img,*n,*d;
+	NSString *img,*n,*d,*ed;
 	int x,c,s,m,flashCount;
 	CGRect rect;
 	//CCSprite *highlight;
 }
 @property (readwrite, nonatomic) int x,c,s,m;
-@property (nonatomic, retain) NSString *n,*d,*img;
+@property (nonatomic, retain) NSString *n,*d,*img,*ed;
 @property(nonatomic, readonly) CGRect rect;
 
 -(void) reset;

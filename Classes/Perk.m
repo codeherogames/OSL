@@ -15,7 +15,7 @@ enum {
 };
 
 @implementation Perk
-@synthesize x,c,n,d,s,m,img,rect;
+@synthesize x,c,n,d,s,m,img,rect,ed;
 
 - (id) initWithFile: (NSString*) iX nX:(NSString*) nX dX:(NSString*)dX xX:(int)xX cX:(int)cX sX:(int)sX mX:(int)mX
 {
@@ -24,10 +24,20 @@ enum {
 	if (self != nil) {
 		self.img = iX;
 		self.n = nX;
-		self.d = dX;
+        NSArray *lines = [dX componentsSeparatedByString: @"|"];
+        NSString *d1 = lines[0];
+        
+		self.d = d1;
+        if (lines.count > 1) {
+            NSString *d2 = lines[1];
+            self.ed = d2;
+        }
+        else {
+            self.ed = self.d;
+        }
 		self.x = xX;
 		self.c = cX;
-		self.s = 1;//sX;
+		self.s = sX;
 		self.m = mX;
 		/*highlight = [CCSprite spriteWithFile: @"w1px.png"];
 		 highlight.color = ccYELLOW;

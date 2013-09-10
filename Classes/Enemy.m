@@ -11,7 +11,7 @@
 #import "GameScene.h"
 
 @implementation Enemy
-@synthesize currentState,lastState,elapsed,duration,nextPosition,speedVector,type,customTag,kidnapper,hat,head;
+@synthesize currentState,lastState,elapsed,duration,nextPosition,speedVector,type,customTag,kidnapper,hat,head,targetHead;
 @synthesize c,layerPointer,shooting,parachute,zipping,zipPost,owner,hits;
 @synthesize actionClimb,animateClimb,actionFight1,animateFight1,actionWalk,animateWalk,elite,armor,dodgeLevel,fullAccessSet;
 //@synthesize emitter;
@@ -341,6 +341,8 @@
 		}
 		lastState = currentState;
 	}
+      //Target Finder
+      [targetHead setPosition:ccp(self.position.x,self.position.y + (self.contentSize.height/2)-10)];
   }// Pause
 }
 
@@ -419,6 +421,16 @@
 		self.c = [[[AppDelegate get].walkStartPoint objectAtIndex:(uint)(arc4random() % 2)] retain];
 	}
 	
+    
+    
+    if (self.type != FROMHELICOPTER && self.type != FROMVEHICLE && self.type != CITIZEN) {
+        targetHead = [CCSprite spriteWithFile:@"head.png"];
+        targetHead.anchorPoint=ccp(0.5,0.5);
+        targetHead.color=ccYELLOW;
+        TargetLayer *mLayer = (TargetLayer*)[(BackgroundLayer*) [AppDelegate get].bgLayer getFrontMostLayer];
+        [mLayer addChild:targetHead z:10];
+    }
+    
 	//CCLOG(@"%@",c.name);
 	self.position = c.point;
 	//CCLOG(@"%f,%f",self.position.x,self.position.y);
@@ -438,6 +450,7 @@
 - (void) dead
 {
 	[self unschedule: @selector(checkIfSighted)];
+    [targetHead removeFromParentAndCleanup:YES];
 	elite.visible = FALSE;
 	armor.visible = FALSE;
 	//CCLOG(@"Dead: current state:%i", self.currentState);
@@ -760,6 +773,9 @@
 {
 	CCLOG(@"kill enemy");
 	self.layerPointer=nil;
+    if (targetHead.parent != nil) {
+        [targetHead removeFromParentAndCleanup:YES];
+    }
 	[self removeAllChildrenWithCleanup:YES];
 	[self unscheduleAllSelectors];
 	[self stopAllActions];

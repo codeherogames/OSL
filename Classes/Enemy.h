@@ -32,7 +32,7 @@
 @property (nonatomic, retain) id actionClimb,actionWalk,actionFight1;
 @property (nonatomic, retain) id c,layerPointer;
 @property (nonatomic,readwrite) CGPoint nextPosition,speedVector;
-@property (nonatomic, retain) CCSprite *shooting,*parachute,*zipping,*zipPost,*elite,*armor,*head;
+@property (nonatomic, retain) CCSprite *shooting,*parachute,*zipping,*zipPost,*elite,*armor,*head,*targetHead;
 @property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) CCSprite *hat;
 @property (readwrite, nonatomic) int dodgeLevel;
