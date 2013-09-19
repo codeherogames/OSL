@@ -77,7 +77,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 		if ([AppDelegate get].gameType == SANDBOX && [AppDelegate get].sandboxMode == 1)
 			[AppDelegate get].money = 99999999;
 		
-        if ([[AppDelegate get] perkEnabled:46])
+        if ([[AppDelegate get] perkEnabled:46] && ![[AppDelegate get] perkEnabled:12])
             [AppDelegate get].sensitivity = 0;
         else
             [AppDelegate get].sensitivity = 1;
@@ -104,7 +104,7 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	[self addChild:[BackgroundLayer node] z:1 tag:kBackgroundLayer];
 	[self addChild:[ForegroundLayer node] z:1 tag:kForegroundLayer];
 	[self addChild:[MidgroundLayer node] z:2 tag:kMidgroundLayer];
-    [self addChild:[TargetLayer node] z:3 tag:kTargetLayer];
+    //[self addChild:[TargetLayer node] z:3 tag:kTargetLayer];
 	[self addChild:[ScopeLayer node] z:4 tag:kScopeLayer];
 
 	[AppDelegate get].bgLayer = (BackgroundLayer*) [self getChildByTag:kBackgroundLayer];
@@ -498,7 +498,7 @@ outer:;
 	if ([[AppDelegate get] perkEnabled:14]) {
 		[self launchSecurity];
 	}
-	
+    
     //Traffic
     if ([[AppDelegate get] perkEnabled:43]) {
 		[self schedule: @selector(doTraffic) interval: 1];
@@ -562,9 +562,9 @@ outer:;
 	gameMins++;
 }
 
--(CCLayer*)getFrontMostLayer {
+/*-(CCLayer*)getFrontMostLayer {
     return (TargetLayer*)[self.parent getChildByTag:kTargetLayer];
-}
+}*/
 
 -(void)doTraffic {
     [self unschedule:@selector(doTraffic)];
@@ -572,7 +572,7 @@ outer:;
 	Armored *vehicle = [[Armored alloc] initWithFile: @"hummer.png" l:self a:[AppDelegate get].vehicleStartPoint];
     vehicle.isTraffic = YES;
     vehicle.passengerCount = 0;
-	[self addChild:vehicle z:8];
+	[self addChild:vehicle z:7];
     [vehicle setTraffic];
 	[traffic addObject:vehicle];
 	[vehicle startMoving:ccp(0,0)];
@@ -1280,14 +1280,14 @@ foundit:
 		[(ForegroundLayer*) [self.parent getChildByTag:kForegroundLayer] setZoom:[AppDelegate get].minZoom];
 		[(MidgroundLayer*) [self.parent getChildByTag:kMidgroundLayer] setZoom:[AppDelegate get].minZoom];
 		[(SkylineLayer*) [self.parent getChildByTag:kSkylineLayer] setZoom:[AppDelegate get].minZoom];
-        [(TargetLayer*) [self.parent getChildByTag:kTargetLayer] setZoom:[AppDelegate get].minZoom];
+        //[(TargetLayer*) [self.parent getChildByTag:kTargetLayer] setZoom:[AppDelegate get].minZoom];
 	}
 	else {
 		[self setZoom:[AppDelegate get].maxZoom];
 		[(ForegroundLayer*) [self.parent getChildByTag:kForegroundLayer] setZoom:[AppDelegate get].maxZoom];
 		[(MidgroundLayer*) [self.parent getChildByTag:kMidgroundLayer] setZoom:[AppDelegate get].maxZoom];
 		[(SkylineLayer*) [self.parent getChildByTag:kSkylineLayer] setZoom:[AppDelegate get].maxZoom];
-        [(TargetLayer*) [self.parent getChildByTag:kTargetLayer] setZoom:[AppDelegate get].maxZoom];
+        //[(TargetLayer*) [self.parent getChildByTag:kTargetLayer] setZoom:[AppDelegate get].maxZoom];
 	}
 }
 
@@ -1768,7 +1768,7 @@ foundit:
 	
 	//self.position = ccp(round(x),round(y));
 	self.position = ccp(x,y);
-    [(TargetLayer*) [self.parent getChildByTag:kTargetLayer] moveBGPostion:x y:y];
+    //[(TargetLayer*) [self.parent getChildByTag:kTargetLayer] moveBGPostion:x y:y];
 	//CCLOG(@"x:%f y:%f",x,y);
 	[(ForegroundLayer*) [self.parent getChildByTag:kForegroundLayer] moveBGPostion:x*1.1 y:y*1.1];
 	[(MidgroundLayer*) [self.parent getChildByTag:kMidgroundLayer] moveBGPostion:x*1.2 y:y*1.2];
@@ -2161,8 +2161,23 @@ foundit:
 	
 
 	if ([AppDelegate get].gameType != SURVIVAL) {
+        
+        //Armageddon
+        if ([[AppDelegate get] perkEnabled:42]) {
+            [[[AppDelegate get].m5.childButtons objectAtIndex:0] disable];
+        }
+        if ([[AppDelegate get] myPerk:42]) {
+            [self showArmageddon];
+        }
+        //Machine Gun
+        if ([[AppDelegate get] perkEnabled:27]) {
+            [[[AppDelegate get].m5.childButtons objectAtIndex:1] disable];
+        }
+        if ([[AppDelegate get] myPerk:27]) {
+            [self showMachinegun];
+        }
         //Agent Count
-        if ([[AppDelegate get] perkEnabled:43]) {
+        /*if ([[AppDelegate get] perkEnabled:43]) {
             fieldReport = [BonusSprite spriteWithFile:@"cinset.png"];
             fieldReport.position = ccp([[UIScreen mainScreen] bounds].size.height/2,[[UIScreen mainScreen] bounds].size.width-10);
             fieldReport.scaleX = 0.5;
@@ -2170,9 +2185,9 @@ foundit:
             fieldReport.val = 0;
             [fieldReport updateLabel:@"0"];//[NSString stringWithFormat: @"%5i",0]];
             [self addChild:fieldReport z:100];
-        }
+        }*/
         //Enemy Money
-        if ([[AppDelegate get] perkEnabled:42]) {
+        /*if ([[AppDelegate get] perkEnabled:42]) {
             enemyMoney = [BonusSprite spriteWithFile:@"cinset.png"];
             enemyMoney.position = ccp([[UIScreen mainScreen] bounds].size.height/2,10);
             enemyMoney.scaleX=0.5;
@@ -2180,7 +2195,7 @@ foundit:
             enemyMoney.val = 0;
             [self addChild:enemyMoney z:100];
             [enemyMoney updateLabel:[NSString stringWithFormat: @"%i",0]];
-        }
+        }*/
 		menuTray = [CCSprite spriteWithFile: @"menutray3.png"];
 		menuTray.position = ccp(menuTray.contentSize.width/2, 160);
 		[self addChild:menuTray z:11];
@@ -3115,7 +3130,7 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 		[self makeBuilding:3 y:6 cc:ccc3(198,142,137) cg:ccp(1200, -920)];
 		//Tower2
 		[self makeBuilding:1 y:6 cc:ccc3(20,160,239) cg:ccp(750, -710)];
-        if ([[AppDelegate get] perkEnabled:27] && [AppDelegate get].gameType != SURVIVAL) {
+        /*if ([[AppDelegate get] perkEnabled:27] && [AppDelegate get].gameType != SURVIVAL) {
             [self schedule: @selector(nightTime) interval: 2];
         }
         if ([AppDelegate get].nightVision == 1) {
@@ -3124,7 +3139,7 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
                     n.color = ccGREEN;
                 }
             }
-        }
+        }*/
 	}
 	return self;
 }
@@ -3453,7 +3468,7 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 }
 
 @end
-
+/*
 @implementation TargetLayer
 - (id) init {
 	CCLOG(@"TargetLayer");
@@ -3494,6 +3509,6 @@ float findAngle(CGPoint pt1, CGPoint pt2) {
 	[super dealloc];
 }
 
-@end
+@end*/
 
 

@@ -423,13 +423,13 @@
 	
     
     
-    if (self.type != FROMHELICOPTER && self.type != FROMVEHICLE && self.type != CITIZEN) {
+    /*if (self.type != FROMHELICOPTER && self.type != FROMVEHICLE && self.type != CITIZEN) {
         targetHead = [CCSprite spriteWithFile:@"head.png"];
         targetHead.anchorPoint=ccp(0.5,0.5);
         targetHead.color=ccYELLOW;
         TargetLayer *mLayer = (TargetLayer*)[(BackgroundLayer*) [AppDelegate get].bgLayer getFrontMostLayer];
         [mLayer addChild:targetHead z:10];
-    }
+    }*/
     
 	//CCLOG(@"%@",c.name);
 	self.position = c.point;

@@ -244,9 +244,9 @@
                                              selector:@selector(tjcConnectFail:)
                                                  name:TJC_CONNECT_FAILED
                                                object:nil];
-	[Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
+	/*[Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
                     secretKey:@"UWIj5ZSXO6CVNN16htpl"
-                    options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) }];
+                    options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) }];*/
 
 
     [AddThisSDK setAddThisPubId:@"ra-4dd55f4e73a4e25b"];

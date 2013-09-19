@@ -108,7 +108,7 @@
 -(void) showBonus:(NSString*)bonus withPerk:(int)i;
 -(void)showEnemyMoney:(int)i;
 -(void)showAgentCount:(int)i;
--(CCLayer*)getFrontMostLayer;
+//-(CCLayer*)getFrontMostLayer;
 @end
 
 @interface ForegroundLayer : CCLayer {}
@@ -185,12 +185,12 @@ float findAngle(CGPoint pt1, CGPoint pt2);
 @end
 
 
-@interface TargetLayer : CCLayer {
+/*@interface TargetLayer : CCLayer {
 
 }
 - (void) moveBGPostion: (float) x y: (float) y;
 - (void) setZoom:(float) z;
-@end
+@end*/
 
 @interface PauseLayer : CCLayer {}
 @end
