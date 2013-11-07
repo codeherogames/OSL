@@ -29,6 +29,7 @@
 #import "Reachability.h"
 #import "ConnectingScene.h"
 #import "AddThis.h"
+#import <Tapjoy/Tapjoy.h>
 
 @implementation AppDelegate
 
@@ -67,6 +68,19 @@
     // UIScreenIPhone3GEmulationMode , UIScreenBestEmulatedMode, UIScreenAspectFitEmulationMode
     [UIScreen mainScreen].currentMode = [UIScreenMode emulatedMode:UIScreenAspectFitEmulationMode];
 #endif
+    // Tapjoy Connect Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tjcConnectSuccess:)
+                                                 name:TJC_CONNECT_SUCCESS
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tjcConnectFail:)
+                                                 name:TJC_CONNECT_FAILED
+                                               object:nil];
+	[Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
+                       secretKey:@"UWIj5ZSXO6CVNN16htpl"
+                         options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) }];
+
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:[MyIAPHelper sharedHelper]];
 	
 	// Init the window
@@ -268,17 +282,6 @@
 	//[[CCDirector sharedDirector] runWithScene: [MenuScene node]];	
 }
 
--(void)tjcConnectSuccess:(NSNotification*)notifyObj
-{
-	NSLog(@"Tapjoy connect Succeeded");
-}
-
-
-- (void)tjcConnectFail:(NSNotification*)notifyObj
-{
-	NSLog(@"Tapjoy connect Failed");
-}
-
 BOOL isGameCenterAPIAvailable()
 {
     // Check for presence of GKLocalPlayer class.
@@ -327,10 +330,17 @@ BOOL isGameCenterAPIAvailable()
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    // Remove this to prevent the possibility of multiple redundant notifications.
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_TAPPOINTS_EARNED_NOTIFICATION object:nil];
 	[[CCDirector sharedDirector] pause];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Add an observer for when a user has successfully earned currency.
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(showEarnedCurrencyAlert:)
+												 name:TJC_TAPPOINTS_EARNED_NOTIFICATION
+											   object:nil];
 	[[CCDirector sharedDirector] resume];
 }
 
@@ -376,6 +386,30 @@ BOOL isGameCenterAPIAvailable()
 - (void)applicationSignificantTimeChange:(UIApplication *)application {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
+
+-(void)tjcConnectSuccess:(NSNotification*)notifyObj
+{
+	CCLOG(@"Tapjoy connect Succeeded");
+    [Tapjoy getTapPoints];
+    [[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication].delegate selector:@selector(showEarnedCurrencyAlert:) name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+}
+
+
+- (void)tjcConnectFail:(NSNotification*)notifyObj
+{
+	CCLOG(@"Tapjoy connect Failed");
+}
+
+- (void)showEarnedCurrencyAlert:(NSNotification*)notifyObj
+{
+	NSNumber *tp = notifyObj.object;
+	tjg = [tp intValue];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:TJC_TAP_POINTS_RESPONSE_NOTIFICATION object:nil];
+	// Print out the updated points value.
+	CCLOG(@"Points: %i", tjg);
+}
+
+
 
 -(void) setUpAudioManager:(NSObject*) data {
 	

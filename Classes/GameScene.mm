@@ -1171,10 +1171,12 @@ foundit:
 			//[self sendIntel:@"Sniper Located"];
 //			[self sniperAlert];
 			if ([AppDelegate get].multiplayer > 0) {
-                if ([[AppDelegate get] perkEnabled:45])
+                if ([[AppDelegate get] perkEnabled:45]) {
                     [self schedule: @selector(delaySniperAlert) interval: 3];
-                else
+                }
+                else {
                     [[AppDelegate get].gkHelper sendAttack:attack];
+                }
             }
 			else if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL) {
 				if ([[AppDelegate get] perkEnabled:45])
@@ -1249,21 +1251,15 @@ foundit:
 }
 
 -(void) delaySniperAlert {
-
-    bool foundKidnapper = NO;
+    [self unschedule: @selector(delaySniperAlert)];
     for (Enemy *e in [AppDelegate get].enemies) {
         if (e.kidnapper == 1) {
-            foundKidnapper = YES;
-            break;
+            if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL)
+                [self launchSniperFound];
+            else
+                [[AppDelegate get].gkHelper sendAttack:SNIPERFOUND];
         }
     }
-    if (foundKidnapper) {
-        if ([AppDelegate get].gameType == SANDBOX || [AppDelegate get].gameType == SURVIVAL)
-            [self launchSniperFound];
-        else
-            [[AppDelegate get].gkHelper sendAttack:SNIPERFOUND];
-    }
-    [self unschedule: @selector(delaySniperAlert)];
 }
 
 -(void) delayWin {
@@ -1507,19 +1503,19 @@ foundit:
 	if ([AppDelegate get].gameType != SURVIVAL)
 		[self sendIntel:@"Armaggedon"];
 	[(ScopeLayer*) [self.parent getChildByTag:kScopeLayer] armageddon];
-    if (![[AppDelegate get] perkEnabled:35]) { //Bomb Shelter
+    if (![[AppDelegate get] myPerk:35]) { //Bomb Shelter
         for (Enemy *e in [AppDelegate get].enemies) {
-            //CCParticleSystem	*emitter = [CCParticleSystemQuad particleWithFile:@"ExplodingRing.plist"];
-            //emitter.position = e.position;
-            //[self addChild:emitter z:10];
             if (e.type != 100 ) 
                 [e kill];
         }
         for (Vehicle *v in vehicles) {
-            //CCParticleSystem *emitter = [CCParticleSystemQuad particleWithFile:@"ExplodingRing.plist"];
-            //emitter.position = v.position;
-            //[self addChild:emitter z:10];
             [v kill];
+        }
+        for (Vehicle *v in traffic) {
+            [v kill];
+        }
+        if ([[AppDelegate get] perkEnabled:43]) {
+            [self unschedule: @selector(doTraffic)];
         }
         [self stopAnti];
         if (security1 > -1) {
@@ -1531,6 +1527,7 @@ foundit:
             securityGuard2.position = ccp(-10000,-10000);
         }
         [[AppDelegate get].soundEngine stopSound:alertID];
+        //if ([AppDelegate get].kidnappers > 0 && [AppDelegate]
         [AppDelegate get].kidnappers = 0;
         [self hideSniper];
         presHostage.position = ccp(-10000,-10000);
@@ -2387,7 +2384,7 @@ foundit:
 -(void) showProximity:(int)i {
     if (i<700)
         proximiyIndicator.opacity = 255;
-    if (i<100)
+    if (i<180)
         proximiyIndicator.color = ccRED;
     else if (i<300)
         proximiyIndicator.color = ccORANGE;

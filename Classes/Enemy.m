@@ -574,8 +574,9 @@
 }
 
 -(void) kidnap {
-	CCLOG(@"kidnap");
-	if (currentState != DEAD) {
+	
+	if (self.currentState != DEAD) {
+        CCLOG(@"kidnap");
 		self.kidnapper=1;
 		[(BackgroundLayer*) [AppDelegate get].bgLayer menuAttack:SNIPERFOUND];
 		[self stopAllActions];
