@@ -1503,7 +1503,7 @@ foundit:
 	if ([AppDelegate get].gameType != SURVIVAL)
 		[self sendIntel:@"Armaggedon"];
 	[(ScopeLayer*) [self.parent getChildByTag:kScopeLayer] armageddon];
-    if (![[AppDelegate get] myPerk:35]) { //Bomb Shelter
+    if (![[AppDelegate get] perkEnabled:35]) { //Bomb Shelter
         for (Enemy *e in [AppDelegate get].enemies) {
             if (e.type != 100 ) 
                 [e kill];
