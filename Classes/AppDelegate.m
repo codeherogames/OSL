@@ -267,8 +267,9 @@
     //Facebook connect settings
 	//CHANGE THIS FACEBOOK API KEY TO YOUR OWN!!
 	[AddThisSDK setFacebookAPIKey:@"163842680351096"];
-	[AddThisSDK setFacebookAuthenticationMode:ATFacebookAuthenticationTypeFBConnect];
-	
+	//[AddThisSDK setFacebookAuthenticationMode:ATFacebookAuthenticationTypeFBConnect];
+    [AddThisSDK setFacebookAuthenticationMode:ATFacebookAuthenticationTypeDefault];
+
 	//CHANGE THIS TWITTER API KEYS TO YOUR OWN!!
 	[AddThisSDK setTwitterConsumerKey:@"Ra7VP0zX8Q8nc3zb5JVxIA"];
 	[AddThisSDK setTwitterConsumerSecret:@"mUVRXyJGRdcdtUGDKXHbwzkmayPnYj7WCoOdJcDvWg"];

@@ -263,9 +263,9 @@ static int GetApproxDistance(CGPoint pt1, CGPoint pt2) {
 	// Filler-Low
 	CCSprite *filler1 = [CCSprite spriteWithFile:@"w1px.png"];
 	filler1.anchorPoint=ccp(0,0);
-	[filler1 setPosition:ccp(300,-600)];	
+	[filler1 setPosition:ccp(-1200,-600)];
 	[filler1 setScaleY:200];
-	[filler1 setScaleX:1000];
+	[filler1 setScaleX:3000];
 	filler1.color= ccc3(79,79,79);
 	[self addChild:filler1 z:0];	
 	
