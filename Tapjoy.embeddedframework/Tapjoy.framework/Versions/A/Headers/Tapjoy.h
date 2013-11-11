@@ -171,7 +171,6 @@ typedef void (^tapPointsCompletion)(NSDictionary *parameters, NSError *error);
  */
 + (void)enableLogging:(BOOL)enable;
 
-
 /**
  * Returns the SDK version.
  *
@@ -179,6 +178,12 @@ typedef void (^tapPointsCompletion)(NSDictionary *parameters, NSError *error);
  */
 + (NSString*)getVersion;
 
+/**
+ * Dissmisses both offer wall and fullscreen ads.
+ *
+ * @return n/a
+ */
++ (void)dismissContent;
 
 @end
 
