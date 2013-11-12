@@ -77,9 +77,16 @@
                                              selector:@selector(tjcConnectFail:)
                                                  name:TJC_CONNECT_FAILED
                                                object:nil];
-	[Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
+    if (IS_OS_7_OR_LATER) {
+        [Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
                        secretKey:@"UWIj5ZSXO6CVNN16htpl"
-                         options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) }];
+                         options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES)}];
+    }
+    else {
+        [Tapjoy requestTapjoyConnect:@"6a75ed93-318a-420d-b1b6-f8c76fd376f0"
+                       secretKey:@"UWIj5ZSXO6CVNN16htpl"
+                         options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) , TJC_OPTION_COLLECT_MAC_ADDRESS : @(TJCMacAddressOptionOn)}];
+    }
 
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:[MyIAPHelper sharedHelper]];
 	

@@ -51,6 +51,7 @@
     self = [super init];
     if (self != nil) {
         currentPage = 0;
+        glowInt = 0;
         float centerX = [[UIScreen mainScreen] bounds].size.height/2;
         float wideScreenOffset = 0.0;
         if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
@@ -263,7 +264,7 @@
 		pButton.position=ccp(purchaseMenu.position.x,purchaseMenu.position.y);
 		[self addChild:pButton z:1];	
         
-        JDMenuItem *moreButton = [JDMenuItem itemFromNormalImage:@"Cbuttonhighlighted.png" selectedImage:@"Cbutton.png"
+        moreButton = [JDMenuItem itemFromNormalImage:@"Cbuttonhighlighted.png" selectedImage:@"Cbutton.png"
                                                         target:self
                                                       selector:@selector(showPerkDescription:)];
         moreButton.scaleX = 0.4;
@@ -275,8 +276,21 @@
 		[myP setColor:ccYELLOW];
 		myP.position=ccp(moreMenu.position.x,moreMenu.position.y);
 		[self addChild:myP z:1];
+        [self schedule: @selector(glow) interval: 0.2];
     }
     return self;
+}
+
+-(void)glow {
+    if (glowInt > 4) {
+        moreButton.opacity = moreButton.opacity + 20; //(glowInt * 10);
+    }
+    else {
+        moreButton.opacity = moreButton.opacity - 20; //(glowInt * 10);
+    }
+    glowInt++;
+    if (glowInt >=10)
+        glowInt = 0;
 }
 
 -(void)showPerkDescription: (id)sender {
@@ -597,6 +611,7 @@
 }
 
 - (void) dealloc {
+    [self unschedule: @selector(glow)];
 	//[[CCTextureCache sharedTextureCache] removeUnusedTextures];
 	CCLOG(@"dealloc PerkScene"); 
 	[CCMenuItemFont setFontName:[AppDelegate get].menuFont];

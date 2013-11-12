@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "AppDelegate.h"
-@class Perk;
+@class Perk,JDMenuItem;
 @interface PerkScene : CCScene {}
 @end
 
@@ -17,9 +17,10 @@
 {
 	CCLabelTTF *gold,*name,*description,*instructions,*pButton,*slot1Text,*slot2Text,*slot3Text;
 	CCSprite *preview,*slot1,*slot2,*slot3;
-	int selected,currentPage;
+	int selected,currentPage,glowInt;
     CCLabelTTF *pageLabel;
     Perk *pk1;
+    JDMenuItem *moreButton;
 }
 -(void)showInfo: (int) i;
 -(void)loadPerks;
