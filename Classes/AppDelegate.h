@@ -45,7 +45,7 @@
 	NSMutableArray *rifles,*scopes,*ammo,*extras,*perks,*news,*opponentPerks;
 	Loadout *loadout;
 	Stats *stats;
-	NSData *kd,*dk;
+	NSData /**kd,*/*dk;
 	CustomPoint *Cbuilding1F4Elevator;
 	/*ALChannelSource* SourceChannelOne;
 	ALChannelSource* SourceChannelTwo;
@@ -66,7 +66,7 @@
 @property (nonatomic, retain) GlassSlider *glassSlider;
 @property (nonatomic, assign) NSString *menuFont,*helpFont,*clearFont,*headshotFont,*currentOpponent;
 @property (nonatomic, retain) NSString *docPath,*vidFont;
-@property (nonatomic, retain) NSData *dk,*kd,*kdhd;
+@property (nonatomic, retain) NSData *dk,/**kd,*/*kdhd;
 //@property (nonatomic, retain) NSArray *matchPlayers;
 @property (nonatomic, retain) MyMenuButton *m1,*m2,*m3,*m4,*m5;
 @property (nonatomic, retain) NSMutableArray *rifles,*scopes,*ammo,*extras,*perks,*news,*opponentPerks;
@@ -87,7 +87,7 @@
 -(CCSprite*) getSprite:(NSString*) spriteName;
 
 -(void) writeData:(NSString*)f d:(id)d;
--(id) readData:(NSString*)f;
+//-(id) readData:(NSString*)f;
 -(id) readDataHD:(NSString*)f;
 -(id) initData:(NSString*)f;
 -(void) loadItem:(NSString*)f;

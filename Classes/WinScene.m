@@ -143,7 +143,12 @@
 	//if ([AppDelegate get].friendInvite > -1) {
 		CCLabelTTF *winTitle = [CCLabelTTF labelWithString:@"You Earned" fontName:[AppDelegate get].clearFont fontSize:16];
 		[winTitle setColor:ccBLACK];
-		winTitle.position=ccp([[UIScreen mainScreen] bounds].size.height/2+74/*314*/,200);
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
+            winTitle.position=ccp([[UIScreen mainScreen] bounds].size.height/2+84,200);
+        }
+        else {
+            winTitle.position=ccp([[UIScreen mainScreen] bounds].size.height/2+74/*314*/,200);
+        }
 		[self addChild:winTitle z:1];
 		winTitle.rotation=6;
 		
@@ -172,12 +177,24 @@
 		[[AppDelegate get] writeData:@"l" d:[AppDelegate get].loadout];	
 		CCLabelTTF *winnings = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%iG", mWon] fontName:[AppDelegate get].clearFont fontSize:30];
 		[winnings setColor:ccBLACK];
-		winnings.position=ccp([[UIScreen mainScreen] bounds].size.height/2+76/*316*/,174);
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
+            winnings.position=ccp([[UIScreen mainScreen] bounds].size.height/2+86,174);
+        }
+        else {
+            winnings.position=ccp([[UIScreen mainScreen] bounds].size.height/2+76/*316*/,174);
+        }
+		
 		[self addChild:winnings z:1];
 		winnings.rotation=7;
 		CCLabelTTF *winnings2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%iG", mWon] fontName:[AppDelegate get].clearFont fontSize:30];
 		[winnings2 setColor:ccYELLOW];
-		winnings2.position=ccp([[UIScreen mainScreen] bounds].size.height/2+74/*314*/,176);
+		
+        if((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen] bounds].size.height == 568)) {
+            winnings2.position=ccp([[UIScreen mainScreen] bounds].size.height/2+84/*314*/,176);
+        }
+        else {
+            winnings2.position=ccp([[UIScreen mainScreen] bounds].size.height/2+74/*314*/,176);
+        }
 		[self addChild:winnings2 z:1];
 		winnings2.rotation=7;
 		[self schedule: @selector(updateG) interval: 0.05];

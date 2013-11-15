@@ -374,7 +374,7 @@ enum {
 			Helicopter *vehicle = [[Helicopter alloc] initWithFile: @"chopper1.png" l:self a:[AppDelegate get].heliStartPoint];
 			[self addChild:vehicle z:8];
 			[vehicle addPassengers];
-			vehicle.position = ccp(HELIPADX,SKYY);
+			vehicle.position = ccp(pres.position.x,SKYY);
 			[vehicles addObject:vehicle];
 			
 			CCSprite *pointer = [CCSprite spriteWithFile:@"arrow1.png"];

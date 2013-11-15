@@ -41,8 +41,6 @@
         [self addChild:m z:1 tag:1];
         bg.scaleX = winSize.height/bg.contentSize.width;
 		[AppDelegate get].multiplayer = 0;
-        [AppDelegate get].loadout.g = 50000;
-        [[AppDelegate get] writeData:@"l" d:[AppDelegate get].loadout];
 		//[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
     }
     return self;

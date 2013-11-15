@@ -294,7 +294,8 @@
 }
 
 -(void)showPerkDescription: (id)sender {
-    CCLayer *popup = [[[PopupLayer alloc] initWithMessage:pk1.ed t:pk1.n] autorelease];
+    NSString *pMessage = [NSString stringWithFormat:@"%@\n\nYou can double tap on any perk icon during gameplay to see the perk description.",pk1.ed];
+    CCLayer *popup = [[[PopupLayer alloc] initWithMessage:pMessage t:pk1.n] autorelease];
     [self addChild:popup z:100];
 }
 

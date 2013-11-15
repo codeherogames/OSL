@@ -970,8 +970,8 @@ enum {
 		targetsLeft = 3;
 	}
 	CCLOG(@"maxShot:%i,targetsLeft:%i",maxShot,targetsLeft);
-	float bulletX = 440;
-	float bulletY = 280;
+	float bulletX = [[UIScreen mainScreen] bounds].size.height - 40; //440;
+	float bulletY = [[UIScreen mainScreen] bounds].size.width - 40; //280;
 	bullets = [[NSMutableArray alloc] init];
 	for (int i = 0; i<maxShot;i++) {
 		if (i > 11)

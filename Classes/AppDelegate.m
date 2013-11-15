@@ -38,7 +38,7 @@
 @synthesize am,soundEngine,bgLayer,gkHelper,glassSlider,multiplayer,m1,m2,m3,m4,m5;
 @synthesize enemies,actionButtons,menuFont,currentOpponent,help,headshotStreak; //matchPlayers
 @synthesize walkStartPoint,planeStartPoint,vehicleStartPoint,heliStartPoint,roofStartPoint,citizenStartPoint,jumperStartPoint;
-@synthesize rifles,scopes,ammo,extras,perks,helpPage,helpFont,clearFont,headshotFont,news,stats,loadout,vidFont,docPath,kd,dk,Cbuilding1F4Elevator,opponentPerks,tutorialState,killStreak,sandboxMode,survivalMode,gameState,kdhd;
+@synthesize rifles,scopes,ammo,extras,perks,helpPage,helpFont,clearFont,headshotFont,news,stats,loadout,vidFont,docPath,/*kd,*/dk,Cbuilding1F4Elevator,opponentPerks,tutorialState,killStreak,sandboxMode,survivalMode,gameState,kdhd;
 
 - (void) removeStartupFlicker
 {
@@ -194,7 +194,7 @@
     survivalMode = 0;
 	tjg = 0;
     nightVision=0;
-	vidFont = [[[UIDevice currentDevice] uniqueIdentifier] retain];
+	//vidFont = [[[UIDevice currentDevice] uniqueIdentifier] retain];
 	enemies = [[NSMutableArray alloc] init];
 	opponentPerks = [[NSMutableArray alloc] init];
 	[CCMenuItemFont setFontName:menuFont];
@@ -205,7 +205,7 @@
 	int zs = zt+4;
 	int zw = zt-1;
 	dk =[[[NSString stringWithFormat:@"j%i%iT%i%i%i.m",ze,zw,zt,zs,ze] dataUsingEncoding:NSUTF8StringEncoding] retain];
-	kd =[[[NSString stringWithFormat:@"Sprite%@%i.png",vidFont,(ze*zs)] dataUsingEncoding:NSUTF8StringEncoding] retain];
+	//kd =[[[NSString stringWithFormat:@"Sprite%@%i.png",vidFont,(ze*zs)] dataUsingEncoding:NSUTF8StringEncoding] retain];
 	kdhd =[[[NSString stringWithFormat:@"Sprite%@%i.png",@"Helvetica",(ze*zs)] dataUsingEncoding:NSUTF8StringEncoding] retain];
 	[[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 	
@@ -1156,11 +1156,11 @@ BOOL isGameCenterAPIAvailable()
 		obj = [(NSMutableArray*) [self readDataHD:f] retain];
         found = YES;
 	}
-    else if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px.pvr",f]]]) {
+    /*else if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px.pvr",f]]]) {
 		//CCLOG(@"%@ exists",f);
 		obj = [(NSMutableArray*) [self readData:f] retain];
         found = YES;
-	}
+	}*/
     if (found) {
         if ([f isEqualToString:@"p"]) {
             for (uint i=0; i<obj.count;i++) {
@@ -1218,11 +1218,11 @@ BOOL isGameCenterAPIAvailable()
 		obj = [[self readDataHD:f] retain];
         found = YES;
 	}
-    else if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px.pvr",f]]]) {
+    /*else if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px.pvr",f]]]) {
 		CCLOG(@"%@ exists",f);
 		obj = [[self readData:f] retain];
         found = YES;
-	}
+	}*/
     if (found) {
         if ([f isEqualToString:@"l"]) {
             Loadout *p2 = (Loadout*) obj;
@@ -1280,7 +1280,7 @@ BOOL isGameCenterAPIAvailable()
 	[data release];
 }
 
--(id) readData:(NSString*)f {
+/*-(id) readData:(NSString*)f {
 	NSString* myPath = [docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px.pvr",f]];
 	NSData *codedData = [[[NSData alloc] initWithContentsOfFile:myPath] autorelease];
     if (codedData == nil) {
@@ -1296,7 +1296,7 @@ BOOL isGameCenterAPIAvailable()
 		[uncodedData release];
 		return obj;
 	}
-}
+}*/
 
 -(id) readDataHD:(NSString*)f {
 	NSString* myPath = [docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@1px-hd.pvr",f]];
@@ -1379,7 +1379,7 @@ BOOL isGameCenterAPIAvailable()
 	[SourceChannelTwo release];
 	[buffer release];*/
 	[dk release];
-	[kd release];
+	[kdhd release];
 	[docPath release];
 	[soundEngine release];
 	[am release];
