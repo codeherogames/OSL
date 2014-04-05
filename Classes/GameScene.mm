@@ -895,6 +895,9 @@ foundit:
 			break;
         case CODESCRAPMETAL: // CODESCRAPMETAL
             if ([[AppDelegate get] myPerk:38]) {
+                if ([AppDelegate get].gameType == MULTIPLAYER && [AppDelegate get].playerLevel == 0) {
+                    break;
+                }
                 [AppDelegate get].money+=40;
                 [(ControlLayer*) [self.parent getChildByTag:kControlLayer] showBonus:@"400" withPerk:38];
             }
@@ -1212,6 +1215,9 @@ foundit:
 			[self schedule: @selector(delayWin) interval: 1];
 			break;
         case CODESCRAPMETAL: // CODESCRAPMETAL
+            if ([AppDelegate get].gameType == MULTIPLAYER && [AppDelegate get].playerLevel == 0) {
+                break;
+            }
             if ([AppDelegate get].multiplayer > 0 && [[AppDelegate get] perkEnabled:38]) {
                     [[AppDelegate get].gkHelper sendAttack:attack];
             }

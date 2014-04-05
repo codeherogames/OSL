@@ -263,7 +263,7 @@
 	NSString *p = [AppDelegate get].currentOpponent;
 	if (p == nil)
 		p = @"another opponent";
-	[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+	[AddThisSDK shareURL:@"https://itunes.apple.com/us/app/online-sniper-league/id419812538?mt=8"
 			 withService:@"twitter"
 				   title:[NSString stringWithFormat:@"I just defeated '%@' in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]
 			 description:[NSString stringWithFormat:@"I just defeated '%@' in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];
@@ -278,7 +278,7 @@
 		p = @"another opponent";
 	/*SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"I just defeated '%@' head to head in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]];
 	[SHKFacebook shareItem:item];*/
-	[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+	[AddThisSDK shareURL:@"https://itunes.apple.com/us/app/online-sniper-league/id419812538?mt=8"
 			 withService:@"facebook"
 				   title:[NSString stringWithFormat:@"I just defeated '%@' head to head in Online Sniper League for the iPhone!  Come play me, it's FREE!",p]
 			 description:@""];

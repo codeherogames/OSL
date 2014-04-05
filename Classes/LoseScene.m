@@ -304,7 +304,7 @@
 -(void)twitterSurvival: (id)sender {
 	/*SHKItem *item = [SHKItem URL:[NSURL URLWithString:SHKMyAppURL] title:[NSString stringWithFormat:@"I survived %i days with a %i kill streak in Online Sniper League for the iPhone!  Come play me, it's FREE!",[AppDelegate get].currentLevel-1,[AppDelegate get].killStreak]];
 	[SHKTwitter shareItem:item];*/
-	[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+	[AddThisSDK shareURL:@"https://itunes.apple.com/us/app/online-sniper-league/id419812538?mt=8"
 			 withService:@"twitter"
 				   title:[NSString stringWithFormat:@"I survived %i days with a %i kill streak in Online Sniper League for the iPhone!  Come play me, it's FREE!",[AppDelegate get].currentLevel-1,[AppDelegate get].killStreak]
 			 description:[NSString stringWithFormat:@"I survived %i days with a %i kill streak in Online Sniper League for the iPhone!  Come play me, it's FREE!",[AppDelegate get].currentLevel-1,[AppDelegate get].killStreak]];
@@ -314,7 +314,7 @@
 -(void)facebookSurvival: (id)sender {
 	/*SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"I survived %i days with a %i kill streak in Online Sniper League for the iPhone!  Come play me, it's FREE!",[AppDelegate get].currentLevel-1,[AppDelegate get].killStreak]];
 	[SHKFacebook shareItem:item];*/
-	[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+	[AddThisSDK shareURL:@"https://itunes.apple.com/us/app/online-sniper-league/id419812538?mt=8"
 			 withService:@"facebook"
 				   title:[NSString stringWithFormat:@"I survived %i days with a %i kill streak in Online Sniper League for the iPhone!  Come play me, it's FREE!",[AppDelegate get].currentLevel-1,[AppDelegate get].killStreak]
 			 description:@""];

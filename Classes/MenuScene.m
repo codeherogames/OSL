@@ -174,7 +174,7 @@
 }
 
 -(void)twitter: (id)sender {
-    [AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+    [AddThisSDK shareURL:@"https://itunes.apple.com/us/app/online-sniper-league/id419812538?mt=8"
 			 withService:@"twitter"
 				   title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"
 			 description:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
@@ -187,7 +187,7 @@
 /*	SHKItem *item = [SHKItem text:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"];
 	[SHKFacebook shareItem:item];*/
 	
-	[AddThisSDK shareURL:@"http://bit.ly/p3SgzQ"
+	[AddThisSDK shareURL:@"https://itunes.apple.com/us/app/online-sniper-league/id419812538?mt=8"
 			 withService:@"facebook"
 				   title:@"I love Online Sniper League for the iPhone!  Come play me, it's FREE!"
 			 description:@""];
